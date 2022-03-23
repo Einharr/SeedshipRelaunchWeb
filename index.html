@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head id="head">
+    <!-- Кодировка веб-страницы -->
+    <meta charset="utf-8">
+    <!-- Настройка viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <!-- Подключаем Bootstrap CSS -->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" >
+	<!-- Подключаем таблицу стилей -->
+  <link rel="stylesheet" href="./style.css" >
+	<!--   <link rel="stylesheet" href="./stylePC.css" > -->
+
+  <link rel="stylesheet" href="./FutUI.css">
+  <link rel="stylesheet" href="./toggle.css">
+
+<!--Подключаем названия и имена -->
+    <script src="./index.js"></script>
+<script src="./names.js"></script>
+    <script>
+        window.addEventListener("error", handleError, true);
+
+function handleError(evt) {
+    if (evt.message) { // Chrome sometimes provides this
+      console.log("error: "+evt.message +" at linenumber: "+evt.lineno+" of file: "+evt.filename);
+    } else {
+      console.log("error: "+evt.type+" from element: "+(evt.srcElement || evt.target));
+    }
+}
+    </script>
+<!-- Подключаем генератор концовки JS -->
+<script>
+document.addEventListener('touchmove', function(e){ e.preventDefault(); }, false);
+</script>
+
+
+
+<audio id="TitleAudio" src="assets/music/Seedship_Title.mp3" preload="auto" allow="autoplay"></audio>
+<audio id="BGMAudio" src="assets/music/Lost_Frontier.mp3" preload="auto" allow="autoplay"></audio>
+
+
+  <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:400,900italic,900,800italic,800,700italic,700,600italic,600,500italic,500,400italic,300italic,300,200italic,200,100italic,100' rel='stylesheet' type='text/css'>
+
+
+
+</head>
+
+<body>
+  <div class="stars">
+    <div class="twinkling">
+      <div class="clouds" id = "ClBg">
+
+        <div class = "planetGraphics">
+          <div id="moonAnimation">
+            <div class = "moon" id = "moon">
+                <div class="darkness"></div>
+              <div class="wrap">
+                <div id="moonBg" class="background"></div>
+              </div>
+                <div class="mask"></div>
+            </div>
+          </div>
+          <div class="planet" id ="planetAnimation">
+              <div id ="darkness" class="darkness"></div>
+              <div id="iceCaps" class="iceCaps"></div>
+            <div class="wrap">
+              <div id ="planet" class="background"></div>
+              <div id ="clouds" class="clouds"></div>
+            </div>
+              <div class="mask"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="container" class="container-fluid">
+    <div class = "col maincol">
+      <div class = "wrapper">
+          <div class="row" id="ShipState"></div>
+          <div id="EventWindow" class = "row">
+                <div id = "textBlock"></div>
+          </div>
+        <div id="more" class="row"></div>
+      </div>
+    </div>
+</div>
+
+<p id = "version"></p>
+<div>
+  <div class = "debugDiv futurepanel" id="DebugWindow">
+
+  <button class = "futurebutton" onclick="debugEvent()">Goto Event</button><input type="Debug" id="DebugInp"  value="1">
+  <br>
+  <button class = "futurebutton" onclick="statReset()"> Stat Reset</button>
+  <button class = "futurebutton" onclick="nextPlanet()"> New Planet</button>
+  <p>Events List:</p>
+  <p id = "debugEventLS"></p>
+  </div>
+  <button id = "debugSwitch" class = "futurebutton" onclick="debugSwitch()">Debug</button>
+</div>
+</body>
+<!-- <script src="cordova.js">onDeviceReady();</script> -->
+<script src="./data/menu.js"></script>
+<script src="./synch-load.js"></script>
+
+</html>

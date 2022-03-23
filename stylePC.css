@@ -1,0 +1,558 @@
+   html {
+     position : fixed;
+    overflow:  hidden;
+   }
+
+#more{
+text-align: center;
+}
+
+#version{
+position: absolute;
+bottom: 10px;
+right: 10px;
+font-size: 10px !important;
+}
+
+
+#debugSwitch{
+position: absolute;
+bottom: 10px;
+left: 10px;
+z-index: 1001;
+visibility: hidden;
+}
+
+.debugDiv {
+overflow-x: hidden;
+overflow-y: visible;
+max-height: 90vh;
+-webkit-overflow-scrolling: touch;
+z-index: 5;
+
+position: absolute;
+top: 10px;
+left: 10px;
+visibility: hidden;
+z-index: 1000;
+}
+#credits{
+  font-size: 1.1vw;
+  margin-top: -10%;
+}
+#menu {
+    margin-top: 20%;
+    text-align: center;
+    position: relative;
+}
+
+.menuItem {
+  justify-content: center;
+    margin: 10px;
+}
+
+#gametitle{
+     color: white;
+     text-align: center;
+   }
+#menubutton{
+  display: inline-block;
+  width: 25%;
+  z-index: 5;
+  position: relative;
+}
+
+#loadbutton{
+  background-color: rgba(199, 211, 219, 0.2);
+  display: inline-block;
+  width: 25%;
+  z-index: 5;
+  position: relative;
+}
+
+#ungradebutton{
+  display: inline-block;
+  width: 95%;
+}
+
+#ShipState{
+      max-height: 25vh;
+      justify-content: center;
+}
+#textwindow{
+      overflow-x: hidden;
+      overflow-y: visible;
+      max-height: 60vh;
+      -webkit-overflow-scrolling: touch;
+      z-index: 5;
+      position: relative;
+}
+
+#textBlock{
+}
+
+#ScanRes{
+}
+
+#languageData{
+  float: right;
+}
+#statsPlaceHolder{
+  display: none;
+}
+#intro{
+overflow:auto;
+}
+
+@viewport {
+  user-zoom: fixed;
+}
+
+@font-face {
+    font-family: "Abster";
+    src: url("./assets/fonts/Abster/ABSTER.ttf");
+}
+@font-face {
+    font-family: "Polaris";
+    src: url("./assets/fonts/Polaris/Polaris.ttf");
+}
+
+.title{
+  font-family: "Polaris";
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  font-size: 2rem;
+}
+
+.subtitle{
+  font-family: "Abster"  !important;
+}
+
+
+select {
+  width: 150px;
+  padding: 5px 35px 5px 5px;
+  font: normal 400 17px/1.2em "Alegreya Sans", Arial, sans-serif;
+  color: rgba(120, 200, 255, 0.8);
+  border: 2px solid rgba(120, 200, 255, 0.8);
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #2a3046;
+}
+
+html, body {
+       max-height: 100%;
+       height: 100%;
+       width: 100%;
+       margin: 0;
+
+}
+
+p {
+  color:white;
+  font: normal 400 2vw/1.1em "Alegreya Sans", Arial, sans-serif;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  margin-bottom: 5px;
+  line-height: inherit;
+}
+
+p.stats{
+  margin-bottom: 0px;
+  line-height: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color:rgba(33, 33, 33, 0.9);
+    color:#ffffff;
+    display:block;
+    font: 14px/1.3 Arial,sans-serif;
+    height:50px;
+    position:relative;
+    z-index:5;
+}
+h2{
+    margin-top: 30px;
+    text-align: center;
+}
+
+h4{
+  font-size: 1.1rem;
+  text-align: center;
+  line-height: 0.5;
+}
+
+header h2{
+    font-size: 22px;
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 80%;
+    text-align: center;
+}
+header a, a:visited {
+    text-decoration:none;
+    color:#fcfcfc;
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-webkit-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-moz-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-ms-keyframes move-clouds-back {
+    from {background-position: 0;}
+    to {background-position:10000px 0;}
+}
+
+.stars, .twinkling, .clouds {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.stars {
+  background:#000 url(assets/stars.png) repeat top center;
+  z-index:0;
+}
+
+.twinkling{
+  background:transparent url(assets/twinkling.png) repeat top center;
+  z-index:1;
+
+  -moz-animation:move-twink-back 800s linear infinite;
+  -ms-animation:move-twink-back 800s linear infinite;
+  -o-animation:move-twink-back 800s linear infinite;
+  -webkit-animation:move-twink-back 800s linear infinite;
+  animation:move-twink-back 800s linear infinite;
+}
+
+.clouds{
+    background:transparent url(assets/clouds3.png) repeat top center;
+    z-index:3;
+
+  -moz-animation:move-clouds-back 200s linear infinite;
+  -ms-animation:move-clouds-back 200s linear infinite;
+  -o-animation:move-clouds-back 200s linear infinite;
+  -webkit-animation:move-clouds-back 200s linear infinite;
+  animation:move-clouds-back 200s linear infinite;
+}
+/* Moon CSS */
+@keyframes orbit {
+    0%   { transform: translateX(160px)
+      scale(0.05);
+      z-index: 2;
+    }
+    5%  { transform: translateX(150px)
+                      scale(0.08);
+    }
+    10%  { transform: translateX(130px)
+                      scale(0.11);
+    }
+    15% { transform: translateX(100px)
+                     scale(0.14);
+    }
+    20% { transform: translateX(60px)
+                     scale(0.17);
+    }
+    25% { transform: translateX(0px)
+       scale(0.20);
+    }
+    30% { transform: translateX(-60px)
+                     scale(0.17);
+    }
+    35% { transform: translateX(-100px)
+                     scale(0.14);
+    }
+    40% { transform: translateX(-130px)
+                     scale(0.11);
+    }
+    45% { transform: translateX(-150px)
+                     scale(0.08);
+    }
+    50% { transform: translateX(-160px)
+                      scale(0.05);
+  }
+    55%   { transform: translateX(-150px)
+                      scale(0.05);
+    }
+    60%  { transform: translateX(-130px)
+      scale(0.05);
+    }
+    65%  { transform: translateX(-100px)
+      scale(0.05);
+    }
+    70% { transform: translateX(-60px)
+      scale(0.05);
+    }
+    75% { transform: translateX(0px)
+      scale(0.05);
+    }
+    80% { transform: translateX(60px)
+      scale(0.05);
+      z-index: -2;
+    }
+    85% { transform: translateX(100px)
+      scale(0.05);
+    }
+    90% { transform: translateX(130px)
+      scale(0.05);
+    }
+    95% { transform: translateX(150px)
+      scale(0.05);
+    }
+    100% { transform: translateX(160px)
+                     scale(0.05);
+    }
+}
+
+.moon{
+  width:300px;
+  height:300px;
+  position:absolute;
+  border-radius:50%;
+  overflow:hidden;
+  box-shadow: 0 0 60px -20px rgba(251, 251, 251, 0.72), -14px -15px 40px -10px rgba(255, 238, 191, 0.23);
+  left:50%;
+  top:75%;
+  margin:-150px;
+  transform: scale(0.2);
+  transition: all 1s;
+  z-index: 1;
+  animation-name: orbit;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  opacity: 0;
+}
+.moon .mask{
+  width:100%;
+  height:100%;
+  position: absolute;
+  box-shadow:inset -10px -10px 40px #251303, inset 10px 10px 30px -10px rgba(255, 204, 159, 0.6);
+  border-radius:50%;
+}
+
+.moon .background{
+  animation: translateBackground 40s infinite linear;
+  background:url(assets/textures/Moon/M1.png) repeat-x;
+  width:300px;
+  height:300px;
+  position:absolute;
+  border-radius:50%;
+}
+.moon .darkness{
+  background:url(assets/textures/Special/darkness.png) repeat-x;
+  width:300px;
+  height:300px;
+  position:absolute;
+  border-radius:50%;
+  animation: translateBackground 15s infinite linear;
+  opacity: 1;
+  z-index: 10;
+}
+.moon .wrap{
+  width:300px;
+  height:300px;
+  position:absolute;
+  border-radius:50%;
+  animation: rotatePlanet 150s infinite linear;
+}
+/* Planet CSS */
+
+.planet{
+  width:300px;
+  height:300px;
+  position:absolute;
+  border-radius:50%;
+  overflow:hidden;
+  box-shadow: 0 0 60px -20px rgba(255, 189, 3, 0.72), -14px -15px 40px -10px rgba(255, 238, 191, 0.23);
+  left:50%;
+  top:75%;
+  margin:-150px;
+  transform: scale(0);
+  transition: all 1s;
+  z-index: -1;
+}
+.planet .mask{
+  width:100%;
+  height:100%;
+  position: absolute;
+  box-shadow:inset -10px -10px 40px #251303, inset 10px 10px 30px -10px rgba(255, 204, 159, 0.6);
+  border-radius:50%;
+}
+.planet .background{
+  animation: translateBackground 40s infinite linear;
+  background:url(assets/textures/Barren/B1.png) repeat-x;
+  width:300px;
+  height:300px;
+  position:absolute;
+  border-radius:50%;
+}
+.planet .clouds{
+  background:url(assets/textures/atmosphere/atm2.png) repeat-x;
+  width:300px;
+  height:300px;
+  position:absolute;
+  border-radius:50%;
+  animation: translateBackground 30s infinite linear;
+  opacity: 0.8;
+}
+
+.planet .darkness{
+  background:url(assets/textures/Special/darkness.png) repeat-x;
+  width:300px;
+  height:300px;
+  position:absolute;
+  border-radius:50%;
+  animation: translateBackground 15s infinite linear;
+  opacity: 1;
+  z-index: 10;
+}
+
+.planet .iceCaps{
+  background:url(assets/textures/IceCaps/IC1.png) repeat-x;
+  width:300px;
+  height:300px;
+  position:absolute;
+  border-radius:50%;
+  animation: translateBackground 40s infinite linear;
+  opacity: 0;
+  z-index: 8;
+}
+
+.planet .wrap{
+  width:300px;
+  height:300px;
+  position:absolute;
+  border-radius:50%;
+/*  animation: rotatePlanet 150s infinite linear;*/
+}
+@keyframes translateBackground{
+  0%{
+    background-position-x:0;
+  }
+  100%{
+    background-position-x:-600px;
+  }
+}
+@keyframes rotatePlanet{
+  0%{
+    transform:rotateZ(0);
+  }
+  100%{
+    transform:rotateZ(-360deg);
+  }
+}
+
+/* ПОПАП */
+
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  background-color: rgb(115, 52, 52);
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  padding: 2px 2px;
+  position: absolute;
+  z-index: 1;
+  margin-left: 1.5vw;
+  margin-top: -2px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 25%;
+  right: 100%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color:  transparent rgb(115, 52, 52) transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+/* Text effects */
+.glowIn {
+  color: white;
+}
+.glowIn span {
+  animation: glow-in 0.8s both;
+}
+
+@keyframes glow-in {
+  from {
+    opacity: 0;
+  }
+  65% {
+    opacity: 1;
+    text-shadow: 0 0 25px white;
+  }
+  75% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.7;
+  }
+}

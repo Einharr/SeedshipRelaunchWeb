@@ -1,0 +1,70 @@
+/* Classic UI */
+
+#description {
+line-height: 1.7;
+text-align: left;
+}
+
+#shipstatspanel{
+background-color: #111 !important;
+border: solid 1px #333 !important;
+margin: -0.1em -0.1em 0.5em -0.1em;
+}
+
+.futurepanel{
+  font-size: .7em !important;
+  margin: 0em .1em 0 0em;
+}
+
+.futurepanel .futurepanel__header {
+    display: none !important;
+}
+.fontClass{
+  font-size: 1em !important;
+}
+
+#intro {
+    overflow: auto;
+    background-color: rgba(47, 42, 68, 0);
+    border: 1px solid rgba(120, 200, 255, 0);
+}
+#textwindow {
+background-color: rgba(47, 42, 68, 0);
+border: 1px solid rgba(120, 200, 255, 0);
+line-height: 1.7;
+max-height: 78vh;
+}
+
+.choicebutton {
+font: normal 500 14px/1.2em Helmet,Freesans,sans-serif;
+border: solid 1px #8af;
+background-color: #001;
+color: #8af;
+}
+.futurebutton{
+font: normal 500 14px/1.2em Helmet,Freesans,sans-serif;
+border: solid 1px #8af;
+background-color: #001;
+color: #8af;
+}
+
+#introtext{
+background-color: #111 !important;
+border: solid 1px #333 !important;
+}
+
+#name {
+  display: none;
+}
+
+.probebutton {
+font: normal 500 10px/1em Helmet,Freesans,sans-serif;
+border: solid 1px #8af;
+background-color: #001;
+color: #8af;
+}
+
+p {
+font: normal 400 3.5vw/1.1em Helmet,Freesans,sans-serif !important;
+line-height: inherit !important;
+}

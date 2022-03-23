@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.seedship.remake"
+    android-versionCode = "10"
+    version     = "0.9.3" >
+<preference name="orientation" value="portrait" />
+<preference name="DisallowOverscroll" value="true" />
+<platform name="android">
+         <icon src="res/icon/android/ldpi.png" density="ldpi" />
+         <icon src="res/icon/android/mdpi.png" density="mdpi" />
+         <icon src="res/icon/android/hdpi.png" density="hdpi" />
+         <icon src="res/icon/android/xhdpi.png" density="xhdpi" />
+</platform>
+<!-- versionCode is optional and Android only -->
+
+  <name>Seedship: Relaunch</name>
+
+  <description>
+      Unofficial fan-remake of Seedship game by John Ayliff
+  </description>
+  <preference name="android-minSdkVersion" value="17" />
+  <author href="" email="atamanplatov@gmail.com">
+      Einharr
+  </author>
+  <content src="index.html" />
+</widget>
