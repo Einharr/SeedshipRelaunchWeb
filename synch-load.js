@@ -1,5 +1,5 @@
 //Этот скрипт отвечает за загрузку скриптов в правильном порядке
-
+//This script is responsible for loading the scripts in the correct order
 function addScript(src){
     var script = document.createElement('script');
     script.src = src;

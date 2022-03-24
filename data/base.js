@@ -7,6 +7,7 @@ var last_encounter_category = "";
 var off_course_counter = 0;
 
 //Инициализация статов корабля
+//Ship stat initialization
 function ship(colonists, atmosphere, gravity, temperature, water, resources, culture, science, probes, landing, construction, techLvl, cultureScore) {
   this.colonists = colonists;
   this.atmosphere = atmosphere;
@@ -25,6 +26,7 @@ function ship(colonists, atmosphere, gravity, temperature, water, resources, cul
 }
 
 //Значения сканеров
+//Scanner values
 var defAtm = [100, 0, languageData.scanAtmosphere[options.language], "cShip.atmosphere"];
 var defGra = [100, 0, languageData.scanGravity[options.language], "cShip.gravity"];
 var defTemp = [100, 0, languageData.scanTemperature[options.language], "cShip.temperature"];
@@ -32,11 +34,16 @@ var defWat = [100, 0, languageData.scanWater[options.language], "cShip.water"];
 var defRes = [100, 0, languageData.scanResources[options.language], "cShip.resources"];
 
 //Значения баз данных
+//Database values
 var defCul = [100, 0, languageData.scanCulture[options.language], "cShip.culture"];
 var defSci = [100, 0, languageData.scanScience[options.language], "cShip.science"];
 
 //Колонисты
-var colStow = 0; // Дополнительные колонисты из события "Безбилетники"
+//colonists
+// Дополнительные колонисты из события "Безбилетники"
+//Additional colonists from the Free Riders event
+var colStow = 0;
+
 
 var colCount = [1000, 0, languageData.scanColonists[options.language], "cShip.colonists"];
 var colMax = 1000 + colStow;
@@ -44,15 +51,18 @@ var colMax = 1000 + colStow;
 
 
 //Зонды
+//Probes
 var probesCount = [10, 0, languageData.scanProbes[options.language], "cShip.probes"];
 
 //Структуры
+//structures
 var defLanding = [100, 0, languageData.scanLanding[options.language], "cShip.landing"];
 var defConstr = [100, 0, languageData.scanConstruction[options.language], "cShip.construction"];
 
 
 
 //Инициализация статов планеты
+//Planet stat initialization
 function planet(atmosphere, gravity, temperature, water, resources, anomalies, anomaliesFull, description, techLvl, natives, culture, cultureScore) {
   this.atmosphere = atmosphere;
   this.gravity = gravity;
@@ -72,10 +82,12 @@ function planet(atmosphere, gravity, temperature, water, resources, anomalies, a
 
 
 // Создание массива корабля в текущей катке
+// Creating an array of a ship in the current game
 var cShip = new ship(colCount, defAtm, defGra, defTemp, defWat, defRes, defCul, defSci, probesCount, defLanding, defConstr, 0, 0);
 
 
 //Массивы для рандомизации повреждений в событиях. Знаю, коряво.
+//Arrays for randomizing damage in events. I know it's gross.
 var ScanArr = [cShip.atmosphere, cShip.gravity, cShip.temperature, cShip.water, cShip.resources];
 var DbArr = [cShip.culture, cShip.science];
 var StrArr = [cShip.landing, cShip.construction];
@@ -85,10 +97,12 @@ var RandStr = ScanArr.concat(DbArr, StrArr);
 var FullArr = ScanArr.concat(DbArr, StrArr, ColArr, ProArr);
 
 //Массив сканнеров для апгрейда
+//Upgradable Scanner Array
 refreshArr = ["atmosphere", "gravity", "temperature", "water", "resources", "colonists", "probes", "science", "culture", "construction", "landing"];
 
 DestroyedArray = [];
 //Цветовая диффиренциация статов
+//Color differentiation of stats
 var percentColors = [
   { pct: 0, color: { r: 0, g: 0, b: 0 } },
   { pct: 1, color: { r: 0xff, g: 0x00, b: 0 } },
@@ -117,13 +131,14 @@ var getColorForPercentage = function (pct) {
 };
 
 //Большая первая буква
-
+// Capitalize first letter
 var capt = (s) => {
   if (typeof s !== 'string') return ''
   return s.charAt(0).toUpperCase() + s.slice(1)
 }
 
 //Склонения для русского языка
+// Declension for Russian https://en.wikipedia.org/wiki/Russian_grammar
 function declOfNum(number, titles) {
   cases = [2, 0, 1, 1, 1, 2];
   return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
@@ -133,6 +148,7 @@ function declOfNum(number, titles) {
 
 
 //Инициализация рандомайзера
+//Randomizer initialization
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -140,6 +156,7 @@ function getRandomInt(min, max) {
 }
 
 //Функция рандомизации урона
+//Damage randomization function
 function deviceDamage(DmgArr, excl1, excl2) {
 
   if (excl1 == undefined) {
@@ -149,6 +166,7 @@ function deviceDamage(DmgArr, excl1, excl2) {
     excl2 = 0;
   }
   //Исключение уничтоженных девайсов
+  //Exclude destroyed devices
   var RandDmgArr = [];
   var i;
   for (i = 0; i < DmgArr.length; i++) {
@@ -170,6 +188,7 @@ function deviceDamage(DmgArr, excl1, excl2) {
 };
 
 //Функция случайного апгрейда
+//Random upgrade function
 function randomUpgrade(Arr) {
 
   var RandUpArr = [];
@@ -188,6 +207,7 @@ function randomUpgrade(Arr) {
 };
 
 //Функции урона
+//Damage functions
 function killColonists(dmg) {
   if (dmg == "Low") {
     deaths = Math.round(getRandomInt(2, 1000 * 0.15));
@@ -232,8 +252,10 @@ function damageApply(system, damage, status) {
     system[0] -= damage;
     if (system[0] == 0) {
       //Добавление в список уничтоженных систем
+      //Adding to the list of destroyed systems
       DestroyedArray.push(system);
       //Заморозка значения уничтоженной системы на 0
+      //Freeze the value of the destroyed system to 0
       Object.freeze(system[0]);
     }
     dif = "-" + damage;
@@ -249,6 +271,7 @@ function damageApply(system, damage, status) {
   };
 
   // ЗАПРЕТ НА ЗНАЧЕНИЯ НИЖЕ НУЛЕВЫХ
+  // PREVENT VALUES BELOW ZERO
   for (key in cShip) {
     var value = cShip[key];
     if (value[0] <= 0) {
@@ -276,7 +299,7 @@ function damageApply(system, damage, status) {
   if (system[3] != (cShip.colonists[3])) {
     if (system[3] != (cShip.probes[3])) {
       document.getElementById(system[3]).style.color = getColorForPercentage(system[0]);
-      
+
     };
   };
 
@@ -306,7 +329,7 @@ function damageApply(system, damage, status) {
     var popup = document.getElementById(system[3] + "_popup");
     popup.innerHTML = "<b>" + dif + "</b>";
     popup.classList.toggle("show");
-    
+
   } else {
     if (system[3] != cShip.probes[3]) {
       if (system[3] != cShip.colonists[3]) {
@@ -347,6 +370,7 @@ function either() {
 };
 
 //Покраска статов планеты
+//Painting planet stats
 function attributeColor(planetAttributes) {
   var planetStats = [cPlanet.atmosphere, cPlanet.gravity, cPlanet.temperature, cPlanet.water, cPlanet.resources, cPlanet.anomalies];
   for (i = 0; i < planetAttributes.length - 1; i++) {
@@ -429,11 +453,13 @@ function gameOver(reason) {
 };
 
 //Проверка на гейм овер из—за уничтоженных систем
+//Check for game over due to destroyed systems
 function gameOverCheck() {
   if (DestroyedArray.length > 4) {
     gameOver("systems");
   };
-
+//Проверить, что игра окончена из-за того, что все колонисты мертвы
+//Check for game over due to all colonists dead
   if (cShip.colonists[0] <= 0) {
     gameOver("colonists");
   };
@@ -441,6 +467,7 @@ function gameOverCheck() {
 //
 
 //Массивы статов планеты
+//Arrays of planet stats
 var PlanetAtmosphere = ["Breathable", "Marginal", "Non-breathable", "Toxic", "Corrosive", "None"];
 var PlanetGravity = ["Moderate", "High", "Low", "Very High", "Very Low"];
 var PlanetTemperature = ["Moderate", "Hot", "Cold", "Very Hot", "Very Cold"];
@@ -459,6 +486,7 @@ function planetStatsTranslate(arr, el) {
   };
 }
 //Аномалии
+//anomalies
 var PlanetAnomaliesList = ["Moon",
   "Vegetation",
   "Animal life",
@@ -560,6 +588,7 @@ var ResRes = ["cPlanet.atmosphere", "cPlanet.gravity", "cPlanet.temperature", "c
 
 function buttonWipe() {
   //Очищаем кнопки выбора событий
+  ////Clear the event select buttons
   const myNode = document.getElementById("more");
   while (myNode.firstChild) {
     myNode.removeChild(myNode.lastChild);
@@ -568,6 +597,7 @@ function buttonWipe() {
 
 function textWipe() {
   //Очищаем поле вывода текста
+  ////Clear the text output field
   const myText = document.getElementById("textwindow");
   while (myText.firstChild) {
     myText.removeChild(myText.lastChild);
@@ -593,6 +623,7 @@ function landingConfirm(ship, planet, ending) {
   more.appendChild(para);
 
   //Добавляем новые кнопки подтверждения
+  //Add new confirmation buttons
   var more = document.getElementById("more");
   var btn = document.createElement("button");
   btn.className = "futurebutton";
@@ -614,6 +645,7 @@ function landingReject() {
   buttonWipe();
 
   //Добавляем новые кнопки выбора событий
+  //Add new event selection buttons
   var more = document.getElementById("more");
   var btn = document.createElement("button");
   btn.className = "futurebutton";
@@ -635,6 +667,7 @@ function landingReject() {
 };
 
 //Функция для отрисовки листа аномалий на правильном языке
+//Function to draw the anomaly sheet in the correct language
 function anomaliesLang(anomalies, anomaliesFull, languageData) {
   var anolang = [];
   for (var i = 0; i < anomalies.length; i++) {
@@ -800,16 +833,18 @@ function anomaliesLangFull(anomalies, anomaliesFull, languageData) {
 function desiredPlanet(){
   do {
     nextPlanet()
-  } while (cMachineDoctrine == 0); 
+  } while (cMachineDoctrine == 0);
 }
 
 //Генерация и отрисовка новой планеты
+//Generate and draw a new planet
 function nextPlanet(load) {
   planetsVisited += 1;
   console.log("Planets visited: " + planetsVisited);
   popupClean();
 
   //ГЕНЕРАТОР ПЛАНЕТЫ
+  //PLANET GENERATOR
   var PlanetAnomalies = [];
   var PlanetAnomaliesReal = [];
 
@@ -1113,6 +1148,8 @@ if (planetsVisited == 42){
 
     // Логика исключение невозможных сочетаний
     //Замораживаем океан
+    // Logic excludes impossible combinations. the below prevents impossible combos from happening.
+     // Freeze the ocean
     if (cPlanet.temperature == "Very Cold" && cPlanet.water == "Planet-wide ocean") {
       cPlanet.water = "Ice-covered surface";
     };
@@ -1127,6 +1164,7 @@ if (planetsVisited == 42){
     };
 
     //Растапливаем лёд
+    //// Melt the ice
     if ((cPlanet.temperature == "Very Hot" || cPlanet.temperature == "Hot" || cPlanet.temperature == "Moderate") && cPlanet.water == "Ice-covered surface") {
       cPlanet.water = "Planet-wide ocean";
     };
@@ -1136,12 +1174,15 @@ if (planetsVisited == 42){
     };
 
     //Если есть жидкая вода — есть атмосфера
+    //If there is liquid water, there is an atmosphere
     if (cPlanet.atmosphere == "None" && (cPlanet.water == "Oceans" || cPlanet.water == "Planet-wide ocean")) {
       cPlanet.atmosphere = "Non-breathable";
     };
 
     //Логика аномалий
     //Луна
+    // Anomaly logic
+     //Moon
     var moon_chance = 0;
 
     function moon_random(moon) {
@@ -1180,6 +1221,7 @@ if (planetsVisited == 42){
 
 
     //Красота
+    //planet beauty
 
     if (getRandomInt(1, 99) <= 20) {
       cPlanet.anomaliesFull.push(PlanetAesthetics[0]);
@@ -1188,6 +1230,7 @@ if (planetsVisited == 42){
     };
 
     //Пещеры
+    //Caves
     var cave_chance = 0;
 
     function cave_random(cave) {
@@ -1228,6 +1271,9 @@ if (planetsVisited == 42){
 
     //ЖИЗНЬ
     //Растения
+    //Life
+     //Plants
+     //Plants can only exist where there is an atmosphere and the temp isn't super extreme
     if (cPlanet.atmosphere != "None" && (cPlanet.temperature == "Hot" || cPlanet.temperature == "Cold" || cPlanet.temperature == "Moderate")) {
       cPlanet.anomalies.push(PlanetAnomaliesList[1]);
       switch (cPlanet.atmosphere) {
@@ -1283,6 +1329,7 @@ if (planetsVisited == 42){
     };
 
     //Животные
+    //Animals may show up if there is vegetation.
 
     if (cPlanet.anomalies.includes("Vegetation")) {
       var animals_chance = 50;
@@ -1293,6 +1340,7 @@ if (planetsVisited == 42){
     };
 
     //Местное население
+    //Local population
 
     if (cPlanet.anomalies.includes("Animal life")) {
       var natives_chance = 50;
@@ -1332,6 +1380,7 @@ if (planetsVisited == 42){
         };
 
         //Культура местных
+        //Local Culture
         if (cPlanet.techLvl < 8) {
           cPlanet.culture = getRandomInt(5, 9);
         } else if (cPlanet.techLvl < 3) {
@@ -1346,6 +1395,7 @@ if (planetsVisited == 42){
     };
 
     //Руины
+    //Ruin
     var ruin_chance = 10;
     if (cPlanet.anomaliesFull.includes("Planet-spanning civilisation")) {
       ruin_chance = 0;
@@ -1368,10 +1418,12 @@ if (planetsVisited == 42){
     //console.log(cPlanet.anomaliesFull);
     //console.log("КУЛЬТУРА:" + cPlanet.culture);
     //Очищаем текст и кнопки
+    //Clear text and buttons
   };
   textWipe();
 
   //Отрисовываем новые элементы
+  //// Draw new elements
   var textwindow = document.getElementById("textwindow");
   var para = document.createElement("p");
   para.id = "name";
@@ -1431,6 +1483,7 @@ if (planetsVisited == 42){
   buttonWipe();
 
   //Добавляем новые кнопки выбора событий
+  //Add new event selection buttons
   var more = document.getElementById("more");
   var btn = document.createElement("button");
   btn.className = "futurebutton";
@@ -1451,7 +1504,7 @@ if (planetsVisited == 42){
     btn.innerHTML = languageData.moveOn[options.language];
     more.appendChild(btn);
   };
-  
+
   planetScale = 1;
 
   switch (cPlanet.gravity) {
@@ -1479,6 +1532,7 @@ if (planetsVisited == 42){
 
   cPlanet.description = planetDescription(cPlanet);
   //Отрисовка результатов сканирования
+  //Rendering scan results
   function drawStats() {
     var AnomaliesLanguageOutput = anomaliesLang(cPlanet.anomalies, cPlanet.anomaliesFull, languageData);
     document.getElementById('description').innerHTML = cPlanet.description;
@@ -1491,6 +1545,7 @@ if (planetsVisited == 42){
   }
   drawStats();
   //Были ли сбои сканирования. Массив для ProbingFunc
+  //Were there any scan failures. Array for ProbingFunc
   var ScanFailArr = [];
   function scanFailCheck(scanners, planetAttributes) {
     for (i = 0; i < scanners.length; i++) {
@@ -1536,6 +1591,7 @@ if (planetsVisited == 42){
   gameOverCheck();
 
   //Загрузка игры
+  //Load the game
 
   if (loading) {
     Loaddata = gameload("Savedata");
@@ -1549,6 +1605,7 @@ if (planetsVisited == 42){
     statsRefresh();
   }
   //Автосохранение
+  //Autosave
   Savedata = [cShip, cPlanet, planetsVisited, last_encounter_category, ScanArr];
   gamesave(Savedata, "Savedata");
   attributeColor(ResRes);
@@ -1561,9 +1618,16 @@ if (planetsVisited == 42){
 //РАНДОМИЗАЦИЯ СЛЕДУЮЩЕГО СОБЫТИЯ
 
 //Исключение предыдущего события
+
+//END OF FUNCTION
+
+//RANDOMIZE THE NEXT EVENT
+
+//Exception of the previous event
 function eventExclusion(list, exclusion) {
 
   //Исключение уничтоженных девайсов
+  //Exclude destroyed devices
   var RandEventArr = [];
   var i;
   for (i = 0; i < list.length; i++) {
@@ -1637,6 +1701,7 @@ function randEvent() {
 };
 
 //ПРОВЕРИТЬ, НЕ УНИЧТОЖЕНЫ ЛИ СТРУКТУРЫ ДЛЯ ОТРИСОВКИ КНОПОК
+//CHECK IF THE STRUCTURES FOR DRAWING BUTTONS HAVE BEEN DESTROYED
 
 function existCheck(DmgArr) {
   if (DmgArr == "true") {
@@ -1645,6 +1710,7 @@ function existCheck(DmgArr) {
     return false;
   } else {
     //Исключение уничтоженных девайсов
+    //Exclude destroyed devices
     var RandDmgArr = [];
     var i;
     for (i = 0; i < DmgArr.length; i++) {
@@ -1653,6 +1719,7 @@ function existCheck(DmgArr) {
       };
     };
     //Если массив пустой, значит кнопка выбора не рисуется
+    //If the array is empty, then the select button is not drawn
     if (RandDmgArr && RandDmgArr.length) {
       return true;
     } else {
@@ -1664,6 +1731,7 @@ function existCheck(DmgArr) {
 };
 
 //ОТРИСОВКА СЛЕДУЮЩЕГО СОБЫТИЯ
+//// DRAWING THE NEXT EVENT
 function nextEncounter(newEnc = "none") {
   popupClean();
 
@@ -1699,15 +1767,18 @@ function nextEncounter(newEnc = "none") {
   choicesBtns();
   gameOverCheck();
 };
-// 
+//
 
 
 
 //ОТРИСОВКА КНОПОК ВЫБОРА В СОБЫТИЯХ
+//DRAWING SELECTION BUTTONS IN EVENTS
 function choicesBtns() {
   //Очищаем кнопки выбора событий
+  //Clear the event select buttons
   buttonWipe();
   //Добавляем новые кнопки выбора событий
+  //Add new event selection buttons
   var more = document.getElementById("more");
   for (var i = 0; i < curEvent.choices.length; i++) {
     if (curEvent.choices[i].exist == true) {
@@ -1723,6 +1794,7 @@ function choicesBtns() {
 
 
 //ДЕБАЖНЫЕ КНОПКИ
+//DEBUG BUTTONS
 function debugSwitch() {
   if (options.debug) {
     document.getElementById("DebugWindow").style.visibility = "hidden";

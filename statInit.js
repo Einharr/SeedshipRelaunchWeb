@@ -1,8 +1,10 @@
 //ОТРИСОВКА ГРАФИКИ ПЛАНЕТЫ
 //АТМОСФЕРА
 //Выбираем случайные облака
+//DRAWING PLANET GRAPHICS
+//ATMOSPHERE
+//Select random clouds
 document.getElementById("clouds").style.background = "url(assets/textures/atmosphere/atm"+getRandomInt(1,8).toString()+".png) repeat-x";
-//
 switch(cPlanet.atmosphere) {
   case 'Breathable':
   case 'Marginal':
@@ -113,6 +115,7 @@ switch(cPlanet.water) {
 };
 
 //ТЕМПЕРАТУРА
+//temperature
   switch(cPlanet.temperature) {
     case 'Moderate':
       break;
@@ -129,6 +132,7 @@ switch(cPlanet.water) {
   };
 
 //ГРАВИТАЦИЯ
+//GRAVITY
   switch(cPlanet.gravity) {
     case 'Moderate':
       break;
@@ -145,6 +149,7 @@ switch(cPlanet.water) {
   };
 
 //РЕСУРСЫ
+//Resource
   switch(cPlanet.resources) {
     case 'Rich':
       break;
