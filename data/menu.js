@@ -87,13 +87,14 @@ function play(audioSrc) {
 
 
 //Сохранение и загрузка
+////Save and load
 function gamesave(obj, name) {
-  var savedata = JSON.stringify(obj); //сериализуем переменную
-  localStorage.setItem(name, savedata); //пишем ее в хранилище
+  var savedata = JSON.stringify(obj); //сериализуем переменную serialize the variable
+  localStorage.setItem(name, savedata); //пишем ее в хранилище write it to the repository
 };
 
 function gameload(name) {
-  var loaddata = JSON.parse(localStorage.getItem(name)) //парсим его обратно объект
+  var loaddata = JSON.parse(localStorage.getItem(name)) //парсим его обратно объект parse it back as an object
   return loaddata;
 };
 
@@ -113,9 +114,11 @@ function pastMissionsRefresh(obj) {
 };
 
 //Функция загрузки настроек
+//Settings load function
 function gameinitialize() {
 
   //Музыка
+  //Music
 /*  if (options.soundEnabled == true) {
     //togglePlay()
     //window.plugins.NativeAudio.loop( 'music' );
@@ -128,6 +131,7 @@ function gameinitialize() {
 
   if (options.firstStart == true) {
     //Инициализация языка пользователя
+    //User language initialization
     var userLang = navigator.language || navigator.userLanguage;
     console.log(userLang);
 
@@ -146,6 +150,7 @@ function gameinitialize() {
   };
 
   //Рисуем облака
+  //Draw clouds
   if (options.clouds == true) {
     document.getElementById('ClBg').style.background = "transparent url(assets/clouds3.png) repeat top center";
   } else if (options.clouds == false) {
@@ -153,6 +158,7 @@ function gameinitialize() {
   };
 
   //Рисуем планету
+  //Draw the planet
   if (options.planet == true) {
     document.getElementById('planetAnimation').style.display = "";
     document.getElementById('moonAnimation').style.display = "";
@@ -162,6 +168,7 @@ function gameinitialize() {
   };
 
   //Рисуем окно дебага
+  //Draw a debug window
   if (options.debug == true) {
     document.getElementById('debugSwitch').style.visibility = "Visible";
   } else if (options.debug == false) {
@@ -172,6 +179,7 @@ function gameinitialize() {
 
 };
 //Функции листов выдачи текста
+//Text output sheet functions
 function arrList(Arr) {
   //  console.log(Arr);
   return Arr.join('<br>');
@@ -181,11 +189,13 @@ function endList(Arr) {
   return Arr.join(' ');
 }
 //Версия в правом нижнем углу
+//Version in the lower right corner
 var version = document.getElementById("version");
 version.innerHTML = curVersion;
 //
 function menuWipe() {
   //Очищаем стартовое меню
+  //Cleaning up the start menu
   const myNode = document.getElementById("ShipState");
   while (myNode.firstChild) {
     myNode.removeChild(myNode.lastChild);
@@ -194,6 +204,7 @@ function menuWipe() {
 
 function langWipe() {
   //удаляем ноду с языком
+  //remove node with language
   document.getElementById("endingLg").remove();
 };
 
@@ -248,6 +259,7 @@ function about() {
   backRow.appendChild(btn);
 };
 //ТИТРЫ
+//TITLES
 function credits() {
   menuWipe();
 
@@ -310,6 +322,7 @@ function credits() {
   backRow.appendChild(btn);
 };
 //ОТРИСОВКА МЕНЮ
+//DRAWING THE MENU
 function createMenu() {
   state = "menu";
   menuWipe();
@@ -446,6 +459,7 @@ function createMenu() {
   more.appendChild(btn);
 
   //Подготовка к загрузке игровых данных
+  //Preparing to download game data
   if (localStorage.getItem("Savedata") !== null) {
     document.getElementById("loadbutton").style.backgroundColor = "rgba(120, 200, 255, 0.6)";
     document.getElementById("loadbutton").onclick = function () {
@@ -460,10 +474,13 @@ function createMenu() {
 
 };
 //МЕНЮ НАСТРОЕК
+//Menu Settings
 function menuSettings() {
   //Очищаем стартовое меню
+  // Cleaning up the start menu
   menuWipe();
   //Рисуем меню настроек
+  //// Draw the settings menu
   var ShipState = document.getElementById("ShipState");
   var crcol = document.createElement("div");
   crcol.className = "futurepanel";
@@ -508,6 +525,7 @@ function menuSettings() {
   more.appendChild(row);
 
   // ЯЗЫКОВОЙ ДРОПДАУН
+ //LANGUAGE DROPDOWN
 
   function langSwitch() {
 
@@ -540,7 +558,7 @@ function menuSettings() {
   selected.addEventListener('change', langSwitch);
 
   //
-  //Google Sing in
+  //Google Sign in
   console.log(options.platform)
    if(options.platform=="Android"){
     var more = document.getElementById("settings");

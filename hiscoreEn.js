@@ -1,4 +1,5 @@
 //Инициализация пробирования
+//Probing Initialization
 function hiscoreText(GoTime, spaceGO, ) {
   this.GoTime = GoTime;
   this.spaceGO = spaceGO;
