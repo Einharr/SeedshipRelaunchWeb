@@ -582,7 +582,7 @@ function newColony(ship, planet, ending) {
 
         EndingLandingList.push(ending.difWords[3]);
 
-	Names.unshift("TestToFixBugMaybe"); //trying to see if this fixes a bug.
+	//Names.unshift("TestToFixBugMaybe"); //trying to see if this fixes a bug.
         if (planet.atmosphere == "Breathable"
           && planet.temperature == "Moderate"
           && planet.gravity == "Moderate"
