@@ -582,6 +582,7 @@ function newColony(ship, planet, ending) {
 
         EndingLandingList.push(ending.difWords[3]);
 
+	//Names.unshift("TestToFixBugMaybe"); //trying to see if this fixes a bug.
         if (planet.atmosphere == "Breathable"
           && planet.temperature == "Moderate"
           && planet.gravity == "Moderate"
@@ -2789,6 +2790,7 @@ function newColony(ship, planet, ending) {
 
   function nextText() {
 
+	//print out final screen and score.
     if (endingCounter == FullEnding.length) {
 
       var textwindow = document.getElementById("textwindow");
@@ -2827,6 +2829,7 @@ function newColony(ship, planet, ending) {
       };
 
       //HISCORE SAVEDATA
+	//save the score in high score list.
       var currentdate = new Date();
       var datetime = currentdate.getDate() + "/"
         + (currentdate.getMonth() + 1) + "/"
