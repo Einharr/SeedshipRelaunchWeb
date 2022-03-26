@@ -12,6 +12,7 @@ function planetLooks(){
     document.getElementById("clouds").style.background = "url(assets/textures/Clouds"+getRandomInt(1,8).toString()+".jpg) repeat-x";
 
 //Визуализация атмосферы
+//Visualization of the atmosphere
 switch(cPlanet.atmosphere) {
   case 'Breathable':
      console.log(cPlanet.atmosphere);
@@ -47,3 +48,4 @@ switch(cPlanet.atmosphere) {
 
 };
  //Визуализация воды
+ //Water visualization

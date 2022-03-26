@@ -1,6 +1,7 @@
 
 
 //подсчет очков
+//scoring
 function countScore(ship, planet, end_score) {
 
 	score =

@@ -25,6 +25,7 @@ off_course = false;
 
 colStow = 0;
 //События без эффектов
+//Events without effects. These won't impact the player.
 var unsuitable = {
     id: 1,
     eventProperty: function(){
@@ -150,6 +151,7 @@ var starCluster = {
 
 
 //ОБЫЧНЫЕ
+//Regular
 
 var overheat = {
     id: 7,
@@ -784,6 +786,7 @@ var micrometiorite = {
   ]
 };
 //ПОЛОМКИ
+//Breakdown
 var probeMalfunction = {
     id: 16,
     eventProperty: function(){
@@ -1341,6 +1344,7 @@ var scannerFailure = {
       ]
     };
 //РЕДИКИЕ
+//Rare
 
 var racistProgram = {
     id: 24,
@@ -2349,6 +2353,9 @@ var reservationCourse = {
       //ЗДЕСЬ НЕДОДЕЛКА! ДОЛЖНО ПРОСЧИТЫВАТЬ КУРС К ПЛАНЕТЕ БЕЗ УЧЕТА АПГРЕЙДОВ СКАНЕРОВ!
 
       //ДОБАВИТЬ КАК ИСХОД ЛОЖНЫЙ СИГНАЛ!
+      // HERE IS A FAKE! MUST CALCULATE THE COURSE TO THE PLANET WITHOUT CONSIDERING SCANNER UPGRADES!
+
+       //ADD AS OUTCOME FALSE SIGNAL!
               }
     },
     { choice: eventsText.reservationCourse.buttons[1], exist: existCheck("true"), outcome: null, result: function(){
@@ -3223,7 +3230,7 @@ var scannerUpgrade = {
                 crrow.className = "row";
                 crrow.id = "upgrade_row_"+i;
                 shipstatspanel.appendChild(crrow);
-          
+
                 var crrow = document.getElementById("upgrade_row_"+i);
                 var number = document.createElement("div");
                 number.className = "col upgradeCol";
@@ -3268,6 +3275,7 @@ var scannerUpgrade = {
 };
 
 //Инициализация события
+//Event initialization
 var eventList = []; //
 
 

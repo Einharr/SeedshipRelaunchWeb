@@ -2861,7 +2861,8 @@ function newColony(ship, planet, ending) {
 
       var para = document.getElementById("description");
       para.innerHTML = endList(FullEnding[endingCounter]);
-      console.log("Массовый урон: ", endingCounter, BulkDamage[endingCounter])
+      console.log("AoE Damage: ", endingCounter, BulkDamage[endingCounter]);
+      console.log("Массовый урон: ", endingCounter, BulkDamage[endingCounter]);
       statsRefresh();
       pageDamage(BulkDamage[endingCounter]);
       endingCounter += 1;
@@ -2878,6 +2879,8 @@ function newColony(ship, planet, ending) {
     textwindow.appendChild(para);
     console.log("Массовый урон весь: ", endingCounter, BulkDamage)
     console.log("Массовый урон: ", endingCounter, BulkDamage[endingCounter])
+    console.log("All Bulk Damage: ", endingCounter, BulkDamage)
+    console.log("Bulk Damage: ", endingCounter, BulkDamage[endingCounter])
     pageDamage(BulkDamage[endingCounter]);
     endingCounter += 1;
 
