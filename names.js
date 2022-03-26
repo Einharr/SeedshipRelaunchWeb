@@ -33,6 +33,7 @@ var languageData = {
   scannerFailure:["SCANNER FAILURE", "СБОЙ СКАНЕРА", "AWARIA SKANERA", "ERROR DE ESCANEO", "", "Scannfehler", "", "", "SCANNER STORING", "掃描失敗"],
 
 //МЕНЮ
+//Menu
   menuStart: ["NEW GAME", "НОВАЯ ИГРА", "NOWA GRA", "NUEVO JUEGO", "NUOVA PARTITA", "NEUES SPIEL", "Here goes French", "NYTT SPEL", "NIEUW SPEL", "新遊戲"],
   menuLoad: ["CONTINUE", "ПРОДОЛЖИТЬ", "KONTYNUOWAĆ", "CONTINUAR", "CONTINUA", "FORTFAHREN", "Here goes French", "FORTSÄTT", "DOORGAAN", "繼續遊戲"],
   menuSettings: ["SETTINGS", "НАСТРОЙКИ", "USTAWIENIA", "OPTIONES", "OPZIONI", "EINSTELLUNGEN", "Here goes French", "INSTÄLLNINGAR", "INSTELLINGEN", "設定"],
@@ -45,6 +46,7 @@ var languageData = {
   //NEW!!!
 
 //НАСТРОЙКИ
+//SETTINGS
   settingsLangCh: ["Language","Язык", "Język", "Idioma", "Lingua", "Sprache", "Here goes French", "Språk", "Taal", "語言"],
   settingsLanguage: ["English","Русский", "Polskie", "Español", "Italiano", "Deutsch", "Français", "Svenska", "Nederlands", "中文"],
   settingsMusic: ["Music","Музыка", "Muzyka", "Música", "Musica", "Musik", "Here goes French", "Musik", "Muziek", "音樂"],
@@ -55,6 +57,7 @@ var languageData = {
 
 
 //Статы и сканеры
+//Stats and scanners
   statnames:{
     scanners: ["Scanners", "Сканеры", "Skanery", "Escáneres", "Sensori", "Scanner", "Here goes French", "Skanning", "Scanners", "掃描器"],
     databases: ["Databases", "Базы данных", "Bazy danych", "Bases de datos", "Database", "Datenbanken", "Here goes French", "Databaser", "Databanken", "資料庫"],
@@ -583,6 +586,7 @@ Score: ["Score"],
         special: ["Alien Observers", "Simulation", "Unwelcoming", "Welcoming", "Planet-spanning civilisation"],
             },
     //РУССКИЙ
+    //RUSSIAN
             {
               vegetation: ["Растения", "Ядовитые растения", "Съедобные растения",],
               moon: ["Пустынная луна", "Нестабильная луна", "Богатая ископаемыми луна"],
@@ -797,6 +801,7 @@ Score: ["Score"],
       scanProbes: ["surface probe", "исследовательский зонд", "", "sondas de superficie", "sonda", "Sonden", "Here goes French", "ytsond", "sonden", "表面探勘機"],
 
 //Кнопки
+//Buttons
   foundColony: ["Found colony", "Основать колонию", "Załóż kolonie", "Colonia encontrada", "Fonda colonia", "Kolonie gründen", "Here goes French", "Grunda koloni", "Kolonie stichten", "成立殖民地"],
   moveOn: ["Move on", "Лететь дальше", "Leć naprzód", "Siga adelante", "Vai altrove", "weiter Reisen", "Here goes French", "Res vidare", "Voortzetten", "繼續前進"],
   launchProbe: ["Launch surface probe", "Запустить зонд", "Wystrzel sondę", "Iniciar sonda", "Lancia sonda", "Sonde lossenden", "Here goes French", "Avfyra sond", "Lanceer sonde", "發射探勘機"],
@@ -805,6 +810,7 @@ Score: ["Score"],
   reconsider: ["Reconsider", "Отказаться", "Przemyśl", "Reconsiderar", "Riconsidera", "Meinung ändern", "Here goes French", "Tänk över ditt val", "Heroverwegen", "重新考慮"],
 
 //Фразы в интерфейсе
+//Phrases in the interface
   landingConfirmationText: ["This decision is the culmination of the AI's existence, and it cannot make it lightly. Founding a colony will end the seedship's journey, and make this planet humanity's new home.",
   "Это решение является кульминацией существования ИИ, над ним стоит серьезно подумать. Основание колонии положит конец путешествию и сделает эту планету новым домом человечества.",
   "Ta decyzja jest kulminacją egzystencji SI. Nie może ono brać jego delikatnie, założenie kolonii zakończy podróż statku nasiona, a ta planeta stanie się nowym domem ludzkości.",

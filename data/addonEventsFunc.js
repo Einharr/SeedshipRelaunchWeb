@@ -855,3 +855,4 @@ if (options.addOnFeatures) {
 debug_event_array = Events_uneventful.concat(Events_common, Events_rare, Event_malfunction);
 
 console.log("addonEventsFunc ЗАГРУЖЕН");
+console.log("addonEventsFunc Loaded");

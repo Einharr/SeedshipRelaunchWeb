@@ -6,6 +6,7 @@ var alienFerocity = 0;
 var alienAppearence = [];
 
 //ЗАПУСК ЗОНДА
+//START THE PROBE
 function launchProbe(probing, ScanFailArr, planet) {
   damageApply(cShip.probes, 1, "damage");
   var scannames = document.getElementById("ScanNames");
@@ -32,6 +33,7 @@ function launchProbe(probing, ScanFailArr, planet) {
     switch (cPlanet.anomaliesFull[i]) {
 
       //ЛУНА
+      //Moon
       case "Barren moon":
         currentProbing.push(cProbing.moon[0]);//As the surface probe approaches the planet it scans the planet's moon, but finds that it is devoid of useful minerals.
         break;
@@ -42,6 +44,7 @@ function launchProbe(probing, ScanFailArr, planet) {
         currentProbing.push(cProbing.moon[2]);//As the surface probe approaches the planet it scans the planet's moon, and finds that it is a recently-captured asteroid in an unstable orbit. In a few decades the moon will come close enough to the planet to break up, and the surface will be bombarded with fragments.
         break;
       //КРАСОТА
+      //The Beauty
       case "Outstanding beauty":
         currentProbing.push(cProbing.beauty[0]); //The AI runs the probe's images of the surface through its aesthetic analysis routine, and determines that humans would find the planet outstandingly beautiful.
         break;
@@ -49,6 +52,7 @@ function launchProbe(probing, ScanFailArr, planet) {
         currentProbing.push(cProbing.beauty[1]); //The AI runs the probe's images of the surface through its aesthetic analysis routine, and determines that humans would find the planet extremely ugly.
         break;
       //ПЕЩЕРЫ
+      //CAVES
       case "Airtight caves":
         currentProbing.push(cProbing.caves[0]);//The planet's crust is riddled with extensive cave systems which could easily be sealed to provide airtight shelters.
         break;
@@ -59,6 +63,7 @@ function launchProbe(probing, ScanFailArr, planet) {
         currentProbing.push(cProbing.caves[2]);//The planet is geologically unstable, and dangerous earthquakes are common everywhere on the surface.
         break;
       //РАСТЕНИЯ
+      //Plants
       case "Plant life":
         currentProbing.push(cProbing.plants[0]);
         switch (cPlanet.gravity) {
@@ -188,6 +193,7 @@ function launchProbe(probing, ScanFailArr, planet) {
 
 
       //ЖИВОТНЫЕ
+      //Animals
       case "Animal life":
       case "Dangerous animals":
       case "Useful animals":
@@ -280,6 +286,7 @@ function launchProbe(probing, ScanFailArr, planet) {
         break;
 
       //МЕСТНЫЕ
+      //LOCALS
       case 'Planet-spanning civilisation':
         currentProbing.push(cProbing.civ[0]);
         break;
@@ -453,6 +460,7 @@ function launchProbe(probing, ScanFailArr, planet) {
         break;
 
       //РУИНЫ
+      //Ruins
       case "Monumental ruins":
         currentProbing.push(cProbing.ruins[0]);
         break;
@@ -466,6 +474,7 @@ function launchProbe(probing, ScanFailArr, planet) {
         currentProbing.push(cProbing.ruins[3]);
         break;
       //ОСОБЫЕ СОБЫТИЯ
+      //SPECIAL EVENTS
       case "Welcoming":
         currentProbing.push(cProbing.features[0]);
         break;
@@ -489,6 +498,7 @@ function launchProbe(probing, ScanFailArr, planet) {
   buttonWipe();
 
   //Отрисовка блока с результатами
+  //Drawing a block with results
   cxa = endList(currentProbing);
   console.log(cxa)
   re = cxa.split(".");
