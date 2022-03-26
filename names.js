@@ -879,158 +879,158 @@ Score: ["Score"],
   var ThisWorld = ["This World", "Эта Планета", "Ten świat", "Este mundo", "Questo mondo", "", "Denna världen", "Deze wereld", "這個世界"];
 
 
-  var NamesEn = ["Eden", "Paradise", "Terra Nova", "New Earth", "Gaia", /*1-5*/
-                "Inferno", "Caliente", "Scorcha", /*6-8*/
-                "Arctica", "Frigidia", "Frigus",  /*9-11*/
-                "Cueball", "Atlas", "Crag", "Rise", /*12-15*/
-                "Atlantis", "Oceanus", "Thalassa", "Pacifica", /*16-19*/
-                "Snowball", "Iceball", "Popsicle", "Glacia", /*20-23*/
-                "Arid", "Desert", "Sandstone", "Thirsty", /*24-27*/
-                "Bounty", "El Dorado", "Hephaestus", "Midas",  /*28-31*/
-                "Dearth", "Paucity",  /*32-33*/
-                "Garden", "Arcadia",  /*34-35*/
-                "Belladonna", "Cornucopia",  /*36-37*/
-                "Warren", "Honeycomb", "Morlock", "Subterra","Spelunk", /*38-42*/
+  var NamesEn = ["Eden", "Paradise", "Terra Nova", "New Earth", "Gaia", /*0-4*/
+                "Inferno", "Caliente", "Scorcha", /*5-7*/
+                "Arctica", "Frigidia", "Frigus",  /*8-10*/
+                "Cueball", "Atlas", "Crag", "Rise", /*11-14*/
+                "Atlantis", "Oceanus", "Thalassa", "Pacifica", /*15-18*/
+                "Snowball", "Iceball", "Popsicle", "Glacia", /*19-22*/
+                "Arid", "Desert", "Sandstone", "Thirsty", /*23-26*/
+                "Bounty", "El Dorado", "Hephaestus", "Midas",  /*27-30*/
+                "Dearth", "Paucity",  /*31-32*/
+                "Garden", "Arcadia",  /*33-34*/
+                "Belladonna", "Cornucopia",  /*35-36*/
+                "Warren", "Honeycomb", "Morlock", "Subterra","Spelunk", /*37-41*/
   ];
 
-  var NamesSp = ["Eden", "Paraíso", "Terra Nova", "Nueva Tierra", "Gaia", /*1-5*/
-                "Infierno", "Caliente", "Carbonizado", /*6-8*/
-                "Artica", "Frígida", "Frigus",  /*9-11*/
-                "Pulido", "Atlas", "Escarpado", "Ascenso", /*12-15*/
-                "Atlantis", "Oceanus", "Thalassia", "Pacifica", /*16-19*/
-                "Bola Nieve", "Bola de Hielo", "Helado", "Glacia", /*20-23*/
-                "Aridez", "Desierto", "Arenisca", "Sed", /*24-27*/
-                "Riqueza", "El Dorado", "Hefesto", "Midas",  /*28-31*/
-                "Escaso", "Pauperidad",  /*32-33*/
-                "Jardín", "Arcadia",  /*34-35*/
-                "Belladona", "Cornucopia",  /*36-37*/
-                "Madriguera", "Panal", "Morlock", "Subterráneo","Espeleología", /*38-42*/
+  var NamesSp = ["Eden", "Paraíso", "Terra Nova", "Nueva Tierra", "Gaia", /*0-4*/
+                "Infierno", "Caliente", "Carbonizado", /*5-7*/
+                "Artica", "Frígida", "Frigus",  /*8-10*/
+                "Pulido", "Atlas", "Escarpado", "Ascenso", /*11-14*/
+                "Atlantis", "Oceanus", "Thalassia", "Pacifica", /*15-18*/
+                "Bola Nieve", "Bola de Hielo", "Helado", "Glacia", /*19-22*/
+                "Aridez", "Desierto", "Arenisca", "Sed", /*23-26*/
+                "Riqueza", "El Dorado", "Hefesto", "Midas",  /*27-30*/
+                "Escaso", "Pauperidad",  /*31-32*/
+                "Jardín", "Arcadia",  /*33-34*/
+                "Belladona", "Cornucopia",  /*35-36*/
+                "Madriguera", "Panal", "Morlock", "Subterráneo","Espeleología", /*37-41*/
   ];
 
-  var NamesPl = ["Eden", "Raj", "Terra Nova", "Nowa Ziemia", "Gaja", /*1-5*/
-                "Inferno", "Calienta", "Scorcha", /*6-8*/
-                "Arktyka", "Chione", "Frigus",  /*9-11*/
-                "Pulid", "Atlas", "Turnia", "Ascensa", /*12-15*/
-                "Atlantyda", "Oceania", "Leukotea", "Pacyfika", /*16-19*/
-                "Kula śniegu", "Kula lodu", "Kula lodu", "Glacia", /*20-23*/
-                "Sucha", "Pustynia", "Piaskowiec", "Sucha", /*24-27*/
-                "Dar", "El Dorado", "Hefajstos", "Midas",  /*28-31*/
-                "Dearta", "Paucitia",  /*32-33*/
-                "ogród", "Arkadia",  /*34-35*/
-                "Belladona", "Cornukopia",  /*36-37*/
-                "Warenia", "Pod Ziemia", "Morlok", "Pod Ziemia","Spelunkia", /*38-42*/
+  var NamesPl = ["Eden", "Raj", "Terra Nova", "Nowa Ziemia", "Gaja", /*0-4*/
+                "Inferno", "Calienta", "Scorcha", /*5-7*/
+                "Arktyka", "Chione", "Frigus",  /*8-10*/
+                "Pulid", "Atlas", "Turnia", "Ascensa", /*11-14*/
+                "Atlantyda", "Oceania", "Leukotea", "Pacyfika", /*15-18*/
+                "Kula śniegu", "Kula lodu", "Kula lodu", "Glacia", /*19-22*/
+                "Sucha", "Pustynia", "Piaskowiec", "Sucha", /*23-26*/
+                "Dar", "El Dorado", "Hefajstos", "Midas",  /*27-30*/
+                "Dearta", "Paucitia",  /*31-32*/
+                "ogród", "Arkadia",  /*33-34*/
+                "Belladona", "Cornukopia",  /*35-36*/
+                "Warenia", "Pod Ziemia", "Morlok", "Pod Ziemia","Spelunkia", /*37-41*/
   ];
 
-  var NamesRu = ["Эдем", "Рай", "Терра Нова", "Новая Земля", "Гея", /*1-5*/
-                "Инферно", "Гибил", "Пламень", /*6-8*/
-                "Арктика", "Фригидия", "Фригус",  /*9-11*/
-                "Кабошон", "Атлас", "Краг", "Пик", /*12-15*/
-                "Атлантида", "Океанус", "Таласса", "Посейдон", /*16-19*/
-                "Снежок", "Хиона", "Борей", "Глыба", /*20-23*/
-                "Иерихон", "Пустыня", "Тифон", "Сет", /*24-27*/
-                "Плутос", "Эль Дорадо", "Гефест", "Мидас",  /*28-31*/
-                "Аид", "Пения",  /*32-33*/
-                "Сад", "Аркадия",  /*34-35*/
-                "Беладонна", "Рог Изобилия",  /*36-37*/
-                "Уоррен", "Сота", "Морлок", "Подземля","Спелео", /*38-42*/
+  var NamesRu = ["Эдем", "Рай", "Терра Нова", "Новая Земля", "Гея", /*0-4*/
+                "Инферно", "Гибил", "Пламень", /*5-7*/
+                "Арктика", "Фригидия", "Фригус",  /*8-10*/
+                "Кабошон", "Атлас", "Краг", "Пик", /*11-14*/
+                "Атлантида", "Океанус", "Таласса", "Посейдон", /*15-18*/
+                "Снежок", "Хиона", "Борей", "Глыба", /*19-22*/
+                "Иерихон", "Пустыня", "Тифон", "Сет", /*23-26*/
+                "Плутос", "Эль Дорадо", "Гефест", "Мидас",  /*27-30*/
+                "Аид", "Пения",  /*31-32*/
+                "Сад", "Аркадия",  /*33-34*/
+                "Беладонна", "Рог Изобилия",  /*35-36*/
+                "Уоррен", "Сота", "Морлок", "Подземля","Спелео", /*37-41*/
   ];
 
-  var NamesRuRod = ["Эдема", "Рая", "Терры Новы", "Новой Земли", "Геи", /*1-5*/
-                "Инферно", "Гибила", "Пламеня", /*6-8*/
-                "Арктики", "Фригидии", "Фригуса",  /*9-11*/
-                "Кабошона", "Атласа", "Крага", "Пика", /*12-15*/
-                "Атлантиды", "Океануса", "Талассы", "Посейдона", /*16-19*/
-                "Снежка", "Хионы", "Борея", "Глыбы", /*20-23*/
-                "Иерихона", "Пустыни", "Тифона", "Сета", /*24-27*/
-                "Плутоса", "Эль Дорадо", "Гефеста", "Мидаса",  /*28-31*/
-                "Аида", "Пении",  /*32-33*/
-                "Сада", "Аркадии",  /*34-35*/
-                "Беладонны", "Рога Изобилия",  /*36-37*/
-                "Уоррена", "Соты", "Морлока", "Подземли","Спелео", /*38-42*/
+  var NamesRuRod = ["Эдема", "Рая", "Терры Новы", "Новой Земли", "Геи", /*0-4*/
+                "Инферно", "Гибила", "Пламеня", /*5-7*/
+                "Арктики", "Фригидии", "Фригуса",  /*8-10*/
+                "Кабошона", "Атласа", "Крага", "Пика", /*11-14*/
+                "Атлантиды", "Океануса", "Талассы", "Посейдона", /*15-18*/
+                "Снежка", "Хионы", "Борея", "Глыбы", /*19-22*/
+                "Иерихона", "Пустыни", "Тифона", "Сета", /*23-26*/
+                "Плутоса", "Эль Дорадо", "Гефеста", "Мидаса",  /*27-30*/
+                "Аида", "Пении",  /*31-32*/
+                "Сада", "Аркадии",  /*33-34*/
+                "Беладонны", "Рога Изобилия",  /*35-36*/
+                "Уоррена", "Соты", "Морлока", "Подземли","Спелео", /*37-41*/
   ];
 
-  var NamesIt = ["Eden", "Paradiso", "Terra Nova", "Nuova Terra", "Gaia", /*1-5*/
-                "Inferno", "Caliente", "Carbonizzata", /*6-8*/
-                "Artica", "Frigida", "Frigus",  /*9-11*/
-                "Pulido", "Atlas", "Ripido", "Ascesa", /*12-15*/
-                "Atlantide", "Oceanus", "Thalassia", "Pacifico", /*16-19*/
-                "Palla di neve", "Palla di ghiaccio", "Gelato", "Glacia", /*20-23*/
-                "Arido", "Deserto", "Arenaria", "Secco", /*24-27*/
-                "Ricchezza", "El Dorado", "Efesto", "Mida",  /*28-31*/
-                "Morte", "Povertà",  /*32-33*/
-                "Giardino", "Arcadia",  /*34-35*/
-                "Belladonna", "Cornucopia",  /*36-37*/
-                "Dedalo", "Alveare", "Morlock", "Subterra","Espeleologia", /*38-42*/
+  var NamesIt = ["Eden", "Paradiso", "Terra Nova", "Nuova Terra", "Gaia", /*0-4*/
+                "Inferno", "Caliente", "Carbonizzata", /*5-7*/
+                "Artica", "Frigida", "Frigus",  /*8-10*/
+                "Pulido", "Atlas", "Ripido", "Ascesa", /*11-14*/
+                "Atlantide", "Oceanus", "Thalassia", "Pacifico", /*15-18*/
+                "Palla di neve", "Palla di ghiaccio", "Gelato", "Glacia", /*19-22*/
+                "Arido", "Deserto", "Arenaria", "Secco", /*23-26*/
+                "Ricchezza", "El Dorado", "Efesto", "Mida",  /*27-30*/
+                "Morte", "Povertà",  /*31-32*/
+                "Giardino", "Arcadia",  /*33-34*/
+                "Belladonna", "Cornucopia",  /*35-36*/
+                "Dedalo", "Alveare", "Morlock", "Subterra","Espeleologia", /*37-41*/
   ];
 
-  var NamesGr = ["Eden", "Paradies", "Terra Nova", "Neue Erde", "Gaia", /*1-5*/
-                "Inferno", "Caliente", "Scorcha", /*6-8*/
-                "Arctica", "Frigidia", "Frigus",  /*9-11*/
-                "Cueball", "Atlas", "Crag", "Rise", /*12-15*/
-                "Atlantis", "Oceanus", "Thalassa", "Pacifica", /*16-19*/
-                "Snowball", "Iceball", "Popsicle", "Glacia", /*20-23*/
-                "Arid", "Desert", "Sandstone", "Thirsty", /*24-27*/
-                "Bounty", "El Dorado", "Hephaestus", "Midas",  /*28-31*/
-                "Dearth", "Paucity",  /*32-33*/
-                "Garten", "Arcadia",  /*34-35*/
-                "Belladonna", "Cornucopia",  /*36-37*/
-                "Labyrinth", "Honigwabe", "Morlock", "Subterra","Spelunk", /*38-42*/
+  var NamesGr = ["Eden", "Paradies", "Terra Nova", "Neue Erde", "Gaia", /*0-4*/
+                "Inferno", "Caliente", "Scorcha", /*5-7*/
+                "Arctica", "Frigidia", "Frigus",  /*8-10*/
+                "Cueball", "Atlas", "Crag", "Rise", /*11-14*/
+                "Atlantis", "Oceanus", "Thalassa", "Pacifica", /*15-18*/
+                "Snowball", "Iceball", "Popsicle", "Glacia", /*19-22*/
+                "Arid", "Desert", "Sandstone", "Thirsty", /*23-26*/
+                "Bounty", "El Dorado", "Hephaestus", "Midas",  /*27-30*/
+                "Dearth", "Paucity",  /*31-32*/
+                "Garten", "Arcadia",  /*33-34*/
+                "Belladonna", "Cornucopia",  /*35-36*/
+                "Labyrinth", "Honigwabe", "Morlock", "Subterra","Spelunk", /*37-41*/
   ];
 
 
-  var NamesFr = ["Eden", "Paraíso", "Terra Nova", "Nueva Tierra", "Gaia", /*1-5*/
-                "Infierno", "Caliente", "Carbonizado", /*6-8*/
-                "Artica", "Frígida", "Frigus",  /*9-11*/
-                "Pulido", "Atlas", "Escarpado", "Ascenso", /*12-15*/
-                "Atlantis", "Oceanus", "Thalassia", "Pacifica", /*16-19*/
-                "Bola Nieve", "Bola de Hielo", "Helado", "Glacia", /*20-23*/
-                "Aridez", "Desierto", "Arenisca", "Sed", /*24-27*/
-                "Riqueza", "El Dorado", "Hefesto", "Midas",  /*28-31*/
-                "Escaso", "Pauperidad",  /*32-33*/
-                "Jardín", "Arcadia",  /*34-35*/
-                "Belladona", "Cornucopia",  /*36-37*/
-                "Madriguera", "Panal", "Morlock", "Subterráneo","Espeleología", /*38-42*/
+  var NamesFr = ["Eden", "Paraíso", "Terra Nova", "Nueva Tierra", "Gaia", /*0-4*/
+                "Infierno", "Caliente", "Carbonizado", /*5-7*/
+                "Artica", "Frígida", "Frigus",  /*8-10*/
+                "Pulido", "Atlas", "Escarpado", "Ascenso", /*11-14*/
+                "Atlantis", "Oceanus", "Thalassia", "Pacifica", /*15-18*/
+                "Bola Nieve", "Bola de Hielo", "Helado", "Glacia", /*19-22*/
+                "Aridez", "Desierto", "Arenisca", "Sed", /*23-26*/
+                "Riqueza", "El Dorado", "Hefesto", "Midas",  /*27-30*/
+                "Escaso", "Pauperidad",  /*31-32*/
+                "Jardín", "Arcadia",  /*33-34*/
+                "Belladona", "Cornucopia",  /*35-36*/
+                "Madriguera", "Panal", "Morlock", "Subterráneo","Espeleología", /*37-41*/
   ];
 
-  var NamesSe = ["Eden", "Paradis", "Terra Nova", "Nya Jorden", "Gaia", /*1-5*/
-                "Inferno", "Caliente", "Scorcha", /*6-8*/
-                "Arctic", "Frigidia", "Frigus",  /*9-11*/
-                "Cueball", "Atlas", "Crag", "Rise", /*12-15*/
-                "Atlantis", "Oceanus", "Thalassa", "Pacifica", /*16-19*/
-                "Snöboll", "Isboll", "Isglass", "Glacia", /*20-23*/
-                "Torr", "Öken", "Sandsten", "Törstig", /*24-27*/
-                "Bounty", "El Dorado", "Hefaistos", "Midas",  /*28-31*/
-                "Brist", "Knapphet",  /*32-33*/
-                "Trädgård", "Arcadia",  /*34-35*/
-                "Belladonna", "Cornucopia",  /*36-37*/
-                "Kaninhål", "Vaxkaka", "Morlock", "Subterra", "Spelunk", /*38-42*/
+  var NamesSe = ["Eden", "Paradis", "Terra Nova", "Nya Jorden", "Gaia", /*0-4*/
+                "Inferno", "Caliente", "Scorcha", /*5-7*/
+                "Arctic", "Frigidia", "Frigus",  /*8-10*/
+                "Cueball", "Atlas", "Crag", "Rise", /*11-14*/
+                "Atlantis", "Oceanus", "Thalassa", "Pacifica", /*15-18*/
+                "Snöboll", "Isboll", "Isglass", "Glacia", /*19-22*/
+                "Torr", "Öken", "Sandsten", "Törstig", /*23-26*/
+                "Bounty", "El Dorado", "Hefaistos", "Midas",  /*27-30*/
+                "Brist", "Knapphet",  /*31-32*/
+                "Trädgård", "Arcadia",  /*33-34*/
+                "Belladonna", "Cornucopia",  /*35-36*/
+                "Kaninhål", "Vaxkaka", "Morlock", "Subterra", "Spelunk", /*37-41*/
   ];
 
-  var NamesDt = ["Eden", "Paradijs", "Terra Nova", "Nieuw Aarde", "Gaia", /*1-5*/
-                "Inferno", "Caliente", "Scorcha", /*6-8*/
-                "Arctica", "Frigidia", "Frigus",  /*9-11*/
-                "Cueball", "Atlas", "Crag", "Rise", /*12-15*/
-                "Atlantis", "Oceanus", "Thalassa", "Pacifica", /*16-19*/
-                "Sneeuwball", "IJsbal", "IJslolly", "Glacia", /*20-23*/
-                "Dor", "Woestijn", "Zandsteen", "Dorstig", /*24-27*/
-                "Bounty", "El Dorado", "Hephaestus", "Midas",  /*28-31*/
-                "Schaarste", "Gebrek",  /*32-33*/
-                "Gaarde", "Arcadia",  /*34-35*/
-                "Belladonna", "Cornucopia",  /*36-37*/
-                "Labyrint", "Bijenkorf", "Morlock", "Ondergronds", "Spelunk", /*38-42*/
+  var NamesDt = ["Eden", "Paradijs", "Terra Nova", "Nieuw Aarde", "Gaia", /*0-4*/
+                "Inferno", "Caliente", "Scorcha", /*5-7*/
+                "Arctica", "Frigidia", "Frigus",  /*8-10*/
+                "Cueball", "Atlas", "Crag", "Rise", /*11-14*/
+                "Atlantis", "Oceanus", "Thalassa", "Pacifica", /*15-18*/
+                "Sneeuwball", "IJsbal", "IJslolly", "Glacia", /*19-22*/
+                "Dor", "Woestijn", "Zandsteen", "Dorstig", /*23-26*/
+                "Bounty", "El Dorado", "Hephaestus", "Midas",  /*27-30*/
+                "Schaarste", "Gebrek",  /*31-32*/
+                "Gaarde", "Arcadia",  /*33-34*/
+                "Belladonna", "Cornucopia",  /*35-36*/
+                "Labyrint", "Bijenkorf", "Morlock", "Ondergronds", "Spelunk", /*37-41*/
   ];
-  var NamesCHt = ["伊甸", "天堂", "特拉諾瓦", "新地球", "蓋亞", /*1-5*/
-                "煉獄", "祝融", "回祿", /*6-8*/
-                "玄冥", "喀俄涅", "滕六",  /*9-11*/
-                "泰山", "輿圖", "峭壁", "昇", /*12-15*/
-                "亞特蘭提斯", "歐開諾斯", "塔拉薩", "太平", /*16-19*/
-                "雪球", "冰球", "冰棒", "冰川", /*20-23*/
-                "乾旱", "沙漠", "砂岩", "口渴", /*24-27*/
-                "賞金", "黃金國", "赫菲斯托斯", "邁達斯",  /*28-31*/
-                "飢謹", "貧乏",  /*32-33*/
-                "花園", "桃源",  /*34-35*/
-                "顛茄", "豐裕之角",  /*36-37*/
-                "沃倫", "蜂窩", "莫洛克", "亞地","穴居", /*38-42*/
+  var NamesCHt = ["伊甸", "天堂", "特拉諾瓦", "新地球", "蓋亞", /*0-4*/
+                "煉獄", "祝融", "回祿", /*5-7*/
+                "玄冥", "喀俄涅", "滕六",  /*8-10*/
+                "泰山", "輿圖", "峭壁", "昇", /*11-14*/
+                "亞特蘭提斯", "歐開諾斯", "塔拉薩", "太平", /*15-18*/
+                "雪球", "冰球", "冰棒", "冰川", /*19-22*/
+                "乾旱", "沙漠", "砂岩", "口渴", /*23-26*/
+                "賞金", "黃金國", "赫菲斯托斯", "邁達斯",  /*27-30*/
+                "飢謹", "貧乏",  /*31-32*/
+                "花園", "桃源",  /*33-34*/
+                "顛茄", "豐裕之角",  /*35-36*/
+                "沃倫", "蜂窩", "莫洛克", "亞地","穴居", /*37-41*/
   ];
 
 
@@ -1038,18 +1038,18 @@ Score: ["Score"],
   NamesLang = [NamesEn, NamesRu, NamesPl, NamesSp, NamesIt, NamesGr, NamesFr, NamesSe, NamesDt, NamesCHt];
 
   var  planetName = "This world";
-  Names = ["Eden", "Paradice", "Terra Nova", "New Earth", "Gaia", /*1-5*/
-                "Inferno", "Caliente", "Scorcha", /*6-8*/
-                "Arctica", "Frigidia", "Frigus",  /*9-11*/
-                "Cueball", "Atlas", "Crag", "Rise", /*12-15*/
-                "Atlantis", "Oceanus", "Thalassa", "Pacifica", /*16-19*/
-                "Snowball", "Iceball", "Popsicle", "Glacia", /*20-23*/
-                "Arid", "Desert", "Sandstone", "Thirsty", /*24-27*/
-                "Bounty", "El Dorado", "Hephaestus", "Midas",  /*28-31*/
-                "Dearth", "Paucity",  /*32-33*/
-                "Garden", "Arcadia",  /*34-35*/
-                "Belladonna", "Cornucopia",  /*36-37*/
-                "Warren", "Honeycomb", "Morlock", "Subterra","Spelunk", /*38-42*/
+  Names = ["Eden", "Paradice", "Terra Nova", "New Earth", "Gaia", /*0-4*/
+                "Inferno", "Caliente", "Scorcha", /*5-7*/
+                "Arctica", "Frigidia", "Frigus",  /*8-10*/
+                "Cueball", "Atlas", "Crag", "Rise", /*11-14*/
+                "Atlantis", "Oceanus", "Thalassa", "Pacifica", /*15-18*/
+                "Snowball", "Iceball", "Popsicle", "Glacia", /*19-22*/
+                "Arid", "Desert", "Sandstone", "Thirsty", /*23-26*/
+                "Bounty", "El Dorado", "Hephaestus", "Midas",  /*27-30*/
+                "Dearth", "Paucity",  /*31-32*/
+                "Garden", "Arcadia",  /*33-34*/
+                "Belladonna", "Cornucopia",  /*35-36*/
+                "Warren", "Honeycomb", "Morlock", "Subterra","Spelunk", /*37-41*/
   ];
 
 
