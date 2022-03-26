@@ -588,57 +588,57 @@ function newColony(ship, planet, ending) {
           && planet.gravity == "Moderate"
           && planet.water == "Oceans"
           && planet.resources == "Rich") {
-          planet.nameID = getRandomInt(1, 5)
+          planet.nameID = getRandomInt(0, 4)
           planet.name = Names[planet.nameID];
         } else if (planet.temperature == "Very Hot"
           || planet.temperature == "Hot") {
-          planet.nameID = getRandomInt(6, 8)
+          planet.nameID = getRandomInt(5, 7)
           planet.name = Names[planet.nameID];
         } else if (planet.temperature == "Very Cold"
           || planet.temperature == "Cold") {
-          planet.nameID = getRandomInt(9, 11)
+          planet.nameID = getRandomInt(8, 10)
           planet.name = Names[planet.nameID];
         };
 
 
         if (planet.gravity == "Very High" || planet.gravity == "High" && planet.water != "Planet-wide ocean") {
-          planet.nameID = getRandomInt(12, 13)
+          planet.nameID = getRandomInt(11, 12)
           planet.name = Names[planet.nameID];
         } else if (planet.gravity == "Very Low" || planet.gravity == "Low" && planet.water != "Planet-wide ocean") {
-          planet.nameID = getRandomInt(14, 15)
+          planet.nameID = getRandomInt(13, 14)
           planet.name = Names[planet.nameID];
         };
 
 
         if (planet.water == "Planet-wide ocean") {
-          planet.nameID = getRandomInt(16, 19)
+          planet.nameID = getRandomInt(15, 18)
           planet.name = Names[planet.nameID];
         } else if (planet.water == "Ice-covered surface") {
-          planet.nameID = getRandomInt(20, 23)
+          planet.nameID = getRandomInt(19, 22)
           planet.name = Names[planet.nameID];
         } else if (planet.water == "Trace") {
-          planet.nameID = getRandomInt(24, 27)
+          planet.nameID = getRandomInt(23, 26)
           planet.name = Names[planet.nameID];
         };
 
         if (planet.resources == "Rich") {
-          planet.nameID = getRandomInt(28, 31)
+          planet.nameID = getRandomInt(27, 30)
           planet.name = Names[planet.nameID];
         } else if (planet.resources == "Poor") {
-          planet.nameID = getRandomInt(32, 33)
+          planet.nameID = getRandomInt(31, 32)
           planet.name = Names[planet.nameID];
         };
 
         if (planet.anomaliesFull.includes("Plant life") || planet.anomaliesFull.includes("Edible plants")) {
-          planet.nameID = getRandomInt(34, 35)
+          planet.nameID = getRandomInt(33, 34)
           planet.name = Names[planet.nameID];
         } else if (planet.anomaliesFull.includes("Poisonous plants")) {
-          planet.nameID = getRandomInt(36, 37)
+          planet.nameID = getRandomInt(35, 36)
           planet.name = Names[planet.nameID];
         };
 
         if (planet.anomaliesFull.includes("Airtight caves") || planet.anomaliesFull.includes("Insulated caves")) {
-          planet.nameID = getRandomInt(38, 42)
+          planet.nameID = getRandomInt(37, 41)
           planet.name = Names[planet.nameID];
         };
         console.log(NamesCurLang)
