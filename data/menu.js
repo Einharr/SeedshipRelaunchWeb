@@ -1383,7 +1383,7 @@ function menuPastMissions() {
 
 function intro() {
   menuWipe();
-  var audio = play("./assets/music/intro.mp3");
+  var audio = play("./assets/music/Intro.mp3");
     //window.plugins.NativeAudio.play( 'intro' );
     console.log('intro');
 
