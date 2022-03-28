@@ -2698,7 +2698,8 @@ function newColony(ship, planet, ending) {
 
       switch (native_relations_names[hiscore.native_relations]) {
         case "Immigrants, Earth remembered":
-          ScoreDescription.push(ending.summary[109])
+          ScoreDescription.push(ending.summary[109]);
+          
           break;
         case "Immigrants, Earth forgotten":
           ScoreDescription.push(ending.summary[110])
@@ -2731,7 +2732,13 @@ function newColony(ship, planet, ending) {
           ScoreDescription.push(cAddonEnding.machinesSummary[3])
           break;
       }
-
+      if (hiscore.native_relations==0){
+        hiscore.nativeRelationsName = "Genocide of Colonists";
+      }
+      else if (hiscore.native_relations > 0) { 
+        hiscore.nativeRelationsName= native_relations_names[hiscore.native_relations];
+      }
+      
 
       if (planet.anomaliesFull.includes("Planet-spanning civilisation")) {
         ScoreDescription.push(ending.summary[116])
@@ -2889,12 +2896,25 @@ function newColony(ship, planet, ending) {
         if (i ==8){
           ScoreNames[i]= ScoreNames[i]  + " ("+ hiscore.cultureName+ ")";
         }
+        if (i ==11){
+          if (hiscore.native_relations == -1){ //don't show native relations if we don't have natives
+            continue;
+          }
+          else {
+            ScoreNames[i]= ScoreNames[i] + " ("+ hiscore.nativeRelationsName +")";
+          }
+        }
         parag.innerHTML = ScoreNames[i] + ":";
         scannames.appendChild(parag);
       };
 
       var scanres = document.getElementById("ScanRes");
       for (var i = 0; i < ScoreRes.length; i++) {
+        if (i==11){
+          if (hiscore.native_relations == -1){ //don't show native relations if we don't have natives
+            continue;
+          }
+        }
         var parag = document.createElement("p");
         parag.className = "stats";
         parag.id = ScoreIDs[i];
@@ -2921,6 +2941,7 @@ function newColony(ship, planet, ending) {
       PastMissions.push(final_score);
       colonist_final_deaths = [colStow, journeyDeaths, constructionDeaths];
       PastMissions.push(colonist_final_deaths);
+      PastMissions.push(hiscore);
 
       //console.log("SAVEDATA:",PastMissions)
 

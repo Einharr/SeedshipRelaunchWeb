@@ -87,7 +87,7 @@ function play(audioSrc) {
 
 
 //Сохранение и загрузка
-////Save and load
+//Save and load
 function gamesave(obj, name) {
   var savedata = JSON.stringify(obj); //сериализуем переменную serialize the variable
   localStorage.setItem(name, savedata); //пишем ее в хранилище write it to the repository
@@ -109,8 +109,8 @@ function pastMissionsRefresh(obj) {
   obj[0] = loaddata.length + 1;
   loaddata.push(obj);
 
-  var savedata = JSON.stringify(loaddata); //сериализуем переменную
-  localStorage.setItem("Hiscore", savedata); //пишем ее в хранилище
+  var savedata = JSON.stringify(loaddata); //Serialize the variable сериализуем переменную
+  localStorage.setItem("Hiscore", savedata); //Write it to the repository пишем ее в хранилище
 };
 
 //Функция загрузки настроек
@@ -1048,8 +1048,8 @@ function menuPastMissions() {
   //End of utilitary row
   //Draw rows for saved data
   scoreLoad = gameload("Hiscore");
-  let size = 10; //размер подмассива
-  let scoreLoadPages = []; //массив в который будет выведен результат.
+  let size = 10; //The size of the submarine  размер подмассива
+  let scoreLoadPages = []; //An array in which the result will be derived. массив в который будет выведен результат.
   if(scoreLoad != null){
     scoreLoad = scoreLoad.reverse();
   for (let i = 0; i < Math.ceil(scoreLoad.length / size); i++) {
@@ -1194,6 +1194,7 @@ function menuPastMissions() {
     colStow = score[i][8][0]
     journeyDeaths = score[i][8][1]
     constructionDeaths = score[i][8][2]
+    hiscore = score[i][9];
 
     var ScoreRes = [
       final_score.atmosphere,
@@ -1346,13 +1347,32 @@ function menuPastMissions() {
     var scannames = document.getElementById("ScoreNames");
     for (var i = 0; i < ScoreNames.length; i++) {
       var parag = document.createElement("p");
-      parag.className = "score";
+      parag.className = "stats";
+      if (i == 7){ //get science level Name
+        ScoreNames[i]= ScoreNames[i] + " ("+ hiscore.sciLevelName +")";
+      }
+      if (i ==8){
+        ScoreNames[i]= ScoreNames[i]  + " ("+ hiscore.cultureName+ ")";
+      }
+      if (i ==11){
+        if (hiscore.native_relations == -1){ //don't show native relations if we don't have natives
+          continue;
+        }
+        else {
+          ScoreNames[i]= ScoreNames[i] + " ("+ hiscore.nativeRelationsName +")";
+        }
+      }
       parag.innerHTML = ScoreNames[i] + ":";
       scannames.appendChild(parag);
     };
 
     var scanres = document.getElementById("ScoreRes");
     for (var i = 0; i < ScoreRes.length; i++) {
+      if (i==11){
+        if (hiscore.native_relations == -1){ //don't show native relations if we don't have natives
+          continue;
+        }
+      }
       var parag = document.createElement("p");
       parag.className = "score";
       parag.id = ScoreIDs[i];
