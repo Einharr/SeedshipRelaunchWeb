@@ -1141,6 +1141,7 @@ var Personalities = [
   //Coders
   "Einharr",
   "Partoffuturehivemind",
+  "Alex Yong",
   // Russian
   "Liubov Blazomirskaia",
   // Polish

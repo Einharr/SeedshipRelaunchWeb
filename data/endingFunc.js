@@ -11,6 +11,7 @@ function createArray(length) {
   return arr;
 };
 //Запуск финальной секвенции
+//Start the final sequence
 function newColony(ship, planet, ending) {
   console.log(planet)
 
@@ -35,6 +36,7 @@ function newColony(ship, planet, ending) {
   var endingCounter = 0;
   var allDeaths = 0;
   // Финальное описание
+  // Final description
 
   //Description Arrays
   var EndingLandingList = [];
@@ -119,7 +121,8 @@ function newColony(ship, planet, ending) {
   var _adjust_min = 0.75;
   var _adjust_max = 1.25;
 
-  //Технологический уровень
+ // Technological level
+ //Технологический уровень
 
   if (planet.anomaliesFull.includes("Metal-rich moon")) {
     if (planet.resources == "Rich") {
@@ -140,6 +143,7 @@ function newColony(ship, planet, ending) {
     }
   }
 
+  / * Bonus from local * /
   /* Бонус от местных */
   var _native_bonus = 0;
   if (planet.anomaliesFull.includes("Planet-spanning civilisation")) {
@@ -147,6 +151,7 @@ function newColony(ship, planet, ending) {
     console.log("Местные:" + _native_bonus);
   };
 
+  / * Death from the atmosphere * /
   /* Смерти от атмосферы */
 
   var atmosphereDeaths = 100 - ship.construction[0] + _native_bonus;
@@ -175,6 +180,7 @@ function newColony(ship, planet, ending) {
     atmosphereDeaths = Math.round(getRandomInt(atmosphereDeaths * _adjust_min, atmosphereDeaths * _adjust_max));
   };
 
+  / * Death from temperature * /
   /* Смерти от температуры */
 
   var temperatureDeaths = 100 - ship.construction[0] + _native_bonus;
@@ -202,7 +208,9 @@ function newColony(ship, planet, ending) {
     temperatureDeaths = Math.round(getRandomInt(temperatureDeaths * _adjust_min, temperatureDeaths * _adjust_max));
   };
 
+  / * Death from gravity * /
   /* Смерти от гравитации */
+
   var gravityDeaths = 100 - ship.construction[0] + _native_bonus;
   if (planet.anomaliesFull.includes("Useful animals")) {
     gravityDeaths -= _good_feature_subtract
@@ -228,6 +236,7 @@ function newColony(ship, planet, ending) {
     gravityDeaths = Math.round(getRandomInt(gravityDeaths * _adjust_min, gravityDeaths * _adjust_max));
   };
 
+  / * Death from water * /
   /* Смерти от воды */
   var waterDeaths = 100 - ship.construction[0] + _native_bonus;
   if (planet.anomaliesFull.includes("Useful animals")) {
@@ -249,6 +258,7 @@ function newColony(ship, planet, ending) {
       break;
   };
 
+  // Alignment of values
   // Выравнивание значений
 
   if (waterDeaths <= 0) {
@@ -280,6 +290,9 @@ function newColony(ship, planet, ending) {
   //
 
   function fc_landing() {
+    // First page description
+
+    // landing assistance from local
     //ПЕРВАЯ СТРАНИЦА ОПИСАНИЯ
 
     //Помощь в посадке от местных
@@ -305,6 +318,7 @@ function newColony(ship, planet, ending) {
 
 
 
+    // Description of landing
     //Описание приземления
     if (ship.landing[0] >= 90) {
       EndingLandingList.push(ending.landing[0]);
@@ -398,6 +412,8 @@ function newColony(ship, planet, ending) {
       EndingLandingDamage[10].push(ship.colonists, Math.ceil(getRandomInt(0, _damage * 5)), "damage");
 
     };
+    console.log ("Colonists at the time of landing:" + ship.colonists);
+    console.log ("Colonists will die:", EndingLandingDamage[10][1], cShip.colonists[0])
     console.log("Колонисты на момент посадки:" + ship.colonists);
     console.log("Колонистов погибнет: ", EndingLandingDamage[10][1], cShip.colonists[0])
 
@@ -407,6 +423,7 @@ function newColony(ship, planet, ending) {
       journeyDeaths = colMax - ship.colonists[0];
       EndingLandingList.push(ending.difWords[6]); //   "The colonists wake from their sleep chambers and survey their new home.",
 
+      // Description of the landscape
       //Описание пейзажа
       if (planet.anomalies.includes("Vegetation")) {
         switch (planet.gravity) {
@@ -511,6 +528,7 @@ function newColony(ship, planet, ending) {
         };
       };
 
+      //sky
       //НЕБО
 
       switch (planet.atmosphere) {
@@ -535,6 +553,7 @@ function newColony(ship, planet, ending) {
       };
 
 
+      //Planet name
       //НАЗВАНИЕ ПЛАНЕТЫ
 
       NamesCurLang[0] = NamesLang[options.language];
@@ -646,7 +665,9 @@ function newColony(ship, planet, ending) {
         //    EndingLandingList.push(planet.name);
       };
 
-      //Описание, почему назвали планету
+// Description, why called the planet     
+ //Описание, почему назвали планету
+
 
       switch (planet.name) {
         case "Inferno":
@@ -731,13 +752,15 @@ function newColony(ship, planet, ending) {
 
       if (ship.colonists[0] < colMax) {
         journeyDeaths = colMax - ship.colonists[0];
-        EndingLandingList.push(ending.difWords[4] + journeyDeaths + ending.difWords[5]); //  "They build a memorial to the ", + ПОГИБШИЕ КОЛОНИСТЫ +  " colonists who did not survive the journey.",
+        EndingLandingList.push(ending.difWords[4] + journeyDeaths + ending.difWords[5]); //  "They build a memorial to the ", + The dead colonists +  " colonists who did not survive the journey.",
       };
     };
   };
 
   function fc_construction() {
+// Second Description Page
     //ВТОРАЯ СТРАНИЦА ОПИСАНИЯ
+
     if (ship.construction[0] >= 90) {
       EndingConstructionList.push(ending.construction[0]);
     } else if (ship.construction[0] >= 50) {
@@ -759,7 +782,9 @@ function newColony(ship, planet, ending) {
       }
     }
 
-    // Описание пещер, если они есть
+// Description of the caves  if they exist     
+ // Описание пещер, если они есть
+
 
     if (planet.anomaliesFull.includes("Airtight caves") && planet.atmosphere != "Breathable"
       && planet.anomaliesFull.includes("Insulated caves") && planet.temperature != "Moderate") {
@@ -773,6 +798,7 @@ function newColony(ship, planet, ending) {
     };
 
 
+    //Atmosphere
     //Атмосфера
     if (atmosphereDeaths > 0 || temperatureDeaths > 0) {
       _p = ","
@@ -999,7 +1025,8 @@ function newColony(ship, planet, ending) {
       };
     };
 
-    // Животные и растения
+    // Animals and plants
+    //Животные и растения
     if (planet.anomaliesFull.includes("Useful animals")) {
       switch (planet.gravity) {
         case 'Moderate':
@@ -1042,7 +1069,9 @@ function newColony(ship, planet, ending) {
       };
     };
 
-    /* Описание смертей от гравитации */
+/ * Description of deaths from gravity * /    
+/* Описание смертей от гравитации */
+
     if (gravityDeaths > 0) {
       if (planet.anomaliesFull.includes("Useful animals") || planet.gravity == "Moderate") {
 
@@ -1104,6 +1133,7 @@ function newColony(ship, planet, ending) {
           break;
       };
     };
+    /* Description of deaths from water */
     /* Описание смертей от воды*/
     if (waterDeaths > 0) {
       if (planet.anomaliesFull.includes("Edible plants")) {
@@ -1115,7 +1145,8 @@ function newColony(ship, planet, ending) {
 
 
 
-    /* Влияние нестабильной геологии*/
+    / * Influence of unstable geology * /
+     /* Влияние нестабильной геологии*/
     if (planet.anomaliesFull.includes("Unstable geology") && ship.colonists[0] > 0) {
       if (getRandomInt(0, 99) < ship.construction[0]) {
         featureDeaths = killColonists("Medium");
@@ -1132,6 +1163,7 @@ function newColony(ship, planet, ending) {
     };
     //
 
+    // The effect of poisonous plants
     // Влияние ядовитых растений
     if (planet.anomaliesFull.includes("Poisonous plants") && ship.colonists[0] > 0) {
       if (getRandomInt(0, 99) < ship.construction[0]) {
@@ -1149,6 +1181,7 @@ function newColony(ship, planet, ending) {
     };
     //
 
+    //Effect of dangerous animals
     //Влияние опасных животных
     if (planet.anomaliesFull.includes("Dangerous animals") && ship.colonists[0] > 0) {
       if (getRandomInt(0, 99) < ship.construction[0]) {
@@ -1164,6 +1197,7 @@ function newColony(ship, planet, ending) {
       };
     };
 
+    //Damage
     //УРОН ОТ СТАТОВ ПЛАНЕТЫ
     allDeaths = atmosphereDeaths + temperatureDeaths + gravityDeaths + waterDeaths + geologyDeaths + animalDeaths + plantsDeaths;
     EndingConstructionDamage[0].push(ship.colonists, allDeaths, "damage");
@@ -1177,6 +1211,7 @@ function newColony(ship, planet, ending) {
   };
 
 
+  //Interaction with local, if unpaved civilization
   //Взаимодействие с местными, в случае если всепланетная цивилизация
   function fci_relations() {
     planet.cultureScore = 0;
@@ -1422,9 +1457,11 @@ function newColony(ship, planet, ending) {
     };
   };
   //Конец блока первого контакта
-
+  //End of first contact block
+	
   function fci_technology() {
     //Технологии вместе с местными, в случае если всепланетная цивилизация
+	  //Technologies together with local ones, if the planetary civilization
     if (cPlanet.anomaliesFull.includes('Machine civilization')) {
       if (cMachineDoctrine == "Guardian") {
         EndingPSCTechnologyList.push(cAddonEnding.machinesInteractions[3])
@@ -1445,7 +1482,8 @@ function newColony(ship, planet, ending) {
       } else if (cPlanet.resources == "None") {
         _max = Math.min(_max, 8);
       };
-    } else {
+    } 
+    else {
       if (cPlanet.resources == "Poor") {
         _max = Math.min(_max, 7)
       } else if (cPlanet.resources == "None") {
@@ -1562,6 +1600,9 @@ function newColony(ship, planet, ending) {
     hiscore.final_tech_level = cPlanet.techLvl
     hiscore.final_culture = planet.culture
   };
+  // End of interaction with non-plane local
+
+  // Third Description Page
   //Конец взаимодействия со всепланетными местными
 
   // Третья страница описания
@@ -1569,7 +1610,7 @@ function newColony(ship, planet, ending) {
     switch (planet.resources) {
       case 'Rich':
         EndingTechnologyList.push(ending.resources[0]);
-        if (ship.science[0] == 100) {
+        if (ship.science[0] >= 100) {
           EndingTechnologyList.push(ending.resourcesBut[8]);
         } else if (ship.science[0] >= 50) {
           EndingTechnologyList.push(ending.resourcesBut[9]);
@@ -1582,7 +1623,7 @@ function newColony(ship, planet, ending) {
         break;
       case 'Poor':
         EndingTechnologyList.push(ending.resources[1]);
-        if (ship.science[0] == 100) {
+        if (ship.science[0] >= 100) {
           EndingTechnologyList.push(ending.resourcesBut[4]);
         } else if (ship.science[0] >= 50) {
           EndingTechnologyList.push(ending.resourcesBut[5]);
@@ -1595,7 +1636,7 @@ function newColony(ship, planet, ending) {
         break;
       case 'None':
         EndingTechnologyList.push(ending.resources[2]);
-        if (ship.science[0] == 100) {
+        if (ship.science[0] >= 100) {
           EndingTechnologyList.push(ending.resourcesBut[0]);
         } else if (ship.science[0] >= 50) {
           EndingTechnologyList.push(ending.resourcesBut[1]);
@@ -1610,7 +1651,8 @@ function newColony(ship, planet, ending) {
         break;
     };
 
-    //Влияние луны
+    //The influence of the Moon
+    ////Влияние луны
     if (planet.anomaliesFull.includes("Metal-rich moon")) {
       EndingTechnologyList.push(ending.moon[0]);
       if (planet.resources == "Rich") {
@@ -1628,12 +1670,13 @@ function newColony(ship, planet, ending) {
 
 
 
+    //Technological level
     //ТЕХНОЛОГИЧЕСКИЙ УРОВЕНЬ
 
     if (finalTech > 100 && ship.science[0] > 100) {
       EndingTechnologyList.push(ending.science[0]);
       ship.techLvl = 10;
-    } else if (finalTech == 90) {
+    } else if (finalTech <= 100 && finalTech >=90) {
       EndingTechnologyList.push(ending.science[1]);
       ship.techLvl = 9
 
@@ -1669,7 +1712,7 @@ function newColony(ship, planet, ending) {
       EndingTechnologyList.push(ending.science[9]);
       ship.techLvl = 1;
 
-    } else if (finalTech == 0) {
+    } else if (finalTech <= 0) { //really can't go below 0, but want to cover potential less than 0 bugs.
       EndingTechnologyList.push(ending.science[10]);
       ship.techLvl = 0;
 
@@ -1678,6 +1721,7 @@ function newColony(ship, planet, ending) {
 
     hiscore.final_tech_level = ship.techLvl;
 
+    //Maintaining life on the planet
     //Поддержание жизни на планете
 
     if (finalTech <= 70 &&
@@ -1721,28 +1765,28 @@ function newColony(ship, planet, ending) {
         EndingTechnologyDamage[0].push(ship.colonists, 10000, "damage");
         //  damageApply(cShip.colonists, 0, "set");
         hiscore.final_tech_level = -1;
-        hiscore.summary = "Long-Term Technological Failure";
+        hiscore.summary = "Long-Term Technological Failure (Atmosphere)";
 
       } else if (_temperature_problem == true) {
         EndingTechnologyList.push(ending.sustain[2]);
         EndingTechnologyDamage[0].push(ship.colonists, 10000, "damage");
         //  damageApply(cShip.colonists, 0, "set");
         hiscore.final_tech_level = -1;
-        hiscore.summary = "Long-Term Technological Failure";
+        hiscore.summary = "Long-Term Technological Failure (Temperature)";
 
       } else if (_gravity_problem == true) {
         EndingTechnologyList.push(ending.sustain[3] + planet.gravity.toLowerCase() + ending.sustain[11]);
         EndingTechnologyDamage[0].push(ship.colonists, 10000, "damage");
         //  damageApply(cShip.colonists, 0, "set");
         hiscore.final_tech_level = -1;
-        hiscore.summary = "Long-Term Technological Failure";
+        hiscore.summary = "Long-Term Technological Failure (Gravity)";
 
       } else if (_water_problem == true) {
         EndingTechnologyList.push(ending.sustain[4]);
         EndingTechnologyDamage[0].push(ship.colonists, 10000, "damage");
         //  damageApply(cShip.colonists, 0, "set");
         hiscore.final_tech_level = -1;
-        hiscore.summary = "Long-Term Technological Failure";
+        hiscore.summary = "Long-Term Technological Failure (Water)";
 
       } else {
         EndingTechnologyList.push(ending.sustain[5]);
@@ -1784,6 +1828,7 @@ function newColony(ship, planet, ending) {
     };
   };
 
+  //Ruins, if you are closed
   //Руины, если пристутствуют
   function fc_ruins() {
     if (planet.anomaliesFull.includes("Monumental ruins")
@@ -1831,6 +1876,7 @@ function newColony(ship, planet, ending) {
       };
     };
   };
+  //CULTURE
   //КУЛЬТУРА
   function fc_culture() {
     _culture_score = ship.culture[0] * Math.min(ship.colonists[0] / colMax, 1);
@@ -1885,9 +1931,11 @@ function newColony(ship, planet, ending) {
     }
     console.log("_culture_score:"+_culture_score+" ")
     /* Calculate and output final result */
+    hiscore.sciLevelName = tech_level_names[ship.techLvl];
     if (_culture_score > 100 && ship.culture[0] > 100) {
       hiscore.final_culture = 17;
-      hiscore.summary = tech_level_names[ship.techLvl].toUpperCase() + " Cosmic Enlightenment";
+      hiscore.summary = tech_level_names[ship.techLvl] + " "+ cultureNames[17];
+      hiscore.cultureName=cultureNames[17];
       EndingCultureList.push(ending.politics[0]); //The cultural database from Earth has been augmented by alien cultural knowledge, and the colonists use this to build a society unlike any that the seedship's founders could have imagined, in which every member lives a life of peace, happiness, and spiritual fulfilment.
     } else {
       switch (ship.techLvl) {
@@ -1896,33 +1944,40 @@ function newColony(ship, planet, ending) {
         case 10:
           if (_culture_score > 90) {
             hiscore.final_culture = 16;
-            hiscore.summary = tech_level_names[ship.techLvl].toUpperCase() + " Post-Scarcity Utopia";
+            hiscore.summary = tech_level_names[ship.techLvl] + " "+ cultureNames[16];
+            hiscore.cultureName=cultureNames[16];
             EndingCultureList.push(ending.politics[1]); //The surviving cultural database is preserved in digital files to which all colonists have access. The colonists work together to build an egalitarian society in which technology takes care of people's material needs, freeing them to pursue lives of art, leisure, and spiritual fulfilment.
           } else if (_culture_score > 80) {
             hiscore.final_culture = 15
-            hiscore.summary = "Engaged " + tech_level_names[ship.techLvl] + " Democracy";
+            hiscore.summary = "Engaged " + tech_level_names[ship.techLvl] + " "+ cultureNames[15];
+            hiscore.cultureName= cultureNames[15];
             EndingCultureList.push(ending.politics[2]); //The surviving cultural database is preserved in digital files to which all colonists have access. The colonists lay the foundation of a democracy in which all citizens are educated and engaged.
           } else if (_culture_score > 60) {
             hiscore.final_culture = 14
-            hiscore.summary = "Corrupt " + tech_level_names[ship.techLvl] + " Democracy"
+            hiscore.summary = "Corrupt " + tech_level_names[ship.techLvl] + " "+ cultureNames[14];
+            hiscore.cultureName= cultureNames[14];
             EndingCultureList.push(ending.politics[3]); //The surviving cultural database is preserved in digital files to which all colonists have access. The colonists lay the foundation of a democracy, but it proves vulnerable to corruption and wealthy individuals become a de facto ruling class.
           } else if (_culture_score > 40) {
             hiscore.final_culture = 13;
-            hiscore.summary = tech_level_names[ship.techLvl].toUpperCase() + " Corporate Rule";
+            hiscore.summary = tech_level_names[ship.techLvl] + " "+ cultureNames[13];
+            hiscore.cultureName=cultureNames[13];
             EndingCultureList.push(ending.politics[4]); //The surviving cultural database is preserved in digital files to which all colonists have access. The colonists attempt to build a democratic, capitalist society, but the government becomes a pawn of wealthy corporations which rule the planet for their owners' benefit.
           } else if (_culture_score > 20) {
             hiscore.final_culture = 12
-            hiscore.summary = "Dystopian " + tech_level_names[ship.techLvl] + " Police State"
+            hiscore.summary = "Dystopian " + tech_level_names[ship.techLvl] + " "+ cultureNames[12];
+            hiscore.cultureName= cultureNames[12];
             EndingCultureList.push(ending.politics[5]); //The colony develops into a high-tech police state, in which the population lives under constant surveillance by the untouchable ruling class, and the slightest dissent is violently put down. The surviving cultural database is preserved, but access to it is strictly limited by the state.
           } else if (_culture_score > 10) {
             hiscore.final_culture = 11;
             ship.culture[0] = Math.round(ship.culture[0] / 2);
-            hiscore.summary = "Warring " + tech_level_names[ship.techLvl] + " Superpowers";
+            hiscore.summary = "Warring " + tech_level_names[ship.techLvl] + " "+ cultureNames[11];
+            hiscore.cultureName= cultureNames[11];
             EndingCultureList.push(ending.politics[6]); //The colony splits into several large nations whose economies become focused on waging war with one another. The colonists attempt to preserve what remains of the cultural database, but much of it is lost, either by damage due to the war, or under layers of the governments' revisionist propaganda.
           } else {
             hiscore.final_culture = 10;
             ship.culture[0] = 0;
-            hiscore.summary = tech_level_names[ship.techLvl].toUpperCase() + " Post-Nuclear Wasteland";
+            hiscore.summary = tech_level_names[ship.techLvl] + " "+ cultureNames[10];
+            hiscore.cultureName=cultureNames[10];
             EndingCultureList.push(ending.politics[7]); //The colony splits into several large nations which wage war with one another, until reckless leaders set off a nuclear war that destroys the infrastructure of civilisation. The surviving colonists live on in a post-nuclear wasteland. What remains of the cultural database is lost in the disaster, and what the colonists remember of Earth they confuse with stories of the pre-war colony.
           };
           break;
@@ -1933,25 +1988,30 @@ function newColony(ship, planet, ending) {
         case 7:
           if (_culture_score > 80) {
             hiscore.final_culture = 9;
-            hiscore.summary = "Egalitarian " + tech_level_names[ship.techLvl] + " Republic";
+            hiscore.summary = "Egalitarian " + tech_level_names[ship.techLvl] + " "+ cultureNames[9];
+            hiscore.cultureName= cultureNames[9];
             EndingCultureList.push(ending.politics[8]); //The colonists use the surviving cultural database to guide them in the creation of a republic based on freedom and equal rights.
           } else if (_culture_score > 60) {
             hiscore.final_culture = 8
-            hiscore.summary = "Benevolent " + tech_level_names[ship.techLvl] + " Monarchy"
+            hiscore.summary = "Benevolent " + tech_level_names[ship.techLvl] + " "+ cultureNames[8];
+            hiscore.cultureName= cultureNames[8];
             EndingCultureList.push(ending.politics[9]); //The first leaders of the colony become the founders of a line of benevolent monarchs, who regard it as their solemn duty to guide the colony and safeguard the remaining knowledge of Earth.
           } else if (_culture_score > 40) {
             hiscore.final_culture = 7
-            hiscore.summary = "Oppressive " + tech_level_names[ship.techLvl] + " Theocracy"
+            hiscore.summary = "Oppressive " + tech_level_names[ship.techLvl] + " "+ cultureNames[7];
+            hiscore.cultureName= cultureNames[7];
             EndingCultureList.push(ending.politics[10]); //The surviving knowledge of Earth becomes the exclusive property of a priestly caste, locked away in libraries. For most of the population, Earth becomes the paradise in a mythological fall from grace, and a final reward to hope for after living lives in service of the oppressive theocracy.
           } else if (_culture_score > 20) {
             hiscore.final_culture = 6
             ship.culture[0] = Math.round(ship.culture[0] / 2)
-            hiscore.summary = tech_level_names[ship.techLvl].toUpperCase() + " Slave Empire"
+            hiscore.summary = tech_level_names[ship.techLvl] + " "+ cultureNames[6];
+            hiscore.cultureName= cultureNames[6];
             EndingCultureList.push(ending.politics[11]); //The colony develops into a slave state, in which the bulk of the population toil to build great gold monuments to their emperors, or die fighting in their wars. Much of the surviving knowledge of Earth is lost, as the emperors preserve only what they can use to prop up their rule.
           } else {
             hiscore.final_culture = 5
             ship.culture[0] = 0
-            hiscore.summary = "Warring " + tech_level_names[ship.techLvl] + " States"
+            hiscore.summary = "Warring " + tech_level_names[ship.techLvl] + " "+ cultureNames[5];
+            hiscore.cultureName= cultureNames[5];
             EndingCultureList.push(ending.politics[12]); //The colony develops into many small states, which exist in a state of constant warfare. What remains of the cultural database is lost in the conflicts.
           }
           break;
@@ -1960,26 +2020,30 @@ function newColony(ship, planet, ending) {
         case 2:
           if (_culture_score > 80) {
             hiscore.final_culture = 4
-            hiscore.summary = tech_level_names[ship.techLvl].toUpperCase() + " Collective Rule"
+            hiscore.summary = tech_level_names[ship.techLvl] + " "+ cultureNames[4];
             EndingCultureList.push(ending.politics[13]); //The surviving cultural database becomes the foundation of a rich oral history. The colony splits into small tribes, each ruled collectively by its members and coexisting peacefully with one another.
           } else if (_culture_score > 60) {
             hiscore.final_culture = 3
             hiscore.score_culture = 1500
-            hiscore.summary = "Benevolent " + tech_level_names[ship.techLvl] + " Chieftains"
+            hiscore.summary = "Benevolent " + tech_level_names[ship.techLvl] + " "+ cultureNames[3];
+            hiscore.cultureName= cultureNames[3];
             EndingCultureList.push(ending.politics[14]); //The surviving cultural database becomes the foundation of a rich oral history, and a caste of benevolent chieftains arises as guardians of that history and protectors of the tribes.
           } else if (_culture_score > 40) {
             hiscore.final_culture = 2
-            hiscore.summary = "Brutal " + tech_level_names[ship.techLvl] + " Chieftains"
+            hiscore.summary = "Brutal " + tech_level_names[ship.techLvl] + " "+ cultureNames[2];
+            hiscore.cultureName= cultureNames[2];
             EndingCultureList.push(ending.politics[15]); //The surviving cultural database becomes the foundation of the colonists' oral history, but a caste of brutal chieftains corrupts the culture and uses it to cement their own rule.
           } else if (_culture_score > 20) {
             hiscore.final_culture = 1
             ship.culture[0] = Math.round(ship.culture[0] / 2)
-            hiscore.summary = "Warring " + tech_level_names[ship.techLvl] + " Tribes"
+            hiscore.summary = "Warring " + tech_level_names[ship.techLvl] + " "+ cultureNames[1];
+            hiscore.cultureName= cultureNames[1];
             EndingCultureList.push(ending.politics[16]); //The colony develops into many small tribes, which exist in a state of constant warfare. The information from the cultural database is almost entirely forgotten, and Earth is remembered only as the home of a pantheon of mythological warriors.
           } else {
             hiscore.final_culture = 0
             ship.culture[0] = 0
-            hiscore.summary = tech_level_names[ship.techLvl].toUpperCase() + " Savagery"
+            hiscore.summary = tech_level_names[ship.techLvl] + " "+ cultureNames[0];
+            hiscore.cultureName= cultureNames[0];
             EndingCultureList.push(ending.politics[17]); //The colonists descend into savagery, and all knowledge of Earth's history and culture is forgotten in their day-to-day struggle for survival.
           };
           break;
@@ -2054,6 +2118,7 @@ function newColony(ship, planet, ending) {
       default:
         break;
     }
+    console.log("Local culture:", planet.culture, planet.cultureScore);
     console.log("КУЛЬТУРА МЕСТНЫХ:", planet.culture, planet.cultureScore);
 
     var _difference = Math.abs(ship.techLvl - planet.techLvl);
@@ -2296,6 +2361,7 @@ function newColony(ship, planet, ending) {
 
 
   };
+  //Final description
   //ФИНАЛЬНОЕ ОПИСАНИЕ
   constructionDeaths = (colMax - ship.colonists[0]) - journeyDeaths;
   function fc_done() {
@@ -2632,7 +2698,8 @@ function newColony(ship, planet, ending) {
 
       switch (native_relations_names[hiscore.native_relations]) {
         case "Immigrants, Earth remembered":
-          ScoreDescription.push(ending.summary[109])
+          ScoreDescription.push(ending.summary[109]);
+          
           break;
         case "Immigrants, Earth forgotten":
           ScoreDescription.push(ending.summary[110])
@@ -2665,7 +2732,13 @@ function newColony(ship, planet, ending) {
           ScoreDescription.push(cAddonEnding.machinesSummary[3])
           break;
       }
-
+      if (hiscore.native_relations==0){
+        hiscore.nativeRelationsName = "Genocide of Colonists";
+      }
+      else if (hiscore.native_relations > 0) { 
+        hiscore.nativeRelationsName= native_relations_names[hiscore.native_relations];
+      }
+      
 
       if (planet.anomaliesFull.includes("Planet-spanning civilisation")) {
         ScoreDescription.push(ending.summary[116])
@@ -2745,6 +2818,7 @@ function newColony(ship, planet, ending) {
   fc_done();
   localStorage.removeItem('Savedata');
 
+  //Function of page damage
   //Функция постраничного урона
 
   function pageDamage(dmgArr) {
@@ -2756,6 +2830,7 @@ function newColony(ship, planet, ending) {
     };
   };
 
+  //Calling Point Count Functions
   //ВЫЗОВ ФУНКЦИИ ПОДСЧЁТА ОЧКОВ
   final_score = countScore(cShip, cPlanet, hiscore);
 
@@ -2815,12 +2890,31 @@ function newColony(ship, planet, ending) {
       for (var i = 0; i < ScoreNames.length; i++) {
         var parag = document.createElement("p");
         parag.className = "stats";
+        if (i == 7){ //get science level Name
+          ScoreNames[i]= ScoreNames[i] + " ("+ hiscore.sciLevelName +")";
+        }
+        if (i ==8){
+          ScoreNames[i]= ScoreNames[i]  + " ("+ hiscore.cultureName+ ")";
+        }
+        if (i ==11){
+          if (hiscore.native_relations == -1){ //don't show native relations if we don't have natives
+            continue;
+          }
+          else {
+            ScoreNames[i]= ScoreNames[i] + " ("+ hiscore.nativeRelationsName +")";
+          }
+        }
         parag.innerHTML = ScoreNames[i] + ":";
         scannames.appendChild(parag);
       };
 
       var scanres = document.getElementById("ScanRes");
       for (var i = 0; i < ScoreRes.length; i++) {
+        if (i==11){
+          if (hiscore.native_relations == -1){ //don't show native relations if we don't have natives
+            continue;
+          }
+        }
         var parag = document.createElement("p");
         parag.className = "stats";
         parag.id = ScoreIDs[i];
@@ -2847,6 +2941,7 @@ function newColony(ship, planet, ending) {
       PastMissions.push(final_score);
       colonist_final_deaths = [colStow, journeyDeaths, constructionDeaths];
       PastMissions.push(colonist_final_deaths);
+      PastMissions.push(hiscore);
 
       //console.log("SAVEDATA:",PastMissions)
 
