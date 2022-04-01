@@ -1985,6 +1985,7 @@ var prematureAwakening = {
   			curEvent.choices[1].outcome = eventsText.prematureAwakening.outcomes[2]; //"The construction robots build a small habitat on the side of the seedship, like the habitats they would build on an airless planet. The colonists wake to find that their new home is a sterile, gravity-less bubble in interstellar space.<br><br>"
   			culture_result = cShip.culture[0] + getRandomInt(0,99);
   			wakersDead = false;
+        wakersFrozen=false;
   			if (culture_result < 50) {
   				// Die, and damage a random system
           choDevice = deviceDamage(ScanArr.concat(DbArr, StrArr, ColArr));
@@ -2001,34 +2002,37 @@ var prematureAwakening = {
           curEvent.damageTaken = systemDamage("Low");
           damageApply(cShip.culture, curEvent.damageTaken, "heal");
   				curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[7]; //"The colonists were chosen and trained for their ability to live in whatever environment the seedship found for them, and they manage to adjust even to this claustrophobic new home. They even chronicle their experiences, creating a melancholy tale of a tiny community hanging in the infinite void between the old world and the new, and save it to the cultural database in the hope that other humans will one day remember them.";
-  			};
+        };
 
-  			if (!wakersDead)
-  				curEvent.choices[1].outcome += "<br><br>";
-  				tech_result = cShip.science[0] + getRandomInt(0,99);
+        if (!wakersDead)
+          curEvent.choices[1].outcome += "<br><br>";
+          tech_result = cShip.science[0] + getRandomInt(0,99);
 
-  				if (tech_result < 50){
-  //					/% Accidentally damage a random system %/
+          if (tech_result < 50){
+  //% Accidentally damage a random system %/
             choDevice = deviceDamage(ScanArr.concat(DbArr, StrArr, ColArr));
             curEvent.damageTaken = systemDamage("High");
             damageApply(choDevice, curEvent.damageTaken, "damage");
-  					curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[8]+choDevice[2]+eventsText.prematureAwakening.outcomes[9]; //;
-  				}else if (tech_result < 100){
-  //					/% No change %/
-  				curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[10]; //"With their community established, the colonists try to find ways to help the seedship on its journey, but the loss of information from the scientific database means that they make no progress.";
-  				} else {
-//  					/% Repair random system %/
-  				curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[11]; //"With their community established, the colonists try to find ways to help the seedship on its journey.";
-  					if (cShip.atmosphere[0] >= 100
-  						&& cShip.temperature[0] >= 100
-  						&& cShip.gravity[0] >= 100
-  						&& cShip.water[0] >= 100
-  						&& cShip.resources[0] >= 100
-  						&& cShip.landing[0] >= 100
-  						&& cShip.construction[0] >= 100){
-  					  curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[12]; //"Using environment suits provided by the construction system and information from the scientific database they mount expeditions to check the seedship's systems for damage, but find that no repairs are needed.";
-  					} else {
-  						curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[13]; //"Using environment suits provided by the construction system and information from the scientific database they mount expeditions to repair some of the damage the seedship has sustained during its journey.";
+            curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[8]+choDevice[2]+eventsText.prematureAwakening.outcomes[9]; //;
+          }
+          else if (tech_result < 100){
+  //% No change %/
+             curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[10]; //"With their community established, the colonists try to find ways to help the seedship on its journey, but the loss of information from the scientific database means that they make no progress.";
+          } 
+          else {
+//% Repair random system %/
+            curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[11]; //"With their community established, the colonists try to find ways to help the seedship on its journey.";
+            if (cShip.atmosphere[0] >= 100
+                && cShip.temperature[0] >= 100
+                && cShip.gravity[0] >= 100
+                && cShip.water[0] >= 100
+                && cShip.resources[0] >= 100
+                && cShip.landing[0] >= 100
+                && cShip.construction[0] >= 100){
+                curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[12]; //"Using environment suits provided by the construction system and information from the scientific database they mount expeditions to check the seedship's systems for damage, but find that no repairs are needed.";
+            } 
+            else {
+              curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[13]; //"Using environment suits provided by the construction system and information from the scientific database they mount expeditions to repair some of the damage the seedship has sustained during its journey.";
               damageApply(cShip.atmosphere, Math.min(100, cShip.atmosphere[0] + getRandomInt(1,10)), "heal");
               damageApply(cShip.temperature, Math.min(100, cShip.temperature[0] + getRandomInt(1,10)), "heal");
               damageApply(cShip.gravity, Math.min(100, cShip.gravity[0] + getRandomInt(1,10)), "heal");
@@ -2036,18 +2040,20 @@ var prematureAwakening = {
               damageApply(cShip.resources, Math.min(100, cShip.resources[0] + getRandomInt(1,10)), "heal");
               damageApply(cShip.landing, Math.min(100, cShip.landing[0] + getRandomInt(1,10)), "heal");
               damageApply(cShip.construction, Math.min(100, cShip.construction[0] + getRandomInt(1,10)), "heal");
-  					};
-  					if (tech_result >= 150){
-  						wakersDead = true;
+            };
+            if (tech_result >= 150){
+              wakersFrozen = true;
               damageApply(cShip.colonists, wakers, "heal");
-  						curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[14]; //"After years of experimentation, they even manage to repair their original sleep chambers, and return to hibernation to await the new world.";
-  			};
+              curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[14]; //"After years of experimentation, they even manage to repair their original sleep chambers, and return to hibernation to await the new world.";
+            };
       };
-  			if (!wakersDead){
-  				curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[15]; //"The awoken colonists live out the rest of the lives in the tiny habitat, until one by one they succumb to old age compounded by health complications brought on by a life in microgravity. The AI sends construction robots to commit their bodies to interstellar space, before returning to hibernation, entirely alone once more.";
-    		} else {
-    		curEvent.choices[1].outcome =	eventsText.prematureAwakening.outcomes[16]; //"The construction robots attempt to build a habitat on the side of the seedship, but the damaged system cannot does not manage to create an airtight shelter by the time the colonists are revived. The colonists asphyxiate, and part of the already damaged construction system is transformed into a useless carbuncle on the seedship's side.";
-  };
+      if (!wakersDead){
+         curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[15]; //"The awoken colonists live out the rest of the lives in the tiny habitat, until one by one they succumb to old age compounded by health complications brought on by a life in microgravity. The AI sends construction robots to commit their bodies to interstellar space, before returning to hibernation, entirely alone once more.";
+      } 
+      else if (!wakersFrozen) {
+      //else{
+        curEvent.choices[1].outcome =	eventsText.prematureAwakening.outcomes[16]; //"The construction robots attempt to build a habitat on the side of the seedship, but the damaged system cannot does not manage to create an airtight shelter by the time the colonists are revived. The colonists asphyxiate, and part of the already damaged construction system is transformed into a useless carbuncle on the seedship's side.";
+      };
 };
       document.getElementById('description').innerHTML+="<br><br>"+curEvent.choices[1].outcome;
       buttonWipe();

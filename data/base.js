@@ -313,7 +313,11 @@ function damageApply(system, damage, status) {
 
     if (status == "heal") {
       document.getElementById(system[3] + "_popup").style.backgroundColor = "green";
-      document.getElementById(system[3]).innerHTML += "%"
+      if (document.getElementById(system[3]).innerHTML =="Colonists"){
+      }
+	    else{
+        document.getElementById(system[3]).innerHTML += "%"
+      }
     } else if (status == "upgrade") {
       document.getElementById(system[3] + "_popup").style.backgroundColor = "yellow";
       document.getElementById(system[3]).innerHTML += "%"
