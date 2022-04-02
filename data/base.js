@@ -313,7 +313,7 @@ function damageApply(system, damage, status) {
 
     if (status == "heal") {
       document.getElementById(system[3] + "_popup").style.backgroundColor = "green";
-      if (document.getElementById(system[3]).innerHTML =="Colonists"){
+      if (document.getElementById(system[3]).innerHTML.match(/colonists/)){//we don't have percentage of colonists so don't add percent sign.
       }
 	    else{
         document.getElementById(system[3]).innerHTML += "%"
@@ -321,7 +321,7 @@ function damageApply(system, damage, status) {
     } else if (status == "upgrade") {
       document.getElementById(system[3] + "_popup").style.backgroundColor = "yellow";
       document.getElementById(system[3]).innerHTML += "%"
-    } else {
+    } else { //damage 
       if (system[3] != cShip.probes[3]) {
         if (system[3] != cShip.colonists[3]) {
           document.getElementById(system[3]).innerHTML += "%"
