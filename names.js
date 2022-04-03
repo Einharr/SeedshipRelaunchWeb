@@ -49,7 +49,8 @@ var languageData = {
 //SETTINGS
   settingsLangCh: ["Language","Язык", "Język", "Idioma", "Lingua", "Sprache", "Here goes French", "Språk", "Taal", "語言"],
   settingsLanguage: ["English","Русский", "Polskie", "Español", "Italiano", "Deutsch", "Français", "Svenska", "Nederlands", "中文"],
-  settingsMusic: ["Music","Музыка", "Muzyka", "Música", "Musica", "Musik", "Here goes French", "Musik", "Muziek", "音樂"],
+  settingsMusic: ["Music","Музыка", "Muzyka", "Música", "Musica", "Musik", "La Musique", "Musik", "Muziek", "音樂"],
+  settingsVoiceOver: ["Voice Acting","озвучка", "Aktorstwo Głosowe", "Actuación De Voz", "Recitazione Vocale", "Sprachausgabe", "Doublage", "Röstskådespeleri", "Stemacteren", "配音"],
   settingsGraphics: ["Graphics","Графика", "Grafika", "Gráficos", "Grafica", "Grafik", "Here goes French", "Grafik", "Grafisch", "畫質"],
   settingsClouds: ["Clouds","Облака", "Chmury", "Nubes", "Nuvole", "Wolken", "Here goes French", "Moln", "Wolken", "雲"],
   settingsPlanet: ["Planet","Планета", "Planety", "Planeta", "Pianeta", "Planet", "Here goes French", "Planeter", "Planeet", "星球"],
