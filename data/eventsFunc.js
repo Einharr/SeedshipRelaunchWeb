@@ -607,13 +607,22 @@ var blackHole = {
         },
         { choice: eventsText.blackHole.buttons[2], exist: existCheck("true"), outcome: null, result: function(){
 
+              var FullArrExceptSleep=[];
+              for (var i=0; i <FullArr.length; i++){
+                if (FullArr[i][2].match("sleep")){
+                  //do nothing
+                }
+                else {
+                  FullArrExceptSleep.push(FullArr[i]);
+                }
+              }
               curEvent.choices[1].outcome =  eventsText.blackHole.outcomes[2];//"The AI commands the engine to exceed its maximum output, ignoring its electronic screams of protest."
               blackHole.visited = true;
-              choDevice = deviceDamage(FullArr);
+              choDevice = deviceDamage(FullArrExceptSleep);
               DamagedSystemsArray = [];
-              if (getRandomInt(0,1) == 0){
+              _r = getRandomInt(0,1);
+              if (_r == 0){
               curEvent.choices[1].outcome +=  eventsText.blackHole.outcomes[3];//"The ship feels as if it is shaking itself apart, but when the burn is complete and the seedship is coasting safely away from the black hole, the AI finds that its builders gave the engine a generous safety margin and the overload has caused no damage.";
-          ScoreDescription.push(ending.summary[96])
                           if(options.platform=="Android"){
                               var data = {
                                 achievementId: "CgkIya77kP0DEAIQCg"
@@ -625,31 +634,68 @@ var blackHole = {
                                 // On error
                             });
                         };
-            } else {
+            } 
+            else {
 
               _r = getRandomInt(1,3);
               if (_r == 1){
                   DamagedSystemsArray.push(choDevice);
-                  damageApply(DamagedSystemsArray[0], systemDamage("Medium"), "damage");
+                  if (choDevice[3].match("probe")){
+                    damageApply(DamagedSystemsArray[0], getRandomInt(2,3), "damage");
+                  }
+                  else {
+                    damageApply(DamagedSystemsArray[0], systemDamage("Medium"), "damage");
+                  }
+                  
                   DamagedSystems = DamagedSystemsArray[0][2];
             }
               if (_r == 2){
                   DamagedSystemsArray.push(choDevice);
-                  choDevice = deviceDamage(FullArr, DamagedSystemsArray[0]);
+                  choDevice = deviceDamage(FullArrExceptSleep, DamagedSystemsArray[0]);
                   DamagedSystemsArray.push(choDevice);
-                  damageApply(DamagedSystemsArray[0], systemDamage("Medium"), "damage");
-                  damageApply(DamagedSystemsArray[1], systemDamage("Low"), "damage");
+                  if (DamagedSystemsArray[0][3].match("probe")){
+                    damageApply(DamagedSystemsArray[0], getRandomInt(2,3), "damage");
+                  }
+                  else {
+                    damageApply(DamagedSystemsArray[0], systemDamage("Medium"), "damage");
+                  }
+
+                  if (DamagedSystemsArray[1][3].match("probe")){
+                    damageApply(DamagedSystemsArray[1], 1, "damage");
+                  }
+                  else {
+                    damageApply(DamagedSystemsArray[1], systemDamage("Low"), "damage");
+                  }
                   DamagedSystems = DamagedSystemsArray[0][2]+" and "+DamagedSystemsArray[1][2];
                 };
               if (_r == 3){
                   DamagedSystemsArray.push(choDevice);
-                  choDevice = deviceDamage(FullArr, DamagedSystemsArray[0]);
+                  choDevice = deviceDamage(FullArrExceptSleep, DamagedSystemsArray[0]);
                   DamagedSystemsArray.push(choDevice);
-                  choDevice = deviceDamage(FullArr, DamagedSystemsArray[0], DamagedSystemsArray[1]);
+                  choDevice = deviceDamage(FullArrExceptSleep, DamagedSystemsArray[0], DamagedSystemsArray[1]);
                   DamagedSystemsArray.push(choDevice);
-                  damageApply(DamagedSystemsArray[0], systemDamage("Low"), "damage");
-                  damageApply(DamagedSystemsArray[1], systemDamage("Low"), "damage");
-                  damageApply(DamagedSystemsArray[2], systemDamage("Low"), "damage");
+
+                  if (DamagedSystemsArray[0][3].match("probe")){
+                    damageApply(DamagedSystemsArray[0], 1, "damage");
+                  }
+                  else {
+                    damageApply(DamagedSystemsArray[0], systemDamage("Low"), "damage");
+                  }
+
+                  if (DamagedSystemsArray[1][3].match("probe")){
+                    damageApply(DamagedSystemsArray[1], 1, "damage");
+                  }
+                  else {
+                    damageApply(DamagedSystemsArray[1], systemDamage("Low"), "damage");
+                  }
+
+                  if (DamagedSystemsArray[2][3].match("probe")){
+                    damageApply(DamagedSystemsArray[2], 1, "damage");
+                  }
+                  else {
+                    damageApply(DamagedSystemsArray[2], systemDamage("Low"), "damage");
+                  }
+
                   DamagedSystems = DamagedSystemsArray[0][2]+", "+DamagedSystemsArray[1][2]+ eventsText.blackHole.outcomes[5]+DamagedSystemsArray[2][2];
               };
 
