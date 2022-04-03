@@ -690,6 +690,50 @@ function menuSettings() {
   checkbox.id = "musicToggle";
   music.appendChild(checkbox);
 
+
+  //new stuff
+  var more = document.getElementById("settings");
+  var row = document.createElement("div");
+  row.className = "row menuItem";
+  row.id = "row_Vox";
+  more.appendChild(row);
+
+  var more = document.getElementById("row_Vox");
+  var row = document.createElement("div");
+  row.className = "col";
+  row.id = "col1_Vox";
+  more.appendChild(row);
+
+  var more = document.getElementById("col1_Vox");
+  var para = document.createElement("h6");
+  para.id = "music";
+  para.innerHTML = languageData.settingsVoiceOver[options.language];
+  more.appendChild(para);
+
+  var more = document.getElementById("row_Vox");
+  var row = document.createElement("div");
+  row.className = "col";
+  row.id = "col2_Vox";
+  more.appendChild(row);
+
+  var voice = document.getElementById("col2_Vox");
+  var checkbox = document.createElement('input');
+  checkbox.type = "checkbox";
+  checkbox.className = "toggle";
+  checkbox.name = "name";
+  checkbox.checked = options.voiceOverEnabled;
+  checkbox.onclick = function () {
+    if (checkbox.checked == true) {
+      options.voiceOverEnabled = true;
+    } else if (checkbox.checked == false) {
+      options.voiceOverEnabled = false;
+    };
+  };
+  checkbox.id = "voiceToggle";
+  voice.appendChild(checkbox);
+  //end new stuff
+
+
   var more = document.getElementById("settings");
   var row = document.createElement("div");
   row.className = "row menuItem";
@@ -1403,7 +1447,10 @@ function menuPastMissions() {
 
 function intro() {
   menuWipe();
-  var audio = play("./assets/music/Intro.mp3");
+  var audio;
+  if (options.voiceOverEnabled) {
+    audio = play("./assets/music/Intro.mp3");
+  }
     //window.plugins.NativeAudio.play( 'intro' );
     console.log('intro');
 
@@ -1421,8 +1468,8 @@ function intro() {
   more.appendChild(para);
 
 
-var textTW = document.getElementById("introtext");
-var TypedText = languageData.intro[options.language];
+  var textTW = document.getElementById("introtext");
+  var TypedText = languageData.intro[options.language];
 
   var typewriter = new Typewriter(textTW, {
       loop: false,
@@ -1431,14 +1478,16 @@ var TypedText = languageData.intro[options.language];
   });
   typewriter.typeString(TypedText)
     .start();
-//typeWriter(0, languageData.intro[options.language], "introtext");
+  //typeWriter(0, languageData.intro[options.language], "introtext");
 
   var more = document.getElementById("container");
   var btn = document.createElement("button");
   btn.className = "futurebutton";
   btn.id = "introbutton";
   btn.onclick = function(){
-    audio.pause();
+    if (options.voiceOverEnabled) {
+      audio.pause();
+    }
     //window.plugins.NativeAudio.stop( 'intro' );
 
     var el = document.getElementById('introbutton');
