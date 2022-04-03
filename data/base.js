@@ -157,13 +157,17 @@ function getRandomInt(min, max) {
 
 //Функция рандомизации урона
 //Damage randomization function
-function deviceDamage(DmgArr, excl1, excl2) {
+//takes an array and three items to exclud e from damage
+function deviceDamage(DmgArr, excl1, excl2, excl3) {
 
   if (excl1 == undefined) {
     excl1 = 0;
   }
   if (excl2 == undefined) {
     excl2 = 0;
+  }
+  if (excl3 == undefined){
+    excl3 = 0;
   }
   //Исключение уничтоженных девайсов
   //Exclude destroyed devices
@@ -172,7 +176,7 @@ function deviceDamage(DmgArr, excl1, excl2) {
   for (i = 0; i < DmgArr.length; i++) {
     if (DmgArr[i][0] !== 0) {
 
-      if (DmgArr[i] == excl1 || DmgArr[i] == excl2) {
+      if (DmgArr[i] == excl1 || DmgArr[i] == excl2 || DmgArr[i] == excl3) {
       } else {
         RandDmgArr.push(DmgArr[i]);
 
