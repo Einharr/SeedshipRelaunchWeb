@@ -996,8 +996,10 @@ function menuSettings() {
 };
 //Past Missions Menu
 function menuPastMissions() {
+  //Clean the starting men
   //Очищаем стартовое меню
   menuWipe();
+  //Draw a block with ships stats
   //Рисуем блок со статами корабля
   var ShipState = document.getElementById("ShipState");
   ShipState.style.maxHeight = "80vh";
@@ -1194,6 +1196,7 @@ function menuPastMissions() {
             scoreLoad = gameload("Hiscore");
             console.log("ТЫЦ:", currentI)
             singlePastMission(scoreLoad, currentI);
+            document.getElementById('shipstatspanel').style.opacity = 1;
           }
         })();
         text.innerHTML = "<u>" + scoreLoadPages[curPage][i][4] + "</u>";
@@ -1285,6 +1288,7 @@ function menuPastMissions() {
     languageData.score[options.language].Total[0],];
     //Очищаем стартовое меню
     menuWipe();
+    // Draw a block with planet stat
     //Рисуем блок со статами планеты
     var ShipState = document.getElementById("ShipState");
     var crcol = document.createElement("div");
@@ -1309,6 +1313,7 @@ function menuPastMissions() {
     crrow.id = "header_row";
     shipstatspanel.appendChild(crrow);
 
+    // Refrigerate(?) new items
     //Отрисовываем новые элементы
     var textwindow = document.getElementById("header_row");
 
@@ -1325,6 +1330,8 @@ function menuPastMissions() {
 
     var scannames = document.getElementById("ScanNames");
     for (var i = 0; i < ResNames.length; i++) {
+
+
       var parag = document.createElement("p");
       parag.className = "stats";
       parag.innerHTML = ResNames[i] + ":";
@@ -1350,6 +1357,7 @@ function menuPastMissions() {
     document.getElementById('cPlanet.anomalies').innerHTML = arrList(AnomaliesFullLanguageOutput);
     attributeColor(ResRes);
 
+    // Draw a block with a description
     //Рисуем блок с описанием
 
     var shipstatspanel = document.getElementById("ShipState");
@@ -1442,6 +1450,7 @@ function menuPastMissions() {
   document.getElementById('EventWindow').style.opacity = 1;
   document.getElementById('more').style.opacity = 1;
 };
+//intro
 //ИНТРОХА
 
 
@@ -1500,7 +1509,9 @@ function intro() {
 
 
 };
+// Function starting 
 //ФУНКЦИЯ НАЧАЛА ИГРЫ
+
 var ResNames = [languageData.stats.Atmosphere[options.language], languageData.stats.Gravity[options.language], languageData.stats.Temperature[options.language], languageData.stats.Water[options.language], languageData.stats.Resources[options.language], languageData.stats.Anomalies[options.language]];
 var DBNames = [languageData.stats.Science[options.language], languageData.stats.Culture[options.language],];
 var SysNames = [languageData.stats.Landing[options.language], languageData.stats.Construction[options.language]];
@@ -1530,6 +1541,7 @@ function gameStart() {
   menuWipe();
     state = "game";
 
+  //Draw a block with ships stats
   //Рисуем блок со статами корабля
   var ShipState = document.getElementById("ShipState");
   var crcol = document.createElement("div");
@@ -1548,6 +1560,7 @@ function gameStart() {
   para.innerHTML = languageData.missionControl[options.language];
   shipstats_header.appendChild(para);
 
+  //A row with colonists
   //Ряд с колонистами
   var shipstatspanel = document.getElementById("shipstatspanel");
   var crrow = document.createElement("div");
@@ -1607,6 +1620,7 @@ function gameStart() {
   shipstatspanel.appendChild(crrow);
 
 
+  //First column
   //ПЕРВАЯ КОЛОНКА
 
   var statnames_row = document.getElementById("statnames_row");
@@ -1661,6 +1675,7 @@ function gameStart() {
   };
 
   //ВТОРАЯ КОЛОНКА
+  //Second column
   var statnames_col2 = document.getElementById("statnames_col2");
   for (var i = 0; i < SystemNames.length; i++) {
 
@@ -1693,9 +1708,11 @@ function gameStart() {
     parag.innerHTML = "";
     crcol.appendChild(parag);
   };
+  //Turn on the initialization of stalles
   //Включаем инициализацию статов
   statsRefresh();
 
+  //Block description
   //Блок описания
 
   var textBlock = document.getElementById("textBlock");
@@ -1717,6 +1734,7 @@ function gameStart() {
   textwindow.appendChild(para);
 
 
+  // Draw the planet and connect mechanics
   //Рисуем планету и подключаем механики
 
   document.getElementById('planetAnimation').style.top = '75%';
@@ -1732,7 +1750,8 @@ function gameStart() {
   document.getElementById('more').style.opacity = 1;
 };
 
-//Функция отрисовки окошка выхода
+// Recover Function Output Window
+////Функция отрисовки окошка выхода
 
 function gameQuitMenu(){
   var anchor = document.getElementById("container");
@@ -1779,6 +1798,7 @@ function gameQuitMenu(){
 
 
 
+//Loading the interface
 //ЗАГРУЗКА ИНТЕРФЕЙСА
 (function () {
   gameinitialize(options);
