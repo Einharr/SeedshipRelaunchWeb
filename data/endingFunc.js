@@ -1676,7 +1676,7 @@ function newColony(ship, planet, ending) {
     if (finalTech > 100 && ship.science[0] > 100) {
       EndingTechnologyList.push(ending.science[0]);
       ship.techLvl = 10;
-    } else if (finalTech <= 100 && finalTech >=90) {
+    } else if ((finalTech >=100 && ship.science[0] == 100) || (finalTech <= 100 && finalTech >=90)) {
       EndingTechnologyList.push(ending.science[1]);
       ship.techLvl = 9
 
@@ -1738,6 +1738,7 @@ function newColony(ship, planet, ending) {
           _atmosphere_problem = false;
         };
       };
+
 
       if (planet.temperature == "Very Cold" || planet.temperature == "Very Hot") {
         var _temperature_problem = true;
