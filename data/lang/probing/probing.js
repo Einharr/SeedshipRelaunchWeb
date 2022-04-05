@@ -23,7 +23,7 @@ var ProbingStart = [
 var ProbingMoon = [
   "As the surface probe approaches the planet it scans the planet's moon, but finds that it is devoid of useful minerals.",
   "As the surface probe approaches the planet it scans the planet's moon, and finds that it is rich in metals and other useful resources.",
-  "As the surface probe approaches the planet it scans the planet's moon, and finds that it is a recently-captured asteroid in an unstable orbit. The probe can't exactly determine when, but at some point in the future, the moon will come close enough to breakup and bombard the surface with fragments."
+  "As the surface probe approaches the planet it scans the planet's moon, and finds that it is a recently-captured asteroid in an unstable orbit. In a few decades the moon will come close enough to the planet to break up, and the surface will be bombarded with fragments."
 ];
 
 var ProbingBeauty = [
