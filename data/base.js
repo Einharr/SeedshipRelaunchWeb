@@ -846,7 +846,7 @@ function desiredPlanet(){
 
 //Генерация и отрисовка новой планеты
 //Generate and draw a new planet
-function nextPlanet(load) {
+function nextPlanet(loading) {
   planetsVisited += 1;
   console.log("Planets visited: " + planetsVisited);
   popupClean();
