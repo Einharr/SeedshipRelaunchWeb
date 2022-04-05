@@ -634,7 +634,7 @@ var blackHole = {
                                 // On error
                             });
                         };
-            } 
+            }
             else {
 
               _r = getRandomInt(1,3);
@@ -646,7 +646,7 @@ var blackHole = {
                   else {
                     damageApply(DamagedSystemsArray[0], systemDamage("Medium"), "damage");
                   }
-                  
+
                   DamagedSystems = DamagedSystemsArray[0][2];
             }
               if (_r == 2){
@@ -775,7 +775,7 @@ var impactChoice = {
         curEvent.damageTaken = systemDamage("Medium");
         curEvent.choices[1].outcome = eventsText.impactChoice.outcomes[8]+choDevice[2]+eventsText.impactChoice.outcomes[9]
       };
-      damageApply(choDevice, curEvent.damageTaken, "damage");
+        damageApply(choDevice, curEvent.damageTaken, "damage");
         document.getElementById('description').innerHTML+= "<br><br>"+curEvent.choices[1].outcome;
 
         buttonWipe();
@@ -1233,22 +1233,22 @@ var scannerFailure = {
                   }
         },
         { choice: eventsText.powerFailure.buttons[2], exist: existCheck("true"), outcome: null, result: function(){
-          powerFailure.visited = true;
-          choDevice = deviceDamage(ScanArr.concat(DbArr, StrArr));
-          DamagedSystemsArray = [];
-          DamagedSystemsArray.push(choDevice);
-          choDevice = deviceDamage(ScanArr.concat(DbArr, StrArr), DamagedSystemsArray[0]);
-          DamagedSystemsArray.push(choDevice);
-          choDevice = deviceDamage(ScanArr.concat(DbArr, StrArr), DamagedSystemsArray[0], DamagedSystemsArray[1]);
-          DamagedSystemsArray.push(choDevice);
-          damageApply(DamagedSystemsArray[0], systemDamage("Low"), "damage");
-          damageApply(DamagedSystemsArray[1], systemDamage("Low"), "damage");
-          damageApply(DamagedSystemsArray[2], systemDamage("Low"), "damage");
-          DamagedSystems = DamagedSystemsArray[0][2]+", "+DamagedSystemsArray[1][2]+" and "+DamagedSystemsArray[2][2];
+            powerFailure.visited = true;
+            choDevice = deviceDamage(ScanArr.concat(DbArr, StrArr));
+            DamagedSystemsArray = [];
+            DamagedSystemsArray.push(choDevice);
+            choDevice = deviceDamage(ScanArr.concat(DbArr, StrArr), DamagedSystemsArray[0]);
+            DamagedSystemsArray.push(choDevice);
+            choDevice = deviceDamage(ScanArr.concat(DbArr, StrArr), DamagedSystemsArray[0], DamagedSystemsArray[1]);
+            DamagedSystemsArray.push(choDevice);
+            damageApply(DamagedSystemsArray[0], systemDamage("Low"), "damage");
+            damageApply(DamagedSystemsArray[1], systemDamage("Low"), "damage");
+            damageApply(DamagedSystemsArray[2], systemDamage("Low"), "damage");
+            DamagedSystems = DamagedSystemsArray[0][2]+", "+DamagedSystemsArray[1][2]+eventsText.powerFailure.outcomes[4]+DamagedSystemsArray[2][2];
 
 
 
-      curEvent.choices[1].outcome = eventsText.powerFailure.outcomes[2];//"The AI ignores the power system's warnings. Stars seem to jump in the sky as power fluctuations put the AI offline for millennia at a time. Eventually the power supply stabilises: the "+DamagedSystems+" have deteriorated to the point that they are no longer draining as much power, so the ancient power plant is sufficient once again.";
+            curEvent.choices[1].outcome = eventsText.powerFailure.outcomes[2] +" "+DamagedSystems + " " + eventsText.powerFailure.outcomes[3];//"The AI ignores the power system's warnings. Stars seem to jump in the sky as power fluctuations put the AI offline for millennia at a time. Eventually the power supply stabilises: the "+DamagedSystems+" have deteriorated to the point that they are no longer draining as much power, so the ancient power plant is sufficient once again.";
 
             document.getElementById('description').innerHTML+= "<br><br>"+curEvent.choices[1].outcome;
 
@@ -2029,11 +2029,11 @@ var prematureAwakening = {
       damageApply(cShip.colonists, wakers, "damage");
       wakersDead = false; //variable to track if the woken colonists have died yet during the event
       wakersFrozen=false; //variable to track if the woken colonists have frozen yet during the event
-      
+
   		if (getRandomInt(0,99) < cShip.construction[0]){
   			curEvent.choices[1].outcome = eventsText.prematureAwakening.outcomes[2]; //"The construction robots build a small habitat on the side of the seedship, like the habitats they would build on an airless planet. The colonists wake to find that their new home is a sterile, gravity-less bubble in interstellar space.<br><br>"
   			culture_result = cShip.culture[0] + getRandomInt(0,99);
-  			
+
   			if (culture_result < 50) {
   				// Die, and damage a random system
           choDevice = deviceDamage(ScanArr.concat(DbArr, StrArr, ColArr));
@@ -2041,14 +2041,14 @@ var prematureAwakening = {
           damageApply(choDevice, curEvent.damageTaken, "damage");
   				wakersDead = true;
   				curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[3]+choDevice[2]+eventsText.prematureAwakening.outcomes[4]; //;
-  		  }	
+  		  }
         else if (culture_result < 100) {
   				wakersDead = true;
   				curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[5]; //"The colonists were chosen and trained for their ability to live in whatever environment the seedship found for them, but the boredom and claustrophobia of living the rest of their lives in such a confined, unnatural space nevertheless takes its toll. The little community becomes disfunctional, and eventually--either due to negligence or to an uncounscious desire to stop living--the colonists fail to maintain their habitat and the die when the atmosphere system stops working.";
-  		  } 
+  		  }
         else if (culture_result < 150) {
   				curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[6]; //"The colonists were chosen and trained for their ability to live in whatever environment the seedship found for them, and they manage to adjust even to this claustrophobic new home.";
-  		  } 
+  		  }
         else {
           curEvent.damageTaken = systemDamage("Low");
           damageApply(cShip.culture, curEvent.damageTaken, "heal");
@@ -2069,7 +2069,7 @@ var prematureAwakening = {
           else if (tech_result < 100){
   //% No change %/
              curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[10]; //"With their community established, the colonists try to find ways to help the seedship on its journey, but the loss of information from the scientific database means that they make no progress.";
-          } 
+          }
           else {
 //% Repair random system %/
             curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[11]; //"With their community established, the colonists try to find ways to help the seedship on its journey.";
@@ -2081,7 +2081,7 @@ var prematureAwakening = {
                 && cShip.landing[0] >= 100
                 && cShip.construction[0] >= 100){
                 curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[12]; //"Using environment suits provided by the construction system and information from the scientific database they mount expeditions to check the seedship's systems for damage, but find that no repairs are needed.";
-            } 
+            }
             else {
               curEvent.choices[1].outcome += eventsText.prematureAwakening.outcomes[13]; //"Using environment suits provided by the construction system and information from the scientific database they mount expeditions to repair some of the damage the seedship has sustained during its journey.";
               damageApply(cShip.atmosphere, Math.min(100, cShip.atmosphere[0] + getRandomInt(1,10)), "heal");
@@ -2108,8 +2108,8 @@ var prematureAwakening = {
         else {
             curEvent.choices[1].outcome =	eventsText.prematureAwakening.outcomes[16]; //"The construction robots attempt to build a habitat on the side of the seedship, but the damaged system cannot does not manage to create an airtight shelter by the time the colonists are revived. The colonists asphyxiate, and part of the already damaged construction system is transformed into a useless carbuncle on the seedship's side.";
 
-         } 
-      
+         }
+
       };
       document.getElementById('description').innerHTML+="<br><br>"+curEvent.choices[1].outcome;
       buttonWipe();
