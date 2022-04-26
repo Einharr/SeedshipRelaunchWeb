@@ -1480,20 +1480,31 @@ function intro() {
   var textTW = document.getElementById("introtext");
   var TypedText = languageData.intro[options.language];
 
-  var typewriter = new Typewriter(textTW, {
+  /*
+  The typed text will be separated in paragraphs.
+  Each paragraph will be typed and spawn a "next" button
+  */
+  var typewriterDelay = 20;
+  var paragraphs = TypedText.split("<br><br>").filter((x)=>x.length>0);
+  var typingFunctionsAndElements = paragraphs.map((paragraph)=>{
+    var el = document.createElement("div");
+    textTW.appendChild(el);
+    var typewriter = new Typewriter(el,{
       loop: false,
-      delay: 59,
-      cursor: "",
+      delay:typewriterDelay,
+      cursor: ""
+    });
+    return [typewriter.typeString(paragraph).start,el];
   });
-  typewriter.typeString(TypedText)
-    .start();
+
+  
   //typeWriter(0, languageData.intro[options.language], "introtext");
 
   var more = document.getElementById("container");
   var btn = document.createElement("button");
   btn.className = "futurebutton";
   btn.id = "introbutton";
-  btn.onclick = function(){
+  var finishIntro = function(){
     if (options.voiceOverEnabled) {
       audio.pause();
     }
@@ -1504,10 +1515,22 @@ function intro() {
     gameStart();
   }
 
+  //Begin cycling through the paragraphs
+  typingFunctionsAndElements[0][0]();
+  var currentParagraph = 1;
+  btn.onclick=()=>{
+    //Wipe out other paragraphs at the last one.
+    if(currentParagraph==typingFunctionsAndElements.length-1)
+      typingFunctionsAndElements.slice(0,typingFunctionsAndElements.length-1).map((pair)=>(pair[1].innerHTML=''));
+    typingFunctionsAndElements[currentParagraph][0]();
+    currentParagraph++;
+    if(currentParagraph==typingFunctionsAndElements.length)
+      btn.onclick=finishIntro;
+  }
+
+
   btn.innerHTML = languageData.continue[options.language];
   more.appendChild(btn);
-
-
 };
 // Function starting 
 //ФУНКЦИЯ НАЧАЛА ИГРЫ
