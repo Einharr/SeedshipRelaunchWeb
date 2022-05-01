@@ -119,7 +119,7 @@ function insertAfter(referenceNode, newNode) {
 
       buttonWipe();
 
-//Отрисовка блока с результатами
+// Blok drawing with results
 
 document.getElementById('description').innerHTML = currentProbing[0]+" "+currentProbing[1];
 //  document.getElementById('description').innerHTML = endList(currentProbing);
@@ -128,25 +128,28 @@ document.getElementById('description').innerHTML = currentProbing[0]+" "+current
   function probingOneByOne() {
     console.log(i);
     var btn = document.getElementById("menubutton");
-    if (i >= currentProbing.length) {
+    //if (i >= currentProbing.length) {
+      if (currentProbing[i] == currentProbing[currentProbing.length -1]){
+      document.getElementById('description').innerHTML = currentProbing[i];
       btn.onclick = function () {
-    //    probingOneByOne();
         landingReject();
         document.getElementById('description').innerHTML = planetDescription(cPlanet);
       };
-    } else {
+    } 
+    else {
     btn.onclick = function () {
       probingOneByOne();
-  //    landingReject();
-  //    document.getElementById('description').innerHTML = planetDescription(cPlanet);
     };
-    if (currentProbing[i].length > 40 && currentProbing[i].indexOf('.') > -1)
-      {
-        document.getElementById('description').innerHTML = currentProbing[i];
-      } else {
-        document.getElementById('description').innerHTML = currentProbing[i]+" "+currentProbing[i+1];
-        i++
-      }
+    //if the item in the probing array is longer than 40 characters, and has a period
+    //at some point, add it like normal.
+    if (currentProbing[i].length > 40 && currentProbing[i].indexOf('.') > -1) {
+      document.getElementById('description').innerHTML = currentProbing[i];
+    } 
+    //otherwise add it with the following item in the array.
+    else {
+      document.getElementById('description').innerHTML = currentProbing[i]+" "+currentProbing[i+1];
+      i++;
+    }
     i++;
   }
 }
@@ -156,8 +159,6 @@ document.getElementById('description').innerHTML = currentProbing[0]+" "+current
   btn.id = "menubutton";
   btn.onclick = function () {
     probingOneByOne();
-//    landingReject();
-//    document.getElementById('description').innerHTML = planetDescription(cPlanet);
   };
   btn.innerHTML = languageData.continue[options.language];
   more.appendChild(btn);
