@@ -1497,7 +1497,6 @@ if (planetsVisited == 42){
   btn.className = "futurebutton";
   btn.onclick = function () {
     landingConfirm(cShip, cPlanet, cEnding);
-    //             newColony(cShip, cPlanet, cEnding);
   }
   btn.innerHTML = languageData.foundColony[options.language];
   more.appendChild(btn);
