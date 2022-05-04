@@ -1803,12 +1803,10 @@ function choicesBtns() {
 //ДЕБАЖНЫЕ КНОПКИ
 //DEBUG BUTTONS
 function debugSwitch() {
-  if (options.debug) {
+  if (document.getElementById("DebugWindow").style.visibility == "visible") {
     document.getElementById("DebugWindow").style.visibility = "hidden";
-    options.debug = false;
   } else {
     document.getElementById("DebugWindow").style.visibility = "visible";
-    options.debug = true;
     output = "";
     for (var i = 0; i < debug_event_array.length; i++) {
       LS = document.getElementById("debugEventLS");
