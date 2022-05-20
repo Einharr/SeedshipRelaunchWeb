@@ -1349,7 +1349,7 @@ var eventsText = {
 	  "The seedship purges the signal from its memory and continues on its way.",
       //1
       "The AI activates the thrusters and turns the ship around, hoping against all odds to find the source",
-	  " of misterious signal.",
+	  " of the mysterious signal.",
 	  " of such a frighteningly familiar signal.",
     ],
     buttons: ["Change course",
