@@ -1148,6 +1148,7 @@ var Personalities = [
   // Polish
   "Joy",
   // Spanish
+  "Jason Salmeron",
   "Делта א",
   // Italitan
   "Joele Bruno",
