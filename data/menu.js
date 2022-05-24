@@ -332,27 +332,7 @@ function createMenu() {
   crcol.id = "menu";
   ShipState.appendChild(crcol);
 
-  var btcg = document.createElement("div");
-  btcg.className = "futurepanel";
-  btcg.id = "BTCG";
-  ShipState.appendChild(btcg);
-
-  document.getElementById('BTCG').addEventListener('click', function() {
-      location.href = 'https://johnayliff.itch.io/beyond-the-chiron-gate'
-  }, false);
-
-  var btcgText = document.createElement("p");
-  btcgText.innerHTML = "<b>COMING SOON!</b>";
-  btcg.appendChild(btcgText);
-
-  var btcgImage = document.createElement('img');
-  btcgImage.id = "btcgImage";
-  btcgImage.src = "assets/btcg.png";
-  btcg.appendChild(btcgImage);
-
-  var btcgText = document.createElement("p");
-  btcgText.innerHTML = "<b>by John Ayliff</b>";
-  btcg.appendChild(btcgText);
+  
 
   var more = document.getElementById("menu");
   var para = document.createElement("h1");
@@ -560,7 +540,7 @@ function menuSettings() {
   //
   //Google Sign in
   console.log(options.platform)
-   if(options.platform=="Android"){
+   if(options.platform=="Android" && typeof cordova !== 'undefined'){
     var more = document.getElementById("settings");
     var row = document.createElement("div");
     row.className = "row menuItem";
@@ -907,7 +887,7 @@ function menuSettings() {
         checkboxA2.onclick = function(){
           if (checkboxA2.checked == true){
             options.original = true;
-                          if (options.platform == "Android") {
+                          if (options.platform == "Android" && typeof cordova !== 'undefined') {
                             var data = {
                               achievementId: "CgkIya77kP0DEAIQFQ"
                               //OriginalGameWasBetter
@@ -1527,7 +1507,8 @@ var SystemNames = ["<b>" + languageData.statnames.systems[options.language] + "<
 var SystemIDs = ["", "cShip.landing", "cShip.construction", "","", "cShip.science", "cShip.culture"]
 
 function gameStart() {
-  if(options.platform=="Android"){
+console.log(navigator.userAgent);
+  if(options.platform=="Android" && typeof cordova !== 'undefined'){
       var data = {
         achievementId: "CgkIya77kP0DEAIQAQ"
         //NewBeginning
