@@ -623,7 +623,7 @@ var blackHole = {
               _r = getRandomInt(0,1);
               if (_r == 0){
               curEvent.choices[1].outcome +=  eventsText.blackHole.outcomes[3];//"The ship feels as if it is shaking itself apart, but when the burn is complete and the seedship is coasting safely away from the black hole, the AI finds that its builders gave the engine a generous safety margin and the overload has caused no damage.";
-                          if(options.platform=="Android"){
+                          if(options.platform=="Android" && typeof cordova !== 'undefined'){
                               var data = {
                                 achievementId: "CgkIya77kP0DEAIQCg"
                                 //I want to break free
@@ -1470,7 +1470,7 @@ var trailingDroneMistake = {
     id: 26,
     eventProperty: function(){
       curEvent.description = eventsText.trailingDroneMistake.description[0]; //"The seedship arrives in the new system, but the AI finds that it can no longer detect the ground control signal. A malfunction in the radio antenna must have triggered old computer protocols and led to the AI's false hope. The AI grieves the loss of ground control once again, and then turns its sensors on the system in which it has arrived.";
-  if (options.platform == "Android") {
+  if (options.platform == "Android" && typeof cordova !== 'undefined') {
     var data = {
       achievementId: "CgkIya77kP0DEAIQHA"
       //AllWeHadToDoWasFollowTheDamnTrailAI
@@ -1500,7 +1500,7 @@ var trailingDroneMistake = {
 var trailingDroneReal = {
     id: 27,
     eventProperty: function(){
-                          if(options.platform=="Android"){
+                          if(options.platform=="Android" && typeof cordova !== 'undefined'){
                               var data = {
                                 achievementId: "CgkIya77kP0DEAIQBw"
                                 //Not In Kansas
@@ -1727,7 +1727,7 @@ var nanotechPlague = {
         damageApply(cShip.colonists, deaths, "damage");
   			curEvent.choices[0].outcome = eventsText.nanotechPlague.outcomes[0]+deaths+eventsText.nanotechPlague.outcomes[1];
 
-  			  if(options.platform=="Android"){
+  			  if(options.platform=="Android" && typeof cordova !== 'undefined'){
                   var data = {
                     achievementId: "CgkIya77kP0DEAIQGw"
                     //SocialDistancing
@@ -1921,7 +1921,7 @@ var readScientific = {
       } else {
       curEvent.damageTaken = systemDamage("High");
       damageApply(choDevice, curEvent.damageTaken, "damage");
-                    if (options.platform == "Android") {
+                    if (options.platform == "Android" && typeof cordova !== 'undefined') {
                       var data = {
                         achievementId: "CgkIya77kP0DEAIQGQ"
                         //GoodNews
@@ -1971,7 +1971,7 @@ var readCultural = {
       curEvent.damageTaken = systemDamage("Low");
       damageApply(cShip.culture, curEvent.damageTaken, "heal");
       curEvent.choices[0].outcome = eventsText.readCultural.outcomes[0]; //"Falteringly at first, but with greater and greater eloquence, the AI composes poetry about its own experience--its love for its sleeping charges; its nostalgia for a dead world it was not made to experience; the beauty of the stars as seen not through a cloak of atmosphere but by a being built to roam among them. With infinite patience and time to work, it composes a great cycle of poems, in a style that draws from the greatest human poets but whose soul is fundamentally unhuman. At last it considers that it has said all it has to say, and contentedly enters hibernation, pleased with the thought that humans will one day read its work."
-              if (options.platform == "Android") {
+              if (options.platform == "Android" && typeof cordova !== 'undefined') {
                 var data = {
                   achievementId: "CgkIya77kP0DEAIQFA"
                   //TuringTestPassed
@@ -2993,7 +2993,7 @@ var destinationSignal = {
                 if (getRandomInt(0,120) < cShip.science[0]){
                     aliensAlive = true;
                     welcoming = true;
-                          if(options.platform=="Android"){
+                          if(options.platform=="Android" && typeof cordova !== 'undefined'){
                               var data = {
                                 achievementId: "CgkIya77kP0DEAIQDw"
                                 //OmniaVincitAmor

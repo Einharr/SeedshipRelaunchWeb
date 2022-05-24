@@ -1341,7 +1341,7 @@ function newColony(ship, planet, ending) {
           EndingPSCrelationsList.push(cAddonEnding.machines[4]); //"The colonists learn that a native synthetic species has enslaved and assimilated the species that created them. Unfortunately, it is too late to escape. The natives assimilate humans by modifying their bodies, and absorb them into their Gestalt Consciousness."
           hiscore.native_relations = 10
           hiscore.summary = "Assimilated by synthetics"
-              if (options.platform == "Android") {
+              if (options.platform == "Android" && typeof cordova !== 'undefined') {
                 var data = {
                   achievementId: "CgkIya77kP0DEAIQFg"
                   //WeAreBorg
@@ -1357,7 +1357,7 @@ function newColony(ship, planet, ending) {
           EndingPSCrelationsList.push(cAddonEnding.machines[5]); //As the surface probe approaches the planet it scans the planet's moon, and finds that it is rich in metals and other useful resources.
           hiscore.native_relations = 11
           hiscore.summary = "Exterminated by synthetics"
-              if (options.platform == "Android") {
+              if (options.platform == "Android" && typeof cordova !== 'undefined') {
                 var data = {
                   achievementId: "CgkIya77kP0DEAIQGA"
                   //OrganicLifeIsNothingButAGeneticMutationAnAccident
@@ -1392,7 +1392,7 @@ function newColony(ship, planet, ending) {
         hiscore.summary = "Killed by Natives"
         EndingPSCrelationsDamage[0].push(ship.colonists, ship.colonists[0], "damage");
 
-        if (options.platform == "Android") {
+        if (options.platform == "Android" && typeof cordova !== 'undefined') {
           var data = {
             achievementId: "CgkIya77kP0DEAIQAw"
             //"Welcoming" Natives
@@ -2163,7 +2163,7 @@ function newColony(ship, planet, ending) {
               EndingNativesList.push(ending.nativeInteractions[18]); //Conflicts escalate into a war that ends with the humans being enslaved by the natives.
               hiscore.native_relations = 10;
               hiscore.summary = "Assimilated by synthetics";
-              if (options.platform == "Android") {
+              if (options.platform == "Android" && typeof cordova !== 'undefined') {
                 var data = {
                   achievementId: "CgkIya77kP0DEAIQFg"
                   //WeAreBorg
@@ -2189,7 +2189,7 @@ function newColony(ship, planet, ending) {
               EndingNativesList.push(ending.nativeInteractions[20]); //Conflicts escalate into a war that ends with the humans being completely wiped out.
               hiscore.native_relations = 11;
               hiscore.summary = "Exterminated by synthetics"
-              if (options.platform == "Android") {
+              if (options.platform == "Android" && typeof cordova !== 'undefined' ) {
                 var data = {
                   achievementId: "CgkIya77kP0DEAIQGA"
                   //OrganicLifeIsNothingButAGeneticMutationAnAccident
@@ -2307,7 +2307,7 @@ function newColony(ship, planet, ending) {
                          EndingNativesList.push(ending.nativeInteractions[18]); //Conflicts escalate into a war that ends with the humans being enslaved by the natives.
                          hiscore.native_relations = 10;
                          hiscore.summary = "Assimilated by synthetics";
-                         if (options.platform == "Android") {
+                         if (options.platform == "Android" && typeof cordova !== 'undefined') {
                            var data = {
                              achievementId: "CgkIya77kP0DEAIQFg"
                              //WeAreBorg
@@ -2333,7 +2333,7 @@ function newColony(ship, planet, ending) {
                          EndingNativesList.push(ending.nativeInteractions[20]); //Conflicts escalate into a war that ends with the humans being completely wiped out.
                          hiscore.native_relations = 11;
                          hiscore.summary = "Exterminated by synthetics"
-                         if (options.platform == "Android") {
+                         if (options.platform == "Android" && typeof cordova !== 'undefined') {
                            var data = {
                              achievementId: "CgkIya77kP0DEAIQGA"
                              //OrganicLifeIsNothingButAGeneticMutationAnAccident
@@ -2505,7 +2505,7 @@ function newColony(ship, planet, ending) {
     if (hiscore.final_culture == -1) {
       if (hiscore.summary == "Crash") {
         ScoreDescription.push(ending.summary[59]);
-        if (options.platform == "Android") {
+        if (options.platform == "Android" && typeof cordova !== 'undefined') {
           var data = {
             achievementId: "CgkIya77kP0DEAIQBA"
             //Launchpad McQuack
@@ -2647,7 +2647,7 @@ function newColony(ship, planet, ending) {
           break;
         case "Dystopian Police State":
           ScoreDescription.push(ending.summary[96])
-          if (options.platform == "Android") {
+          if (options.platform == "Android" && typeof cordova !== 'undefined') {
             var data = {
               achievementId: "CgkIya77kP0DEAIQCA"
               //1984
@@ -2765,7 +2765,7 @@ function newColony(ship, planet, ending) {
       ScoreDescription.push(ending.summary[128])
       if (ship.techLvl == 10) {
         ScoreDescription.push(cAddonEnding.AIfearutes[0])
-                      if (options.platform == "Android") {
+                      if (options.platform == "Android" && typeof cordova !== 'undefined') {
                         var data = {
                           achievementId: "CgkIya77kP0DEAIQGg"
                           //AnEndingItDeserved

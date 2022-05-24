@@ -423,7 +423,7 @@ function gameOver(reason) {
 
   if (reason == "colonists") {
     text = cEnding.gameOverText[0];
-                      if(options.platform=="Android"){
+                      if(options.platform=="Android" && typeof cordova !== 'undefined'){
                           var data = {
                             achievementId: "CgkIya77kP0DEAIQBQ"
                             //Flying Dutchman
@@ -857,7 +857,7 @@ function nextPlanet(load) {
   var PlanetAnomaliesReal = [];
 
 if (planetsVisited == 42){
-                          if(options.platform=="Android"){
+                          if(options.platform=="Android" && typeof cordova !== 'undefined'){
                               var data = {
                                 achievementId: "CgkIya77kP0DEAIQDA"
                                 //AnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything
@@ -1574,7 +1574,7 @@ if (planetsVisited == 42){
    off_course_counter++;
   };
   if(off_course_counter > 3){
-                    if (options.platform == "Android") {
+                    if (options.platform == "Android" && typeof cordova !== 'undefined') {
                       var data = {
                         achievementId: "CgkIya77kP0DEAIQDg"
                         //ThisLittleManeuversGonnaCostUs51Years
