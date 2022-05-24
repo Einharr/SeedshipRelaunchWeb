@@ -15,7 +15,7 @@ function createArray(length) {
 function newColony(ship, planet, ending) {
   console.log(planet)
 
-  if (options.platform == "Android") {
+  if (options.platform == "Android" && typeof cordova !== 'undefined') {
     var data = {
       achievementId: "CgkIya77kP0DEAIQCw"
       //Leif Airickson
