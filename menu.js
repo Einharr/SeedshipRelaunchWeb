@@ -584,8 +584,7 @@ function menuSettings() {
 
   //
   //Google Sign in
-  console.log(options.platform)
-   if(options.platform=="Android"){
+   if(options.platform=="Android" && typeof cordova !== 'undefined'){
     var more = document.getElementById("settings");
     var row = document.createElement("div");
     row.className = "row menuItem";
@@ -932,7 +931,7 @@ function menuSettings() {
         checkboxA2.onclick = function(){
           if (checkboxA2.checked == true){
             options.original = true;
-                          if (options.platform == "Android") {
+                          if (options.platform == "Android" && typeof cordova !== 'undefined') {
                             var data = {
                               achievementId: "CgkIya77kP0DEAIQFQ"
                               //OriginalGameWasBetter
@@ -1552,7 +1551,7 @@ var SystemNames = ["<b>" + languageData.statnames.systems[options.language] + "<
 var SystemIDs = ["", "cShip.landing", "cShip.construction", "","", "cShip.science", "cShip.culture"]
 
 function gameStart() {
-  if(options.platform=="Android"){
+  if(options.platform=="Android" && typeof cordova !== 'undefined'){
       var data = {
         achievementId: "CgkIya77kP0DEAIQAQ"
         //NewBeginning
