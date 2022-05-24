@@ -38,7 +38,7 @@ var languageData = {
   menuLoad: ["CONTINUE", "ПРОДОЛЖИТЬ", "KONTYNUOWAĆ", "CONTINUAR", "CONTINUA", "FORTFAHREN", "Here goes French", "FORTSÄTT", "DOORGAAN", "繼續遊戲"],
   menuSettings: ["SETTINGS", "НАСТРОЙКИ", "USTAWIENIA", "OPTIONES", "OPZIONI", "EINSTELLUNGEN", "Here goes French", "INSTÄLLNINGAR", "INSTELLINGEN", "設定"],
   menuCredits: ["CREDITS", "АВТОРЫ", "AUTORZY", "Créditos", "CREDITI", "MITWIRKENDE", "Here goes French", "LISTA ÖVER MEDVERKANDE", "AFTITELING", "製作團隊"],
-  menuBack: ["BACK", "НАЗАД", "PLECY", "Espalda", "INDIETRO", "ZURÜCK", "Here goes French", "TILLBAKA", "TERUG", "返回"],
+  menuBack: ["BACK", "НАЗАД", "PLECY", "REGRESAR", "INDIETRO", "ZURÜCK", "Here goes French", "TILLBAKA", "TERUG", "返回"],
   menuClassic: ["Classic UI", "Классический UI", "KLASYCZNY INTERFEJS", "UI Clasica", "", "Klassisches UI", "", "", "Klassieke weergave", "經典介面"],
   menuAddon: ["Community Content", "Дополнительный Контент", "ZAWARTOŚĆ SPOŁECZNOŚĆI", "Contenido comunitario", "", "Community Erweiterung", "", "", "Community-inhoud", "社群功能"],
   menuPastM: ["Past Missions", "Прошлые Миссии", "POPRZEDNIE MISJE", "Misiones Previas", "", "Bisherige Missionen", "", "", "Eerdere Missies", "過去的任務"],
