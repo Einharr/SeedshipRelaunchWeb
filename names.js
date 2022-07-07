@@ -51,9 +51,9 @@ var languageData = {
   settingsLanguage: ["English","Русский", "Polskie", "Español", "Italiano", "Deutsch", "Français", "Svenska", "Nederlands", "中文"],
   settingsMusic: ["Music","Музыка", "Muzyka", "Música", "Musica", "Musik", "La Musique", "Musik", "Muziek", "音樂"],
   settingsVoiceOver: ["Voice Acting","озвучка", "Aktorstwo Głosowe", "Actuación De Voz", "Recitazione Vocale", "Sprachausgabe", "Doublage", "Röstskådespeleri", "Stemacteren", "配音"],
-  settingsGraphics: ["Graphics","Графика", "Grafika", "Gráficos", "Grafica", "Grafik", "Here goes French", "Grafik", "Grafisch", "畫質"],
-  settingsClouds: ["Clouds","Облака", "Chmury", "Nubes", "Nuvole", "Wolken", "Here goes French", "Moln", "Wolken", "雲"],
-  settingsPlanet: ["Planet","Планета", "Planety", "Planeta", "Pianeta", "Planet", "Here goes French", "Planeter", "Planeet", "星球"],
+  settingsGraphics: ["Graphics","Графика", "Grafika", "Gráficos", "Grafica", "Grafik", "Graphismes", "Grafik", "Grafisch", "畫質"],
+  settingsClouds: ["Clouds","Облака", "Chmury", "Nubes", "Nuvole", "Wolken", "Nuages", "Moln", "Wolken", "雲"],
+  settingsPlanet: ["Planet","Планета", "Planety", "Planeta", "Pianeta", "Planet", "Planètes", "Planeter", "Planeet", "星球"],
   settingsApply: ["Apply","Применить", "Zastosuj", "Aplicar", "Applica", "Anwenden", "Here goes French", "Tillämpa", "Toepassen", "套用"],
 
 
@@ -400,11 +400,11 @@ Score: ["Score"],
         },
 //FRENCH
         {
-          Atmosphere: ["Respirable", "Marginal", "No Respirable", "Tóxica", "Corrosiva", "Inexistente"],
-          Gravity: ["Moderada", "Alta", "Baja", "Muy Alta", "Muy Baja"],
-          Temperature: ["Moderada", "Caliente", "Fría", "Muy Caliente", "Muy Fría"],
-          Water: ["Océanos", "Casquetes Polares", "Océano Planetario", "Superficie cubierta de hielo", "Trazas", "Ausente"],
-          Resources: ["Abudantes", "Escasos", "Nulos"],
+          Atmosphere: ["Respirable", "Marginale", "Non Respirable", "Toxique", "Corrosive", "Inexistante"],
+          Gravity: ["Modérée", "Élevée", "Basse", "Très élevée", "Très basse"],
+          Temperature: ["Modérée", "Chaude", "Froide", "Très chaude", "Très froide"],
+          Water: ["Océans", "Calottes polaires", "Océan planétaire", "Surface gelée", "Traces", "Aucune"],
+          Resources: ["Abondantes", "Pauvres", "Aucune"],
         },
 //SWEDISH
         {
@@ -511,16 +511,16 @@ Score: ["Score"],
         },
 //FRENCH
         {
-          list: ["Luna",
-                "Vegetación",
-                "Vida animal",
-                "Posibles estructuras",
-                "Anomalías geológicas",
-                "Vida inteligente",
-                "Actividad electromagnética",
-                "Civilización que abarca el planeta",
-                "Observadores alienígenas",
-                "Simulación"],
+          list: ["Lune",
+                "Végétation",
+                "Vie animale",
+                "Structures possibles",
+                "Anomalies géologiques",
+                "Vie intelligente",
+                "Activité électromagnétique",
+                "Planète habitée",
+                "Observateurs extra-terrestres",
+                "Simulation"],
         },
 //SWEDISH
         {
@@ -700,25 +700,25 @@ Score: ["Score"],
                 },
             //FRENCH
             {
-            vegetation: ["Plant life", "Poisonous plants", "Edible plants",],
-            moon: ["Barren moon", "Unstable moon", "Metal-rich moon"],
-            animals: ["Animal life", "Dangerous animals", "Useful animals"],
-            ruins: ["Regular geological formations", "Dangerous ruins", "Monumental ruins", "High-tech ruins"],
-            caves: ["Unstable geology", "Airtight caves", "Insulated caves"],
-            aesthetics: ["Outstanding ugliness", "Outstanding beauty"],
-            natives: [   "Pre-Stone Age civilization",
-                                    "Paleolithic civilization",
-                                    "Mesolithic civilization",
-                                    "Neolithic civilization",
-                                    "Bronze Age civilization",
-                                    "Iron Age civilization",
-                                    "Medieval civilization",
-                                    "Industrial civilization",
-                                    "Atomic Age civilization",
-                                    "Information Age civilization",
-                                    "Post-singularity civilization"],
+            vegetation: ["Flore abondante", "Plantes toxiques", "Plantes comestibles",],
+            moon: ["Lune stérile", "Lune instable", "Lune riche en métaux"],
+            animals: ["Vie animale", "Dangerous animals", "Useful animals"],
+            ruins: ["Formations géologiques régulières", "Ruines menaçantes", "Ruines colossales", "Ruines High-tech"],
+            caves: ["Géologie instable", "Grottes hermétiques", "Grottes éparses"],
+            aesthetics: ["Incroyable laideur", "Incroyable beauté"],
+            natives: [   "Civilisation antérieure à l'âge de pierre",
+                                    "Civilisation Paléolithique",
+                                    "Civilisation Mésolithique ",
+                                    "Civilisation Néolithique",
+                                    "Civilisation de l'âge du Bronze",
+                                    "Civilisation de l'âge du Fer",
+                                    "Civilisation de l'ère Médiévale",
+                                    "Civilisation de l'ère Industrielle",
+                                    "Civilisation de l'ère Atomique",
+                                    "Civilisation de l'ère de l'Information",
+                                    "Civilisation de l'ère Post-singularité"],
 
-            special: ["Alien Observers", "Simulation", "Unwelcoming", "Welcoming", "Planet-spanning civilisation"],
+            special: ["Observateurs extraterrestres", "Simulation", "Inamical", "Accueillant", "Planète habitée"],
                 },
             //SWEDISH
             {
@@ -979,7 +979,7 @@ Score: ["Score"],
   ];
 
 
-  var NamesFr = ["Eden", "Paraíso", "Terra Nova", "Nueva Tierra", "Gaia", /*0-4*/
+  var NamesFr = ["Eden", "Paradis", "Terre nouvelle", "Nouvelle Terre", "Gaia", /*0-4*/
                 "Infierno", "Caliente", "Carbonizado", /*5-7*/
                 "Artica", "Frígida", "Frigus",  /*8-10*/
                 "Pulido", "Atlas", "Escarpado", "Ascenso", /*11-14*/
@@ -1155,6 +1155,7 @@ var Personalities = [
   // German
   "Claptrappington",
   // French
+  "Alleni",
   // Swedish
   "dating - Oscar Salman Prim",
   // Dutch
@@ -1309,22 +1310,21 @@ var CreditsDe = [
 ];
 
 var	CreditsFr = [
-  "Creator of original Seedship game:",
-  "Original Seedship team",
-  "Seedship:Relaunch team",
-  "Remake programming:",
-  "Russian translation:",
-  "Polish translation:",
-  "Spanish translation:",
-  "Italian translation:",
-  "German translation:",
-  "French translation:",
-  "Swedish translation:",
-  "Dutch translation:",
-  "Turkish translation:",
-  "Music and SFX",
-  "Graphics",
-  "Playtesters",
+    "Créateur original du jeu -Seedship-",
+    "Équipe Originale de Seedship:",
+    "Reprogrammation:",
+    "Traduction Russe:",
+    "Traduction Polonaise:",
+    "Traduction Espagnole:",
+    "Traduction Italienne:",
+    "Traduction Allemande:",
+    "Traduction Française:",
+    "Traduction Suedoise",
+    "Traduction Néerlandaise",
+    "Traduction Turque:",
+    "Musique et SFX",
+    "Graphismes",
+    "Playtesters",
 ]
 
 var	CreditsSE = [
