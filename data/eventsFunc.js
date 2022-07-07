@@ -1573,9 +1573,9 @@ var trailingDroneReal = {
         				&& cShip.resources[0] >= 100
         				&& cShip.landing[0] >= 100
         				&& cShip.construction[0] >= 100){
-        				curEvent.choices[0].outcome +=  eventsText.trailingDroneReal.outcomes[7]; //"Repair robots swarm across the seedship and check its systems for integrity, but find nothing they can repair.";
+        				curEvent.choices[0].outcome =  eventsText.trailingDroneReal.outcomes[7]; //"Repair robots swarm across the seedship and check its systems for integrity, but find nothing they can repair.";
         			} else {
-        				curEvent.choices[0].outcome += eventsText.trailingDroneReal.outcomes[8]; //"Repair robots swarm across the seedship, dismantling the drone and using its parts to repair the seedship's systems.";
+        				curEvent.choices[0].outcome = eventsText.trailingDroneReal.outcomes[8]; //"Repair robots swarm across the seedship, dismantling the drone and using its parts to repair the seedship's systems.";
         				repairAmount = Math.ceil(droneHealth/4 + 25)	/* 25-50 */
                 damageApply(cShip.atmosphere, Math.min(100, cShip.atmosphere[0] + repairAmount), "set");
                 damageApply(cShip.temperature, Math.min(100, cShip.temperature[0] + repairAmount), "set");
