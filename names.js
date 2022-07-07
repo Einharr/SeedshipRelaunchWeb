@@ -36,18 +36,18 @@ var languageData = {
 //Menu
   menuStart: ["NEW GAME", "НОВАЯ ИГРА", "NOWA GRA", "NUEVO JUEGO", "NUOVA PARTITA", "NEUES SPIEL", "NOUVELLE PARTIE", "NYTT SPEL", "NIEUW SPEL", "新遊戲"],
   menuLoad: ["CONTINUE", "ПРОДОЛЖИТЬ", "KONTYNUOWAĆ", "CONTINUAR", "CONTINUA", "FORTFAHREN", "CONTINUER", "FORTSÄTT", "DOORGAAN", "繼續遊戲"],
-  menuSettings: ["SETTINGS", "НАСТРОЙКИ", "USTAWIENIA", "OPTIONES", "OPZIONI", "EINSTELLUNGEN", "Here goes French", "INSTÄLLNINGAR", "INSTELLINGEN", "設定"],
-  menuCredits: ["CREDITS", "АВТОРЫ", "AUTORZY", "Créditos", "CREDITI", "MITWIRKENDE", "Here goes French", "LISTA ÖVER MEDVERKANDE", "AFTITELING", "製作團隊"],
-  menuBack: ["BACK", "НАЗАД", "PLECY", "REGRESAR", "INDIETRO", "ZURÜCK", "Here goes French", "TILLBAKA", "TERUG", "返回"],
-  menuClassic: ["Classic UI", "Классический UI", "KLASYCZNY INTERFEJS", "UI Clasica", "", "Klassisches UI", "", "", "Klassieke weergave", "經典介面"],
-  menuAddon: ["Community Content", "Дополнительный Контент", "ZAWARTOŚĆ SPOŁECZNOŚĆI", "Contenido comunitario", "", "Community Erweiterung", "", "", "Community-inhoud", "社群功能"],
-  menuPastM: ["Past Missions", "Прошлые Миссии", "POPRZEDNIE MISJE", "Misiones Previas", "", "Bisherige Missionen", "", "", "Eerdere Missies", "過去的任務"],
-  MainMenu: ["Main Menu", "Главное Меню", "", "Menú Principal", "", "", "", "", "", "主畫面"],
+  menuSettings: ["SETTINGS", "НАСТРОЙКИ", "USTAWIENIA", "OPTIONES", "OPZIONI", "EINSTELLUNGEN", "PARAMÈTRES", "INSTÄLLNINGAR", "INSTELLINGEN", "設定"],
+  menuCredits: ["CREDITS", "АВТОРЫ", "AUTORZY", "Créditos", "CREDITI", "MITWIRKENDE", "CRÉDITS", "LISTA ÖVER MEDVERKANDE", "AFTITELING", "製作團隊"],
+  menuBack: ["BACK", "НАЗАД", "PLECY", "REGRESAR", "INDIETRO", "ZURÜCK", "RETOUR", "TILLBAKA", "TERUG", "返回"],
+  menuClassic: ["Classic UI", "Классический UI", "KLASYCZNY INTERFEJS", "UI Clasica", "", "Klassisches UI", "Interface originelle", "", "Klassieke weergave", "經典介面"],
+  menuAddon: ["Community Content", "Дополнительный Контент", "ZAWARTOŚĆ SPOŁECZNOŚĆI", "Contenido comunitario", "", "Community Erweiterung", "Contenu de la communauté", "", "Community-inhoud", "社群功能"],
+  menuPastM: ["Past Missions", "Прошлые Миссии", "POPRZEDNIE MISJE", "Misiones Previas", "", "Bisherige Missionen", "Anciennes missions", "", "Eerdere Missies", "過去的任務"],
+  MainMenu: ["Main Menu", "Главное Меню", "", "Menú Principal", "", "", "Menu principal", "", "", "主畫面"],
   //NEW!!!
 
 //НАСТРОЙКИ
 //SETTINGS
-  settingsLangCh: ["Language","Язык", "Język", "Idioma", "Lingua", "Sprache", "Here goes French", "Språk", "Taal", "語言"],
+  settingsLangCh: ["Language","Язык", "Język", "Idioma", "Lingua", "Sprache", "Français", "Språk", "Taal", "語言"],
   settingsLanguage: ["English","Русский", "Polskie", "Español", "Italiano", "Deutsch", "Français", "Svenska", "Nederlands", "中文"],
   settingsMusic: ["Music","Музыка", "Muzyka", "Música", "Musica", "Musik", "La Musique", "Musik", "Muziek", "音樂"],
   settingsVoiceOver: ["Voice Acting","озвучка", "Aktorstwo Głosowe", "Actuación De Voz", "Recitazione Vocale", "Sprachausgabe", "Doublage", "Röstskådespeleri", "Stemacteren", "配音"],
