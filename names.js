@@ -27,15 +27,15 @@ Starts from zero.
 
 */
 var languageData = {
-  missionControl: ["Mission status", "Текущее состояние миссии", "Status misji", "Estado de la misión", "Stato della missione", "Missionsstauts", "Here goes French", "Uppdragsstatus", "Missie status", "任務狀態"],
-  missionScanResult: ["Scan result", "Результаты сканирования", "Resultat Skanu", "Resultados de escaneo", "Risultato della scannerizzazione", "Ergebnis des Scans", "Here goes French", "Skannresultat", "Scan resultaat", "掃描結果"],
-  destroyed: ["Destroyed", "Уничтожен", "Zniszczony", "Destruido", "Distrutto", "Zerstört", "Here goes French", "Förstörd", "Vernietigd", "已摧毀"],
-  scannerFailure:["SCANNER FAILURE", "СБОЙ СКАНЕРА", "AWARIA SKANERA", "ERROR DE ESCANEO", "", "Scannfehler", "", "", "SCANNER STORING", "掃描失敗"],
+  missionControl: ["Mission status", "Текущее состояние миссии", "Status misji", "Estado de la misión", "Stato della missione", "Missionsstauts", "Statut de la mission", "Uppdragsstatus", "Missie status", "任務狀態"],
+  missionScanResult: ["Scan result", "Результаты сканирования", "Resultat Skanu", "Resultados de escaneo", "Risultato della scannerizzazione", "Ergebnis des Scans", "Résultat du scan", "Skannresultat", "Scan resultaat", "掃描結果"],
+  destroyed: ["Destroyed", "Уничтожен", "Zniszczony", "Destruido", "Distrutto", "Zerstört", "Détruite", "Förstörd", "Vernietigd", "已摧毀"],
+  scannerFailure:["SCANNER FAILURE", "СБОЙ СКАНЕРА", "AWARIA SKANERA", "ERROR DE ESCANEO", "", "Scannfehler", "ÉCHEC DU SCAN", "", "SCANNER STORING", "掃描失敗"],
 
 //МЕНЮ
 //Menu
-  menuStart: ["NEW GAME", "НОВАЯ ИГРА", "NOWA GRA", "NUEVO JUEGO", "NUOVA PARTITA", "NEUES SPIEL", "Here goes French", "NYTT SPEL", "NIEUW SPEL", "新遊戲"],
-  menuLoad: ["CONTINUE", "ПРОДОЛЖИТЬ", "KONTYNUOWAĆ", "CONTINUAR", "CONTINUA", "FORTFAHREN", "Here goes French", "FORTSÄTT", "DOORGAAN", "繼續遊戲"],
+  menuStart: ["NEW GAME", "НОВАЯ ИГРА", "NOWA GRA", "NUEVO JUEGO", "NUOVA PARTITA", "NEUES SPIEL", "NOUVELLE PARTIE", "NYTT SPEL", "NIEUW SPEL", "新遊戲"],
+  menuLoad: ["CONTINUE", "ПРОДОЛЖИТЬ", "KONTYNUOWAĆ", "CONTINUAR", "CONTINUA", "FORTFAHREN", "CONTINUER", "FORTSÄTT", "DOORGAAN", "繼續遊戲"],
   menuSettings: ["SETTINGS", "НАСТРОЙКИ", "USTAWIENIA", "OPTIONES", "OPZIONI", "EINSTELLUNGEN", "Here goes French", "INSTÄLLNINGAR", "INSTELLINGEN", "設定"],
   menuCredits: ["CREDITS", "АВТОРЫ", "AUTORZY", "Créditos", "CREDITI", "MITWIRKENDE", "Here goes French", "LISTA ÖVER MEDVERKANDE", "AFTITELING", "製作團隊"],
   menuBack: ["BACK", "НАЗАД", "PLECY", "REGRESAR", "INDIETRO", "ZURÜCK", "Here goes French", "TILLBAKA", "TERUG", "返回"],
