@@ -1,7 +1,7 @@
 //ORIGINAL CONTENT
 var eventLang = ["eventsEn.js", "eventsRu.js", "eventsEn.js", "eventsSp.js", "eventsEn.js", "eventsDe.js", "eventsEn.js", "eventsEn.js", "eventsDt.js", "eventsEn.js"];
 var endingLang = ["endingEn.js", "endingRu.js", "endingPl.js", "endingSp.js", "endingEn.js", "endingDe.js", "endingEn.js", "endingSv.js", "endingDt.js", "endingEn.js"];
-var probingLang = ["probing.js", "probingRu.js", "probingPl.js", "probingSp.js", "probing.js", "probingDe.js", "probing.js", "probingSv.js", "probingDt.js", "probingCNt.js"];
+var probingLang = ["probingEn.js", "probingRu.js", "probingPl.js", "probingSp.js", "probing.js", "probingDe.js", "probing.js", "probingSv.js", "probingDt.js", "probingCNt.js"];
 var descLang = ["planetEn.js", "planetRu.js", "planetEn.js", "planetSp.js", "planetEn.js", "planetDe.js", "planetEn.js", "planetEn.js", "planetDt.js", "planetEn.js"];
 
 //ADDON CONTENT
