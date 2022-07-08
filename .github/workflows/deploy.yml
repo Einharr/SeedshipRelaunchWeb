@@ -40,5 +40,4 @@ jobs:
           && unzip butler.zip \
           && chmod +x butler
           export BUTLER_API_KEY="${{ inputs.apiKey }}"
-          echo $BULTER_API_KEY;
           ./butler push "SeedshipRelaunchWeb.zip" ${{ inputs.userName }}/${{ inputs.gameName }}:html5 
