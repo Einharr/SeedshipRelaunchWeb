@@ -11,9 +11,19 @@ var options = {
   addOnFeatures: false,
   debug: false,
   platform: "",
+  noLocalStorage: false
 };
 var state = "none";
 
+//see if local storage is available or not.
+//if we can't access it, warn the user, and 
+//set a flag to prevent localStorage code from being ran.
+try{
+console.log(localStorage)
+}
+catch(error){
+  options.noLocalStorage = true;
+}
 
 var userDeviceArray = [
   {device: 'Android', platform: /Android/},
@@ -42,10 +52,12 @@ console.log('Платформа в опциях: ' + options.platform);
 loading = false;
 
 var curVersion = "0.9.5";
-
-if (localStorage.getItem("Options") !== null) {
-  options = gameload("Options");
+if (!options.noLocalStorage){
+  if (localStorage.getItem("Options") !== null) {
+    options = gameload("Options");
+  }
 }
+
 
 //google autologin
 if (options.autoLogin == true) {
@@ -89,11 +101,19 @@ function play(audioSrc) {
 //Сохранение и загрузка
 //Save and load
 function gamesave(obj, name) {
+  if (options.noLocalStorage){
+    alert("local storage is disabled on this browser. Saving is not possible.")
+    return;
+  }
   var savedata = JSON.stringify(obj); //сериализуем переменную serialize the variable
   localStorage.setItem(name, savedata); //пишем ее в хранилище write it to the repository
 };
 
 function gameload(name) {
+  if (options.noLocalStorage){
+    alert("local storage is disabled on this browser. Loading is not possible.")
+    return;
+  }
   var loaddata = JSON.parse(localStorage.getItem(name)) //парсим его обратно объект parse it back as an object
   return loaddata;
 };
@@ -101,6 +121,10 @@ function gameload(name) {
 
 //HISCORE REFRESH
 function pastMissionsRefresh(obj) {
+  if (options.noLocalStorage){
+    alert("Cannot load past missions on this browser.");
+    return;
+  }
   if (localStorage.getItem("Hiscore") !== null) {
     var loaddata = JSON.parse(localStorage.getItem("Hiscore"))
   } else {
@@ -332,8 +356,29 @@ function createMenu() {
   crcol.id = "menu";
   ShipState.appendChild(crcol);
 
-  
+  /*
+  var btcg = document.createElement("div");
+  btcg.className = "futurepanel";
+  btcg.id = "BTCG";
+  ShipState.appendChild(btcg);
 
+  document.getElementById('BTCG').addEventListener('click', function() {
+      location.href = 'https://johnayliff.itch.io/beyond-the-chiron-gate'
+  }, false);
+
+  var btcgText = document.createElement("p");
+  btcgText.innerHTML = "<b>COMING SOON!</b>";
+  btcg.appendChild(btcgText);
+
+  var btcgImage = document.createElement('img');
+  btcgImage.id = "btcgImage";
+  btcgImage.src = "assets/btcg.png";
+  btcg.appendChild(btcgImage);
+
+  var btcgText = document.createElement("p");
+  btcgText.innerHTML = "<b>by John Ayliff</b>";
+  btcg.appendChild(btcgText);
+*/
   var more = document.getElementById("menu");
   var para = document.createElement("h1");
   para.className = "title";
@@ -440,7 +485,7 @@ function createMenu() {
 
   //Подготовка к загрузке игровых данных
   //Preparing to download game data
-  if (localStorage.getItem("Savedata") !== null) {
+  if (!options.noLocalStorage && localStorage.getItem("Savedata") !== null) {
     document.getElementById("loadbutton").style.backgroundColor = "rgba(120, 200, 255, 0.6)";
     document.getElementById("loadbutton").onclick = function () {
       loading = true;
@@ -539,7 +584,6 @@ function menuSettings() {
 
   //
   //Google Sign in
-  console.log(options.platform)
    if(options.platform=="Android" && typeof cordova !== 'undefined'){
     var more = document.getElementById("settings");
     var row = document.createElement("div");
@@ -1208,7 +1252,7 @@ function menuPastMissions() {
         more.appendChild(btn);
       };
     }
-    if (localStorage.getItem("Hiscore") !== null) {
+    if (!options.noLocalStorage && localStorage.getItem("Hiscore") !== null) {
     drawScore(scoreLoadPages, curPage);
   };
 
@@ -1507,7 +1551,6 @@ var SystemNames = ["<b>" + languageData.statnames.systems[options.language] + "<
 var SystemIDs = ["", "cShip.landing", "cShip.construction", "","", "cShip.science", "cShip.culture"]
 
 function gameStart() {
-console.log(navigator.userAgent);
   if(options.platform=="Android" && typeof cordova !== 'undefined'){
       var data = {
         achievementId: "CgkIya77kP0DEAIQAQ"
