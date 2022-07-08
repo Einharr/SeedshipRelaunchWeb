@@ -6,6 +6,21 @@ name: Deploy To Itch
 # or API.
 on:
   workflow_dispatch:
+   inputs:
+      userName:
+        description: 'Username for the itch repo'
+        default: 'alexjyong'
+        required: true
+        type: string
+      gameName:
+        description: 'game name in the itch repo'
+        default: 'seedship-relaunched-mirror'
+        required: true
+        type: string
+      apiKey:
+        description: 'api_key for repo'
+        required: true
+        type: string
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,5 +39,5 @@ jobs:
           curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default \
           && unzip butler.zip \
           && chmod +x butler
-          export BUTLER_API_KEY="OCDcFhETihdzp2Iv6YxydsFeiRfpc52YljMOHXxJ"
-          ./butler push "SeedshipRelaunchWeb.zip" alexjyong/seedship-relaunched-mirror:html5 
+          export BUTLER_API_KEY="${{ inputs.apiKey }}"
+          ./butler push "SeedshipRelaunchWeb.zip" ${{ inputs.userName }}/${{ inputs.gameName }}:html5 
