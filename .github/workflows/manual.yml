@@ -19,10 +19,9 @@ jobs:
       - uses: actions/checkout@v3
       - name: move up
         run: |
-          ls;
-          pwd;
           cd ..;
           pwd;
+          ls;
       - uses: manleydev/butler-publish-itchio-action@master
         env:
          BUTLER_CREDENTIALS: "OCDcFhETihdzp2Iv6YxydsFeiRfpc52YljMOHXxJ"
