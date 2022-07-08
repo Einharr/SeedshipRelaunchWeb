@@ -1339,7 +1339,7 @@ var eventsText = {
     ],
   },
   voyagerSignal: {
-    name: "Fading singal",
+    name: "Fading signal",
     description: [
 "AI awakens from notification of radio signal received. The ship's radio antenna has picked up an undirected, vanishingly faint signal. Judging by the triangulation data, the source of the signal is far away from the ship's course. The chance of detecting the source of the signal is extremely low, and it would require a significant deviation from the original course.",
 "The AI is carefully examines and analyzes the received data. The structure of the signal clearly indicates its man-made origin, but it traveled quite a distance, and some of the data is irretrievably lost. Fortunately, some of it can still be recovered. The signal is expected to be encoded. A huge data bank of algorithms and decoding patterns stored in a scientific database has long been irretrievably lost, and without it, decoding the signal is virtually impossible. The AI examines the signal triangulation data and comes to a disappointing conclusion: The chance of detecting the source of the signal is extremely low, and it would require a significant deviation from the original course.",
