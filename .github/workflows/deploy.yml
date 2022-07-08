@@ -29,4 +29,4 @@ jobs:
          CHANNEL: html5
          ITCH_GAME: seedship-relaunched-mirror
          ITCH_USER: alexjyong
-         PACKAGE: /home/runner/SeedshipRelaunchWeb.zip
+         PACKAGE: /home/runner/work/SeedshipRelaunchWeb/SeedshipRelaunchWeb.zip
