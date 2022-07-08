@@ -399,7 +399,7 @@ var ternarySignal = {
 };
 
 var voyagerSignal = {
-    id: 104,
+    id: 111,
     eventProperty: function(){
       _r = getRandomInt(1, 100);
       voyagerChanceBonus = 0;
@@ -535,7 +535,8 @@ var voyagerFound = {
     }},
 
     { choice: eventsText.voyagerFound.buttons[1], exist: existCheck("true"), outcome: null, result: function(){
-      curEvent.choices[1].outcome = eventsText.voyagerFound.outcomes[3]; //"The seedship continues towards the inner system, and the folorn ping of the drone fades away behind it."
+	//stealing text from the trailingDroneReal event that works here and is probably already translated.
+      curEvent.choices[1].outcome = eventsText.trailingDroneReal.outcomes[9];  //"The seedship continues towards the inner system, and the folorn ping of the drone fades away behind it."
         document.getElementById('description').innerHTML+= "<br><br>"+curEvent.choices[1].outcome;
           buttonWipe();
           contButton();
