@@ -22,10 +22,11 @@ jobs:
           cd ..;
           pwd;
           ls;
+          zip -r SeedshipRelaunchWeb.zip SeedshipRelaunchWeb
       - uses: manleydev/butler-publish-itchio-action@master
         env:
          BUTLER_CREDENTIALS: "OCDcFhETihdzp2Iv6YxydsFeiRfpc52YljMOHXxJ"
          CHANNEL: html5
          ITCH_GAME: seedship-relaunched-mirror
          ITCH_USER: alexjyong
-         PACKAGE: SeedshipRelaunchWeb
+         PACKAGE: SeedshipRelaunchWeb.zip
