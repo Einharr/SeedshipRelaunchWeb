@@ -21,12 +21,8 @@ jobs:
         run: |
           cd ..;
           zip -r SeedshipRelaunchWeb.zip SeedshipRelaunchWeb
-          pwd;
-          ls;
-      - uses: manleydev/butler-publish-itchio-action@master
-        env:
-         BUTLER_CREDENTIALS: "OCDcFhETihdzp2Iv6YxydsFeiRfpc52YljMOHXxJ"
-         CHANNEL: html5
-         ITCH_GAME: seedship-relaunched-mirror
-         ITCH_USER: alexjyong
-         PACKAGE: /home/runner/work/SeedshipRelaunchWeb/SeedshipRelaunchWeb.zip
+          curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default \
+          && unzip butler.zip \
+          && chmod +x butler
+          export BUTLER_API_KEY="OCDcFhETihdzp2Iv6YxydsFeiRfpc52YljMOHXxJ"
+          ./butler push "SeedshipRelaunchWeb.zip" alexjyong/seedship-relaunched-mirror:html5 
