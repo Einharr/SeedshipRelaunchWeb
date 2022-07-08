@@ -39,5 +39,7 @@ jobs:
           curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default \
           && unzip butler.zip \
           && chmod +x butler
-          export BUTLER_API_KEY="${{ inputs.apiKey }}"
+          export BUTLER_API_KEY="${{ secrets.INJECTED_ENV_VAR }}"
           ./butler push "SeedshipRelaunchWeb.zip" ${{ inputs.userName }}/${{ inputs.gameName }}:html5 
+        env:
+          INJECTED_ENV_VAR: ${{ secrets[github.event.inputs.apiKey] }}
