@@ -17,6 +17,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v3
+      - name: move up
+        run: cd ..
       - uses: manleydev/butler-publish-itchio-action@master
         env:
          BUTLER_CREDENTIALS: "OCDcFhETihdzp2Iv6YxydsFeiRfpc52YljMOHXxJ"
