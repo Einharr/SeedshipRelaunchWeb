@@ -18,7 +18,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: move up
-        run: cd ..
+        run: |
+          ls;
+          pwd;
+          cd ..;
+          pwd;
       - uses: manleydev/butler-publish-itchio-action@master
         env:
          BUTLER_CREDENTIALS: "OCDcFhETihdzp2Iv6YxydsFeiRfpc52YljMOHXxJ"
