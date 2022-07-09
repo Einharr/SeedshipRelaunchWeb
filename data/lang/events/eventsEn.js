@@ -222,7 +222,7 @@ var eventsText = {
       " and ",
       ".",
     ],
-    buttons: ["Jetisson ", " sleep chambers",
+    buttons: ["Jettison ", " sleep chambers",
       "Push the main engine past its safety limit",
     ],
   },
