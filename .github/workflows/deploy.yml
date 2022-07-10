@@ -34,6 +34,8 @@ jobs:
       - name: move up
         run: |
           rm -rf .github #don't need this to be uploaded
+          rm -rf .git
+          rm -rf .git*
           cd ..; #move up from the game repo so we can compress it.
           zip -r SeedshipRelaunchWeb.zip SeedshipRelaunchWeb #compress the repo
 
