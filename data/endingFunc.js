@@ -2854,7 +2854,7 @@ function newColony(ship, planet, ending) {
     final_score.score_native_relations,
     final_score.overall,
   ]
-
+  hiscore.planetsVisited = planetsVisited;
   console.log(ScoreRes, hiscore)
 
   for (i = 0; i < PossibleEnding.length; i++) {
@@ -2887,6 +2887,7 @@ function newColony(ship, planet, ending) {
       crcol.id = "ScanRes";
       scanlist.appendChild(crcol);
 
+      //build up the final score menu. this for loop builds up the score names
       var scannames = document.getElementById("ScanNames");
       for (var i = 0; i < ScoreNames.length; i++) {
         var parag = document.createElement("p");
@@ -2908,6 +2909,11 @@ function newColony(ship, planet, ending) {
         parag.innerHTML = ScoreNames[i] + ":";
         scannames.appendChild(parag);
       };
+      //planets visited always goes at the bottom 
+      var parag = document.createElement("p");
+      parag.className = "stats";
+      parag.innerHTML = "Planets Visited" + ":";
+      scannames.appendChild(parag);
 
       var scanres = document.getElementById("ScanRes");
       for (var i = 0; i < ScoreRes.length; i++) {
@@ -2923,8 +2929,16 @@ function newColony(ship, planet, ending) {
         scanres.appendChild(parag);
       };
 
+      //planets visited always goes at bottom
+      var parag = document.createElement("p");
+      parag.className = "stats";
+      parag.id = "planetsVisited";
+      parag.innerHTML = planetsVisited
+      scanres.appendChild(parag);
+
       //HISCORE SAVEDATA
 	//save the score in high score list.
+
       var currentdate = new Date();
       var datetime = currentdate.getDate() + "/"
         + (currentdate.getMonth() + 1) + "/"

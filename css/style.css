@@ -41,7 +41,7 @@ right: 10px;
 
 html, body {
        max-height: 100%;
-       overflow-x: hidden;
+       overflow-x: scroll;
 }
 
 p {

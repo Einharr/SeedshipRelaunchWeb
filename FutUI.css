@@ -281,6 +281,7 @@ h1.heading {
 
 body {
   background-color: #012;
+  overflow-x:scroll;
 }
 
 body > * {

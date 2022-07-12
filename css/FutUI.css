@@ -262,6 +262,7 @@ h1.heading {
 
 body {
   background-color: #012;
+  overflow-y: scroll;
 }
 
 body > * {
