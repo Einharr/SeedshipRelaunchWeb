@@ -1266,6 +1266,10 @@ function menuPastMissions() {
     journeyDeaths = score[i][8][1]
     constructionDeaths = score[i][8][2]
     hiscore = score[i][9];
+    var planetsVisited;
+    if (hiscore.planetsVisited){
+      planetsVisited = hiscore.planetsVisited;
+    }
 
     var ScoreRes = [
       final_score.atmosphere,
@@ -1441,6 +1445,14 @@ function menuPastMissions() {
       parag.innerHTML = ScoreNames[i] + ":";
       scannames.appendChild(parag);
     };
+    if (planetsVisited){
+      //planets visited always goes at the bottom 
+      var parag = document.createElement("p");
+      parag.className = "stats";
+      parag.innerHTML = "Planets Visited" + ":";
+      scannames.appendChild(parag);
+    } 
+    
 
     var scanres = document.getElementById("ScoreRes");
     for (var i = 0; i < ScoreRes.length; i++) {
@@ -1454,7 +1466,16 @@ function menuPastMissions() {
       parag.id = ScoreIDs[i];
       parag.innerHTML = ScoreRes[i];
       scanres.appendChild(parag);
-    };
+    }; 
+    if (planetsVisited){
+      //planets visited always goes at bottom
+      var parag = document.createElement("p");
+      parag.className = "stats";
+      parag.id = "planetsVisited";
+      parag.innerHTML = planetsVisited
+      scanres.appendChild(parag);
+    } 
+    
 
   };
   //
