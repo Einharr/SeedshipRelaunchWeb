@@ -99,9 +99,9 @@ var EndingNameBecause = [
 ];
 
 var EndingLanding = [
-  "Het landingssysteem bestuurt de afdaling van het zaadschip, en het ",
-  "Het beschadigde landingssysteem kan de afdaling van het zaadschip niet goed besturen, en lijdt daardoor wat schade wanneer het ",
-  "De AI gebruikt de bewegings-stuwraketten om het zaadschip moeizaam te laten afdalen, en het ",
+  "Het landingssysteem bestuurt de afdaling van het zaadschip, waarna het ",
+  "Het beschadigde landingssysteem kan de afdaling van het zaadschip niet goed besturen, en lijdt daardoor schade wanneer het "
+  "De AI gebruikt de bewegings-stuwraketten om het zaadschip moeizaam te laten afdalen, en het "
 ];
 
 var EndingLandingBut = [
@@ -204,12 +204,12 @@ var EndingAtmosphere = [
   "gloeiende hitte",
   "vriezende kou",
   "loodsmeltende hitte",
-  "extreem koude temperaturen",
+  "extreem koude temperaturen",  
 ];
 
 var EndingAtmosphereBut = [
   "maar de corrosieve atmosfeer bijt door de afdichtingen van enkele constructie voertuigen en doodt 1 kolonist",
-  "maar de corrosieve atmosfeer bijt door de afdichtingen van enkele constructie voertuigen en doodt",
+  "maar de corrosieve atmosfeer bijt door de afdichtingen van enkele constructie voertuigen en doodt ",
   " kolonisten",
 
   "but a suit failure leads to 1 colonist being poisoned",
@@ -256,7 +256,7 @@ var EndingTemperature = [
 ];
 
 var EndingTemperatureBut = [
-  "en nog een sterft wanneer een van hun onderdakken wegsmelt in de hitte.",
+  "en nog een sterft wanneer een van hun onderdakken wegsmelt in de hitte."
   "en nog ",
   " meer sterven wanneer een van hun onderdakken wegsmelt in de hitte.",
 
@@ -374,7 +374,7 @@ var EndingNativeInteractions = [
 
   "Conflicten escaleren tot een oorlog, welke eindigd met de inheemse bevolking als slaaf van de mensen.",
   "Conflicten escaleren tot een oorlog, welke eindigd met de mensen als slaaf van de inheemse bevolking.",
-
+  
   "Conflicten escaleren tot een oorlog, welke eindigd met een genocide van de inheemse bevolking.",
   "Conflicten escaleren tot een oorlog, welke eindigd met een genocide van de mensheid.",
 
@@ -465,7 +465,7 @@ var EndingCaves = [
   " kolonisten.",
 
   "Ze bouwen hun nederzetting in luchtdichte, geïsoleerde grotten, welke een kant-en-klare bescherming bieden tegen de onherbergzame atmosfeer en temperatuur van de planeet.",
-  "Ze bouwen hun nederzetting in luchtdichte grotten, welke een kant-en-klare bescherming bieden tegen de onherbergzame atmosfeer en temperatuur van de planeet.",
+  "Ze bouwen hun nederzetting in luchtdichte grotten, welke een kant-en-klare bescherming bieden tegen de onherbergzame atmosfeer en temperatuur van de planeet.".,
   "Ze bouwen hun nederzetting in geïsoleerde grotten, welke een kant-en-klare bescherming bieden tegen de onherbergzame atmosfeer en temperatuur van de planeet.",
   "Ze bouwen hun nederzetting vlakbij de grotten, die zij gebruiken voor opslag."
 ];
@@ -474,7 +474,7 @@ var EndingRuins = [
   "Met de nederzetting voltooid en de voedselvoorziening geregeld, zetten de kolonisten een expeditie op naar de nabijgelegen ruïnes.",
   "De ontdekkers bestuderen de sculpturen, friezen, en buitenaardse geschriften die de ruïnes in overvloed hebben. Zelfs voordat ze de geschriften vertaald hebben leren ze veel over de cultuur en redenen voor zijn ondergang, kennis die hen helpt in het opbouwen van hun eigen cultuur op deze wereld.",
   "Ze",
-  "De ontdekkers",
+  "De ontdekkers".
   "vinden geavanceerde buitenaardse machines, waarvan sommige nog steeds functioneren.",
   "Het reverse-engineering van deze machines zal hun wetenschap voorbij het technologieniveau brengen die de aardse beschaving bereikt had toen het zaadschip gelanceerd werd.",
   "Het reverse-engineering van deze machines zal de kennis geven om enkele gaten in de beschadigde wetenschappelijke databanken te vullen.",
@@ -535,7 +535,7 @@ var EndingSustain = [
 
   "hun afstammelingen genetisch gemanipuleerd om te kunnen overleven in de ",
   " zwaartekracht",
-  "geautomatiseerde water-recyclings systemen opgezet die oneindig lang kunnen werken zonder onderhoud.",
+  "geautomatiseerde water-recyclings systemen opgezet die oneindig lang kunnen werken zonder onderhoud."
   "",
 
 ]
@@ -560,8 +560,8 @@ var EndingPolitics = [
   "De overgebleven culturele databanken zijn bewaard gebleven in digitale bestanden waartoe alle kolonisten toegang hebben. De kolonisten proberen een democratie op te bouwen, maar de overheid wordt een pion van rijke corporaties welke de planeet voor hun eigenbelang regeren.",
   "De kolonie ontwikkelt in een high-tech politiestaat, waarin de populatie leeft onder constante observatie door een ontoereikbare heersende klasse, en de kleinste afwijkende mening met de grond gelijk gemaakt wordt. De overgebleven culturele databanken zijn bewaard gebleven, maar alleen strikt toegankelijk door de staat.",
   "De kolonie splitst op in meerdere grote landen, wiens economieën gefocust worden op het voeren van oorlog onder elkaar. De kolonisten proberen de overblijfsels van de culturele databanken te bewaren, maar veel is verloren gegaan, hetzij door oorlogsschade, of onder lagen van de revisionistische propaganda van de regeringen.",
-  "De kolonie splitst op in meerdere grote landen, welke oorlog met elkaar voeren, totdat roekeloze leiders een nucleare oorlog ontketenen welke de infrastructuur van de beschaving vernietigd. De overlevende kolonisten leven in een post-nucleare woestenij. Wat overgebleven is van de culturele databanken is verloren gegaan in de ramp, en wat de kolonisten herrineren van de aarde verwarren zij met vooroorlogse verhalen over de kolonie.",
-
+  "De kolonie splitst op in meerdere grote landen, welke oorlog met elkaar voeren, totdat roekeloze leiders een nucleare oorlog ontketenen welke de infrastructuur van de beschaving vernietigd. De overlevende kolonisten leven in een post-nucleare woestenij. Wat overgebleven is van de culturele databanken is verloren gegaan in de ramp, en wat de kolonisten herrineren van de aarde verwarren zij met vooroorlogse verhalen over de kolonie."
+  
   "De kolonisten gebruiken de overgebleven culturele databanken om hen te begeleiden in de creatie van een republiek, gebaseerd op vrijheid en gelijke rechten.",
   "De eerste leiders van de kolonie worden de oprichters van een lijn van goedwillende monarchieën, die het als hun plicht zien de kolonie te begeleiden en de overgebleven kennis over de aarde te waarborgen.",
   "De overgebleven kennis van de aarde wordt de exclusieve eigendom van de priestelijke kaste, achter gesloten deuren in bibliotheken. Voor het grootste deel van de populatie is de aarde een uit de gratie gevallen mythologisch paradijs, en een laatste beloning om op te hopen na hun leven te hebben geleid in dienst van de onderdrukkende theocratie.",
@@ -577,29 +577,29 @@ var EndingPolitics = [
 ];
 
 var EndingResources = [
-  "De planeet is rijk aan metalen en andere grondstoffen,",
-  "De planeet is arm aan metalen en andere grondstoffen,",
+  "De planeet is rijk aan metalen en andere grondstoffen ",
+  "De planeet is arm aan metalen en andere grondstoffen ",
   "De planeet heeft geen toegang tot metalen of andere grondstoffen,",
 ];
 
 var EndingResourcesBut = [
   //none
-  " en de kolonisten kunnen niet hun hoge technologieniveau behouden, zelfs met de volledig intacte wetenschappelijke databanken.",
-  " en dus kunnen de kolonisten niet hun hoge technologieniveau behouden, zelfs niet met grotendeels intacte wetenschappelijke databanken.",
-  " en dus vinden de kolonisten het moeilijk om, wat ze hebben hersteld van de wetenschappelijke databanken, te gebruiken.",
-  " en alle informatie uit de de wetenschappelijke databanken die hen mogelijk zou kunnen helpen is vernietigd.",
+  " waardoor de kolonisten kunnen niet hun hoge technologieniveau behouden, zelfs met de volledig intacte wetenschappelijke databanken.",
+  " dus kunnen de kolonisten niet hun hoge technologieniveau behouden, zelfs niet met grotendeels intacte wetenschappelijke databanken.",
+  " dus vinden de kolonisten het moeilijk om, wat ze hebben hersteld van de wetenschappelijke databanken, te gebruiken.",
+  " waardoor alle informatie uit de de wetenschappelijke databanken die hen mogelijk zou kunnen helpen is vernietigd.",
 
   //poor
-  " maar de wetenschappelijke databanken bevatten een schat aan informatie over hoe je gebruik kunt maken van wat er is.",
-  " maar de beschadigde wetenschappelijke databanken bevatten nog steeds veel informatie over hoe je gebruik kunt maken van wat er is.",
-  " en omdat de wetenschappelijke databanken zwaar beschadigd zijn, is het moeilijk voor de kolonisten om gebruik te kunnen maken van wat er is.",
-  " en zonder de wetenschappelijke databanken is het moeilijk voor de kolonisten om gebruik te maken van wat er is.",
+  ", maar de wetenschappelijke databanken bevatten een schat aan informatie over hoe je gebruik kunt maken van wat er is.",
+  ", maar de beschadigde wetenschappelijke databanken bevatten nog steeds veel informatie over hoe je gebruik kunt maken van wat er is."
+  "en omdat de wetenschappelijke databanken zwaar beschadigd zijn, is het moeilijk voor de kolonisten om gebruik te kunnen maken van wat er is.",
+  "en zonder de wetenschappelijke databanken is het moeilijk voor de kolonisten om gebruik te maken van wat er is.",
 
   //rich
-  " en de wetenschappelijke databanken bevatten een schat aan informatie over hoe je gebruik kunt maken van wat er is.",
-  " en de beschadigde wetenschappelijke databanken bevatten nog steeds veel informatie over hoe je gebruik kunt maken van wat er is.",
-  " al hoewel de zwaar beschadigde wetenschappelijke databanken betekenen dat de kolonisten veel technologie moeten herontdekken om gebruik te kunnen maken van wat er is.",
-  " al hoewel zonder de wetenschappelijke databanken, de kolonisten veel technologie moeten herontdekken om gebruik te kunnen maken van wat er is.",
+  "en de wetenschappelijke databanken bevatten een schat aan informatie over hoe je gebruik kunt maken van wat er is.",
+  "en de beschadigde wetenschappelijke databanken bevatten nog steeds veel informatie over hoe je gebruik kunt maken van wat er is.",
+  ", al hoewel de zwaar beschadigde wetenschappelijke databanken betekenen dat de kolonisten veel technologie moeten herontdekken om gebruik te kunnen maken van wat er is.",
+  ", al hoewel zonder de wetenschappelijke databanken, de kolonisten veel technologie moeten herontdekken om gebruik te kunnen maken van wat er is.",
 ];
 
 var EndingSummary = [
@@ -667,7 +667,7 @@ var EndingSummary = [
   "een zwarte, sterrengevulde hemel.",
   "een buitenaardse lucht.",
   "een giftige lucht.",
-  "een lucht, gevuld met zure wolken.",
+  "een lucht, gevuld met zure wolken."
 
   "In de nacht zijn de mysterieuze buitenaardse structuren zichtbaar als een glinsterende band aan de sterrenhemel",
 
@@ -752,7 +752,7 @@ var EndingSummary = [
 
   "staan monumenten voor de ",
   " kolonisten die stierven bij het bouwen van de eerste nederzetting, en voor ",
-
+  
   "staat een monument voor ",
   "de AI van het zaadschip die de mensheid begeleid heeft naar hun nieuwe thuis.",
 ];
