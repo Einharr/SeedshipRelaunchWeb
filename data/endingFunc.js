@@ -1,4 +1,5 @@
 //Array creation Function
+
 function createArray(length) {
   var arr = new Array(length || 0),
     i = length;
