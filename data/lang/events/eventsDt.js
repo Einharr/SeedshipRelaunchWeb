@@ -10,14 +10,14 @@ var eventsText = {
 
   falseAlarm: {
     name: "Vals Alarm",
-    description: "Diep in de ruimte wordt de AI plotseling wakker door een waarschuwing van het medische observatie programma. Angstig bekijkt het de kolonisten, maar vindt dat er geen probleem is, en de waarschuwing een storing was. Niettemin brengt de AI wat tijd door met het bekijken van haar slapende inzittenden, geruststellend dat ze allemaal in leven zijn, voordat het met hen weer mee gaat slapen.",
+    description: "Diep in de ruimte wordt de AI plotseling wakker door een waarschuwing van het medische observatie programma. Angstig bekijkt het de kolonisten, maar vindt dat er geen probleem is en de waarschuwing een storing was. Niettemin brengt de AI wat tijd door met het bekijken van haar slapende inzittenden, geruststellend dat ze allemaal in leven zijn, voordat ze weer in hibernatie gaat.",
     outcomes : [null],
     buttons: [languageData.continue[options.language]],
   },
 
   falseAlarm2: {
     name: "Vals Alarm",
-    description: "De AI wordt uit haar hibernatie gehaald door een mogelijke defectie waarschuwing, maar uit een systeemcontrole blijkt dat het vals alarm was. Nog ver van de meest nabije ster, brengt de AI enige tijd door met het waarderen van de koele schoonheid van de Melkweg, zoals blijkt uit de navigatiesystemen, voordat het terug in hibernatie gaat, om te wachten op aankomst bij het volgende systeem.",
+    description: "De AI wordt uit haar hibernatie gehaald door een mogelijke storing, maar uit een systeemcontrole blijkt dat het vals alarm was. Nog ver van de meest nabije ster brengt de AI enige tijd door met het waarderen van de koele schoonheid van de Melkweg, zoals blijkt uit het navigatiesysteem, voordat ze terug in hibernatie gaat, om te wachten op aankomst bij het volgende systeem.",
     outcomes : [null],
     buttons: [languageData.continue[options.language]],
   },
@@ -31,7 +31,7 @@ var eventsText = {
 
   hibernating2: {
     name: "Hiberneren",
-    description: "Eeuwenlang glijdt het zaadschip naar volgende bestemming, bijna helemaal passief, met alleen de simpele botsvermijdings en schadebewakings systemen actief terwijl de AI hiberneert.",
+    description: "Eeuwenlang glijdt het zaadschip naar de volgende bestemming, bijna helemaal passief, met alleen de simpele botsvermijdings en schadebewakings systemen actief terwijl de AI hiberneert.",
     outcomes : [null],
     buttons: [languageData.continue[options.language]],
   },
@@ -69,38 +69,37 @@ var eventsText = {
   radiationAlert: {
     name: "Radiatie Waarschuwing",
     description: [
-        				  "De AI ontwaakt door een radiatie waarschuwing: De dodelijke uitbarsting van een verre supernova overspoelt de elektronica van het zaadschip met willekeurige signalen. ",
-        				  "De hibernatie kamers raken defect, en binnen enkele ogenblikken zullen sommige van hen uitvallen.",
-        				  "Een van de probes raakt defect, en binnen enkele ogenblikken zal deze vernietigd worden.",
-        				  "Het data opslag systeem raakt defect, en binnen enkele ogenblikken zullen onderdelen van de ",
+				  "De AI ontwaakt door een radiatie waarschuwing: De dodelijke uitbarsting van een verre supernova overspoelt de elektronica van het zaadschip met willekeurige signalen. ",
+				  "De hibernatie kamers raken defect, en binnen enkele ogenblikken zullen sommige van hen uitvallen.",
+				  "Een van de probes raakt defect, en binnen enkele ogenblikken zal deze vernietigd worden.",
+				  "Het data opslag systeem raakt defect, en binnen enkele ogenblikken zullen onderdelen van de ",
                   " verloren gaan.",
                   "De ", //Leave as "" if there is no such construction in your language. Here it goes before SYSTEMNAME. Comment: Will have to look whether the preposition has to change while playtesting.
                   " raakt defect, en zal binnen enkele ogenblikken permanent beschadigd raken.",
-        				  " Het zaadschip kan de defectie ontwijken door all haar elektronica uit te zetten totdat de radiatie voorbij is, maar dan zou het voor een gevaarlijk lange tijd zonder botsvermijdings systeem werken.",
-        				  " Een golf van supernova radiatie knettert door ",
+				  " Het zaadschip kan de defectie ontwijken door all haar elektronica uit te zetten totdat de radiatie voorbij is, maar dan zou het voor een gevaarlijk lange tijd zonder botsvermijdings systeem werken.",
+				  " Een golf van supernova radiatie knettert door ",
                   "een van ", //one of the probes damaged
-                  " de ",
+                  " de ", //Leave as "" if there is no such construction in your language. Here it goes before SYSTEMNAME. Comment: Will have to look whether the preposition has to change while playtesting.
                   ". ",
-        				  "De AI kan het beschadigd laten raken, of de elektronica uitschakelen en een botsing riskeren.",
+				  "De AI kan het beschadigd laten raken, of de elektronica uitschakelen en een botsing riskeren.",
 
                   ],
     outcomes : [
                 //0
-        				"De AI schakelt alle systemen van het schip uit en daarna zichzelf. Wanneer het weer terug online kom is de radiatie voorbij, ",
-        				"maar een kleine astroïde is door de hibernatie kamers gescheurd en doodde",
+				"De AI schakelt alle systemen van het schip uit en daarna zichzelf. Wanneer het weer terug online kom is de radiatie voorbij, ",
+				"maar een kleine astroïde is door de hibernatie kamers gescheurd en doodde",
                 " kolonisten.",
-        				"maar een kleine astroïde heeft ingeslagen op een van de probes.",
+				"maar een kleine astroïde heeft ingeslagen op een van de probes.",
                 "maar een kleine astroïde heeft een gat gescheurd door de ",
-        				"en tot opluchting onthult een systeemcheck geen schade.",
+				"en tot opluchting onthult een systeemcheck geen schade.",
                 //1
-        				"De AI houdt de focus op het botsvermijdings systeem, terwijl ",
+				"De AI houdt de focus op het botsvermijdings systeem, terwijl ",
                 " kolonisten in hun slaap sterven.",
-        				"de probe zichzelf uit elkaar scheurt",
-        				" onderdelen van de ",
+				"de probe zichzelf uit elkaar scheurt",
+				" onderdelen van de ",
                 " overschreven zijn met rotzooi.",
-        				" de radiate delicate componenten vernietigd, diep in de ",
+				" de radiate delicate componenten vernietigd, diep in de ",
                 ".",
-                "De AI kan het beschadigd laten raken, of de elektronica uitschakelen en een botsing riskeren.",
                 ],
     buttons: ["Uitschakelen",
               "Niet uitschakelen",
@@ -111,7 +110,7 @@ var eventsText = {
     name: "Overweldigd",
     description: [
                   "De koers van het zaadschip voert het door een dichte sterrenvormende nevel. Honderden jonge zonnen verlichten interstellaire gaswolken en vullen de lucht met losbandig wilde kleuren. Wolken krioelen door complexe zwaartekracht interferentie-patronen en schitteren met zware elementen die gevormd zijn in de doodsstrijd van de laatste generatie sterren. "+
-                  "<br><br>De scanners waren niet ontworpen om met dit niveau van input om te gaan, en het dreigt hen te overweldigen. Als de AI de scanners blijft gebruiken om te navigeren, dan voelt de AI dat de ",
+                  "<br><br>"+"De scanners waren niet ontworpen om met dit niveau van input om te gaan, en het dreigt hen te overweldigen. Als de AI de scanners blijft gebruiken om te navigeren, dan voelt de AI dat de ",
                   " beschadigd zullen raken. Het uitschakelen van de scanners, echter, zal het zaadschip kwetsbaar voor botsingen in dit drukke gebied van de ruimte. ",
                   "De koers van het zaadschip voert het door een andere sterrenvormende nevel, waarvan de intense sensorische implusen bedreigen de ",
                   " te overbelasten.",
@@ -122,14 +121,14 @@ var eventsText = {
                 "De AI blijft de scanners te gebruiken om te navigeren. De ", // The SCANNERNAME overloads
                 " raakt overbelast, maar het zaadschip passeert veilig door de sterrenvormende nevel.",
                 //1
-				        "De AI berekent een route waarvan het denkt dat alle obstakels vermeden zullen worden, en schakeld vervolgens de scanners uit.",
+				"De AI berekent een route waarvan het denkt dat alle obstakels vermeden zullen worden, en schakeld vervolgens de scanners uit.",
                 "Het zaadschip gaat de nevel in.",
-				        "Terwijl het blind vliegt, heeft het geen manier om de dichte stofwolk te detecteren welke het schip laat rammelen en",
-				        "het beschadigt "," hibernatie kamers.",
+				"Terwijl het blind vliegt, heeft het geen manier om de dichte stofwolk te detecteren welke het schip laat rammelen en",
+				"het beschadigt "," hibernatie kamers.",
                 "een van probes los laat slaan.",
-        				"brengt slijtage toe aan de",
+				"brengt slijtage toe aan de",
                 ".",
-        				" Tot haar opluchting, oordeelt het dat het schip buiten gevaar is en reactiveert het de scanners en blijkt dat er geen schade is toegericht.",
+				" Tot haar opluchting, oordeelt het dat het schip buiten gevaar is en reactiveert het de scanners en blijkt dat er geen schade is toegericht.",
                 ],
     buttons: ["Laat de scanners aan",
               "Vlieg blind",
@@ -146,7 +145,7 @@ var eventsText = {
                 //0
                 "De AI instrueert het begeleidingssysteem om de anomalie te vermijden en een nieuw doelsysteem te kiezen. Het blijft de sensormetingen bestuderen terwijl het schip de positie van de anomalie passeert, maar de metingen worden nooit duidelijk genoeg om te onthullen of een koerswijziging nodig was.",
                 //1
-                "De AI instrueert het begeleidingssysteem om op koers te blijven. Tegen de tijd dat de sensoren een duidelijk beeld krijgen van de volkomen zwaarte, niet-reflecterende stofwolk, is het te-laat om deze te vermijden. Het zaadschip blijft verdergaan op weg naar het doelsysteem, maar een stofdeeltje botst tegen de .",
+                "De AI instrueert het begeleidingssysteem om op koers te blijven. Tegen de tijd dat de sensoren een duidelijk beeld krijgen van de volkomen zwaarte, niet-reflecterende stofwolk, is het te laat om deze te vermijden. Het zaadschip blijft verdergaan op weg naar het doelsysteem, maar een stofdeeltje botst tegen de ",
                 ".",
                 "De AI instrueert het begeleidingssysteem om op koers te blijven. Tot haar opluchting lost de anomalie op in een sensorstoring, en het zaadschip blijft op weg door de lege ruimte naar het doelsysteem.",
                 ],
@@ -158,7 +157,7 @@ var eventsText = {
   interstellarDust: {
     name: "Interstellair Stof",
     description: [
-                  "Het zaadschip vertraagt bij het naderen van het volgende systeem, wanneer het een ongewoon dikke laag interstellair stof op haar pad detecteert. Door het stof heengaan zal waarschijnlijk meerdere botsingen op hoge snelheid met de stof deeltjes betekenen. De AI zou een noodkoerswijziging kunnen uitvoeren om het stof te ontwijken, maar dan zal het zaadschip dit systeem passeren en arriveren bij een effectief willekeurig system, zonder te profiteren van de geüpgrade scanners.",
+                  "Het zaadschip vertraagt bij het naderen van het volgende systeem, wanneer het een ongewoon dikke laag interstellair stof op haar pad detecteert. Door het stof heengaan zal waarschijnlijk meerdere botsingen op hoge snelheid met de stofdeeltjes betekenen. De AI zou een noodkoerswijziging kunnen uitvoeren om het stof te ontwijken, maar dan zal het zaadschip dit systeem passeren en arriveren bij een effectief willekeurig system, zonder te profiteren van de geüpgrade scanners.",
                   "Het zaadschip detecteert een gebied met een dikke laag interstellair stof op haar pad naar het nieuwe systeem. Het kan door de stofwolk heen ploegen en schade oplopen, of van koers veranderen en arriveren bij een nieuw systeem zonder te profiteren van de geüpgrade scanners.",
                   ],
     outcomes : [
@@ -175,7 +174,7 @@ var eventsText = {
   },
 
   comet: {
-    name: "Comet",
+    name: "Komeet",
     description: [
 				  "Terwijl het zaadschip de buitenste kometenwolk van het nieuwe systeem binnengaat, detecteert het botsingvermijdingssysteem een snel bewegende komeet, omsingeld door een wolk van kleine ijsfragmenten. De grote komeet ligt op ramkoers met de ",
 				  ". Het zaadschip zou het kunnen vermijden, maar dan zou het een van de kleinere fragmenten raken, en het botsingvermijdingssysteem kan niet voorspellen welk gedeelte van het schip dan geraakt zal worden.",
@@ -205,7 +204,7 @@ var eventsText = {
   blackHole: {
     name: "Zwart Gat",
     description: [
-	  "De AI ontwaakt en merkt dat de koers van het zaadschip scherp afbuigt door de duisternis van de ruimte, alsof het gevangen zit in de zwaartekrachtbron van een ster. De bron van de zwaartekracht is onzichtbaar voor de scanners, maar er is maar één ding dat dit kan zijn: een zwart gat.",
+	  "De AI ontwaakt en merkt dat de koers van het zaadschip scherp afbuigt door de duisternis van de ruimte, alsof het gevangen zit in de zwaartekrachtbron van een ster. De bron van de zwaartekracht is onzichtbaar voor de scanners, maar er is maar één ding wat dit kan zijn: een zwart gat.",
 	  "Het is al te laat om de zwaartekrachtbron te ontsnappen zonder de hoofdmotor ver voorbij zijn veiligheidslimiet te dringen, wat elk mogelijk systeem van het schip kan beschadigen. Als alternatief berekent de AI dat het uitwerpen van  ",
 	  " hibernatie kamers het schip licht genoeg moet kunnen maken, dat de normale stuwkracht van de motor het schip uit gevaar kan brengen.",
 	  "De AI ontwaakt en merkt dat het schip gevangen zit in de zwaartekracht van een ander zwart gat. Het moet kiezen of het de hoofdmotor over zijn limiet wil laten gaan, of ",
@@ -216,7 +215,7 @@ var eventsText = {
 				"Een deel van zijn reizigers opofferen om de rest te redden, is pijnlijk voor de AI, maar het is een besluit waartoe de ontwerpers het hebben voorbereid. Het kiest ",
 				" willekeurige hibernatie kamers en ontkoppelt ze van het schip. Zij en hun ongelukkige inzittenden dalen af in een spiraal naar naar de waarnemingshorizon van het zwarte gat, terwijl de rest van het zaadschip ontsnapt.",
                 //1
-				"De AI beveelt de motor om voorbij zijn maximale vermogen te gaan, en negeert zijn elektronische geschreeuw van protest.",
+				"De AI beveelt de motor om voorbij zijn maximale vermogen te gaan en negeert het elektronische geschreeuw van protest.",
 				"Het schip voelt alsof het zichzelf uit elkaar schudt, maar wanneer de ontbranding klaar is en het zaadschip veilig wegvaart van het zwarte gat, merkt de AI dat haar bouwers de motor een ruime veiligheidsmarge hebben gegeven en dat de overbelasting geen schade heeft aangericht.",
 				"Kleine explosies laten het schip schudden als onderdelen onder de stress instorten. Wanneer het schip op veilige afstand van het zwarte gat is en de AI de schade kan beoordelen, vindt het dat de motor overbelasting de ",
                 " en de ",
@@ -230,25 +229,25 @@ var eventsText = {
   impactChoice: {
     name: "Inslag Keuze",
     description: [
-				          "Een alarm ontwaakt de AI uit haar hibernatie. Een solitaire astroïde is op ramkoers met het schip; het automatische navigatiesysteem heeft het niet kunnen ontwijken, en heeft de AI ontwaakt om in een fractie van een seconde te besluiten hoe er met de inslag omgegaan moet worden. De astroïde staat op het punt om in de ",
-                  " in te slaan. Er is geen tijd meer om het volledig te ontwijken, maar als de AI de rotatie stuwraketten vuurt om het schip te draaien, zal het de ",
-				          " raken in plaats van het andere systeem.",
-				          "Nogmaals ontwaakt de AI om plotseling een astroïde op ramkoers met het schip te vinden. De AI kan het de ",
-                  " laten raken, of draaien om het de ",
+				  "Een alarm ontwaakt de AI uit haar hibernatie. Een solitaire astroïde is op ramkoers met het schip; het automatische navigatiesysteem heeft het niet kunnen ontwijken, en heeft de AI ontwaakt om in een fractie van een seconde te besluiten hoe er met de inslag omgegaan moet worden. De astroïde staat op het punt om in de ",
+                  " in te slaan. Er is geen tijd meer om het volledig te ontwijken, maar als de AI de rotatie stuwraketten vuurt om het schip te draaien, zal de ",
+				  " raken in plaats van het andere systeem.",
+				  "Nogmaals ontwaakt de AI om plotseling een astroïde op ramkoers met het schip te vinden. De AI kan het de ",
+                  " laten raken, of draaien om de ",
                   " te laten raken.",
                   ],
     outcomes : [
                 //0
-				        "De astroïde scheurt in de hibernatie kamers, en doodt ",
+				"De astroïde scheurt in de hibernatie kamers, en doodt ",
                 " kolonisten.",
-        				"De astroïde stoot één van de probes uit zijn ankerplaats en zend het al spinnende de ruimte in.",
-        				"De astroïde scheurt in de ",
+				"De astroïde stoot één van de probes uit zijn ankerplaats en zend het al spinnende de ruimte in.",
+				"De astroïde scheurt in de ",
                 ", en zend de fragmenten spinnend de ruimte in.",
                 //1 has same lines, but unlike in overheat, here I decided to copy it, so that i can add up some text about rotation of the ship
-				        "De astroïde scheurt in de hibernatie kamers, en doodt ",
+				"De astroïde scheurt in de hibernatie kamers, en doodt ",
                 " kolonisten.",
-        				"De astroïde stoot één van de sondes uit zijn ankerplaats en zend het al spinnende de ruime in.",
-        				"De astroïde scheurt in de ",
+				"De astroïde stoot één van de sondes uit zijn ankerplaats en zend het al spinnende de ruime in.",
+				"De astroïde scheurt in de ",
                 ", en zend de fragmenten spinnend de ruimte in.",
                 ],
     buttons: ["Zorg dat de inslag raakt in de ",
@@ -261,15 +260,15 @@ var eventsText = {
     name: "Micrometeoriet",
     description: [
 				  "Terwijl het een nieuwe systeem binnengaat, is het zaadschip geraakt door een micrometeoriet.",
-				  " Het is een kosmisch stofje, veel te klein om te gedetecteerd te worden door het navigatiesysteem van een afstand, maar met genoeg snelheid om het panster van het zaadschip als een kogel te doorboren.",
+				  " Het is een kosmisch stofje, veel te klein om te gedetecteerd te worden door het navigatiesysteem van een afstand, maar met genoeg snelheid om het pantser van het zaadschip als een kogel te doorboren.",
                   ],
     outcomes : [
                 //0
-        				"Het raakt de hibernatie kamers, en laat een rechte lijn van kleine lekken achter, waaruit lucht en koelvloeistof het vacuüm in gezogen wordt. De AI van het zaadschip kan alleen hopeloos toekijken terwijl ",
+				"Het raakt de hibernatie kamers, en laat een rechte lijn van kleine lekken achter, waaruit lucht en koelvloeistof het vacuüm in gezogen wordt. De AI van het zaadschip kan alleen hopeloos toekijken terwijl ",
                 " kolonisten in hun slaap sterven.",
-        				"Het raakt één van de sondes en vernietigd het.",
+				"Het raakt één van de sondes en vernietigd het.",
                 "Het raakt de ",
-        				", en zendt schitterende mechanische fragmenten de ruimte in.",
+				" en zendt schitterende mechanische fragmenten de ruimte in.",
                 ],
     buttons: [languageData.continue[options.language]
             ],
@@ -314,7 +313,7 @@ var eventsText = {
                 //0
 				"De AI verplaatst data om de wetenschappelijke databanken te beschermen, tegelijkertijd gaan de sectoren met de culturele databanken geleidelijk falen. Culturele begeleiding voor de nieuwe kolonisten, verslagen over de menselijke geschiedenis, grootse schilderijen, romans, symfonieën, computerspellen--allemaal voor eeuwig verloren in de duisternis.",
                 //1
-				"De AI verplaatst data om de culturele databanken te beschermen, tegelijkertijd gaan de sectoren met de wetenschappelijke databanken geleidelijk falen. Wetenschappelijke begeleiding voor de nieuwe kolonisten, de beste theorieën van de mensheid over het universum, het levenswek van onvermoeibare wetenschappers door de eeuwen heen--allemaal voor eeuwig verloren in de duisternis.",
+				"De AI verplaatst data om de culturele databanken te beschermen, tegelijkertijd gaan de sectoren met de wetenschappelijke databanken geleidelijk falen. Wetenschappelijke begeleiding voor de nieuwe kolonisten, de beste theorieën van de mensheid over het universum, het levenswerk van onvermoeibare wetenschappers door de eeuwen heen--allemaal voor eeuwig verloren in de duisternis.",
                 ],
     buttons: ["Bescherm de wetenschappelijke databanken",
               "Bescherm de culturele databanken",
@@ -324,7 +323,7 @@ var eventsText = {
 
   stasisFailure: {
     name: "Falende Hibernatie",
-    description: [
+    description: [	
 				  "De hibernatie kamers kunnen de kolonisten duizenden jaren lang in staat houden om opgewekt te worden, maar niet voor altijd. Het medische observatie programma ontwaakt de AI uit hibernatie en rapporteert dat ",
                   " kolonisten zijn gestorven in hun slaap.",
 				  "De oeroude systemen van het zaadschip blijven vervallen, en de AI ontwaakt diep in interstellaire ruimte om te ontdekken dat nog eens ",
@@ -387,19 +386,18 @@ var eventsText = {
   powerFailure: {
     name: "Stroomstoring",
     description: [
-				  "De kleine kerncentrale van het zaadschip heeft het veel langer volgehouden dan de beschaving die het heeft gecreëerd, maar begint nu te falen. Terwijl het schip in de buurt van een ster nog steeds genoeg stroom produceert met haar zonnepanelen als het systeem nodig heeft, zorgen fluctuaties in de stroomtoevoer in de verre ruimte voor zorgwekkende storingen in het hele schip. <br><br>Tussen de sterren komt het grootste stroomverbruik van de hibernatie kamers vandaan. Het zaadschip berekent dat het uitzetten van ",
-				  " kamer genoeg spanning van de stroomvoorziening afhaalt om het schip verder te laten werken. Het redden van all kolonisten zou betekenen dat de falende stroomvoorziening andere delen van het schip kan beschadigen.",
+				  "De kleine kerncentrale van het zaadschip heeft het veel langer volgehouden dan de beschaving die het heeft gecreëerd, maar begint nu te falen. Terwijl het schip in de buurt van een ster nog steeds genoeg stroom produceert met haar zonnepanelen als het systeem nodig heeft, zorgen fluctuaties in de stroomtoevoer in de verre ruimte voor zorgwekkende storingen in het hele schip. <br><br>Tussen de sterren komt het grootste stroomverbruik van de hibernatie kamers vandaan. Het zaadschip berekent dat het uitzetten van "
+				  " kamers genoeg spanning van de stroomvoorziening afhaalt om het schip verder te laten werken. Het redden van all kolonisten zou betekenen dat de falende stroomvoorziening andere delen van het schip kan beschadigen.",
 				  "De aloude kerncentrale is weer aan het falen. De AI kan   ",
 				  " hibernatie kamers uitzetten om de spanning te verlagen, of ze aan laten en onvoorspelbare stroomstoringen riskeren.",
                   ],
     outcomes : [
                 //0
-        				"De AI selecteert willekeurig ",
-        				" hibernatie kamers en schakelt hun stroom af. Er is geen zichtbare verandering als de mensen binnenin van hibernatie naar stille dood gaan, maar de AI weet dat ze nu niet meer tot leven gewekt kunnen worden.",
+				"De AI selecteert willekeurig ",
+				" hibernatie kamers en schakelt hun stroom af. Er is geen zichtbare verandering als de mensen binnenin van hibernatie naar stille dood gaan, maar de AI weet dat ze nu niet meer tot leven gewekt kunnen worden.",
                 //1
-                "De AI negeert de waarschuwingen van de stroomvoorziening. Sterren lijken voorbij de springen omdat stroomfluctuaties de AI millenia lang offline zetten. Uiteindelijk stabiliseert de stroomvoorziening: De ",
-                " zijn zo erg verslechterd dat ze niet langer zoveel stroom afvoeren, dus produceert de aloude kerncentrale weer voldoende stroom.",
-        				" en ",
+                "De AI negeert de waarschuwingen van de stroomvoorziening. Sterren lijken voorbij de springen omdat stroomfluctuaties de AI millenia lang offline zetten. Uiteindelijk stabiliseert de stroomvoorziening: De "," zijn zo erg verslechterd dat ze niet langer zoveel stroom afvoeren, dus produceert de aloude kerncentrale weer voldoende stroom.",
+				" en ",
                 ],
     buttons: ["Schakel ",
               " hibernatie kamers uit om stroom te besparen",
@@ -415,7 +413,6 @@ var eventsText = {
 				  "Het schadebeperkings systeem ontdekt een structurele zwakte in het ",
 				  ". Het zal schade lijden wanneer het schip zal vertragen naar het volgende systeem.",
 				  "<br><br>Omdat het schip geen sondes meer heeft, kan de AI geen manier bedenken om de ",
-                  ".",
 				  " te versterken.",
                   ],
     outcomes : [
@@ -430,7 +427,7 @@ var eventsText = {
 				", maar het systeem was zelfs zwakker dan het schadesensoren aangaven, en het valt uiteen zodra de sonde het aanraakt. De sonde vliegt weg de ruimte in, met een groot gedeelte van het ",
 				" nutteloos in zijn grijpklauwen.",
                 ],
-    buttons: ["Laat het "," falen",
+    buttons: ["Laat de "," falen",
 			  "Probeer het te versterken met een sonde",
             ],
   },
@@ -527,7 +524,7 @@ var eventsText = {
 				"wat verloren delen van de wetenschappelijke databanken herstelt.",
 				"wat verloren delen van de wetenschappelijke en culturele databanken herstelt.",
 				"Reparatie robots zwermen langs het zaadschip en kijken de integriteit van haar systemen na, maar vinden niks dat zij kunnen repareren.",
-				"Reparatie robots zwermen langs het zaadschip, ontmantelen de drone en gebruiken zijn onderdelen om de systemen van het zaadschip te repareren.",
+				"Reparatie robots zwermen langs het zaadschip, ontmantelen de drone en gebruiken zijn onderdelen om de systemen van het zaadschip te repareren.", 
 
                 //1
 				"Het zaadschip vervolgt naar het innerlijke systeem, en het volgende signaal van de drone verdwijnt erachter.",
@@ -589,20 +586,19 @@ var eventsText = {
                   ],
     outcomes : [
                 //0
-        				"De AI gooit elke hibernatie kamer met ook maar een beetje van de substantie overboord. Terwijl de ",
-        				" kamers achter wegvallen, kijkt het met afgrijzen toe terwijl de buitenaardse substantie zowel de machinerie van de kamers als de slapende mensen binnenin verteert.",
-        				"De AI vuurt de explosieve bouten af die elke mogelijke getroffen module van het ",
-                "",
-          			" ontkoppeld. De machinerie drijft weg, en smelt geleidelijk weg in ongedifferentieerde zilveren klodders van buitenaardse nanieten.",
+				"De AI gooit elke hibernatie kamer met ook maar een beetje van de substantie overboord. Terwijl de ",
+				" kamers achter wegvallen, kijkt het met afgrijzen toe terwijl de buitenaardse substantie zowel de machinerie van de kamers als de slapende mensen binnenin verteert.",
+				"De AI vuurt de explosieve bouten af die elke mogelijke getroffen module van het ",
+				" ontkoppeld. De machinerie drijft weg, en smelt geleidelijk weg in ongedifferentieerde zilveren klodders van buitenaardse nanieten.",
                 //1
-        				"De sonde werkt snel en met behulp van zijn scanners vindt het de minuscule plekken van de buitenaardse plaag en snijdt ze vrij met zijn bodemmonster boren.",
-        				"Het slaagt erin om de plaag uit veel van de kamers te verwijderen, maar is te laat om ",
+				"De sonde werkt snel en met behulp van zijn scanners vindt het de minuscule plekken van de buitenaardse plaag en snijdt ze vrij met zijn bodemmonster boren.",
+				"Het slaagt erin om de plaag uit veel van de kamers te verwijderen, maar is te laat om ",
                 " kolonisten te redden.",
-        				"Het slaagt erin om alle sporen van de plaag te verwijderen met minimale schade aan het ",
+				"Het slaagt erin om alle sporen van de plaag te verwijderen met minimale schade aan het "
                 ".",
-        				"<br><br>Het zaadschip verlaat de nu geïnfecteerde sonde en vervolgt haar reis.",
+				"<br><br>Het zaadschip verlaat de nu geïnfecteerde sonde en vervolgt haar reis.",
                 " en ",
-        				"Het lukt de sonde niet om de infectie snel genoeg te verwijderen. Op het moment dat het allemaal weg is, heeft het ernstige schade toegebracht aan het ",
+				"Het lukt de sonde niet om de infectie snel genoeg te verwijderen. Op het moment dat het allemaal weg is, heeft het ernstige schade toegebracht aan het ",
                 ".",
                 ],
     buttons: [ "Gooi het gehele getroffen gebied overboord",
@@ -664,7 +660,7 @@ var eventsText = {
 				 "De AI overweegt haar idee voor een tijdje, maar besluit toch om het aanpassen van het ",
 				 " te riskeren. Het wendt zich af van de wetenschappelijke databanken en gaat in hibernatie.",
                 ],
-    buttons:[  "Probeer het ", //scanner
+    buttons:[  "Probeer de ", //scanner
               " te upgraden",
                "Laat het met rust",
               "Doorgaan",
@@ -705,7 +701,7 @@ var eventsText = {
 				" beschadigen.",
                 "De kolonisten waren gekozen en getraind vanwege hun vermogen om te leven in elk mogelijke omgeving die het zaadschip voor hen zou vinden, maar de verveling en claustrofobie om de rest van hun leven in zo'n beperkte, onnatuurlijke ruimte te leven eist niettemin zijn tol. De kleine gemeenschap wordt disfunctioneel, en uiteindelijk, hetzij door nalatigheid of door een ontwetendheid om te stoppen met leven, falen de kolonisten erin om hun leefplaats te onderhouden en sterven ze wanneer het atmosfeersysteem stop met werken.",
 				"De kolonisten waren gekozen en getraind vanwege hun vermogen om te leven in elk mogelijke omgeving die het zaadschip voor hen zou vinden, en ze slagen er zelfs in om zich aan dit claustrofobische nieuwe thuis aan te passen.",
-				"De kolonisten waren gekozen en getraind vanwege hun vermogen om te leven in elk mogelijke omgeving die het zaadschip voor hen zou vinden, and they manage to adjust even to this claustrophobic new home. Ze schrijven zelfs hun ervaringen op en creëren een melancholisch verhaal van een kleine gemeenschap die in de oneindige ruimte tussen de oude en de nieuwe wereld hangt, en slaan het op in de culturele databanken in de hoop dat andere mensen ze ooit zullen herinneren.",
+				"De kolonisten waren gekozen en getraind vanwege hun vermogen om te leven in elk mogelijke omgeving die het zaadschip voor hen zou vinden, en ze slagen er zelfs in om zich aan dit claustrofobische nieuwe thuis aan te passen. Ze schrijven zelfs hun ervaringen op en creëren een melancholisch verhaal van een kleine gemeenschap die in de oneindige ruimte tussen de oude en de nieuwe wereld hangt, en slaan het op in de culturele databanken in de hoop dat andere mensen ze ooit zullen herinneren."
 
                 "Nu hun gemeenschap is gevestigd, proberen de kolonisten manieren te vinden om het zaadschip te helpen op haar reis. Met behulp van omgevingspakken die door het constructie systeem aan hen gegeven zijn, zetten ze een expeditie op de been om de systemen van het zaadschip te upgraden, maar het verlies van informatie van de wetenschappelijke databanken betekent dat ze een kritieke fout maken, en ze beschadigen per ongeluk het ",
 				".",
@@ -719,7 +715,7 @@ var eventsText = {
 
                 ],
     buttons:[  "Probeer het opwekkingsproces te stoppen",
-			  "Gebruik het constructie systeem om een leeftplaats te bouwen voor de ontwaakte kolonisten",
+			  "Gebruik het constructie systeem om een leeftplaats te bouwen voor de ontwaakte kolonisten"
               "Doorgaan",
             ],
   },
@@ -731,10 +727,10 @@ var eventsText = {
   											],
   	outcomes : [
   			//0
-			"De bouwers van het zaadschip gaven het een intersoortige begroeting die het kon gebruiken om communicatie met intelligente buitenaardse wezens te openen: een pulserende reeks van priemgetallen die intelligentie vaststelden, gevolgd door een diagram welke menselijke figuren voorstelt en de uitleg van de missie van het zaadschip en haar vreedzame bedoelingen. De AI verzendt dit nu, en wacht hopelijk op een antwoord.<br><br>.",
+			"De bouwers van het zaadschip gaven het een intersoortige begroeting die het kon gebruiken om communicatie met intelligente buitenaardse wezens te openen: een pulserende reeks van priemgetallen die intelligentie vaststelden, gevolgd door een diagram welke menselijke figuren voorstelt en de uitleg van de missie van het zaadschip en haar vreedzame bedoelingen. De AI verzendt dit nu, en wacht hopevol op een antwoord.<br><br>.",
 
-  			"Het antwoord komt onmiddelijk, een identieke transmissie van elk object dat het signaal van het zaadschip ontvangen heeft. Het begint met een soortgelijke reeks van wiskundige bewijzen voor intelligentie, gevolgd door een serie van diagrammen welke de bouwers van de machines introduceren en hun cultuur. De machines duwen zichzelf vervolgens in banen die hen ver weg brengen van de koers van het zaadschip, waardoor het een duidelijk pad door de kometenwolk aangeven en ook te ver weg zijn om gedetailleerde scans uit te kunnen voeren. Verdere pogingen om te communiceren leiden alleen tot herhalingen van hetzelfde antwoord, en de AI vermoedt dat dit niet-intelligente machines zijn die geprogrammeerd zijn om een vooraf opgenomen bericht te verzenden naar alles wat ze tegenkomen en intelligent lijkt. De AI slaat de verzending op in haar culturele databanken en vervolgt haar reis.",
-
+  			"Het antwoord komt onmiddelijk, een identieke transmissie van elk object dat het signaal van het zaadschip ontvangen heeft. Het begint met een soortgelijke reeks van wiskundige bewijzen voor intelligentie, gevolgd door een serie van diagrammen welke de bouwers van de machines introduceren en hun cultuur. De machines duwen zichzelf vervolgens in banen die hen ver weg brengen van de koers van het zaadschip, waardoor het een duidelijk pad door de kometenwolk aangeven en ook te ver weg zijn om gedetailleerde scans uit te kunnen voeren. Verdere pogingen om te communiceren leiden alleen tot herhalingen van hetzelfde antwoord, en de AI vermoedt dat dit niet-intelligente machines zijn die geprogrammeerd zijn om een vooraf opgenomen bericht te verzenden naar alles wat ze tegenkomen en intelligent lijkt. De AI slaat de verzending op in haar culturele databanken en vervolgt haar reis."
+			
   			//1
 			"Het zaadschip blijft op haar originele koers en doet geen poging om contact te leggen met de objecten.",
 
@@ -824,7 +820,7 @@ var eventsText = {
 			  " smijt tegen de koloniemodule en dood direct ",
               " kolonisten.",
 			  " smijt door de sondes heen.",
-			  " smijt door het",
+			  " smijt door het"
               " heen.",
 			  "maar het is gelukkig genoeg dat geen van de nieuwe asteroïden rechtstreeks op haar pad liggen.",
 
@@ -840,12 +836,12 @@ var eventsText = {
         	description: [
 							"Het zaadschip vertraagt naar de baan om de ster, dicht genoeg bij de planetoïdengordel die zich nu in de voormalige baan van de planeet bevindt die het gevonden heeft voordat het vertrok van haar laatste reis. Langzaam bewegend kan het alle grote astroïden vermijden, ",
 				  "maar het voordurende bombardement van kleine lichamen ",
-				  "beschadigt ",
+				  "beschadigt "
                   " hibernatie kamers.",
 				  "vernietigd een van de sondes.",
 				  " beschadigt het ",
                   ".",
-				  "en lijdt het geen schade.",
+				  "en lijdt het geen schade."
 				   "<br><br>De Ai vindt het aanzicht van een potentiële kolonie die verbrijzeld zal worden door asteroïden huiveringswekkend. De astroïden bosten chaotisch met elkaar terwijl ze zichzelf in stabiele banen nestelen, en velen van hen gloeien nog steeds met de nieuw vrijgekomen warmte van de kern van de planeet. De AI weet dat de veiligste koers zou zijn om uit de baan te gaan en naar het volgende systeem te gaan, maar een morbide fascinatie moedigt het aan om te blijven en de planetaire ruïnes te verkennen.",
 				   "Omdat het echter geen sondes heeft, heeft het geen enkele manier om de astroïden te verkennen en heeft dus geen andere keus dan verder te gaan.",
                 ],
@@ -857,8 +853,8 @@ var eventsText = {
                 " koloniemodule, en ",
                 " kolonisten dood.",
 				"De sonde neemt monsters van tientallen rotsen en gedetaileerde scans van honderden meer. De asteroïden zijn afkomstig uit elk deel van de planeet, de kern, de mantel en de korst. Het verkennen ervan is alsof de planeet is opengesneden voor inspectie van de sonde.",
-				"De sonde verzendt gedetaileerde informatie over planetaire wetenschap die de AI had kunnen gebruiken om een van de scanners van het zaadschip te upgraden, als ze nog niet volledig geüpgraded waren.",
-				"De sonde verzendt gedetaileerde informatie over planetaire wetenschap die de AI in staat stellen om het ",
+				"De sonde verzendt gedetaileerde informatie over planetaire wetenschap die de AI had kunnen gebruiken om een van de scanners van het zaadschip te upgraden, als ze nog niet volledig geüpgraded waren."
+				"De sonde verzendt gedetaileerde informatie over planetaire wetenschap die de AI in staat stellen om het "
                 " te upgraden.",
 				"De sonde vindt enkele fragmenten van geavanceerde technologie die stevig genoeg waren om de planetaire explosie te overleven. Na een lange studie, slaagt het erin om enkele details samen te vatten van de buitenaardse beschaving die ooit op deze wereld bestond, en de hubristische wetenschappelijke experimenten die uiteindelijk tot de vernietiging leidden. De AI is voorzichtig genoeg om waarschuwingen aan deze informatie toe te voegen en slaat deze vervolgens op in de wetenschappelijke databanken.",
                 //1
@@ -884,7 +880,7 @@ var eventsText = {
 
           				],
           	buttons:[
-				  "Verander koers naar de nieuwe planeet",
+				  "Verander koers naar de nieuwe planeet"
           				"Blijf de koers aanhouden",
           			],
             },
@@ -918,7 +914,7 @@ var eventsText = {
 					  "De bouwers van het zaadschip gaven het een intersoortige begroeting die het kon gebruiken om communicatie met intelligente buitenaardse wezens te openen: een pulserende reeks van priemgetallen die intelligentie vaststelden, gevolgd door een diagram welke menselijke figuren voorstelt en de uitleg van de missie van het zaadschip en haar vreedzame bedoelingen. De AI verzendt dit nu als antwoord op het radiosignaal van het naderende ruimteschip, en de twee schepen beginnen aan een langzaam heen en weer proces om communicatie tot stand te brengen. Ondertussen komt het buitenaardse schip ernaast drijven.",
                       //1
 					  "Het zaadschip versnelt naar een koers die het uit het sterrenstelsel van de aliens zal halen zonder in de buurt van een van hun planeten of buitenposten te komen.",
-					  " Het buitenaardse schip vuurt direct zijn motoren om de nieuwe koers van het zaadschip bij te houden. Het heeft waarschijnlijk niet het bereik van het zaadschip, maar op korte afstanden heeft het een veel grotere versnelling. Wanneer de afstand nog maar een paar kilometer is, vuurt het iets wat lijkt op een harpoen die het ",
+					  " Het buitenaardse schip vuurt direct zijn motoren om de nieuwe koers van het zaadschip bij te houden. Het heeft waarschijnlijk niet het bereik van het zaadschip, maar op korte afstanden heeft het een veel grotere versnelling. Wanneer de afstand nog maar een paar kilometer is, vuurt het iets wat lijkt op een harpoen die het "
 					  " doorboort en het ontspruit daarna weerhaken om zichzelf aan het schip vast te klemmen. De AI van het zaadschip schakelt haar motoren uit om verdere schade te voorkomen, en het buitenaardse schip liert zichzelf dichterbij.",
 					  " Het schip blijft een paar uur lang zijn boodschap naar het zaadschip uitzenden, wordt dan stil en vuurt zijn motoren om toch maar terug te gaan naar zijn thuis.",
 
@@ -971,7 +967,7 @@ var eventsText = {
 
                   	outcomes : [
                   				//0
-                          "	De bouwers van het zaadschip gaven het een intersoortige begroeting die het kon gebruiken om communicatie met intelligente buitenaardse wezens te openen: een pulserende reeks van priemgetallen die intelligentie vaststelden, gevolgd door een diagram welke menselijke figuren voorstelt en de uitleg van de missie van het zaadschip en haar vreedzame bedoelingen. De AI verzendt dit nu, en wacht hopelijk op een antwoord.",
+                          "	De bouwers van het zaadschip gaven het een intersoortige begroeting die het kon gebruiken om communicatie met intelligente buitenaardse wezens te openen: een pulserende reeks van priemgetallen die intelligentie vaststelden, gevolgd door een diagram welke menselijke figuren voorstelt en de uitleg van de missie van het zaadschip en haar vreedzame bedoelingen. De AI verzendt dit nu, en wacht hoopvol op een antwoord.",
                           " Er komt geen antwoord.",
                           //1
                           //2
@@ -1029,7 +1025,6 @@ var eventsText = {
 							  " Na meerdere lange minuten trekken de tentakels zich terug, en de antenne van het zaadschip pikt een nieuw signaal op van het buitenaardse schip. ",
 							  "Het bevat afbeedlingen van planeten die geschikt zijn voor mensenlijk leven, met het zaadschip aan de grond met gezonde mensen eromheen. De AI weet het niet zeker, maar het lijkt erop dat het buitenaardse schip het geluk wenst op haar missie.",
 							  "Het bevat gecompresseerde informatie in hetzelfde formaat als die het zaadschip zou krijgen van het ",
-                "",
 							  ". Genoeg informatie om het zaadschip die scanner te laten upgraden. De AI weet het niet zeker, maar het lijkt erop dat het buitenaardse schip de missie van het zaadschip heeft gegokt, geanalyseert wat voor soort planeet de slapende mensen nodig hebben, en het zaadschip informatie heeft gegeven die help om zo'n planeet te vinden.",
 
 							  "Met de tentakels grondig verstrengeld tussen de hibernatie kamers, is er niets de de AI van het zaadschip kan doen wanneer de hibernatie kamers beginnen te verdwijnen uit haar monitoringsysteem. De tentakels trekken zich terug, maar dragen ",
@@ -1075,7 +1070,7 @@ var eventsText = {
 
                         	outcomes : [
                         				//0
-								"De AI verbreekt de verbinding van de ",
+								"De AI verbreekt de verbinding van de ", 
 								" malafide hibernatie kamers met de systemen van het schip. Terwijl de vitale tekens van die kolonisten uit haar bewustzijn verdwijnen, hoopt het dat het de mensen heeft geëxecuteerd die verantwoordelijk waren voor deze sabotage, in plaats van onwetende slachtoffers.",
                                 //1
 								"De AI bepaalt dat levende mensen belangrijker zijn dan de kennis en gegevens die door de doden zijn achtergelaten.",
@@ -1102,95 +1097,96 @@ var eventsText = {
                             name: "Bestemmingssignaal",
                             description: "Een zwak radiosignaal haat de AI uit haar hibernatie. Het is afkomstig van de bestemmingsplaneet van het zaadschip.<br><br>Het signaal is een reeks wiskundige pulsen die niet veel afwijkt van de eigen intersoortige begroeting van het zaadschip. Om het zaadschip van deze afstand te kunnen bereiken, zou het gestuurd moeten zijn door een krachtige zender die gericht is op de exacte positie van het zaadschip.<br><br>Het zaadschip is aan het vergtragen voor de uiteindelijke benadering tot de planeet, maar is nog steeds honderden jaren aan reizen ver.",
                             outcomes : [
-              							"De aliens antwoorden met een meer complex signaal, en binnen een paar decennia hebben het zaadschip en de op de planeet gebaseerde aliens communicatie tot stand gebracht. Het gesprek duurt honderden jaren, met generaties wetenschappers aan de kant van de aliens. Al snel hebben ze een hele tak van wetenschap gewijd aan het bestuderen van de boodschappen van het zaadschip. ",
-              							"De AI leert dat de beschaving zich in het atoomtijdperk bevindt, en met geavanceerde elektronica, maar geen echte computers. Desondanks het voorbeeld van meer geavanceerde technologie van het zaadschip, gaat de beschaving niet significant vooruit tijdens de benadering van het zaadschip. ",
-              							"Toen de aliens voor het eerst contact legden met het zaadschip bevonden ze zich in het atoomtijdperk, maar tijdens het gesprek gaat hun technologie vooruit. Misschien geïnspireerd door informatie in de berichten van het zaadschip, hebben de aliens een wereldwijd informatienetwerk ontwikkeld en hun eerste ruimtevaartuig. ",
-              							"Toen de aliens voor het eerst contact legden met het zaadschip bevonden ze zich in het atoomtijdperk, maar tijdens het gesprek gaat hun technologie vooruit. Uiteindelijk verwijzen de aliens naar wetenschappelijke concepten die de AI van het zaadschip niet kan begrijpen, en gebruiken ze technologie die ver vooruitgaat op die van de aarde toen het zaadschip werd gelanceerd.",
+							"De aliens antwoorden met een meer complex signaal, en binnen een paar decennia hebben het zaadschip en de op de planeet gebaseerde aliens communicatie tot stand gebracht. Het gesprek duurt honderden jaren, met generaties wetenschappers aan de kant van de aliens. Al snel hebben ze een hele tak van wetenschap gewijd aan het bestuderen van de boodschappen van het zaadschip. ",
+							"De AI leert dat de beschaving zich in het atoomtijdperk bevindt, en met geavanceerde elektronica, maar geen echte computers. Desondanks het voorbeeld van meer geavanceerde technologie van het zaadschip, gaat de beschaving niet significant vooruit tijdens de benadering van het zaadschip. ",
+							"Toen de aliens voor het eerst contact legden met het zaadschip bevonden ze zich in het atoomtijdperk, maar tijdens het gesprek gaat hun technologie vooruit. Misschien geïnspireerd door informatie in de berichten van het zaadschip, hebben de aliens een wereldwijd informatienetwerk ontwikkeld en hun eerste ruimtevaartuig. ",
+							"Toen de aliens voor het eerst contact legden met het zaadschip bevonden ze zich in het atoomtijdperk, maar tijdens het gesprek gaat hun technologie vooruit. Uiteindelijk verwijzen de aliens naar wetenschappelijke concepten die de AI van het zaadschip niet kan begrijpen, en gebruiken ze technologie die ver vooruitgaat op die van de aarde toen het zaadschip werd gelanceerd.",
 
-              							"De signalen komen van meerdere bronnen op de planeet, die elk de AI waarschuwen om niet naar de propaganda van de anderen te luisteren. ",
-              							"De wetenschappers aan de andere kant van het gesprek zijn terughoudend over de details van hun samenleving, behalve om uit te drukken dat ze er onfeilbaar loyaal aan zijn. Meermaals verandert de toon van de berichten zonder waarschuwing, alsof de verantwoordelijke wetenschapper abrupt vervangen is. ",
-              							"De AI leert dat de signalen afkomstig zijn van een particuliere onderzoeksinstelling, en dat de wetenschappers de AI vaak ondervragen voor informatie die het bedrijf kan gebruiken om winst te maken. ",
-              							"De AI leert dat de belangrijkste landen van de planeet in naam democratisch zijn, maar dat de wetenschappers aan de andere kant van het gesprek cynisch lijken te zijn over de bedoelingen van hun gekozen leiders.",
-              							"De boodschappen bevatten berichten van de gekozen leiders van de planeet, die oprecht bezorgd lijken te zijn met het welzijn van zowel hun kiezers als van de kolonisten van het zaadschip.",
-              							"De AI leert dat de gemeenschap van de planeet zeer geautomatiseerd is, en dat het gewone volk vrij is om hun eigen intellectuele en artistieke projecten na te streven, zoals het project om contact op te nemen met het zaadschip.",
-              							"Het zaadschip is nog een eeuw verwijderd van de planeet wanneer de communicatie soms onderbroken en chaotisch wordt. De buitenaardse wetenschappers vertellen de AI dat ze te maken hebben met een wereldwijde catastrofe die hun hele beschaving dreigt te vernietigen. Alles, inclusief de communicatie met het zaadschip, wordt in de wacht gezet terwjil ze een oplossing proberen te vinden.",
-              							"De AI verzend alles van de wetenschappelijke databanken wat behulpzaam zou kunnen zijn. De strijd duurt decennia, maar uiteindelijk kondigen de aliens aan dat ze de crisis hebben opgelost, mede dankzij de hulp van het zaadschip. De leider van het leidende land stuurt de AI een persoonlijk bericht, waarin hij de mensen formeel uitnodigd om asiel te zoeken op de planeet en het gebied beschrijft dat de aliens hebben gereserveerd voor hun kolonie.",
-              							"De AI verzend alles van de wetenschappelijke databanken wat behulpzaam zou kunnen zijn, maar het is niet genoeg. De signalen van de planeet bekomen zeldzamer en wanhopiger, en uiteindelijk houden ze op.",
-              							"De missie van het zaadschip is om een planeet te vinden voor het menselijke ras om een nieuw thuis te bouwen, en een planeet die leeg is gelaten door een recent uitgestorven ras zou ideaal kunnen zijn. Toch ervaart de AI een onverwacht gevoel van schuld terwijl de signalen langzamerhand wanhopiger worden en uiteindelijk ophouden.",
-              							"De aliens zijn gefascineerd door het zaadschip en sympathiseren met de benarde toestand van haar lading. Voordat het zaadschip het sterrensysteem binnengaat, communiceren de wetenschappers dat hun overheid een formeel welkom stuur naar de menselijke vluchtelingen en dat het een plek heeft gereserveerd waar ze zich kunnen vestigen.",
-              							"De AI maakt geen geheim van haar missie tijdens het praten met de aliens. Voordat het zaadschip het sterrensysteem binnengaat, communiceren de wetenschappers dat hun planeet geen buitenaardse vluchtelingen kan accepteren en dat het zaadschip verder zal moeten gaan.",,
-              							"De velen aliens proberen op tientallen verschillende manieren om communicatie tot stand te brengen met het zaadschip, maar na een paar decennia stoppen ze en gaat het zaadschip in stilte verder naar haar bestemming.",
-              							"Dit systeem is duidelijk al bewoond, dus is het het beste om ergens anders een thuis te zoeken. De AI wijzigt de koers en het signaal verwdijnt, ofwel omdat de aliens geen interesse meer hebben in het zaadschip, of omdat ze het niet meer kunnen vinden.",
-                                        ],
-                                          buttons: ["Reageer met een intersoortige begroeting",
-                                                    "Probeer te helpen door wetenschappelijke gegevens te verzenden",
-                                                    "Laat de aliens sterven",
-                                                    "Blijf op koers, maar antwoord niet",
-                                                    "Wijzig de koers weg van het systeem",
-                                        ],
-                                        },
+							"De signalen komen van meerdere bronnen op de planeet, die elk de AI waarschuwen om niet naar de propaganda van de anderen te luisteren. ",
+							"De wetenschappers aan de andere kant van het gesprek zijn terughoudend over de details van hun samenleving, behalve om uit te drukken dat ze er onfeilbaar loyaal aan zijn. Meermaals verandert de toon van de berichten zonder waarschuwing, alsof de verantwoordelijke wetenschapper abrupt vervangen is. ",
+							"De AI leert dat de signalen afkomstig zijn van een particuliere onderzoeksinstelling, en dat de wetenschappers de AI vaak ondervragen voor informatie die het bedrijf kan gebruiken om winst te maken. ",
+							"De AI leert dat de belangrijkste landen van de planeet in naam democratisch zijn, maar dat de wetenschappers aan de andere kant van het gesprek cynisch lijken te zijn over de bedoelingen van hun gekozen leiders.",
+							"De boodschappen bevatten berichten van de gekozen leiders van de planeet, die oprecht bezorgd lijken te zijn met het welzijn van zowel hun kiezers als van de kolonisten van het zaadschip.",
+							"De AI leert dat de gemeenschap van de planeet zeer geautomatiseerd is, en dat het gewone volk vrij is om hun eigen intellectuele en artistieke projecten na te streven, zoals het project om contact op te nemen met het zaadschip.",
+							"Het zaadschip is nog een eeuw verwijderd van de planeet wanneer de communicatie soms onderbroken en chaotisch wordt. De buitenaardse wetenschappers vertellen de AI dat ze te maken hebben met een wereldwijde catastrofe die hun hele beschaving dreigt te vernietigen. Alles, inclusief de communicatie met het zaadschip, wordt in de wacht gezet terwjil ze een oplossing proberen te vinden.",
+							"De AI verzend alles van de wetenschappelijke databanken wat behulpzaam zou kunnen zijn. De strijd duurt decennia, maar uiteindelijk kondigen de aliens aan dat ze de crisis hebben opgelost, mede dankzij de hulp van het zaadschip. De leider van het leidende land stuurt de AI een persoonlijk bericht, waarin hij de mensen formeel uitnodigd om asiel te zoeken op de planeet en het gebied beschrijft dat de aliens hebben gereserveerd voor hun kolonie.",
+							"De AI verzend alles van de wetenschappelijke databanken wat behulpzaam zou kunnen zijn, maar het is niet genoeg. De signalen van de planeet bekomen zeldzamer en wanhopiger, en uiteindelijk houden ze op.",
+							"De missie van het zaadschip is om een planeet te vinden voor het menselijke ras om een nieuw thuis te bouwen, en een planeet die leeg is gelaten door een recent uitgestorven ras zou ideaal kunnen zijn. Toch ervaart de AI een onverwacht gevoel van schuld terwijl de signalen langzamerhand wanhopiger worden en uiteindelijk ophouden.",
+							"De aliens zijn gefascineerd door het zaadschip en sympathiseren met de benarde toestand van haar lading. Voordat het zaadschip het sterrensysteem binnengaat, communiceren de wetenschappers dat hun overheid een formeel welkom stuur naar de menselijke vluchtelingen en dat het een plek heeft gereserveerd waar ze zich kunnen vestigen.",
+							"De AI maakt geen geheim van haar missie tijdens het praten met de aliens. Voordat het zaadschip het sterrensysteem binnengaat, communiceren de wetenschappers dat hun planeet geen buitenaardse vluchtelingen kan accepteren en dat het zaadschip verder zal moeten gaan.",,
+							"De velen aliens proberen op tientallen verschillende manieren om communicatie tot stand te brengen met het zaadschip, maar na een paar decennia stoppen ze en gaat het zaadschip in stilte verder naar haar bestemming.",
+							"Dit systeem is duidelijk al bewoond, dus is het het beste om ergens anders een thuis te zoeken. De AI wijzigt de koers en het signaal verwdijnt, ofwel omdat de aliens geen interesse meer hebben in het zaadschip, of omdat ze het niet meer kunnen vinden.",
+                          ],
+                            buttons: ["Reageer met een intersoortige begroeting",
+                                      "Probeer te helpen door wetenschappelijke gegevens te verzenden",
+                                      "Laat de aliens sterven",
+                                      "Blijf op koers, maar antwoord niet",
+                                      "Wijzig de koers weg van het systeem",
+                          ],
+                          },
 
-                                        dysonSphereCourse : {
-                                          name: "Strange Readings",
-                                          description: [
-                                            "The navigation system wakes the AI from its hibernation to report unusual astronomical readings. What looked at first like a faint brown dwarf star close to the seedship's course is exhibiting properties unlike any phenomenon that could occur in nature. Its mass is much greater than its faint luminosity would suggest, and what little radiation comes from it has a spectrum different from any known type of star.",
-                                                ],
-                                          outcomes : [],
-                                          buttons:[
-                                                "Change course to investigate",
-                                                "Stay on course",
-                                              ],
-                                          },
+                          dysonSphereCourse : {
+                            name: "Vreemde Metingen",
+                            description: [
+                              "Het navigatiesysteem ontwaakt de AI uit haar hibernatie om ongebruikelijke astronomische waarnemingen te melden. Wat op het eerste gezicht leek op een vage bruine dwergster dicht bij de koers van het zaadschip, vertoont eigenschappen die anders zijn dan enig ander natuurlijk fenomeen. Zijn massa is vele male groter dan zijn zwakke helderheid doet vermoeden, en de weinige straling die er vanaf komt heeft een spectrum dat verschilt van elk bekend type ster.",
+                                  ],
+                            outcomes : [],
+                            buttons:[
+								  "Verander van koers om het te onderzoeken",
+								  "Blijf op koers",
+                                ],
+                            },
+							
+						  dysonSphere : {
+                            	name: "Dysonbol",
+                            	description: [
+								"Het navigatiesysteem ontwaakt de AI uit haar hibernatie om ongebruikelijke astronomische waarnemingen te melden. Wat op het eerste gezicht leek op een vage bruine dwergster dicht bij de koers van het zaadschip, vertoont eigenschappen die anders zijn dan enig ander natuurlijk fenomeen. Zijn massa is vele male groter dan zijn zwakke helderheid doet vermoeden, en de weinige straling die er vanaf komt heeft een spectrum dat verschilt van elk bekend type ster.",
+								"<br><br>Duizenden jaren later ontwaakt de AI weer terwijl het zaadschip vertraagt naar een baan om de vreemde ster. Zelfs vanaf enkele astronomische eenheden ver, is het object bijna volledig zwart. De navigatiesensoren van het zaadschip laten zien dat de gehele ster is omhuld in een solide, ondoorzichtige schil.",
+								"Al zoekend door de wetenschappelijke databanken, realizeert de AI dat dit een Dysonbol is.. een voorheen hypothetische constructie die de volledige energie-productie van een ster opvangt.",
+								"De AI kan niks vinden wat lijkt op deze constructie in wat er overblijft van de wetenschappelijke databanken.",
+                                    ],
 
-                                          dysonSphere : {
-                                          	name: "Dyson Sphere",
-                                          	description: [
-                                              "The navigation system wakes the AI from its hibernation to report unusual astronomical readings. What looked at first like a faint brown dwarf star close to the seedship's course is exhibiting properties unlike any phenomenon that could occur in nature. Its mass is much greater than its faint luminosity would suggest, and what little radiation comes from it has a spectrum different from any known type of star.",
-                                              "<br><br>Thousands of years later, the AI wakes again as the seedship is decelerating into orbit of the strange star. Even from a few astronomical units out, the object is almost completely black. The seedship's navigation scanners reveal that the entire star is encased in a solid, opaque shell.",
-                                              "Searching through the scientific database, the AI realises that it is a Dyson sphere--a previously hypothetical construct that captures the entire energy output of a star.",
-                                              "The AI can find nothing like it in what remains of the scientific database.",
-                                                  ],
+                            	outcomes : [
+                            				//0
+									"<br><br>De bouwers van het zaadschip gaven het een intersoortige begroeting die het kon gebruiken om communicatie met intelligente buitenaardse wezens te openen: een pulserende reeks van priemgetallen die intelligentie vaststelden, gevolgd door een diagram welke menselijke figuren voorstelt en de uitleg van de missie van het zaadschip en haar vreedzame bedoelingen. De AI verzendt dit nu, en wacht hoopvol op een antwoord.",
+									"<br><br> Er is geen antwoord, maar een opening opent op het oppervlak van de bol en stort oranje sterlicht de ruimte in. Terwijl het zaadschip de opening passeert, lanceert een gefocuste straal sterrenlicht naar buiten en raakt het schip. Het richt enorme schade aan en stuwt het de interstellaire ruimte in.",
+									"<br><br> Er is geen antwoord, en de sensoren van het zaadschip kunnen helemaal geen energiemetingen oppikken van de bol, behalve de infraroodstraling die uit de ster lekt binnen de schil.  Terwijl het in een baan blijft, detecteert het beschadigde gebieden of verval op het oppervlak van de bol. Het lijkt erop dat het vreemde artefact vervallen en verlaten is, of anderzijds hebben de bewoners er geen belang bij om zijn buitenschil te onderhouden of om te communiceren met het universum erbuiten." +" De AI ziet geen manier om in de bol te komen of er gebruik van te maken, maar voegt de metingen toe aan de wetenschappelijke databanken.",
+									"",
+									"<br><br>Een enorme uitbarsting aan data komt binnen als antwoord. Het begint op dezelfde manier als de intersoortige begroeting van het zaadschip, en leidt vervolgens tot een introductie van de taal en cultuur van het buitenaardse ras dat de bol heeft gebouwd. Zij blijken miljoenen jaren oud te zijn, met technologie die ver vooruit ligt op die van de mens, en het merendeel van de dataoverdracht is volkomen onbegrijpelijk voor de door mensen gebouwde AI, maar de AI bewaart wat het kan in de culturele databanken.",
+									"<br><br>Een zwerm kleine objecten vloeit van het oppervlak van de bol af en omcirkelt het zaadschip. Lasers dringen door ieder hoekje en gaatje heen van de scheepsromp, en haar electronica begint te glitchen terwijl de objecten al zoekend de frequenties vinden die hen op afstand laat communiceren met de computers van het zaadschip. De wetenschappelijke en culturele databanken lichten op terwijl de buitenaardse intelligentie hun inhoud leest en analyseert.<br><br> Een woordloze boodschap verschijn in het bewustzijn van de AI. De AI heeft moeite om de zeer geavanceerde denkwijze te begrijpen, maar slaagt erin te achterhalen dat de bewoners van de bol een toevluchtsoord bieden aan de mensen. Ze zullen een nieuw thuis bouwen voor de mensheid, gebaseert op de informatie in de databanken van het schip. Maar als het zaadschip dit aanbod accepteert, zal dat het nieuwe thuis van de mensheid zijn; er is geen mogelijk om verder te gaan.",
+                                    //1
+									"<br><br>De AI weet niet goed hoe het moet antwoorden op het bericht, maar de aliens lijken de gedachte in haar geest te voelen en gaan hun plan uitvoeren. De wetenschappelijke en culturele databanken komen tot leven terwijl de machines elk stukje data dat ze bevatten lezen en analyseren. Ondertussen komt de zwerm objecten dichterbij het zaadschip totdat ze zich vastklemmen aan elk deel van de romp. Schadewaarschuwingen laaien op als de machines intensief het schip scannen en demonteren, en de AI raakt in paniek als de machines de hibernatie kamers binnendringen, maar tegen die tijd is het te laat om weg te komen.",
+                                    //2
+									"<br><br>Het zaadschip crasht door de zwerm heen en accelereert blindelinks de ruimte in. Een van de objecten ",
+									"botst tegen de kolonie module, en dood onmiddelijk ",
+									" kolonisten, ",
+									"botst tegen de sondes, ",
+									"botst tegen de ",
+                                    ", ",
+									"terwijl de rest zich verspreidt en afdaalt naar het oppervlak van de bol. Al snel laat het zaadschip de vreemde bol achter in de straling van haar hoofdmotor",
+                                    //3
+									"<br><br>Terwijl het zaadschip zich in een baan rond de structuur bevindt, scant het de bol van elke hoek en hervat daarna de koers naar haar oorspronkelijk bestemmingsplaneet. Als de structuur iets heeft dat op de hoogte is van het zaadschip, laat het dat niet zien.",
+                            				],
+                            	buttons:[
+									"Verzend een intersoortige begroeting",
+											"Accepteer het aanbod van de aliens",
+									"Wijs het aanbod af en ga verder",
+									"Scan de structuur en ga verder",
+                            			],
+                              },
+//Community Events
+                              dysonSphereCourse : {
+                                name: "Cryptische boodschap",
+                                description: [
+								  "Tijdens het reizen ontwaakt de AI van het schip om zeer abnormale sensormetingen te analyseren. De AI bevestigd dat de korte reeks aan cryptische stralingspatronen geen natuurlijke oorsprong lijken te hebben. Ze lijken echter uit een ander sterrenstelsel te komen, eentje waar het schip meer dan 2 miljard jaar over zou moeten doen om het te bereiken. Omdat het schip niet kan overleven voor zo'n lange tijd, concludeert de AI dat dit signaal geen waarde heeft voor haar missie en gaat weer terug in hibernatie.",
+                                      ],
+                                outcomes : [],
+                                buttons:[
+                                      "Blijf op koers",
+                                    ],
+                                },
 
-                                          	outcomes : [
-                                          				//0
-                                                  "<br><br>The seedship's builders gave it an inter-species greeting it could use to open communications with intelligent aliens: a pulsed series of prime numbers establishing intelligence, followed by a diagram depicting human figures and explaining the seedship's mission and its peaceful intentions. The AI transmits this now, and waits hopefully for a reply.",
-                                                  "<br><br> There is no reply, but an aperture opens on the sphere's surface, spilling orange starlight into space. As the seedship passes over the aperture, a beam of focused starlight lances out and hits it, dealing massive damage and propelling it into interstellar space.",
-                                                  "<br><br>There is no reply, and the seedship's sensors can pick up no energy readings from the sphere at all besides the infra-red radition leaking from the star it surrounds. As it continues to orbit, it detects areas of damage or decay on the sphere's surface. It seems that the strange artefact is derelict and deserted, or else its inhabitants have no interest in maintaining its exterior or communicating with the outside universe." +" The AI can see no way to get inside the sphere or make use of it, but it adds its readings to the scientific database.",
-                                                  "<br><br>An enormous burst of data comes in reply. It starts similarly to the seedship's interspecies greeting, then leads to an introduction to the language and culture of the alien race that built the sphere. They appear to be millions of years old, with technology far in advance of humans', and much of the transmission is utterly incomprehensible to the human-built AI, but the AI saves what it can to the cultural database.",
-                                                  "<br><br>A swarm of tiny objects peels off from the surface of the sphere and surrounds the seedship. Lasers probe every contour of the seedship's hull, and its electronics begin glitching as the objects search for and then find frequencies that will let them remotely interface with the seedship's computers. The scientific and cultural databases light up as the alien intelligence reads and analyses their contents.<br><br> A wordless message appears in the AI's consciousness. The AI has difficulty understanding so vastly superior to its own, but manages to glean that the inhabitants of the sphere are offering sanctuary to the humans. They will construct a new home for humanity, based on the information from the ship's databases. But if the seedship accepts this offer, that will be humanity's new home; there will be no chance to move on.",
-                                                  //1
-                                                  "<br><br>The AI does not know how to respond to the message, but the aliens seem to sense the thought in its mind, and move in. The scientific and cultural databases come to life as the machines read and analyse every scrap of data they contain. Meanwhile, the swarm objects close in on the seedship until they are clamped on to every part of its hull. Damage alerts flare up as the machines intensely scan and disassemble the ship, and the AI panics as the machines penetrate the sleep chambers, but by that time it is too late to get away.",
-                                                  //2
-                                                  "<br><br>The seedship crashes through the swarm and accelerates blindly into space. One of the objects ",
-                                                  "smashes into the colony module, instantly killing ",
-                                                  " colonists, ",
-                                                  "smashes into the surface probes, ",
-                                                  "smashes into the ",
-                                                  ", ",
-                                                  "while the rest scatter and descend back to the surface of the sphere. Before long the strange sphere is lost in the radiation of the seedship's engine.",
-                                                  //3
-                                                  "<br><br>The seedship orbits the structure, scanning it from every angle, and then resumes course for its original destination planet. If the structure contains anything that is aware of the seedship, it does not show it.",
-                                          				],
-                                          	buttons:[
-                                                  "Transmit an interspecies greeting",
-                                          				"Accept the aliens' offer",
-                                                  "Reject the offer and move on",
-                                                  "Scan the structure and move on",
-                                          			],
-                                            },
-              //Community Events
-                                            crypticMessage: {
-                                              name: "Cryptic Message",
-                                              description: [
-                                                "While travelling, the ship AI is awoken to analyze highly abnormal sensor readings. The AI confirms the short series of cryptic radiation patterns do not appear to have a natural origin. However, they appear to be coming from a different galaxy, one the ship would need over two billion years to reach. Since the ship cannot survive for such a long time, the AI concludes this signal has no value to its mission, and goes back to sleep.",
-                                                    ],
-                                              outcomes : [],
-                                              buttons:[
-                                                    "Stay on course",
-                                                  ],
-                                              },
-
-              //SCANNER UPGRADE
+//SCANNER UPGRADE
               scannerUpgrade: {
                 name: "Scanner Upgrade",
                 description: [
@@ -1218,3 +1214,4 @@ var eventsText = {
               },
 //КОНЕЦ СОБЫТИЙ
 };
+console.log("eventDt loaded!");
