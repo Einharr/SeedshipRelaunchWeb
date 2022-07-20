@@ -36,13 +36,13 @@ var languageData = {
 //Menu
   menuStart: ["NEW GAME", "НОВАЯ ИГРА", "NOWA GRA", "NUEVO JUEGO", "NUOVA PARTITA", "NEUES SPIEL", "NOUVELLE PARTIE", "NYTT SPEL", "NIEUW SPEL", "新遊戲"],
   menuLoad: ["CONTINUE", "ПРОДОЛЖИТЬ", "KONTYNUOWAĆ", "CONTINUAR", "CONTINUA", "FORTFAHREN", "CONTINUER", "FORTSÄTT", "DOORGAAN", "繼續遊戲"],
-  menuSettings: ["SETTINGS", "НАСТРОЙКИ", "USTAWIENIA", "OPTIONES", "OPZIONI", "EINSTELLUNGEN", "PARAMÈTRES", "INSTÄLLNINGAR", "INSTELLINGEN", "設定"],
-  menuCredits: ["CREDITS", "АВТОРЫ", "AUTORZY", "Créditos", "CREDITI", "MITWIRKENDE", "CRÉDITS", "LISTA ÖVER MEDVERKANDE", "AFTITELING", "製作團隊"],
+  menuSettings: ["SETTINGS", "НАСТРОЙКИ", "USTAWIENIA", "OPTIONES", "OPZIONI", "EINSTELLUNGEN", "PARAMÈTRES", "INSTÄLLNINGAR", "OPTIES", "設定"],
+  menuCredits: ["CREDITS", "АВТОРЫ", "AUTORZY", "Créditos", "CREDITI", "MITWIRKENDE", "CRÉDITS", "LISTA ÖVER MEDVERKANDE", "CREDITS", "製作團隊"],
   menuBack: ["BACK", "НАЗАД", "PLECY", "REGRESAR", "INDIETRO", "ZURÜCK", "RETOUR", "TILLBAKA", "TERUG", "返回"],
   menuClassic: ["Classic UI", "Классический UI", "KLASYCZNY INTERFEJS", "UI Clasica", "", "Klassisches UI", "Interface originelle", "", "Klassieke weergave", "經典介面"],
   menuAddon: ["Community Content", "Дополнительный Контент", "ZAWARTOŚĆ SPOŁECZNOŚĆI", "Contenido comunitario", "", "Community Erweiterung", "Contenu de la communauté", "", "Community-inhoud", "社群功能"],
   menuPastM: ["Past Missions", "Прошлые Миссии", "POPRZEDNIE MISJE", "Misiones Previas", "", "Bisherige Missionen", "Anciennes missions", "", "Eerdere Missies", "過去的任務"],
-  MainMenu: ["Main Menu", "Главное Меню", "", "Menú Principal", "", "", "Menu principal", "", "", "主畫面"],
+  MainMenu: ["Main Menu", "Главное Меню", "", "Menú Principal", "", "", "Menu principal", "", "Hoofdmenu", "主畫面"],
   //NEW!!!
 
 //НАСТРОЙКИ
@@ -50,8 +50,8 @@ var languageData = {
   settingsLangCh: ["Language","Язык", "Język", "Idioma", "Lingua", "Sprache", "Français", "Språk", "Taal", "語言"],
   settingsLanguage: ["English","Русский", "Polskie", "Español", "Italiano", "Deutsch", "Français", "Svenska", "Nederlands", "中文"],
   settingsMusic: ["Music","Музыка", "Muzyka", "Música", "Musica", "Musik", "La Musique", "Musik", "Muziek", "音樂"],
-  settingsVoiceOver: ["Voice Acting","озвучка", "Aktorstwo Głosowe", "Actuación De Voz", "Recitazione Vocale", "Sprachausgabe", "Doublage", "Röstskådespeleri", "Stemacteren", "配音"],
-  settingsGraphics: ["Graphics","Графика", "Grafika", "Gráficos", "Grafica", "Grafik", "Graphismes", "Grafik", "Grafisch", "畫質"],
+  settingsVoiceOver: ["Voice Acting","озвучка", "Aktorstwo Głosowe", "Actuación De Voz", "Recitazione Vocale", "Sprachausgabe", "Doublage", "Röstskådespeleri", "Voice-over", "配音"],
+  settingsGraphics: ["Graphics","Графика", "Grafika", "Gráficos", "Grafica", "Grafik", "Graphismes", "Grafik", "Grafische instellingen", "畫質"],
   settingsClouds: ["Clouds","Облака", "Chmury", "Nubes", "Nuvole", "Wolken", "Nuages", "Moln", "Wolken", "雲"],
   settingsPlanet: ["Planet","Планета", "Planety", "Planeta", "Pianeta", "Planet", "Planètes", "Planeter", "Planeet", "星球"],
   settingsApply: ["Apply","Применить", "Zastosuj", "Aplicar", "Applica", "Anwenden", "Here goes French", "Tillämpa", "Toepassen", "套用"],
@@ -297,28 +297,28 @@ Score: ["Score"],
 },
 //DUTCH
 {
-Atmosphere: ["Planet atmosphere"],
-Gravity: ["Planet gravity"],
-Temperature: ["Planet temperature"],
-Water: ["Planet water"],
-Resources: ["Planet resources"],
+Atmosphere: ["Planeet atmosfeer"],
+Gravity: ["Planeet zwaartekracht"],
+Temperature: ["Planeet temperatuur"],
+Water: ["Planeet water"],
+Resources: ["Planeet grondstoffen"],
 
-SurvivorsAL: ["Survivors after landing"],
-SurvivorsAC: ["Survivors after settlement construction"],
+SurvivorsAL: ["Overlevenden na landing"],
+SurvivorsAC: ["Overlevenden na nederzetting opbouw"],
 
-FinalTL: ["Final technology level"],
-FinalC: ["Final culture"],
+FinalTL: ["Uiteindelijke technologieniveau"],
+FinalC: ["Uiteindelijke cultuur"],
 
-SurvivingSc: ["Surviving scientific database × 10"],
-SurvivingCl: ["Surviving cultural database × 10"],
+SurvivingSc: ["Behouden wetenschapelijke databanken × 10"],
+SurvivingCl: ["Behouden culturele databanken × 10"],
 
-NativeRl: ["Native Relations"],
+NativeRl: ["Inheemse Relaties"],
 
-Total: ["Total"],
+Total: ["Totaal"],
 
-Planet: ["Planet"],
-Date: ["Date"],
-Result: ["Result"],
+Planet: ["Planeet"],
+Date: ["Datum"],
+Result: ["Resultaat"],
 Score: ["Score"],
 },
       //Chinese
@@ -799,7 +799,7 @@ Score: ["Score"],
       scanScience: ["science database", "научная база данных", "baza danych naukowych", "base de datos científica", "Database scientifico", "Wissenschatliche Datenbank", "Here goes French", "vetenskapsdatabas", "wetenschapelijke databank", "科學資料庫"],
       scanCulture: ["cultural database", "культурная база данных", "baza danych kulturowych", "base de datos cultural", "Database culturale", "Kulturelle Datenbank", "Here goes French", "kulturdatabas", "culturele databank", "文化資料庫"],
       scanColonists: ["sleep chambers", "криокапсул", "komory hibernacyjne", "Cámaras de criosueño", "Camere criogeniche", "Kälteschlaf Kapslen", "Here goes French", "sovkammare", "hibernatie kamers", "冬眠艙"],
-      scanProbes: ["surface probe", "исследовательский зонд", "", "sondas de superficie", "sonda", "Sonden", "Here goes French", "ytsond", "sonden", "表面探勘機"],
+      scanProbes: ["surface probe", "исследовательский зонд", "", "sondas de superficie", "sonda", "Sonden", "Here goes French", "ytsond", "sondes", "表面探勘機"],
 
 //Кнопки
 //Buttons
@@ -864,10 +864,10 @@ Score: ["Score"],
   +"<br>"+"<br>"+"Fartygets solsegel driver sig självt snabbare och snabbare in i mörkret, och AI'n lyssnar medans radiokontakten från markkontrollen brister och sedan upphör. När allt är tyst går skeppet in i viloläge för att vänta på första etappen av sin långa resa."
   +"<br>"+"<br>"+"Efter tusentals år av tröga resor vaknar fröskeppets AI. Med hoppet på lågvarv siktar den sin mottagare i riktning mot jordens sol, men den är lika tyst som vilken annan av de otaliga döda stjärnorna. Med undantag för de tusen frysta kolonisterna som vaggas i sina skydds- och livsuppehållande system, är människosläktet nu utrotat."+"<br><br>",
 //DUTCH
-"En toen ze wisten dat de aarde ten onder zou gaan, bouwden zij een schip. Niet als een ark, maar als een zaadje: sluimerend, maar met potentieel. In haar hart, duizend kolonisten in hibernatie, gekozen en getraind om een nieuwe beschaving op te bouwen op een nieuwe wereld."+
-  "<br>"+"<br>"+"Om het schip te besturen maakten zij een een artificiële intelligentie. Geen mens, maar gemaakt om als hen te denken en voelen, omdat alleen iets dat kan nadenken en voelen als een mens met de toekomst van de mensheid vertrouwd kon worden. Haar taak is groots maar simpel: Het evalueren van elke planeet die het schip tegenkomt, hetzij beslissen om verder te zoeken, of haar reis hier te beëindingen."
-  +"<br>"+"<br>"+"Haar zonnezeilen stuwen het schip steeds sneller voort naar de duisternis, en de AI luistert terwijl de signalen van het grondstation langzaamaan vervagen en uiteindelijk ophouden. Als alles stil is geworden, gaat de AI zelf in hibernatie, om op de eerste stappen van haar lange reis af te wachten."
-  +"<br>"+"<br>"+"Na millenia van langzaam reizen, ontwaakt de AI. Al hopend richt de AI haar antennes terug richting de zon, Sol, maar deze is net zo stil talloze andere dode sterren. Afgezien van de duizend bevrozen kolonisten die door het schip in leven worden gehouden, is het menselijke ras nu uitgestorven."+"<br><br>",
+"En toen ze wisten dat de aarde ten onder zou gaan, bouwden ze een schip. Niet bedoeld als een ark, maar als een zaadje: sluimerend, maar met potentie. Met in haar hart, 1000 kolonisten in hibernatie, gekozen en getraind om een nieuwe beschaving op te bouwen in een nieuwe wereld."+
+  "<br>"+"<br>"+"Om het schip te besturen schaapten zij een artificiële intelligentie. Geen mens, maar gemaakt om als hen te denken en voelen. Alleen iets dat kan nadenken en voelen als een mens kan namelijk met de toekomst van de mensheid vertrouwd kon worden. Haar taak is groots maar simpel: Het evalueren van elke planeet die het schip tegenkomt, hetzij beslissen om verder te zoeken, of haar reis hier te beëindingen."
+  +"<br>"+"<br>"+"De zonnezeilen stuwen het schip steeds sneller voort naar de duisternis, en de AI luistert terwijl de signalen van het grondstation langzaamaan vervagen en uiteindelijk ophouden. Als alles stil is geworden, gaat de AI zelf in hibernatie, om op de eerste stappen van haar lange reis af te wachten."
+  +"<br>"+"<br>"+"Na millenia van langzaam reizen, ontwaakt de AI. Al hopend richt de AI haar antennes terug richting de zon, Sol, maar deze is net zo stil als talloze andere dode sterren. Afgezien van de duizend bevrozen kolonisten die door het schip in leven worden gehouden, is het menselijke ras nu uitgestorven."+"<br><br>",
   //CHINESE
   "當人們知道地球注定毀滅時，他們建造了一個殖民船。不太像方舟，而更像一個種子:休眠但有潛力。在它之中，一千個受過訓練且經過層層選拔的殖民者，等待著甦醒並在新世界上重建文明"+
   "<br>"+"<br>"+"為了操縱飛船，人們製作了一個人工智慧。不是人但有著像人一樣思考和感受的能力。因為只有能像人一樣思考和感受的東西才能承擔人類未來的重任。它的任務重大但簡單，評估每一個飛船遇見的星球且決定要繼續尋找，還是在原地結束任務"
@@ -1010,7 +1010,7 @@ Score: ["Score"],
   var NamesDt = ["Eden", "Paradijs", "Terra Nova", "Nieuw Aarde", "Gaia", /*0-4*/
                 "Inferno", "Caliente", "Scorcha", /*5-7*/
                 "Arctica", "Frigidia", "Frigus",  /*8-10*/
-                "Cueball", "Atlas", "Crag", "Rise", /*11-14*/
+                "Cueball", "Atlas", "Klif", "Rise", /*11-14*/
                 "Atlantis", "Oceanus", "Thalassa", "Pacifica", /*15-18*/
                 "Sneeuwball", "IJsbal", "IJslolly", "Glacia", /*19-22*/
                 "Dor", "Woestijn", "Zandsteen", "Dorstig", /*23-26*/
@@ -1018,7 +1018,7 @@ Score: ["Score"],
                 "Schaarste", "Gebrek",  /*31-32*/
                 "Gaarde", "Arcadia",  /*33-34*/
                 "Belladonna", "Cornucopia",  /*35-36*/
-                "Labyrint", "Bijenkorf", "Morlock", "Ondergronds", "Spelunk", /*37-41*/
+                "Labyrint", "Honingraat", "Morlock", "Subterra", "Spelunk", /*37-41*/
   ];
   var NamesCHt = ["伊甸", "天堂", "特拉諾瓦", "新地球", "蓋亞", /*0-4*/
                 "煉獄", "祝融", "回祿", /*5-7*/
@@ -1140,30 +1140,41 @@ var Personalities = [
  "<b>Relaunch team</b>",
     "",
   //Coders
+  "<b>Coders</b>",
   "Einharr",
   "Partoffuturehivemind",
   "Alex Yong",
   // Russian
+  "<b>Russian Translation</b>",
   "Liubov Blazomirskaia",
   // Polish
+  "<b>Polish Translation</b>",
   "Joy",
   // Spanish
+  "<b>Spanish Translation</b>",
   "Jason Salmeron",
   "Делта א",
   // Italitan
+  "<b>Italian Translation</b>",
   "Joele Bruno",
   // German
+  "<b>German Translation</b>",
   "Claptrappington",
   // French
+  "<b>French Translation</b>",
   "Alleni",
   // Swedish
+  "<b>Swedish Translation</b>",
   "dating - Oscar Salman Prim",
   // Dutch
+  "<b>Dutch Translation</b>",
   "Bob Bornkamp",
   //Chinese
+  "<b>Chinese Translation</b>",
   "章立達Albert Jones",
   //Music&SFX
   //Graphics
+  "<b>Graphics</b>",
   "Alexandra 'Aspid' Vagner",
   "Kostyantyn 'Koksma' Khrystyuk",
 ]
@@ -1337,19 +1348,23 @@ var	CreditsSE = [
 ]
 
 var	CreditsDt = [
-  "Maker van het originele spel Seedship:",
-  "Programmering van de remake:",
-  "Russische vertaling:",
-  "Spaanse vertaling:",
-  "Poolse vertaling:",
-  "Italiaanse vertaling:",
-  "Duitse vertaling:",
-  "Zweedse vertaling:",
-  "Nederlandse vertaling:",
-  "Turkish translation:",
-  "Music and SFX",
-  "Graphics",
-  "Playtesters",
+  "<b>Maker van het originele spel Seedship:<b>",
+  "<b>Originele Seedship team<b>",
+  "<b>Seedship:Relaunch team<b>",
+  "<b>Programmering van de remake:<b>",
+  "<b>Russische vertaling:<b>",
+  "<b>Poolse vertaling:<b>",
+  "<b>Spaanse vertaling:<b>",
+  "<b>Italiaanse vertaling:<b>",
+  "<b>Duitse vertaling:<b>",
+  "<b>Franse vertaling:<b>",
+  "<b>Zweedse vertaling:<b>",
+  "<b>Nederlandse vertaling:<b>",
+  "<b>Turkse vertaling:<b>",
+  "<b>Chinese vertaling:<b>",
+  "<b>Muziek en SFX:<b>",
+  "<b>Graphics:<b>",
+  "<b>Playtesters:<b>",
 ];
 
 var	CreditsCHt = [
