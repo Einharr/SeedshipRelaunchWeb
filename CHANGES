@@ -2,3 +2,4 @@ Version 0.9.7
 --------------
 Bugs:
  * fixed a bug where the nanotech plague would only damage one component at a time on "failure"
+ * fixed a bug when selecting a past mission on the past mission menu would sometimes select the wrong one.
