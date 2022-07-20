@@ -1219,7 +1219,7 @@ function menuPastMissions() {
           return function () {
             scoreLoad = gameload("Hiscore");
             console.log("ТЫЦ:", currentI)
-            singlePastMission(scoreLoad, currentI);
+            singlePastMission(scoreLoad.reverse(), currentI);
             document.getElementById('shipstatspanel').style.opacity = 1;
           }
         })();
