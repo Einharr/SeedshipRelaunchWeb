@@ -1751,8 +1751,8 @@ var nanotechPlague = {
     { choice: eventsText.nanotechPlague.buttons[1], exist: existCheck("false"), outcome: null, result: function(){
       nanotechPlague.visited = true;
       damageApply(cShip.probes, 1, "damage")
-
-			if (getRandomInt(0,100) >= 50){
+      _r = getRandomInt(0,100);
+			if (_r >= 50){
 				curEvent.choices[1].outcome = eventsText.nanotechPlague.outcomes[5]; //"The probe works quickly, using its scanners to find the minute patches of alien plague and its sample drills to cut them free.";
 				if (choDevice == languageData.scanColonists[options.language]){
 					deaths = killColonists("Low");
@@ -1773,7 +1773,7 @@ var nanotechPlague = {
         choDevice = deviceDamage(ScanArr.concat(DbArr, StrArr, ColArr), DamagedSystemsArray[0], DamagedSystemsArray[1]);
         DamagedSystemsArray.push(choDevice);
 
-        for (i = 0; i < DamagedSystemsArray.length; i++){
+        for (var i = 0; i < DamagedSystemsArray.length; i++){
           if (DamagedSystemsArray[i][2] == languageData.scanColonists[options.language]){
             damageApply(DamagedSystemsArray[i], killColonists("High"), "damage");
           } else {
