@@ -30,7 +30,7 @@ function newColony(ship, planet, ending) {
 
   planetGraphics();
   var planetName = "This Planet";
-  planet.name = "Unnamed planet"
+  planet.name = "unnamed planet"
   planet.nameID = 0;
   var colMax = 1000;
   var journeyDeaths = 0;
@@ -2815,7 +2815,10 @@ function newColony(ship, planet, ending) {
         };
       };
     };
-  };
+  }
+  else {//
+    NamesCurLang[1] = ["The " + planet.name];
+  }
 
   fc_done();
   localStorage.removeItem('Savedata');
