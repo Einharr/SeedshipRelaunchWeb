@@ -1,3 +1,8 @@
+Version 0.9.9
+-------------
+Bugs:
+ * Fixed a bug where on crash that kills all colonists, the name of the planet would be `undefined` instead of just unnamed planet.
+
 Version 0.9.8
 -------------
 Features:
