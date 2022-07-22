@@ -1205,7 +1205,7 @@ function newColony(ship, planet, ending) {
     EndingConstructionDamage[0].push(ship.colonists, allDeaths, "damage");
 
     //
-
+    damageApply(cShip.colonists,allDeaths,"damage");
     if (ship.colonists[0] <= 0) {
       hiscore.summary = "Construction Failure"
     };
