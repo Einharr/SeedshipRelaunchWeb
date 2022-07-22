@@ -2799,7 +2799,7 @@ function newColony(ship, planet, ending) {
         fc_ruins();
         if (hiscore.summary != "Destroyed by Alien Ruins") {
           fc_technology();
-          if (hiscore.summary != "Long-Term Technological Failure") {
+          if (!hiscore.summary.includes('Long-Term Technological Failure') ) {
             fc_culture();
           };
         };
