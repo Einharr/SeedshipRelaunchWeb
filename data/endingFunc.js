@@ -102,7 +102,8 @@ function newColony(ship, planet, ending) {
     final_tech_level: -1,
     final_culture: -1,
     native_relations: -1,
-
+    sciLevelName: "None",
+    cultureName: "None"
   };
 
   //Вычисление урона
