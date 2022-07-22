@@ -4,6 +4,7 @@ Bugs:
  * Fixed a bug where on crash that kills all colonists, the name of the planet would be `undefined` instead of just unnamed planet.
  * Fixed a bug where upon crash, you would get undefined in the final technology and final culture levels.
  * Fixed a bug where construction failure game over wasn't being triggered, allowing players to win the game with zero colonists.
+ * Fixed a bug where long-term technological failure game over would not occur.
 
 Version 0.9.8
 -------------
