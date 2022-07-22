@@ -2,6 +2,7 @@ Version 0.9.9
 -------------
 Bugs:
  * Fixed a bug where on crash that kills all colonists, the name of the planet would be `undefined` instead of just unnamed planet.
+ * Fixed a bug where upon crash, you would get undefined in the final technology and final culture levels.
 
 Version 0.9.8
 -------------
