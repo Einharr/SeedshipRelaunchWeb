@@ -18,6 +18,8 @@ on:
         required: true
         type: string
       apiKey:
+        #this should be a secret, but I don't have access to the settings at the time of writing and this is a private repo.
+        #revoke the secret when you are done.
         description: 'api_key for repo'
         required: true
         type: string
