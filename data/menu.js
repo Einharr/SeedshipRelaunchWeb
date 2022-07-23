@@ -51,7 +51,7 @@ console.log('Платформа в опциях: ' + options.platform);
 
 loading = false;
 
-var curVersion = "0.9.8";
+var curVersion = "0.9.9";
 if (!options.noLocalStorage){
   if (localStorage.getItem("Options") !== null) {
     options = gameload("Options");
