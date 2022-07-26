@@ -7,7 +7,11 @@
     if (cPlanet.anomalies.includes("Moon")){
       document.getElementById('moon').style.opacity = 1;
       document.getElementById("moonBg").style.background = "url(assets/textures/Moon/M"+getRandomInt(1,4).toString()+".png) repeat-x";
-    };
+    }
+    else {
+      document.getElementById('moon').style.opacity = 0;
+
+    }
 
 
     //ОТРИСОВКА ГРАФИКИ ПЛАНЕТЫ
