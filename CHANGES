@@ -2,6 +2,8 @@ Version 0.9.10
 --------------
 Bugs:
 * Making sure the moon goes hidden once we have a planet without it.
+* Reverted construction failure fix, as it was causing colonist miscalculations.
+* Fixed a bug where technological failure check would crash JS code.
 
 Version 0.9.9
 -------------
