@@ -98,7 +98,7 @@ function newColony(ship, planet, ending) {
 
 
   var hiscore = {
-    summary: null,
+    summary: "",
     final_tech_level: -1,
     final_culture: -1,
     native_relations: -1,
@@ -1205,7 +1205,8 @@ function newColony(ship, planet, ending) {
     EndingConstructionDamage[0].push(ship.colonists, allDeaths, "damage");
 
     //
-    damageApply(cShip.colonists,allDeaths,"damage");
+
+    //damageApply(cShip.colonists,allDeaths,"damage");
     if (ship.colonists[0] <= 0) {
       hiscore.summary = "Construction Failure"
     };
@@ -2799,7 +2800,7 @@ function newColony(ship, planet, ending) {
         fc_ruins();
         if (hiscore.summary != "Destroyed by Alien Ruins") {
           fc_technology();
-          if (hiscore.summary && !hiscore.summary.includes('Long-Term Technological Failure') ) {
+          if (!hiscore.summary.includes('Long-Term Technological Failure') ) {
             fc_culture();
           };
         };
