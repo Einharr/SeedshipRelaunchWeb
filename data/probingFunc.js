@@ -133,7 +133,8 @@ document.getElementById('description').innerHTML = currentProbing[0]+" "+current
       document.getElementById('description').innerHTML = currentProbing[i];
       btn.onclick = function () {
         landingReject();
-        document.getElementById('description').innerHTML = planetDescription(cPlanet);
+        //document.getElementById('description').innerHTML = planetDescription(cPlanet);
+        document.getElementById('description').innerHTML = cPlanet.description;
       };
     } 
     else {
