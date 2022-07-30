@@ -1,3 +1,9 @@
+Version 0.9.11
+--------------
+Bugs:
+* Fixed a bug where lanuching a probe would change the planet description text.
+* Reimplemented a new fix for the "all dead colonists but still won the game" bug 
+
 Version 0.9.10
 --------------
 Bugs:
