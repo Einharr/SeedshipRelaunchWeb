@@ -1,0 +1,37 @@
+{
+  "name": "com.seedship.relaunch",
+  "displayName": "Seedship:Relaunch",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "cordova-android": "^9.1.0",
+    "cordova-browser": "^6.0.0",
+    "cordova-plugin-nativeaudio": "^3.0.9",
+    "cordova-plugin-play-games-services": "^1.1.2",
+    "cordova-plugin-whitelist": "^1.3.4"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-play-games-services": {
+        "APP_ID": "136669222729",
+        "ANDROID_PLAY_SERVICES_GAMES_VERSION": "16.+",
+        "ANDROID_PLAY_SERVICES_PLUS_VERSION": "16.+"
+      },
+      "cordova-plugin-nativeaudio": {}
+    },
+    "platforms": [
+      "android",
+      "browser"
+    ]
+  }
+}
