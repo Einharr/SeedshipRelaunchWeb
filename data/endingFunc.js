@@ -2369,7 +2369,7 @@ function newColony(ship, planet, ending) {
   };
   //Final description
   //ФИНАЛЬНОЕ ОПИСАНИЕ
-  constructionDeaths = (colMax - ship.colonists[0]) - journeyDeaths;
+  constructionDeaths = (colMax - allDeaths) - journeyDeaths;
   function fc_done() {
     console.log(planet.name, planet.nameID, Names)
     console.log(NamesCurLang)
@@ -2842,9 +2842,10 @@ function newColony(ship, planet, ending) {
   //Calling Point Count Functions
   //ВЫЗОВ ФУНКЦИИ ПОДСЧЁТА ОЧКОВ
   final_score = countScore(cShip, cPlanet, hiscore);
-
+  console.log("constructiom deaths: "+ constructionDeaths);
+  console.log(constructionDeaths);
   final_score.landing = (1000 + colStow) - journeyDeaths;
-  final_score.construction = (1000 + colStow) - (journeyDeaths + constructionDeaths);
+  final_score.construction = (1000 + colStow) - (journeyDeaths + allDeaths);
   final_score.overall += (final_score.landing + final_score.construction);
 
   var ScoreRes = [
@@ -2962,7 +2963,7 @@ function newColony(ship, planet, ending) {
       PastMissions.push(cPlanet);
       PastMissions.push(ScoreDescription);
       PastMissions.push(final_score);
-      colonist_final_deaths = [colStow, journeyDeaths, constructionDeaths];
+      colonist_final_deaths = [colStow, journeyDeaths, allDeaths];
       PastMissions.push(colonist_final_deaths);
       PastMissions.push(hiscore);
 
