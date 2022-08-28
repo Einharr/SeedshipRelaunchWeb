@@ -957,7 +957,7 @@ var eventsText = {
       " While the alien ship retrieves its crew members, the seedship moves away and sets course for a new system.",
     ],
     buttons: [
-      "Let the aliens investige the ",
+      "Let the aliens investigate the ",
       "",
       "Try to shake the aliens off",
     ],

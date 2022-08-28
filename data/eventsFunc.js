@@ -2523,15 +2523,18 @@ var crewedShipDock = {
     id: 44,
     eventProperty: function(){
       	curEvent.description = eventsText.crewedShipDock.description[0];//"A hatch opens on the side of the alien ship and several creatures in bulky spacesuits emerge. They float over to the seedship and clamber around its surface, chattering incomprehensibly over their radios.";
-
-        if (getRandomInt(0,100) >= 50){
-        	choDevice[2] = languageData.scanColonists[options.language];
+        var randomNumberYay = getRandomInt(0,100);
+        if (randomNumberYay >= 50){
+        	choDevice = languageData.scanColonists[options.language];
         	curEvent.description += eventsText.crewedShipDock.description[1];//" When they find the sleep chambers they gather round in what looks like excitement and begin removing the outer layers of one of the chambers to take a look at the human being inside.";
+          curEvent.choices[0].choice = eventsText.crewedShipDock.buttons[0]+choDevice+eventsText.crewedShipDock.buttons[1];
         } else {
         	choDevice = deviceDamage(DbArr.concat(StrArr, ScanArr));
         	curEvent.description += eventsText.crewedShipDock.description[2]+choDevice[2]+eventsText.crewedShipDock.description[3]
+          curEvent.choices[0].choice = eventsText.crewedShipDock.buttons[0]+choDevice[2]+eventsText.crewedShipDock.buttons[1];
+          
         };
-        curEvent.choices[0].choice = eventsText.crewedShipDock.buttons[0]+choDevice[2]+eventsText.crewedShipDock.buttons[1];
+        
     },
     repeateble: true,
     visited: false,
@@ -2541,18 +2544,21 @@ var crewedShipDock = {
         { choice: null, exist: existCheck("true"), outcome: null, result: function(){
           curEvent.choices[0].outcome =	"";
 
-          if (getRandomInt(0,100) >= 50) {
-      			if (choDevice[2] == languageData.scanColonists[options.language]){
+          var aRandomInt = getRandomInt(0,100);
+          if (aRandomInt >= 50) {
+      			if (choDevice == languageData.scanColonists[options.language]){
       				deaths = killColonists("Low");
               damageApply(cShip.colonists, deaths, "damage");
       				curEvent.choices[0].outcome +=eventsText.crewedShipDock.outcomes[0]+deaths+eventsText.crewedShipDock.outcomes[1];
-      		}	else
+      		  }	
+            else {
       				curEvent.damageTaken = systemDamage("Low");
       				damageApply(choDevice, curEvent.damageTaken, "damage");
       				curEvent.choices[0].outcome += eventsText.crewedShipDock.outcomes[2]+choDevice[2]+eventsText.crewedShipDock.outcomes[3];
-
-      		} else {
-      			if (choDevice[2] == languageData.scanColonists[options.language]){
+            }
+      		} 
+          else {
+      			if (choDevice == languageData.scanColonists[options.language]){
       				curEvent.choices[0].outcome += eventsText.crewedShipDock.outcomes[4]; //"The aliens remove the outer shielding of some of the sleep chambers, but stop short of tampering with the life support equipment. They take pictures of the frozen humans with cameras mounted on their suits, and their radio chatter goes quiet as they press their hands against the transparency. After a while they carefully replace the shielding and make their way back to their ship.";
       			} else {
       				curEvent.choices[0].outcome += eventsText.crewedShipDock.outcomes[5]+choDevice[2]+eventsText.crewedShipDock.outcomes[6];
