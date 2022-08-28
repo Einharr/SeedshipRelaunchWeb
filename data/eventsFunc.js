@@ -811,7 +811,7 @@ var micrometiorite = {
         damageApply(choDevice, curEvent.damageTaken, "damage");
         curEvent.description += eventsText.micrometiorite.outcomes[3]+choDevice[2]+eventsText.micrometiorite.outcomes[4];
       };
-      damageApply(choDevice, curEvent.damageTaken, "damage");
+      //damageApply(choDevice, curEvent.damageTaken, "damage");
 
 
     },
