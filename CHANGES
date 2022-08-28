@@ -3,6 +3,7 @@ Version 0.9.13
 Bugs:
 * Fixed a bug where micrometeorite damage was being applied twice.
 * Fixed a bug where in the closed Android build, font was not being applied properly.
+* Fixed a bug with the Crewed Ship event where colonists would die and it would glitch the game stats. 
 
 Version 0.9.12
 --------------
