@@ -1139,6 +1139,7 @@ if (planetsVisited == 42){
         //destinationSignal aliens
   } else {
     cPlanet = new planet(
+      PlanetAtmosphere[getRandomInt(0, ((PlanetAtmosphere.length - 1) - cShip.atmosphere[1] * 2))],
       PlanetGravity[getRandomInt(0, ((PlanetGravity.length - 1) - cShip.gravity[1] * 2))],
       PlanetTemperature[getRandomInt(0, ((PlanetTemperature.length - 1) - cShip.temperature[1] * 2))],
       PlanetWater[getRandomInt(0, ((PlanetWater.length - 1) - cShip.water[1] * 2))],
