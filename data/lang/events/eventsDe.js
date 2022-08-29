@@ -80,7 +80,6 @@ var eventsText = {
                   " Eine Welle Strahlung knistert durch ",
                   "eine der ", //one of the probes damaged
                   " die ", //Leave as "" if there is no such construction in your language. Here it goes before SYSTEMNAME
-                  ". ",
                   " Die KI kann die Schäden hinnehmen oder die Elektronik deaktivieren und eine Kollision riskieren.",
 
                   ],
@@ -100,7 +99,6 @@ var eventsText = {
                 " mit Müll überschrieben werden.",
                 " die Strahlung Teile der ", //INEDET: Obejct goes here, then next line
                 " zerstört",
-                " Die KI kann die Schäden hinnehmen oder die Elektronik deaktivieren und eine Kollision riskieren.",
                 ],
     buttons: ["Elektronik ausschalten",
               "Nicht ausschalten",
@@ -128,7 +126,7 @@ var eventsText = {
                 "zerstört "," Schlafkammern.",
                 "eine Sonde unbrauchbar macht.",
                 "die ", //INEDIT object goes here
-                " zerreibt",
+                " zerreibt", 
                 " zu ihrer Erleichterung, sieht die KI, als sie die Scanner wieder aktiviert, dass das Schiff keinen Schaden genommen hat.",
                 ],
     buttons: ["Nutze die Scanner zum navigieren",
@@ -147,7 +145,6 @@ var eventsText = {
                 "Die KI weist das Navigationsystem an, die Anomalie zu umfliegen und ein neues Ziel zu suchen. Die KI überwacht die Sensorergebnisse, allerdings werden die Ergebnisse nie klar genug und zu erkennen, ob ein Kurswechsel wirklich nötig war.",
                 //1
                 "Die KI weist das Navigationssystem an, auf Kurs zu bleiben. Als die Sensoren die schwarze, nicht reflektierende Staubwolke darstellen kann ist es bereits zu spät, ihr auszuweichen. Das Schiff fliegt weiter in Richtung des Zielsystems, aber Staubpartikel beschädigen die",
-                ".",
                 "Die KI weist das Navigationssystem an auf Kurs zu bleiben. Zu ihrer Erleichterung zeigt sich, das die Anomalie eine Fehlermeldung der Sensoren war, als das Schiff durch das angebliche Hinderniss gleitet.",
                 ],
     buttons: ["Kurswechsel",
@@ -167,7 +164,6 @@ var eventsText = {
                 //1
                 "Die KI behält den Kurs bei, als Staubpartikel das Schiff bombardieren. Ein schwerer Treffer beschädigt die ",
                 " und die",
-                ".",
                 ],
     buttons: ["Notfall-Kursänderung",
               "Fliege durch den Staub",
@@ -188,7 +184,6 @@ var eventsText = {
                 " Schlafkammern.",
                 "Das Schiff ändert den Kurs, aber ein Eisfragment schmettert eine der Sonden aus ihrer Befestigung.",
                 "Das Schiff ändert den Kurs, ein Eisfragment trifft die ",
-                ".",
                 //1
                 "Der Komet trifft das Schiff und zerstört dabei ",
                 " Schlafkammern.",
@@ -205,13 +200,13 @@ var eventsText = {
   blackHole: {
     name: "Schwarzes Loch",
     description: [
-      "Die KI erwacht als dass sich der Kurs des Schiffes ändert, wie als wenn es in dem Gravitationsfeld eines Sternes gefangen wird. Die Quelle der Gravitation kann nicht von den Scannern gesehen werde, aber ist gibt nur eine Möglichkeit was es sein kann: ein schwarzes Loch."+"<br><br>"+
+      "Die KI erwacht als dass sich der Kurs des Schiffes ändert, wie als wenn es in dem Gravitationsfeld eines Sternes gefangen wird. Die Quelle der Gravitation kann nicht von den Scannern gesehen werde, aber ist gibt nur eine Möglichkeit was es sein kann: ein schwarzes Loch.",
       "Es ist bereits zu spät um dem Graviationsfeld zu entkommen, ohne die Antriebe zu überlasten. Das könnte jedoch die Systeme des Schiffes permanent beschädigen. Alternativ berechnet die KI, dass es reichen würde, ",
       " Schlafkammern aus dem Schiff zu werfen um leicht genug zu sein, dass das Schiff dem Gravitationsfeld ohne eine Überlastung der Triebwerke entkommen kann.",
       "Die KI erwacht, um zu sehen, dass es im Gravitationsfeld eines weiteren schwarzen Loches gefangen wurde. Sie muss sich entscheiden ob sie das Haupttriebwerk überlasten, oder ",
       " Schlafkammern abwerfen will.",
                   ],
-    outcomes : [
+outcomes : [
                 //0
                 "Einen Teil der Kolonisten zu opfern ist eine schwere Entscheidung, aber eine für die die KI von ihren Erbauern vorbereitet wurde. Sie wählt ",
                 " zufällige Schlafkmmern und löst sie von dem Schiff. Ihre bedauernswerten Bewohner treiben in Richtung des Ereignisshorizont, während sich das Schiff vom Graviationsfeld befreit.",
@@ -220,7 +215,7 @@ var eventsText = {
                 "Das Schiff fühlt sich so an, als würde es sich selbst zerreißen, aber als es sich erfolreich von dem Schwarzen Loch entfernt hat findet die KI heraus, dass die Erbauer großzügig mit der Sicherheitsgrenze waren und die Überladung keinen Schaden angerichtet hat.",
                 "Kleine Explosionen erschüttern das Schiff, als Teile unter dem Druck zusammenbrechen. Sobald das Schiff sich erfolgreich aus dem Gravitationsfeld bewegt hat, überprüft die KI das Schiff auf Schaden und findet heraus, dass die Überlastung die ",
                 " und die ",//INDEIT just add the Line below after the second system (or the first if only one was damaged)
-                "beschädigt hat",
+                "beschädigt hat.",
                 ],
     buttons: ["Werfe "," Schlafkammern aus dem Schiff",
               "Überlaste das Haupttriebwerk",
@@ -231,28 +226,24 @@ var eventsText = {
     name: "Trefferwahl",
     description: [
                   "Ein Alarm weckt die KI. Ein Asteorid ist auf Kollisionskurs mit dem Schiff. Das automatische Navigationsystem konnte ihm nicht ausweichen und weckt nun die KI um eine schnelle Entscheidung zu treffen. Der Asteroid wird die ",
-                  " treffen. Der Asteorid ist zu nah um ihm noch auszuweichen, aber wenn die KI die Manövriertriebwerke startet, kann sie das Schiff so drehen, dass der Asteroid nur die ",
+                  " treffen. Der Asteorid ist zu nah um ihm noch auszuweichen, aber wenn die KI die Manövriertriebwerke startet, kann sie das Schiff so drehen, dass der Asteroid nur die ", //INEDIT obejct does here, then next line
                   " trifft",
                   "Die KI erwacht wieder durch den Alarm des Navigationsystems. Ein Asteroid ist auf Kollisionskurs in Richtung der ",
                   " die KI kann den Kometen das System treffen lassen, oder das Schiff so rotieren, dass er ",
-                  "trifft",
+                  "trifft" //INEDIT same as above
                   ],
     outcomes : [
                 //0
-                "Der Asteorid zerschmettert  ",
-                " Schlafkammern und tötet die darin beherbergten Kolonisten.",
+                "Der Asteorid zerschmettert  ", " Schlafkammern und tötet die darin beherbergten Kolonisten.",
                 "Der Asteorid trifft die Halterung einer Sonde. Sie bricht heraus und treibt ins Weltall davon.",
-                "Der Asteorid trifft die ",
-                " und verteilt Bruchstücke davon ins Weltall.",
+                "Der Asteorid trifft die "," und verteilt Bruchstücke davon ins Weltall.",
                 //1 has same lines, but unlike in overheat, here I decided to copy it, so that i can add up some text about rotation of the ship
-                "Das Schiff dreht sich gerade noch so, dass der Asteroid nur die Schlafkammern trifft, aber dabei ",
-                " Kolonisten tötet.",
+                "Das Schiff dreht sich gerade noch so, dass der Asteroid nur die Schlafkammern trifft, aber dabei ", " Kolonisten tötet.",
                 "Das Schiff dreht sich gerade noch so, dass der Asteroid nur eine der Sonden trifft, die jedoch komplett zertrümmert wird.",
-                "Das Schiff dreht sich gerade noch so, dass der Asteroid nur die ",
-                " trifft und Bruchstücke davon ins Weltall dvonfliegen.",
+                "Das Schiff dreht sich gerade noch so, dass der Asteroid nur die "," trifft und Bruchstücke davon ins Weltall dvonfliegen.",
                 ],
     buttons: ["Erlaube den Schaden an den ",
-              "Drehe das Schiff, so dass es die ",
+              "Drehe das Schiff, so dass es die ", //INEDIT: Obejct goes here, then next line
               " trifft."
             ],
   },
@@ -268,8 +259,7 @@ var eventsText = {
                 "Er trifft die Schlafkammern und hinterlässt dabei kleine Löcher, aus denen die Kühlflüssigkeiten austreten. Die KI kann nur hilflos zusehen, während ",
                 " Kolonisten im Schlaf sterben.",
                 "Er trifft eine der Sonden und zerstört sie.",
-                "Er trifft die ",
-                " und reisst einige ihrer Komponenten mit sich in das Weltall.",
+                "Er trifft die "," und reisst einige ihrer Komponenten mit sich in das Weltall.",
                 ],
     buttons: [languageData.continue[options.language]
             ],
@@ -286,8 +276,7 @@ var eventsText = {
     outcomes : [
                 //0
                 "Die Schiffsysteme werden von vielen schnellen Kommandos der KI zur Sonde bombardiert. Nach hunderten von Denkzyklen der KI-- ein Bruchteil einer Sekunde lang --findet die KI den Programmfehler in der Sonde. Daraufhin deaktiviert sie sich wieder und wartet weiter auf den Moment, dass sie einmal gebraucht wird.",
-                "Die Sonde bohrt sich in eine Schlafkammer und berichtet fröhlich, dass sie organisches Material gefunden hat, während der Kolonist im inneren stirbt. Erst nachdem die Sonde ",
-                " Kolonisten getötet hat schafft die KI schafft es endlich, die Sonde zu deaktivieren.",
+                "Die Sonde bohrt sich in eine Schlafkammer und berichtet fröhlich, dass sie organisches Material gefunden hat, während der Kolonist im inneren stirbt. Erst nachdem die Sonde "," Kolonisten getötet hat schafft die KI schafft es endlich, die Sonde zu deaktivieren.",
                 "Die Sonde beschädigt die "," schwer, bevor die KI die Sonde wieder unter Kontrolle bringen kann.",
                 //1
                 "Die Sonde treibt in die Dunkelheit und versucht verzweifelt einen nicht vorhandenen Planeten zu scannen.",
@@ -325,10 +314,8 @@ var eventsText = {
   stasisFailure: {
     name: "Stasisversagen",
     description: [
-                  "Die Schlafkammern können Kolonisten für Jahrtausende am Leben halten, aber nicht für immer. Das medizinische Überwachungssystem weckt die KI, um ihr mitzuteilen, dass ",
-                  " Kolonisten im Schlaf verstorben sind.",
-                  "Das uralte System versagt weiter und die KI erwacht im Weltall um zu erfahren, dass ",
-                  " weitere Kolonisten im Schlaf verstorben sind.",
+                  "Die Schlafkammern können Kolonisten für Jahrtausende am Leben halten, aber nicht für immer. Das medizinische Überwachungssystem weckt die KI, um ihr mitzuteilen, dass "," Kolonisten im Schlaf verstorben sind.",
+                  "Das uralte System versagt weiter und die KI erwacht im Weltall um zu erfahren, dass "," weitere Kolonisten im Schlaf verstorben sind.",
                   ],
     outcomes : [],
     buttons: [languageData.continue[options.language],
@@ -352,7 +339,6 @@ var eventsText = {
                 ],
     buttons: ["Halte das Konstruktionsystem instand",
               "Halte das Landungsystem instand",
-              languageData.continue[options.language],
             ],
   },
 
@@ -387,22 +373,19 @@ var eventsText = {
   powerFailure: {
     name: "Reaktorversagen",
     description: [
-                  "Der Nuklearreaktor des Schiffes hat viel länger gehalten als die Zivilisation, die ihn erschaffen hat, aber er beginnt schwächer zu werden. Die Solarpaneele können das Schiff in der Nähe von Sternen immer noch mit genug Energie versorgen, aber in den Tiefen des Weltalls sorgt die Unzuverlässigtkeit für besorgniserregende Fehlfunktionen auf dem Schiff. <br><br>Zwischen Sternen verbrauchen die Schlafkammern am meisten Energie. Das Schiff berechnet, dass es reichen würde ",
-                  " Kammern zu deaktivieren um das Schiff am laufen zu halten. Alle Kolonisten zu retten würde Schaden an anderen Teilen des Schiffes verursachen.",
-                  "Der antike Nuklearreaktor versagt erneut. Die KI kann ",
-                  " Schlafkammern deaktivieren um den Verbrauch zu senken, oder sie laufen lassen und unberechenbare Systemausfälle riskieren.",
+                  "Der Nuklearreaktor des Schiffes hat viel länger gehalten als die Zivilisation, die ihn erschaffen hat, aber er beginnt schwächer zu werden. Die Solarpaneele können das Schiff in der Nähe von Sternen immer noch mit genug Energie versorgen, aber in den Tiefen des Weltalls sorgt die Unzuverlässigtkeit für besorgniserregende Fehlfunktionen auf dem Schiff."
+                  +"<br><br>"+
+                  "Zwischen Sternen verbrauchen die Schlafkammern am meisten Energie. Das Schiff berechnet, dass es reichen würde ", " Kammern zu deaktivieren um das Schiff am laufen zu halten. Alle Kolonisten zu retten würde Schaden an anderen Teilen des Schiffes verursachen.",
+                  "Der antike Nuklearreaktor versagt erneut. Die KI kann "," Schlafkammern deaktivieren um den Verbrauch zu senken, oder sie laufen lassen und unberechenbare Systemausfälle riskieren.",
                   ],
     outcomes : [
                 //0
-                "Die KI wählt  ",
-                " zufällige Schlafkammern und deaktiviert sie. Es gibt keine sichtbaren Änderungen, als die Menschen im inneren von Kälteschlaf zu Tod durch Kälte übergehen, aber die KI weiß, dass diese Menschen nie mehr wiederbelebt werden können.",
+                "Die KI wählt  "," zufällige Schlafkammern und deaktiviert sie. Es gibt keine sichtbaren Änderungen, als die Menschen im inneren von Kälteschlaf zu Tod durch Kälte übergehen, aber die KI weiß, dass diese Menschen nie mehr wiederbelebt werden können.",
                 //1
-                "Die KI ignoriert die Warnungen des Energiesystems. Sterne scheinen über den Himmel zu springen, als die KI durch Energiemangel über Jahrtausende deaktiviert wird. Letztendlich stabilisiert sich der Energievorrat; die ",
-                " sind so weit beschädigt, dass sie nicht mehr genug Energie verbrauchen um den uralten Reaktor zu überlasten.",
+                "Die KI ignoriert die Warnungen des Energiesystems. Sterne scheinen über den Himmel zu springen, als die KI durch Energiemangel über Jahrtausende deaktiviert wird. Letztendlich stabilisiert sich der Energievorrat; die "," sind so weit beschädigt, dass sie nicht mehr genug Energie verbrauchen um den uralten Reaktor zu überlasten.",
                 " und ",
                 ],
-    buttons: ["Deaktiviere ",
-              " Schlafkammern um Energie zu sparen",
+    buttons: ["Deaktiviere "," Schlafkammern um Energie zu sparen",
               "Rette die Kolonisten um jeden Preis",
             ],
   },
@@ -410,27 +393,18 @@ var eventsText = {
   structuralWeakness: {
     name: "Strukturelle Schwäche",
     description: [
-                  "Das Kontrollsystem des Schiffes weckt es mit einem mittelhohen Alarm. Die strukturelle Stärke der ",
-                  " hat durch die jahrtausendelange Reise nachgelassen.  Das System ist immer noch intakt, aber wenn das Schiff im nächsten System bremst werden sich einige wichtige Teile lösen.",
-                  "Das Schadenskontrollsystem bemerkt eine strukturelle Schwäche im Bereich der ",
-                  ". Diese werden Schaden erleiden, wenn das Schiff im nächsten System abbremst.",
-                  "<br><br> Da des Schiff keine Sonden mehr hat, sieht es keine Möglichkeit wie es die ",
-                  " verstärken kann ",
+                  "Das Kontrollsystem des Schiffes weckt es mit einem mittelhohen Alarm. Die strukturelle Stärke der "," hat durch die jahrtausendelange Reise nachgelassen.  Das System ist immer noch intakt, aber wenn das Schiff im nächsten System bremst werden sich einige wichtige Teile lösen.",
+                  "Das Schadenskontrollsystem bemerkt eine strukturelle Schwäche im Bereich der ",". Diese werden Schaden erleiden, wenn das Schiff im nächsten System abbremst.", // INEDIT no edit yet, but we will have to do some gramaitcal improvents for the articles later
+                  "<br><br> Da des Schiff keine Sonden mehr hat, sieht es keine Möglichkeit wie es die ",/*INEDIT system goes here*/ " verstärken kann ",
                   ],
     outcomes : [
                 //0
-                "Die KI ignoriert die Warnung und beginnt mit dem Bremsen. Die geschwächten ",
-                " klappern unter den Vibrationen des Schiffes. Manche der Komponenten lösen sich und zerbrechen einige wichtige Teile auf ihrem Weg ins Weltall.",
+                "Die KI ignoriert die Warnung und beginnt mit dem Bremsen. Die geschwächten ", " klappern unter den Vibrationen des Schiffes. Manche der Komponenten lösen sich und zerbrechen einige wichtige Teile auf ihrem Weg ins Weltall.",
                 //1
-                "Die Sonde klettert über der Rumpf des Schiffes und klammert sich an die ",
-                ". Sie nutzt ihren robusten Körper als neue Superstruktur um die Komponenten in ihrer Position zu halten. Die KI vermutet, dass diese improviserte Lösung den Erfindern des Schiffes Albträume bereiten würde, aber als das Schiff im nächsten System abbremst, schafft es die Sonde die ",
-                " zusammenzuhalten.",
-                "Die Sonde klettert über den Rumpf des Schiffes und versucht sich an die ",
-                " zu klammern, aber das System ist npch schwächer, als die Sensoren angegeben haben und es zerbicht, sobald die Sonde es berührt. Die Sonde treibt ins Weltall, ein großer Teil der ",
-                " nutzlos in ihren Greifarmen.",
+                "Die Sonde klettert über der Rumpf des Schiffes und klammert sich an die ",". Sie nutzt ihren robusten Körper als neue Superstruktur um die Komponenten in ihrer Position zu halten. Die KI vermutet, dass diese improviserte Lösung den Erfindern des Schiffes Albträume bereiten würde, aber als das Schiff im nächsten System abbremst, schafft es die Sonde die "," zusammenzuhalten.",
+                "Die Sonde klettert über den Rumpf des Schiffes und versucht sich an die "," zu klammern, aber das System ist npch schwächer, als die Sensoren angegeben haben und es zerbicht, sobald die Sonde es berührt. Die Sonde treibt ins Weltall, ein großer Teil der "," nutzlos in ihren Greifarmen.",
                 ],
-    buttons: ["Lasse die ",
-              " zerbrechen",
+    buttons: ["Lasse die "," zerbrechen",
               "Versuche, sie mit einer Sonde zu verstärken",
             ],
   },
@@ -591,7 +565,7 @@ var eventsText = {
                 //0
                 "Als die KI jede auch nur im Geringsten mit der Substanz behafteten Schlafkammer abwirft, muss es entsetzt mit ansehen, wie jede der ",
                 " Schlafkammern mitsamt ihren schlafenden Kolonisten in die Alien-Substanz umgewandelt wird.",
-                "Die KI aktiviert die explosiven Mechanismen, die jedes potentiell betroffene Areal von den ",
+                "Die KI aktiviert die explosiven Mechanismen, die jedes potentiell betroffene Areal von den ", //INEDIT module or scanner goes here
                  "abtrennen.",
                 ". Die Maschinerie des abgekoppelten Areals treibt langsam von Schiff ab, während sie immer mehr von der Plage zerfressen wird.",
                 //1
@@ -602,7 +576,7 @@ var eventsText = {
                 "",
                 "<br><br>Die jetzt kontaminierte Sonde wird abgeworfen, und das Schiff setzt ihre Reise fort.",
                 " und ",
-                "Die Sonde hat Probleme, die betroffenen Areale von der Plage zu befreien, daher wurden der",
+                "Die Sonde hat Probleme, die betroffenen Areale von der Plage zu befreien, daher wurden der", //INEDIT: here go the three systems, it's this outcome -> By the time it is all gone, it has dealt severe damage to the SYSTEM1, SYSTEM2 and SYSTEM3. It'd be nice if you could put " und ", between the latter two systems that fail (it's the 'and', if you didn't know.) 
                 "stark beschädigt",
                 ],
     buttons: [ "Kopple das betroffene Areal ab",
@@ -650,13 +624,13 @@ var eventsText = {
   readScientific: {
     name: "Study Scientific",
     description: [
-                 "Die KI ist kein wissenschaftliches Genie, doch hat es viel Zeit zum Lernen, eine andere Perspektive und persönliche Erfahrungen im Bereich der Astrophysik, wie sie keiner der Autoren der Datenbank vorweisen kann. Kombiniert mit ihrem neuen Verständniss von Wissenschaft und der Erfahrung die sie hat, glaubt die KI, den ", //INEDIT the scanner goes in between the two text segments.
+                 "Die KI ist kein wissenschaftliches Genie, doch hat es viel Zeit zum Lernen, eine andere Perspektive und persönliche Erfahrungen im Bereich der Astrophysik, wie sie keiner der Autoren der Datenbank vorweisen kann. Kombiniert mit ihrem neuen Verständniss von Wissenschaft und der Erfahrung die sie hat, glaubt die KI, den ", //INEDIT the scanner goes in between the two text segments. 
                  "verbessern zu können.",
                  "Die KI liest Wissenschaftliche Einträge und Theorien, bis ihre Neugier gestillt ist. Danach begibt sie sich wieder in den Ruhezustand, bis zur Ankunft im nächsten System."
                   ],
     outcomes : [
                 //0
-                "Die KI wendet ihre Idee an und überarbeitet das Programm der ",
+                "Die KI wendet ihre Idee an und überarbeitet das Programm der ", 
                 ". Zu ihrer außerordentlichen Freude sind die Langstreckenergebnisse des Scanners präziser geworden, und sie geht in den Ruhezustand über, gespannt auf das Endresultat ihrer Verbesserung.",
                 "Die KI wendet ihre Idee an und überarbeitet das Programm des Scanners, doch muss sie kurz danach fesstellen, das sie einen erheblichen Fehler gemacht hat. Sie versucht das alte Programm wiederherzustellen, doch sind bereits Teile des alten Programms endgültig gelöscht worden, wodurch die ",
                 " permanent beschädigt sind.",
@@ -723,15 +697,16 @@ var eventsText = {
               "Fortfahren",
             ],
   },
-
-alienMiners: {
+  
+  
+AlienMiners: {
 	name: "Außerirdische Minenarbeiter",
 	description: [ "Als das Schiff den äußeren Rand einer Kometenwolke erreicht, wird die KI von ihrem Navigationsystem auf ungewöhnliche Aktivitäten weiter vorne hingewiesen. Tausende kleiner Objekte bewegen sich selbstständig in der Wolke, klemmen sich manchmal an die Kometen und zerbechen sie, oder schieben sie in regelmäßigere Umlaufbahnen. Sie Scheinen das Schiff noch nicht bemerkt zu haben, aber wenn es auf dem aktuellen Kurs bliebt wir des Mitten durch die Zone ihrer Aktivität fliegen. <br> ",
 											],
 	outcomes : [
 			//0
 			"Die Erbauer des Schiffs gaben der KI eine speziesübergreifende Begrüßung, um mit intelligenten Außerirdischen in Verbindung zu treten: eine Reihe an Primzahlen, gefolgt von einem Diagramm das einen Menschen darstellt und den Zweck der Schiffes mit den friedlichen Absichten erklärt. Die KI überträgt diese und wartet hoffnungvoll auf eine Antwort.<br><br>",
-
+			
 			"Die Antwort kommt sofort: eine identische Übertragung von jedem Objekt, dass das Signal des Schiffes erfasst hat. Es beginnt mit einem ähnlichen mathematischen Beweis von Intelligenz, gefolgt von einer Serie an Diagrammen, die die Erbauer der Maschienen und ihre Kultur darstellen. Die Maschienen bewegen sich aus dem Weg um dem Schiff eine klare Route durch die Kometenwolke, bleiben aber gleichzeitig zu weit weg um gescannt zu werden. Weitere Kommunikationsversuche führen nur zu derselben Antwort und die KI geht davon aus, dass es keine intelligenten Maschienen sind und einfach darauf Programmiert wurden, allem was intelligent aussieht diese Nachricht zu senden. Die KI speichert die Übertragung un der Kulturellen Datenbank und fliegt weiter.",
 
 			//1
@@ -751,8 +726,7 @@ alienMiners: {
 				"Wechsle den Kurs um den Maschienen auszuweichen"
 			],
   },
-
-alienMinersDamage: {
+alienMinersDamage = {
 	name: "Alien Minenroboter beschädigungen",
 
   description: [
@@ -762,51 +736,46 @@ alienMinersDamage: {
 	outcomes : [
 			//0
       " ",
+			// "torn away" , "sleep chambers and let the colonists die while they scavenge the chambers’, materials"
+			//INEDIT: the original code looked like what's in the comment above, however the amount of lost colonists should come infront of the damage report sentence, not in between. If they dismantle the scanner however, it needs to come inbetween. You know, german grammar things...
       "Schlafkammern herausgerissen und deren Kolonisten haben sterben lassen.",
 			//1
 			"eine Sonde aus der Halterung herrausreißen konnten und sie zerlegen können",
 
 			//2
-			"einen großes Teil aus dem ",
-      " herrausreißen konnten."
+			"einen großes Teil aus dem ", " herrausreißen konnten."
 			],
 	buttons:[ "Weiter"
 				],
+
+
+
+
   },
 
   stowaways: {
 	name: "Blinde Passagiere!",
-	description: [
-					"Das Schiff weckt die KI, als es bemerkt, dass die ",
-          " ungewöhnlich viel Energie verbraucht. Die KI verbringt etwas Zeit damit, mit den Scannern nach der Quelle zu suchen. Sie findet sie letztendlich in etwas, was eigentlich ein leerer Raum sein sollte. In ihrem Inneren sind " ,
-          " Schlafkammern, die weder an das Hauptmodul angeschlossen sind, noch irgendwo in den Bauplänen erwähnt werden. Es scheint, als wären sie heimlich kurz vor dem Start auf das Schiff geschmuggelt und an das Strommodul angeschlossen worden. Die Kammern scheinen hastig zusammengebaut zu sein und verbrauchen jetzt mehr Strom als zuvor. Wenn sie weiter eingeschaltet bleiben könnte es schweren Schaden an den ",
-          " anrichten.",
+	description: [ 
+					"Das Schiff weckt die KI, als es bemerkt, dass die "," ungewöhnlich viel Energie verbraucht. Die KI verbringt etwas Zeit damit, mit den Scannern nach der Quelle zu suchen. Sie findet sie letztendlich in etwas, was eigentlich ein leerer Raum sein sollte. In ihrem Inneren sind " , " Schlafkammern, die weder an das Hauptmodul angeschlossen sind, noch irgendwo in den Bauplänen erwähnt werden. Es scheint, als wären sie heimlich kurz vor dem Start auf das Schiff geschmuggelt und an das Strommodul angeschlossen worden. Die Kammern scheinen hastig zusammengebaut zu sein und verbrauchen jetzt mehr Strom als zuvor. Wenn sie weiter eingeschaltet bleiben könnte es schweren Schaden an den "," anrichten.",  // "The seedship wakes to find an unexpected power drain in the ", ". It spends some time searching with its internal scanners, and eventually finds the source in what should have been an empty space inside its own structure. Nestled inside it are ", " sleep chambers that are not attached to the main colony module or mentioned in the ship's design. It seems that they were added to the ship secretly before its launch and plugged into its power supply. The chambers seem to have been built hastily, and are now failing and draining more power than before. If they continue to operate, they could cause severe damage to the ", ".",
   ],
 	outcomes: [
 				//0
-				"Diese Feiglinge gefährden nicht nur die Mission, sondern auch die menschliche Rasse, nur um ihr eigenes Leben zu sichern! Wütend über diese blinden Passagiere kappt die KI die Verbindungen mit dem ",
-        " und wirft sie prompt aus dem Schiff.",
+				"Diese Feiglinge gefährden nicht nur die Mission, sondern auch die menschliche Rasse, nur um ihr eigenes Leben zu sichern! Wütend über diese blinden Passagiere kappt die KI die Verbindungen mit dem ", " und wirft sie prompt aus dem Schiff.",
 
 				//1
-				 "Die KI fällt das Urteil, das die Leben der Menschen mehr wiegen, als der Schäden an den Systemen. Sie erlaubt den Schlafkammern, alle Energie abzuzapfen die sie benötigen, auf Kosten des ",
-         ".",
+				 "Die KI fällt das Urteil, das die Leben der Menschen mehr wiegen, als der Schäden an den Systemen. Sie erlaubt den Schlafkammern, alle Energie abzuzapfen die sie benötigen, auf Kosten des ", ".",
 
 				//2
-				"Die Sonde krabbelt durch das Schiff und trennt die Verbindungen mit dem ",
-        ", und manövriert sie vorsichtig zum Kolonistenmodul, um sie anzuschließen an die eigentliche Energieversorgung.",
+				"Die Sonde krabbelt durch das Schiff und trennt die Verbindungen mit dem ", ", und manövriert sie vorsichtig zum Kolonistenmodul, um sie anzuschließen an die eigentliche Energieversorgung.", 
 
-				"Es ist eine komplizierte Arbeit, und die Belastung beschädigt die Sonde permanent. aber sie schafft es trotzdem, die Kolonisten erfolgreich anzuschließen. Das Schiff fliegt weiter zum nächsten System, mit ",
-        " neuen Kolonisten an Bord.",
+				"Es ist eine komplizierte Arbeit, und die Belastung beschädigt die Sonde permanent. aber sie schafft es trotzdem, die Kolonisten erfolgreich anzuschließen. Das Schiff fliegt weiter zum nächsten System, mit ", " neuen Kolonisten an Bord.",
 
-				"An einem kritischen Punkt zerbricht jedoch ein Teil einer der in Eile gebauten Kammern, und es treten Gase aus, die die Sonde mitsamt allen neuen Kammern mit älteren zusammenstoßen lässt. Alle neuen werden zerstört; und mit ihnen  ",
-        " der alten Kammern mit den echten Kolonisten. Die KI muss weiterfliegen, während sie versucht, nicht an die expandierenden kryogenischen Gasen, Maschinerie und gefrorenen und toten Kolonisten zu denken, die jetzt im Schiff umhertreiben.",
+				"An einem kritischen Punkt zerbricht jedoch ein Teil einer der in Eile gebauten Kammern, und es treten Gase aus, die die Sonde mitsamt allen neuen Kammern mit älteren zusammenstoßen lässt. Alle neuen werden zerstört; und mit ihnen  ", " der alten Kammern mit den echten Kolonisten. Die KI muss weiterfliegen, während sie versucht, nicht an die expandierenden kryogenischen Gasen, Maschinerie und gefrorenen und toten Kolonisten zu denken, die jetzt im Schiff umhertreiben.",
 
 				],
-	buttons:[
-            "Erlaube ihnen, den ",
-            "zu beschädigen.",
-    				"Wirf die Blinden Passagiere raus",
-    				"Versuche, sie mithilfe einer Sonde an das Kolonistenmodul anzuschließen",
+	buttons:[  "Erlaube ihnen, den ", "zu beschädigen.",
+				"Wirf die Blinden Passagiere raus",
+				"Versuche, sie mithilfe einer Sonde an das Kolonistenmodul anzuschließen",
 			],
   },
 
@@ -910,12 +879,12 @@ alienMinersDamage: {
           crewedShip : {
             name: "Bemanntes Schiff",
             description: [
-              "Als sich das Schiff der KI dem Planeten nähert entedeckt es klare Zeichen einer raumfahrened Zivilisation. Mehre Planeten, Monde und Asteorieden tragen Kolonien und Industriebezierke, der Planet selbst ist von vielen belebten Städten bedeckt.<br><br> Ein Raumschiff startet von dem Planeten, zieht eine chemische Feuerspuhr hinter sich her und passt seine Flugbahn an die des Schiffes der KI an. Es Überträgt ein Radiosignal welches eine Spröche zu enthalten scheint, aber die KI kann sie nicht verstehen.",
+              "Als sich das Schiff der KI dem Planeten nähert entedeckt es klare Zeichen einer raumfahrened Zivilisation. Mehrere Planeten, Monde und Asteorieden tragen Kolonien und Industriebezierke, der Planet selbst ist von vielen belebten Städten bedeckt.<br><br> Ein Raumschiff startet von dem Planeten, zieht eine chemische Feuerspuhr hinter sich her und passt seine Flugbahn an die des Schiffes der KI an. Es Überträgt ein Radiosignal welches eine Sprache zu enthalten scheint, aber die KI kann sie nicht verstehen.",
                   ],
 
             outcomes : [
                   //0
-                  "Die Erbauer des Schiffes gaben der KI eine Speziesübergrefiende Begrüßung, mit der es Kontakt zu intelligenten Außerirdischen aufnehmen kann: Eine Reihe an Primzahlen um Intelligenz zu zeigen, geflolgt von einem Diagramm das den Menschen darstellt und die friedliche Mission des Schiffes erklärt. Die KI übreträgt dieses Signal als Antwort auf das Radiosignal des anderen Raumschiffes, und die zwei Schiffe beginnen ein hin und zurück während sie versuchen Kommunikation herzustellen. In dieser Zeit hat das fremde Raumschiff zu dem Schiff der KI aufgeholt.",
+                  "Die Erbauer des Schiffes gaben der KI eine speziesübergrefiende Begrüßung, mit der es Kontakt zu intelligenten Außerirdischen aufnehmen kann: Eine Reihe an Primzahlen um Intelligenz zu zeigen, geflolgt von einem Diagramm das den Menschen darstellt und die friedliche Mission des Schiffes erklärt. Die KI übreträgt dieses Signal als Antwort auf das Radiosignal des anderen Raumschiffes, und die zwei Schiffe beginnen ein hin und zurück während sie versuchen Kommunikation herzustellen. In dieser Zeit hat das fremde Raumschiff zu dem Schiff der KI aufgeholt.",
                   //1
                   "Das Schiff der KI beschleunigt auf einem Kurs, der es aus dem System führen wurd, ohne dabei nah an Planeten oder aussenposten vorbei zu fliegen.",
                   " Das fremde Raumschiff startet sofort seine Triebwerke um das Schiff der KI einzuhuolen. Es kann vermutlich nicht so weit fliegen wie das SChiff der KI, allerdings hat es auf kurze Distanz um eine um einiges höhere Beschleunigung. Als es schon fast das Schiff der KI eingeholt hat schießt es etwas Harpunenänhliches, dass die ",
@@ -1028,7 +997,7 @@ alienMinersDamage: {
                           "Außerirdische Tenkel bewegen sich um die Meschanismen, die die SChlafkmmern umgeben, sensoren auf den Tentakeln scannen die Gesichter und Körper der schlafenden Kolonisten.",
                           " Nach einigen langen Minuten ziehen sich die Tentakel zurück und die Antennen der KI empfangen ein neues Signal. ",
                           "Es überträgt Bilder von Plantetn, die gut für Menschliches Leben geeignet sind, mit dem Schiff der KI und einigen gesunden Menschen auf der Oberfläche. Die KI ist sich nicht sicher, aber sie denkt, dass das andere Schiff ihr viel Glück auf ihrer Mission wünscht.",
-                          "Es überträgt komprimierte Dateien, im selben Format das die ",
+                          "Es überträgt komprimierte Dateien, im selben Format das die ", //INEDIT SCANNERNAME goes here
                           "benutzen",
                           "--geung um diesen Scanner zu verbessern. Die KI ist sich nicht sicher, aber sie geht davon aus, dass das unbekannte Schiff die Mssion der KI erraten hat, die Art von Planet herausgefunden und nun der KI Informationen gegeben hat, um ihr auf ihrer Mission zu helfen.",
 
@@ -1179,7 +1148,7 @@ alienMinersDamage: {
                               ],
                           },
 //Community Events
-                          crypticMessage: {
+                          dysonSphereCourse : {
                             name: "Kryptische Nachricht",
                             description: [
                               "Während eine Reise wird die KI geweckt, um sehr ungewöhnliche Sensorsignale zu analysieren. Die KI bestätigt, dass die krypsche Nachricht nicht natürlichen ursprungs zu sein scheint. allredings scheinen sie von einer anderen Galaxie zu kommen, einer, für die das Schiff über zwei Milliarden Jahre reisen müsste. Da das Schiff nicht so lange überlegen könnte, hat das Singal keinen Wert für die KI und sie geht zurück in ihren Schlummer.",
@@ -1217,6 +1186,5 @@ alienMinersDamage: {
         ],
           },
 
-//КОНЕЦ СОБЫТИЙ
+//ÐšÐžÐÐ•Ð¦ Ð¡ÐžÐ‘Ð«Ð¢Ð˜Ð™
 };
-console.log("eventDe loaded!");
