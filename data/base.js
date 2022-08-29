@@ -1139,7 +1139,6 @@ if (planetsVisited == 42){
         //destinationSignal aliens
   } else {
     cPlanet = new planet(
-      PlanetAtmosphere[getRandomInt(0, ((PlanetAtmosphere.length - 1) - cShip.atmosphere[1] * 2))],
       PlanetGravity[getRandomInt(0, ((PlanetGravity.length - 1) - cShip.gravity[1] * 2))],
       PlanetTemperature[getRandomInt(0, ((PlanetTemperature.length - 1) - cShip.temperature[1] * 2))],
       PlanetWater[getRandomInt(0, ((PlanetWater.length - 1) - cShip.water[1] * 2))],
@@ -1153,6 +1152,16 @@ if (planetsVisited == 42){
       0,
     );
 
+    //determine what the atmosphere will be judging by scanner upgrades
+    if (cShip.atmosphere[1]== 0) {
+        cPlanet.atmosphere = PlanetAtmosphere[getRandomInt(0, ((PlanetAtmosphere.length - 1) - cShip.atmosphere[1] * 2))];
+    }
+    else if (cShip.atmosphere[1]== 1) {
+        cPlanet.atmosphere = PlanetAtmosphere[getRandomInt(0, ((PlanetAtmosphere.length - 3) - cShip.atmosphere[1] * 2))];
+    }
+    else {
+        cPlanet.atmosphere = "Breathable";
+    }
 
     // Логика исключение невозможных сочетаний
     //Замораживаем океан
