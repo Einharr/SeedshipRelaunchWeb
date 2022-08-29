@@ -219,29 +219,29 @@ var languageData = {
     },
     //GERMAN
   {
-    Atmosphere: ["Planet atmosphere"],
-    Gravity: ["Planet gravity"],
-    Temperature: ["Planet temperature"],
-    Water: ["Planet water"],
-    Resources: ["Planet resources"],
+    Atmosphere: ["Planetenatmosphäre"],
+    Gravity: ["Planetengravitation"],
+    Temperature: ["Planetentemperatur"],
+    Water: ["Planetenwasser"],
+    Resources: ["Planetenresourcen"],
 
-    SurvivorsAL: ["Survivors after landing"],
-    SurvivorsAC: ["Survivors after settlement construction"],
+    SurvivorsAL: ["Überlebende bei Landung"],
+    SurvivorsAC: ["Überlebende nach Siedlungsbau"],
 
-    FinalTL: ["Final technology level"],
-    FinalC: ["Final culture"],
+    FinalTL: ["Endtechnologie"],
+    FinalC: ["Endkultur"],
 
-    SurvivingSc: ["Surviving scientific database × 10"],
-    SurvivingCl: ["Surviving cultural database × 10"],
+    SurvivingSc: ["Verbeleibende wissenschaftliche Datenbank × 10"],
+    SurvivingCl: ["Verbleibende kulturelle Datenbank × 10"],
 
-    NativeRl: ["Native Relations"],
+    NativeRl: ["Beziehungen mit Ureinwohnern"],
 
     Total: ["Total"],
 
     Planet: ["Planet"],
-    Date: ["Date"],
-    Result: ["Result"],
-    Score: ["Score"],
+    Date: ["Datum"],
+    Result: ["Ergebnis"],
+    Score: ["Punkte"],
   },
   //FRENCH
 {
