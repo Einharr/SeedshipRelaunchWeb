@@ -1,3 +1,8 @@
+Version 0.9.15
+--------------
+Bugs:
+ * Fixed an issue where the atmosphere scanner upgrades were not always being respected when on-course.
+
 Version 0.9.14
 --------------
 Features:
