@@ -8,11 +8,9 @@ function ending(difWords, name, nameBecause,
 
                 gravity, gravityBut,
                 natives, nativeInteractions,
-                PSCTInteractions, culture,
+                culture,
 
-                politics,
-                summary,
-                gameOverText) {
+                politics) {
 
   this.difWords = difWords;
   this.name = name;
@@ -53,13 +51,9 @@ function ending(difWords, name, nameBecause,
 
   this.natives = natives;
   this.nativeInteractions = nativeInteractions;
-  this.PSCTInteractions = PSCTInteractions;
 
   this.culture = culture;
   this.politics = politics;
-
-  this.summary = summary;
-  this.gameOverText = gameOverText;
 
 }
 
@@ -190,8 +184,8 @@ var EndingMoon = [
 
 var EndingAtmosphere = [
   "Sie können das Schiff nur in Fahrzeugen verlassen, die gebaut wurden um der giftigen ", //They cannot leave the ship except in vehicles that have been specially built to withstand the corrosive ",
-  "Sie können das Schiff in klobigen Schutzanzügern verlassen, die sie vor der giftigen", // They can leave the ship in bulky environment suits that protect them from the toxic ",
-  "Die können das Schaiff in klobigen Schutzanz+gen verlassen, die sie vor der ", // They can leave the ship in bulky environment suits that protect them from the ",
+  "Sie können das Schiff in klobigen Schutzanzügen verlassen, die sie vor der giftigen", // They can leave the ship in bulky environment suits that protect them from the toxic ",
+  "Die können das Schaiff in klobigen Schutzanzügen verlassen, die sie vor der ", // They can leave the ship in bulky environment suits that protect them from the ",
   "Sie können ihr Schiff ohne Atemgeräte verlassen und tragen  ",
   "Sie können ihr Schiff mit minimalen Atemgeräten verlassen und tragen ",
   "Sie können das Schiff mit Atemgeräten verlassen und tragen ",
@@ -232,7 +226,7 @@ var EndingAtmosphereBut = [
 var EndingGravity = [
   "Sie können sie leicht in der Erdähnlichen Gravitation bewegen.",
   "Die hohe Gravitation macht das Arbeiten schwieriger.",
-  "Die niedrige gravitation macht das Arbeiten etwas schwerer als es auf der Erde wäre.",
+  "Die niedrige Gravitation macht das Arbeiten etwas schwerer als es auf der Erde wäre.",
   "Die zerdrückende Gravitation führt dazu, dass sie sich kaum ohne mechanischer Unterstützung bewegen können,",
   "Die sehr niedrige Gravitation macht das arbeiten schwieriger, als es auf der Erde gewesen wäre,"
 ];
@@ -249,9 +243,9 @@ var EndingGravityBut = [
 
 var EndingTemperature = [
   "leichte Kleidung in den angenehmen Temperaturen",
-  "schütztende Kleidung um der sengenden Hitze zu widerstehen",
-  "schwere Kleidung um sie vor der klirrenden Kälte zu beschützten",
-  "wärmende Anzüge um sie vor der bleischmelzenden Hitze zu schützten",
+  "schützende Kleidung um der sengenden Hitze zu widerstehen",
+  "schwere Kleidung um sie vor der klirrenden Kälte zu beschützen",
+  "wärmende Anzüge um sie vor der bleischmelzenden Hitze zu schützen",
   "sich selbst eritztende Anzüge, um in den fast 0 K Temperaturen zu überleben",
 ];
 
@@ -392,7 +386,7 @@ var EndingNativeInteractions = [
   "die Kultur der Bewohner des Planeten macht sie feindliche gegenüber den ihnen unbekannten Neuankömlingen.",
   "die Kultur der Bewohner des Planeten macht sie sehr misstrauisch gegenüber Außenseitern.",
   "the natives' culture makes them wary towards the humans.",
-  "die Kultur der Bewohner des Planeten macht sie vorsichtig, aber akzeptant gegenüber den immigranten.",
+  "die Kultur der Bewohner des Planeten macht sie vorsichtig, aber akzeptant gegenüber den Immigranten.",
   "die Kultur der Einheimischen macht sie den Flüchtlingen gegenüber aufgeschlossen.",
 
   "Die Bewhoner schätzen es, dass die Menschen ihren Planeten so schln finden wie sie, was des den beiden Spezies einfacher macht, sich mit den anderen Kulturen anzufreunden.",
@@ -492,7 +486,7 @@ var EndingFeatures = [
   "Rätselhafte Objekte nähern sich regelmäßig von den Strukturen im Orbit und Kolonisten unter dem Einfluss dieser Objekte werden kooperativer und mitfühlender geneigt.",
   "Rätselhafte Objekte nähern sich regelmäßig von den Strukturen im Orbit und Kolonisten unter dem Einfluss dieser Objekte werden streitlustiger und eigensinniger.",
   //Красота
-  "Die Schönheit des Planeten macht das Leben angenehmer und hilft den Kolonisten, eine bessere Gesellschaft zu schaffen.",
+  "Die Schönheit des Planeten macht das leben angenehmer und hilft den Kolonisten, eine bessere Gesellschaft zu schaffen.",
   "Die Hässlichkeit des Planeten führt zu Spannungen unter den Kolonisten und macht es schwieriger, eine funktionierende Gesellschaft zu schaffen.", //
   //Симуляция
   "",
@@ -545,7 +539,7 @@ var EndingCulture = [
   "Der ehemalige Diktator, der einen der ursprünglichen Kolonisten ersetzt hat, übernimmt schnell die Kontrolle über die Kolonie und führt ein autoritäres Regime ein.",
 
   "Die kulturelle Datenbank enthält eine Vielfalt an historischen Informationen, die es den Kolonisten erleichtern, sich für eine Regierungsform zu entscheiden, zusammen mit einer reichen Auswahl an Kunst und Literatur, um sie zu inspirieren und zu unterhalten.",
-  "Obwohl Teile der kulturellen Datenbank fehlen, enthält sie noch immer viele historische Informationen, um die Kolonisten zu ??? in ihrer Gesellschaft zu leiten. Sie enthält außerdem noch viel Kunst und Literatur um sie zu inspirieren.",
+  "Obwohl Teile der kulturellen Datenbank fehlen, enthält sie noch immer viele historische Informationen, um den Kolonisten zu helfen eine Gesellschaft zu bauen. Sie enthält außerdem noch viel Kunst und Literatur um sie zu inspirieren.",
   "Die Kolonisten durchsuchen die schwer beschädigte kulturelle Datenbank und schaffen es, Teile der Informationen über die Erde wiederherzustellen, um sie zu führen und zu inspirieren.",
   "Da die kulturelle Datenbank komplett zerstört wurde, ist über die Erde bald nur noch bekannt, was die ersten Kolonisten an ihre Kinder weitererzählen konnten.",
 
@@ -561,7 +555,7 @@ var EndingPolitics = [
   "Die verbleibende kulturelle Datenbank wird in digitaler Weise festgehalten, auf die alle Kolonisten zugriff haben. Die Kolonisten versuchen, eine Demokratie einzuführen, aber die Regierung wird zur Marionette großer Konzerne, die den Planeten allein zum Vorteil ihrer Besitzer regieren.",
   "Die Kolonie entwickelt sich zu einem hochtechnischen Überwachungsstaat, in dem die Bewohner unter permanenter Kontrolle durch die unantastbare, herrschende Klasse leben. Die kulturelle Datenbank wird weiterhin aufbewahrt, aber der Zugriff darauf wird vom Staat streng kontrolliert und jegliche Kritik brutal niedergeschlagen.",
   "Die Kolonie zerbricht in mehrere große Nationen, die ihre Ressourcen in Krieg gegeneinader investieren. Die Kolonisten versuchen den Inhalt der kulturellen Datenbank zu bewahren, aber viel geht durch Kriege und Propaganda der Kriegsparteien verloren.",
-  "Die Kolonie zerbricht in mehrere große Nationen, die Krieg gegeneinander führen und in einem nuklearen Konflikt gipfelt. Die Infrastruktur der Zivilisation zerstört, die überlebenden Kolonisten leben in einer nuklear verstrahlten Wüste. Die Überreste der kulturellen Datenbank gehen in der Katastrophe verloren und die Kolonisten verwechseln die Geschichten der Erde mit denen der Vorkriegskolonie.",
+  "Die Kolonie zerbricht in mehrere große Nationen, die Krieg gegeneinander führen, was in einem nuklearen Konflikt gipfelt. Die Infrastruktur der Zivilisation zerstört, die überlebenden Kolonisten leben in einer nuklear verstrahlten Wüste. Die Überreste der kulturellen Datenbank gehen in der Katastrophe verloren und die Kolonisten verwechseln die Geschichten der Erde mit denen der Vorkriegskolonie.",
 
   "Die Kolonisten nutzen die verbleibende kulturelle Datenbank für die Bildung einer Republik, deren Grundlagen Freiheit und Gleichberechtigung sind.",
   "Die ersten Anführer der Kolonie begründen eine Dynastie von wohlwollenden Monarchen, die es als ihre Ihre Pflicht sehen, die Kolonie und das verbleibende Wissen über die Erde zu schützen.",
@@ -664,7 +658,7 @@ var EndingSummary = [
   "s unbeweglicher flache Landschaft erstreckt sich unter einem",
 
   " blauen Himmel.",
-  " blasse, blauen Himmel.",
+  " blassen, blauen Himmel.",
   " schwarzen, sternbedeckten Himmel.",
   " fremden Himmel.",
   " giftigen Himmel.",
@@ -673,11 +667,11 @@ var EndingSummary = [
   "Nachts kann man die umkreisenden außerirdischen Strukturen als glizerndes Band zwischen den Sternen sehen.",
 
   "Die Fragmente des abgestürzten Schiffes",
-  "Die runen der Kolonie",
+  "Die Ruinen der Kolonie",
 
   "verrotten am Boden des Ozeans.",
-  "liegen in der Paletenweiten Eisschicht.",
-  "sind von der Nauter des Planeten erobert worden.",
+  "liegen in der planetenweiten Eisschicht.",
+  "sind von der Natur des Planeten erobert worden.",
   "sind von außerirdischen Pflanzen überwachsen.",
   "liegen auf der steinigen Oberfläche.",
 
@@ -702,18 +696,18 @@ var EndingSummary = [
   "wandernden Jäger und Sammler Stämmen",
 
   "unter dem offenen Himmel des Planeten,",
-  "mit Geböuden, die gegen die harschen umgebungen schützten,",
-  "in Luftdichten Hölen,",
+  "mit Gebäuden, die gegen die harschen Gegebenheiten schützen,",
+  "in luftdichten Hölen,",
   "unter luftdichten Kuppeln,",
 
   "auf Platfromen, die auf dem planetenweiten Ozean schwimmen.",
   "auf der planetenweiten Eisschicht.",
   "und sammeln sich um Wasserproduktionsfabriken.",
-  "an Seen aus wasser, die aus der Eisschicht des Planeten gescholzen sind.",
+  "an Seen aus Wasser, die aus der Eisschicht des Planeten gescholzen sind.",
   "neben Flüssen, die in die Ozeane des Planeten fließen.",
 
   "Sie leben ein Leben des Friedens und der spirituellen Erfüllung, das die Träume ihrer Vorfahren auf der Erde übersteigt, geleitet von einer Kombination aus menschlicher und außerirdischer Philosophie.",
-  "Sie verbringen ihre Zeit mit Kunst, Freizeit und geistiger Erfüllung, während sich automatische Maschinen um ihre materiellen Bedürfnisse kümmern.",
+  "Sie verbringen ihre Zeit mit Kunst, Entspannung und geistiger Erfüllung, während sich automatische Maschinen um ihre materiellen Bedürfnisse kümmern.",
   "Sie leben ein glückliches und erfülltes Leben unter der Führung selbstloser Mandatsträger.",
   "Armut, Ausbeutung und Kriminalität sind weit verbreitet, und die korrupte gewählte Regierung tut wenig, um sie zu lindern.",
   "Die Städte werden von den Zentralen reicher Konzerne dominiert, die die Bevölkerung zur Bereicherung ihrer Eigentümer beherrschen.",
@@ -755,7 +749,7 @@ var EndingSummary = [
   " Kolonisten, die beim Bau der ersten Siedlung starben und",
 
   "steht ein Monument für ",
-  "die KI, die ihr Schiff zur neuen Heimt der Menschen geführt hat.",
+  "die KI, die ihr Schiff zur neuen Heimat der Menschen geführt hat.",
 ];
 
 var GameOverText = [
