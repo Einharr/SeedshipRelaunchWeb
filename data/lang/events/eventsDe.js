@@ -726,7 +726,7 @@ AlienMiners: {
 				"Wechsle den Kurs um den Maschienen auszuweichen"
 			],
   },
-alienMinersDamage = {
+alienMinersDamage: {
 	name: "Alien Minenroboter beschädigungen",
 
   description: [
