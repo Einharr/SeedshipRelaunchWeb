@@ -1,3 +1,8 @@
+Version 0.9.16
+--------------
+Bugs:
+ * Fixed an issue where there wouldn't be an event after the first planet like in the original game.
+
 Version 0.9.15
 --------------
 Bugs:
