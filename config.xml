@@ -3,7 +3,7 @@
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "com.seedship.remake"
     android-versionCode = "10"
-    version     = "0.9.15" >
+    version     = "0.9.16" >
 <preference name="orientation" value="portrait" />
 <preference name="DisallowOverscroll" value="true" />
 <platform name="android">
