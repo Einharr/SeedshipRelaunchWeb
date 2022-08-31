@@ -41,7 +41,7 @@ var unsuitable = {
 
             buttonWipe();
 
-            nextPlanet();
+            nextEncounter();
     }},
     ]
 };
