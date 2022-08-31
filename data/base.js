@@ -1674,7 +1674,7 @@ function randEvent() {
   prevEvent = curEvent;
 
 
-  if (planetsVisited == 1) {
+  if (planetsVisited == 1 && prevEvent.name != "Unsuitable") {
     curEvent = unsuitable;
     console.log("SPECIAL:" + curEvent.name);
   } else if (prevEvent != scannerUpgrade && (planetsVisited % 3 == 0) && randomUpgrade(ScanArr) != 0) {
