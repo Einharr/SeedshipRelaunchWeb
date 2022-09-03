@@ -3,6 +3,7 @@ var options = {
   firstStart: true,
   language: 0,
   soundEnabled: false,
+  musicEnabled: true,
   music: 100,
   graphics: true,
   clouds: true,
@@ -14,6 +15,7 @@ var options = {
   noLocalStorage: false
 };
 var state = "none";
+var titleAudo
 
 //see if local storage is available or not.
 //if we can't access it, warn the user, and 
@@ -77,6 +79,11 @@ if (options.original == true) {
 
 var myAudio = document.getElementById("TitleAudio");
 document.getElementById("TitleAudio").loop = true;
+var myBGMAudio = document.getElementById("BGMAudio");
+myBGMAudio.loop=true;
+
+playMusic(myAudio); //play the title music
+
 var isPlaying = false;
 //window.plugins.NativeAudio.loop( 'music' );
 
@@ -85,16 +92,24 @@ function togglePlay() {
 };
 
 myAudio.onplaying = function () {
-  isPlaying = true;
-};
-myAudio.onpause = function () {
-  isPlaying = false;
+  myBGMAudio.pause(); //turn off background music from game if applicable.
 };
 
-function play(audioSrc) {
+myBGMAudio.onplaying = function() {
+  myAudio.pause(); //pause title music if playing.
+}
+
+function playMusic(audioSrc) {
+  if (options.musicEnabled){ //only work if music is enabled
+    audioSrc.play()
+  }
+  else{
+    //do nothing if not
+  }
+  /*
   var audio = new Audio(audioSrc);
   audio.play();
-  return audio;
+  return audio; */
 }
 
 
@@ -365,10 +380,6 @@ function createMenu() {
   document.getElementById('BTCG').addEventListener('click', function() {
       location.href = 'https://johnayliff.itch.io/beyond-the-chiron-gate'
   }, false);
-
-  var btcgText = document.createElement("p");
-  btcgText.innerHTML = "<b>COMING SOON!</b>";
-  btcg.appendChild(btcgText);
 
   var btcgImage = document.createElement('img');
   btcgImage.id = "btcgImage";
@@ -703,12 +714,12 @@ function menuSettings() {
   checkbox.type = "checkbox";
   checkbox.className = "toggle";
   checkbox.name = "name";
-  checkbox.checked = options.soundEnabled;
+  checkbox.checked = options.musicEnabled;
   checkbox.onclick = function () {
     if (checkbox.checked == true) {
-      options.soundEnabled = true;
+      options.musicEnabled = true;
     } else if (checkbox.checked == false) {
-      options.soundEnabled = false;
+      options.musicEnabled = false;
     };
   };
   checkbox.id = "musicToggle";
@@ -1502,6 +1513,7 @@ function menuPastMissions() {
 function intro() {
   menuWipe();
   var audio;
+  myAudio.pause();
   if (options.voiceOverEnabled) {
     audio = play("./assets/music/Intro.mp3");
   }
@@ -1572,6 +1584,7 @@ var SystemNames = ["<b>" + languageData.statnames.systems[options.language] + "<
 var SystemIDs = ["", "cShip.landing", "cShip.construction", "","", "cShip.science", "cShip.culture"]
 
 function gameStart() {
+  playMusic(myBGMAudio);
   if(options.platform=="Android" && typeof cordova !== 'undefined'){
       var data = {
         achievementId: "CgkIya77kP0DEAIQAQ"
