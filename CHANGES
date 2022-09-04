@@ -1,7 +1,9 @@
 Version 0.9.17
 --------------
 Features:
- *Re-enabled music for the game.
+ * Re-enabled music for the game.
+Bugs:
+ * Set community events on by default as a temp workaround to avoid a bug with the ending function.
 
 Version 0.9.16
 --------------
