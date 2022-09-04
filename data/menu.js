@@ -9,7 +9,7 @@ var options = {
   clouds: true,
   planet: true,
   original: false,
-  addOnFeatures: false,
+  addOnFeatures: true, //Setting this to true by default until we fix one bug where the game checks for code from this when it shouldn't.
   debug: false,
   platform: "",
   noLocalStorage: false
