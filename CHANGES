@@ -8,6 +8,7 @@ Bugs:
  * its vs it's typo fix
  * fixed a bug where settling on a planet spanning civilization would omit the summary in the final score output and high score display as well as the planet name.
  * Fixed a bug where sometimes sending out a probe would not return results. 
+ * Fixed an issue where certain situations would have the game use dialogue from the machine planet ending, even if community events was disabled, crashing the game.
 
 Version 0.9.16
 --------------
