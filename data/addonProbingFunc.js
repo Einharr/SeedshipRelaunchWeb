@@ -4,6 +4,9 @@ function insertAfter(referenceNode, newNode) {
 
 var alienFerocity = 0;
 var alienAppearence = [];
+var animalAtmosphere;
+var animalGravity;
+var animalWater;
 
 //ЗАПУСК ЗОНДА
 //START THE PROBE
