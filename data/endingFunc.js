@@ -571,10 +571,12 @@ function newColony(ship, planet, ending) {
           planet.nameID = getRandomInt(0, (AlienNamesRu.length));
           NamesCurLang[0] = AlienNamesRu;
           NamesCurLang[1] = AlienNamesRu;
+	  planet.name = NamesCurLang[1][planet.nameID];
         } else {
           planet.nameID = getRandomInt(0, (AlienNames.length));
           NamesCurLang[0] = AlienNames;
           NamesCurLang[1] = AlienNames;
+	  planet.name = NamesCurLang[1][planet.nameID];
         };
 
 
