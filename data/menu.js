@@ -15,7 +15,6 @@ var options = {
   noLocalStorage: false
 };
 var state = "none";
-var titleAudo
 
 //see if local storage is available or not.
 //if we can't access it, warn the user, and 
