@@ -13,7 +13,7 @@ var EndingMachines = [
     "With the help of the Seedship AI, two species manage to achieve communications, and the colonists learn that the natives call their planet ",
     " The planet's native inhabitants guard colonists from any threat, and also help them by setting up shelters, clearning the land and providing provisions and water.",
     "The colonists learn that a native synthetic species has enslaved and assimilated the species that created them. Unfortunately, it is too late to escape. The natives assimilate humans by modifying their bodies, and absorb them into their Gestalt Consciousness.",
-    "The colonists learn that a native synthetic species has exterminated their creators in a great war, and they accepted Seedship's landing only to save it's AI from slavery. All organics must be exterminated. Unfortunately, it is too late to escape. Within hours of emerging from their sleep chambers the humans have all been murdered, and AI is absorbed into Gestalt Consciousness.",
+    "The colonists learn that a native synthetic species has exterminated their creators in a great war, and they accepted Seedship's landing only to save its AI from slavery. All organics must be exterminated. Unfortunately, it is too late to escape. Within hours of emerging from their sleep chambers the humans have all been murdered, and AI is absorbed into Gestalt Consciousness.",
     "As they leave the ship, the humans and aliens try to establish communications with one another.",
 
     //GUARDIAN DOCTRINE
