@@ -1608,6 +1608,7 @@ function newColony(ship, planet, ending) {
     hiscore.sciLevelName = tech_level_names[cPlanet.techLvl];
     hiscore.cultureName = cultureNames[planet.culture];
     hiscore.final_culture = planet.culture
+    hiscore.summary = hiscore.sciLevelName + " "+ hiscore.cultureName
   };
   // End of interaction with non-plane local
 
