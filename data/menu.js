@@ -740,20 +740,20 @@ function menuSettings() {
   more.appendChild(row);
 
   var music = document.getElementById("col2_Mus");
-  var checkbox = document.createElement('input');
-  checkbox.type = "checkbox";
-  checkbox.className = "toggle";
-  checkbox.name = "name";
-  checkbox.checked = options.musicEnabled;
-  checkbox.onclick = function () {
-    if (checkbox.checked == true) {
+  var checkboxMusic = document.createElement('input');
+  checkboxMusic.type = "checkbox";
+  checkboxMusic.className = "toggle";
+  checkboxMusic.name = "name";
+  checkboxMusic.checked = options.musicEnabled;
+  checkboxMusic.onclick = function () {
+    if (checkboxMusic.checked == true) {
       options.musicEnabled = true;
-    } else if (checkbox.checked == false) {
+    } else if (checkboxMusic.checked == false) {
       options.musicEnabled = false;
     };
   };
-  checkbox.id = "musicToggle";
-  music.appendChild(checkbox);
+  checkboxMusic.id = "musicToggle";
+  music.appendChild(checkboxMusic);
 
 
   //new stuff
