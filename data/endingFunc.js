@@ -2725,7 +2725,7 @@ function newColony(ship, planet, ending) {
           ScoreDescription.push(cAddonEnding.machinesSummary[1])
           break;
         case "Immigrants, rich hybrid culture":
-          ScoreDescription.push(cAddonEnding.machinesSummary[2])
+          ScoreDescription.push(ending.summary[111]) //this should probably be something else, but i can't find any other text that would fix with this.
           break;
         case "Friendly":
           ScoreDescription.push(ending.summary[112])
