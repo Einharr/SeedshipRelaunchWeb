@@ -22,7 +22,7 @@ Starts from zero.
 6 - French
 7 - Swedish
 8 - Dutch
-9 - Reserved for?
+9 - Chinese
 
 
 */
@@ -32,6 +32,10 @@ var languageData = {
   destroyed: ["Destroyed", "Уничтожен", "Zniszczony", "Destruido", "Distrutto", "Zerstört", "Détruite", "Förstörd", "Vernietigd", "已摧毀"],
   scannerFailure:["SCANNER FAILURE", "СБОЙ СКАНЕРА", "AWARIA SKANERA", "ERROR DE ESCANEO", "", "Scannfehler", "ÉCHEC DU SCAN", "", "SCANNER STORING", "掃描失敗"],
 
+  confirmDataClear: ["This will delete saved game data and high score data. Are you sure?","Это приведет к удалению сохраненных игровых данных и данных о рекордах. Уверены ли вы?",
+  "Spowoduje to usunięcie zapisanych danych gry i danych o najlepszych wynikach. Jesteś pewny?","Esto eliminará los datos del juego guardados y los datos de puntuación más alta. ¿Está seguro?",
+  "Questo cancellerà i dati di gioco salvati e i dati sui punteggi più alti. Sei sicuro?","Dadurch werden gespeicherte Spieldaten und Highscore-Daten gelöscht. Bist du dir sicher?","Cela supprimera les données de jeu sauvegardées et les données de score élevé. Êtes-vous sûr?",
+  "Detta kommer att radera sparad speldata och data med höga poäng. Är du säker?","Hiermee worden opgeslagen gamegegevens en hoogste scoregegevens verwijderd. Weet je het zeker?","这将删除保存的游戏数据和高分数据。 你确定吗？"],
 //МЕНЮ
 //Menu
   menuStart: ["NEW GAME", "НОВАЯ ИГРА", "NOWA GRA", "NUEVO JUEGO", "NUOVA PARTITA", "NEUES SPIEL", "NOUVELLE PARTIE", "NYTT SPEL", "NIEUW SPEL", "新遊戲"],
@@ -43,6 +47,7 @@ var languageData = {
   menuAddon: ["Community Content", "Дополнительный Контент", "ZAWARTOŚĆ SPOŁECZNOŚĆI", "Contenido comunitario", "", "Community Erweiterung", "Contenu de la communauté", "", "Community-inhoud", "社群功能"],
   menuPastM: ["Past Missions", "Прошлые Миссии", "POPRZEDNIE MISJE", "Misiones Previas", "", "Bisherige Missionen", "Anciennes missions", "", "Eerdere Missies", "過去的任務"],
   MainMenu: ["Main Menu", "Главное Меню", "", "Menú Principal", "", "", "Menu principal", "", "Hoofdmenu", "主畫面"],
+  menuClearData: ["CLEAR DATA", "УДАЛЕНИЕ ДАННЫХ","WYCZYŚĆ DANE","ELIMINAR DATOS","ELIMINA I DATI","DATEN LÖSCHEN","EFFACER LES DONNÉES","RADERA DATA","GEGEVENS WISSEN","清除数据"],
   //NEW!!!
 
 //НАСТРОЙКИ
