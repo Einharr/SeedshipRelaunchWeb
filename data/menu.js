@@ -291,8 +291,8 @@ function about() {
   btn.className = "futurebutton";
   btn.id = "menubutton";
   btn.onclick = function() {
-  backRow.remove();
-  createMenu();
+      backRow.remove();
+      createMenu();
   }
   btn.innerHTML = languageData.menuBack[options.language];
   backRow.appendChild(btn);
@@ -494,6 +494,23 @@ function createMenu() {
   btn.innerHTML = languageData.menuCredits[options.language];
   more.appendChild(btn);
 
+  var more = document.getElementById("menu");
+  var row = document.createElement("div");
+  row.className = "row menuItem";
+  row.id = "row_CL";
+  more.appendChild(row);
+
+  var more = document.getElementById("row_CL");
+  var btn = document.createElement("button");
+  btn.className = "futurebutton";
+  btn.id = "menubutton"
+  btn.onclick = 
+  btn.onclick = function() {
+    clearData();
+   }
+  btn.innerHTML = languageData.menuClearData[options.language];
+  more.appendChild(btn);
+
   //Подготовка к загрузке игровых данных
   //Preparing to download game data
   if (!options.noLocalStorage && localStorage.getItem("Savedata") !== null) {
@@ -509,6 +526,20 @@ function createMenu() {
   //
 
 };
+
+
+function clearData() {
+
+  if (confirm(languageData.confirmDataClear[options.language]) == true) {
+    localStorage.clear();
+    window.location.reload(true);
+  } else {
+    console.log("nothing is deleted");
+  }
+
+
+}
+
 //МЕНЮ НАСТРОЕК
 //Menu Settings
 function menuSettings() {
