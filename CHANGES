@@ -3,7 +3,6 @@ Version 0.9.18
 Features:
  * Added in a clear data option for the game.
 Bugs:
- * Set community events on by default as a temp workaround to avoid a bug with the ending function.
  * its vs it's typo fix
  * fixed a bug where settling on a planet spanning civilization would omit the summary in the final score output and high score display as well as the planet name.
  * Fixed a bug where sometimes sending out a probe would not return results.
