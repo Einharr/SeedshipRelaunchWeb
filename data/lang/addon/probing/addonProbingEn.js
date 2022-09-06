@@ -344,7 +344,7 @@ var ProbingCulture = [
   "The most advanced nations are ruled by benevolent monarchs who regard it as their duty to see to the needs of their subjects.",
   "The most advanced nations are republics, where decisions are made by assemblies of citizens.",
   "The civilisation has recently undergone a nuclear war, and the natives eke out a living in the ruins of their once-great cities.",
-  "Most of the planet is diveded between several superpowers which exist in a state of constant tension.",
+  "Most of the planet is divided between several superpowers which exist in a state of constant tension.",
   "The most advanced nations are dictatorships, which make extensive use of policing and technological surveillance to keep their populations in line.",
   "The planet is dominated by a host of multinational corporations which have supplanted the role of governments.",
   "The planet's most powerful nations are nominally democratic, but the leaders are corrupt and do little to improve the lot of the general population.",
