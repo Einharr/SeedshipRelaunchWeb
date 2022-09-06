@@ -24,7 +24,7 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
     // Cordova is now initialized. Have fun!
-
+/*
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
 
 
@@ -37,7 +37,7 @@ function onDeviceReady() {
     window.plugins.NativeAudio.preloadSimple( 'intro', 'assets/music/Intro.mp3', function(msg){
     }, function(msg){
        console.log( 'error: ' + msg );
-    });
+    }); */
 
 
 
