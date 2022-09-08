@@ -318,65 +318,85 @@ function newColony(ship, planet, ending) {
       }
     };
 
-
-
     // Description of landing
     //Описание приземления
-    if (ship.landing[0] >= 90) {
-      EndingLandingList.push(ending.landing[0]);
-      if (planet.anomalies.includes("Vegetation")) {
-        EndingLandingList.push(ending.landingBut[1]); //   "touches gently down",
-        EndingLandingList.push(ending.surface[3]); //   "a field of alien vegetation.",
-      } else if (planet.water == "Planet-wide ocean") {
-        EndingLandingList.push(ending.landingBut[0]); //  "splashes gently down into",
-        EndingLandingList.push(ending.surface[1]); //  "the planet-wide ocean.",
-      } else if (planet.water == "Ice-covered surface") {
-        EndingLandingList.push(ending.landingBut[1]); //   "touches gently down",
-        EndingLandingList.push(ending.surface[2]); //  "the top of the planet-wide ice sheet.",
-      } else if (planet.water == "Oceans") {
-        EndingLandingList.push(ending.landingBut[0]); //  "splashes gently down into",
-        EndingLandingList.push(ending.surface[0]); //  "the ocean off the shore of one of the planet's continents.",
-      } else {
-        EndingLandingList.push(ending.landingBut[1]); //   "touches gently down",
-        EndingLandingList.push(ending.surface[4]); //  "the rocky surface.",
-      };
-    } else if (ship.landing[0] <= 30) {
-      EndingLandingList.push(ending.landing[2]);
-      if (planet.anomalies.includes("Vegetation")) {
-        EndingLandingList.push(ending.landingBut[5]); //  "ploughs through"
-        EndingLandingList.push(ending.surface[5]); //  "a field of alien vegetation before coming to a stop."
-      } else if (planet.water == "Planet-wide ocean") {
-        EndingLandingList.push(ending.landingBut[4]); //  "splashes down hard into",
-        EndingLandingList.push(ending.surface[1]); //  "the planet-wide ocean.",
-      } else if (planet.water == "Ice-covered surface") {
-        EndingLandingList.push(ending.landingBut[5]); //  "crashes into",
-        EndingLandingList.push(ending.surface[2]); //  "the top of the planet-wide ice sheet.",
-      } else if (planet.water == "Oceans") {
-        EndingLandingList.push(ending.landingBut[4]); //  "splashes down hard into",
-        EndingLandingList.push(ending.surface[0]); //  "the ocean off the shore of one of the planet's continents.",
-      } else {
-        EndingLandingList.push(ending.landingBut[5]); //  "crashes into",
-        EndingLandingList.push(ending.surface[4]);  //  "the rocky surface.",
-      };
-    } else {
-      EndingLandingList.push(ending.landing[1]);
-      if (planet.anomalies.includes("Vegetation")) {
-        EndingLandingList.push(ending.landingBut[3]);  //  "touches down on",
-        EndingLandingList.push(ending.surface[3]);  //  "a field of alien vegetation.",
-      } else if (planet.water == "Planet-wide ocean") {
-        EndingLandingList.push(ending.landingBut[2]); //  "splashes down into",
-        EndingLandingList.push(ending.surface[1]); //  "the planet-wide ocean.",
-      } else if (planet.water == "Ice-covered surface") {
-        EndingLandingList.push(ending.landingBut[3]);  //  "touches down on",
-        EndingLandingList.push(ending.surface[2]); //  "the top of the planet-wide ice sheet.",
-      } else if (planet.water == "Oceans") {
-        EndingLandingList.push(ending.landingBut[2]); //  "splashes down into",
-        EndingLandingList.push(ending.surface[0]); //  "the ocean off the shore of one of the planet's continents.",
-      } else {
-        EndingLandingList.push(ending.landingBut[3]);  //  "touches down on",
-        EndingLandingList.push(ending.surface[4]);  //  "the rocky surface.",
-      };
-    };
+	switch(true) {
+	  case ship.landing[0] >= 100: 
+			EndingLandingList.push(ending.landing[0]);	  
+		switch (true) {
+		  case planet.anomalies.includes("Vegetation"):
+				EndingLandingList.push(ending.landingBut[1]); //   "touches gently down",
+				EndingLandingList.push(ending.surface[3]); //   "a field of alien vegetation.",
+			break;
+		  case planet.water == "Planet-wide ocean":
+				EndingLandingList.push(ending.landingBut[0]); //  "splashes gently down into",
+				EndingLandingList.push(ending.surface[1]); //  "the planet-wide ocean.",
+			break;
+		  case planet.water == "Ice-covered surface":
+				EndingLandingList.push(ending.landingBut[1]); //   "touches gently down",
+				EndingLandingList.push(ending.surface[2]); //  "the top of the planet-wide ice sheet.",
+			break;
+		  case planet.water == "Oceans":
+				EndingLandingList.push(ending.landingBut[0]); //  "splashes gently down into",
+				EndingLandingList.push(ending.surface[0]); //  "the ocean off the shore of one of the planet's continents.",
+			break;	
+		  default:
+				EndingLandingList.push(ending.landingBut[1]); //   "touches gently down",
+				EndingLandingList.push(ending.surface[4]); //  "the rocky surface.",
+			break;	
+		}		  
+		break;
+	  case ship.landing[0] <= 50:  // if (x === 'value2')
+			EndingLandingList.push(ending.landing[2]);
+		switch (true) {
+		  case planet.anomalies.includes("Vegetation"):
+			EndingLandingList.push(ending.landingBut[5]); //  "ploughs through"
+			EndingLandingList.push(ending.surface[5]); //  "a field of alien vegetation before coming to a stop."
+			break;
+		  case planet.water == "Planet-wide ocean":
+			EndingLandingList.push(ending.landingBut[4]); //  "splashes down hard into",
+			EndingLandingList.push(ending.surface[1]); //  "the planet-wide ocean.",
+			break;
+		  case planet.water == "Ice-covered surface":
+			EndingLandingList.push(ending.landingBut[5]); //  "crashes into",
+			EndingLandingList.push(ending.surface[2]); //  "the top of the planet-wide ice sheet.",
+			break;
+		  case planet.water == "Oceans":
+			EndingLandingList.push(ending.landingBut[4]); //  "splashes down hard into",
+			EndingLandingList.push(ending.surface[0]); //  "the ocean off the shore of one of the planet's continents.",
+			break;	
+		  default:
+			EndingLandingList.push(ending.landingBut[5]); //  "crashes into",
+			EndingLandingList.push(ending.surface[4]);  //  "the rocky surface.",
+			break;	
+		}			
+		break;
+	  default:
+		  EndingLandingList.push(ending.landing[1]);
+			switch (true) {
+			  case planet.anomalies.includes("Vegetation"):
+			EndingLandingList.push(ending.landingBut[3]);  //  "touches down on",
+			EndingLandingList.push(ending.surface[3]);  //  "a field of alien vegetation.",
+				break;
+			  case planet.water == "Planet-wide ocean":
+			EndingLandingList.push(ending.landingBut[2]); //  "splashes down into",
+			EndingLandingList.push(ending.surface[1]); //  "the planet-wide ocean.",
+				break;
+			  case planet.water == "Ice-covered surface":
+			EndingLandingList.push(ending.landingBut[3]);  //  "touches down on",
+			EndingLandingList.push(ending.surface[2]); //  "the top of the planet-wide ice sheet.",
+				break;
+			  case planet.water == "Oceans":
+			EndingLandingList.push(ending.landingBut[2]); //  "splashes down into",
+			EndingLandingList.push(ending.surface[0]); //  "the ocean off the shore of one of the planet's continents.",
+				break;	
+			  default:
+			EndingLandingList.push(ending.landingBut[3]);  //  "touches down on",
+			EndingLandingList.push(ending.surface[4]);  //  "the rocky surface.",
+				break;	
+			}		  	  
+		break;
+	};
 
     /* Roll to see if it is a landing or a crash */
     /* Roll crash damage and then reduce it by landing system integrity. */
