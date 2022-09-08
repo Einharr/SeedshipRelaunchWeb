@@ -1,3 +1,8 @@
+Version 0.9.19
+--------------
+Bugs:
+ * Fixed an issue where the ending text wouldn't reflect ship damage during a problematic landing.
+
 Version 0.9.18
 --------------
 Features:
