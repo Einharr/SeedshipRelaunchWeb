@@ -30,12 +30,12 @@ jobs:
         with:
           exec: |
            cordova platform add android && \
-           cordova build --no-telemetry && \
-           cp "$(find . -name '*.apk')" ~/
+           cordova build --no-telemetry 
+           
            
       - name: move file up
         run: |
-         cp /github/workspace/platforms/android/app/build/outputs/apk/debug/app-debug.apk ~/
+         cp "$(find . -name '*.apk')" ~/
 
       - uses: actions/upload-artifact@v3
         with:
