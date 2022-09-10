@@ -14,18 +14,21 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     steps:
+    
+      - uses: actions/checkout@v3
       - name: checkout code
-        uses: actions/checkout@v3
+        run: |
+         mkdir www
+         rm -rf .github
+         mv *.js *.css *.html -t www/
+         mv assets/ bootstrap/ css/ data/ res/ -t www/
+         ls;
+        
         
       - name: Use oxr463/setup-cordova
         uses: oxr463/setup-cordova@0.0.3
         with:
           exec: |
-           mkdir www
-           rm -rf .github
-           mv *.js *.css *.html -t www/
-           mv assets/ bootstrap/ css/ data/ res/ -t www/
-           ls;
            cordova platform add android && \
            cordova build --no-telemetry && \
            cp "$(find . -name '*.apk')" ~/
