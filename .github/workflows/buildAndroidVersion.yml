@@ -25,15 +25,4 @@ jobs:
          ls;
         
         
-      - name: Use oxr463/setup-cordova
-        uses: oxr463/setup-cordova@0.0.3
-        with:
-          exec: |
-           cordova platform add android && \
-           cordova build --no-telemetry && \
-           cp "$(find . -name '*.apk')" ~/
 
-      - uses: actions/upload-artifact@v3
-        with:
-         name: my-apk-file
-         path: ~/*.apk
