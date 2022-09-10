@@ -16,7 +16,7 @@ jobs:
     steps:
     
       - uses: actions/checkout@v3
-      - name: checkout code
+      - name: prepare environment
         run: |
          mkdir www
          rm -rf .github
