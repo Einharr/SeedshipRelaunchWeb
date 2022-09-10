@@ -21,8 +21,22 @@ jobs:
          mkdir www
          rm -rf .github
          mv *.js *.css *.html -t www/
-         mv assets/ bootstrap/ css/ data/ res/ -t www/
+         mv assets/ bootstrap/ css/ data/ -t www/
          ls;
+         
+         
+      - name: Use oxr463/setup-cordova
+        uses: oxr463/setup-cordova@0.0.3
+        with:
+          exec: |
+           cordova platform add android && \
+           cordova build --no-telemetry && \
+           cp "$(find . -name '*.apk')" ~/
+
+      - uses: actions/upload-artifact@v3
+        with:
+         name: my-apk-file
+         path: ~/*.apk
         
         
 
