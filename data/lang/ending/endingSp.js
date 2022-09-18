@@ -117,7 +117,7 @@ var EndingLandingBut = [
 ];
 
 var EndingLandingBonus = [
-  "Un escuadron de vehículos espaciales lanzados por los nativos, intercepta a la nave durante su aproximación y comieza a guiarla, en tanto los habitantes del planeta preparan un área de aterrizaje.",
+  "Un escuadrón de vehículos espaciales lanzados por los nativos, intercepta a la nave durante su aproximación y comieza a guiarla, en tanto los habitantes del planeta preparan un área de aterrizaje.",
   "La civilización nativa lanza a duras penas una nave espacial para guiar a la nave en su descenso, mientras los habitantes del planeta preparan un área de aterrizaje.",
   "La civilización nativa lanza una tosca nave espacial para monitorear la aproximación de la nave, mientras los habitantes del planeta preparan un área de aterrizaje.",
 ];
@@ -139,7 +139,7 @@ var EndingSurfaceFull = [
   "La nave flota sobre la superficie de un océano plano como espejo, bajo",
 
   "Bosques de árboles extraterrestres inimaginablemente delgados se alzan kilómetros hacia",
-  "Bosques de elongados árboles extraterrestres se imponen ciento de metros hacia",
+  "Bosques de elongados árboles extraterrestres se imponen cientos de metros hacia",
   "Bosques de vegetación alienígena se extienden bajo",
   "Arboledas de rechonchas y gruesas plantas extraterrestres se extienden bajo",
   "Una capa de musgo alienígena se dispersa bajo",
@@ -168,7 +168,7 @@ var EndingSky = [
   "un tenue cielo azul.",
   "un cielo negro repleto de estrellas.",
   "un cielo extraño.",
-  "un cielo toxico, repleto de veneno.",
+  "un cielo tóxico, repleto de veneno.",
   "un cielo saturado de nubes corrosivas."
 ];
 
@@ -190,27 +190,27 @@ var EndingMoon = [
 
 //NEW FROM HERE!
 var EndingAtmosphere = [
-  "Ellos no pueden salir de la nave excepto en pesados vehiculos diseñados para resistir la muy corrosiva ",
-  "Ellos pueden abandonar la nave vistiendo bulminosos trajes diseñados para protegerlos de la muy toxica ",
+  "Ellos no pueden salir de la nave excepto en pesados vehículos diseñados para resistir la muy corrosiva ",
+  "Ellos pueden abandonar la nave vistiendo voluminosos trajes diseñados para protegerlos de la muy tóxica ",
   "pueden dejar la nave vistiendo pesados trajes que los protegen de ",
   "pueden dejar la nave sin equipo de respiración, vistiendo ",
   "Pueden salir de la nave vistiendo pequeñas mascarillas respiratorias y ",
-  "Pueden salir de la nave usando equipos de respiracion y ",
+  "Pueden salir de la nave usando equipos de respiración y ",
 
   "atmósfera",
   "atmósfera y",
-  "el vacio",
+  "el vacío",
   "el vacio y",
 
   "el calor ardiente",
-  "el frio congelante",
+  "el frío congelante",
   "el calor capaz de fundir el plomo ",
   "las temperaturas cercanas al 0 absoluto",
 ];
 
 var EndingAtmosphereBut = [
-  "Pero la atmósfera corrosiva carcome los sellos de un vehiculo de construcción, matando a 1 colono",
-  " Pero la atmósfera corrosiva carcome los sellos de varios vehiculos de construcción, matando a ",
+  "Pero la atmósfera corrosiva carcome los sellos de un vehículo de construcción, matando a 1 colono",
+  " Pero la atmósfera corrosiva carcome los sellos de varios vehículos de construcción, matando a ",
   " colonizadores",
 
   "pero una falla de traje mata a 1 colono",
@@ -221,39 +221,39 @@ var EndingAtmosphereBut = [
   "Pero algunas fallas en diversos trajes resultan en ",
   " colonos asfixiandose",
 
-  "pero fallas en un equipo de respiracion asfixia a 1 colono.",
-  "pero fallas en varios equipos de respiracion resultan en ",
+  "pero fallas en un equipo de respiración asfixia a 1 colono.",
+  "pero fallas en varios equipos de respiración resultan en ",
   " colonos asfixiandose",
 
-  "pero a pesar de la atmósfera respirable, 1 colono muere por exposicion al ambiente antes de que los refugios terminaran de construirse",
+  "pero a pesar de la atmósfera respirable, 1 colono muere por exposición al ambiente antes de que los refugios terminaran de construirse",
   "pero a pesar de la atmósfera respirable, ",
-  " colonos mueren por exposicion al ambiente.",
+  " colonos mueren por exposición al ambiente.",
 ];
 
 var EndingGravity = [
-  "Pueden moverse facilmente bajo la gravedad similar a la terrestre",
+  "Pueden moverse fácilmente bajo la gravedad similar a la terrestre",
   "Pero la elevada gravedad dificulta el trabajo.",
   "la baja gravedad hace el trabajo un poco mas complejo que bajo la gravedad terrestre.",
-  "La aplastante gravedad hace que el movimiento sea casi imposible sin asistencia mecanica,",
+  "La aplastante gravedad hace que el movimiento sea casi imposible sin asistencia mecánica,",
   "La gravedad extremadamente baja dificulta mucho el trabajo,"
 ];
 
 var EndingGravityBut = [
   "pero",
   "y",
-  " accidentes en la construccion matan a ",
+  " accidentes en la construcción matan a ",
   " colonos.",
-  " colonos mueren por problemas medicos causados por la extrema gravedad.",
-  " colonos mueren cuando una estructura en construccion colapsa.",
+  " colonos mueren por problemas médicos causados por la extrema gravedad.",
+  " colonos mueren cuando una estructura en construcción colapsa.",
 ];
 
 
 var EndingTemperature = [
   "ropa ligera en la templada temperatura planetaria",
   "vestimentas refrigeradas para resistir las ardientes temperaturas",
-  "vestimentas pesadas para resistir las gelidas temperaturas",
+  "vestimentas pesadas para resistir las gélidas temperaturas",
   "trajes de amianto refrigerados para resistir las extremas temperaturas",
-  "trajes calefacciones para resistir las extremas temperaturas",
+  "trajes climatizados para resistir las extremas temperaturas",
 ];
 
 var EndingTemperatureBut = [
@@ -265,21 +265,21 @@ var EndingTemperatureBut = [
   "y ",
   " mueren por sobrecalentamiento cuando los sistemas de refrigeración falla.",
 
-  "y un error en el sistema de regulacion termica mata a un colono mas.",
-  "y un error en el sistema de regulacion termica mata a ",
+  "y un error en el sistema de regulación térmica mata a un colono mas.",
+  "y un error en el sistema de regulación térmica mata a ",
   " mas.",
 
-  "y uno mas muere congelado cuando un sistema de calefaccion falla.",
+  "y uno mas muere congelado cuando un sistema de calefacción falla.",
   "y ",
-  " mas mueren congelados cuando el sistema de calefaccion falla.",
+  " mas mueren congelados cuando el sistema de calefacción falla.",
 
-  "y 1 mas muere cuando un refugio se quiebra bajo el extremo frio.",
+  "y 1 mas muere cuando un refugio se quiebra bajo el frío extremo.",
   "y ",
-  " mas muere cuando un refugio se quiebra bajo el extremo frio..",
+  " mas muere cuando un refugio se quiebra bajo el frío extremo.",
 
-  "pero 1 colono muere cuando una estructura en construccion se derrite bajo el ardiente calor.",
+  "pero 1 colono muere cuando una estructura en construcción se derrite bajo el ardiente calor.",
   "pero ",
-  " colonos  mueren cuando una estructura en construccion se derrite bajo el ardiente calor.",
+  " colonos  mueren cuando una estructura en construcción se derrite bajo el ardiente calor.",
 
   "pero 1 colono muere por sobrecalentamiento cuando un sistema de refrigeración falla.",
   "pero ",
@@ -293,19 +293,19 @@ var EndingTemperatureBut = [
   "pero  ",
   " colonos mueren por hipotermia cuando un sistema de calefacción falla.",
 
-  "pero un colono muere cuando una estructura en costruccion se resquebraja bajo el frio devastador.",
+  "pero un colono muere cuando una estructura en costruccion se resquebraja bajo el frío devastador.",
   "pero  ",
-  " colonos mueren cuando una estructura en costruccion se resquebraja bajo el frio devastador.",
+  " colonos mueren cuando una estructura en costruccion se resquebraja bajo el frío devastador.",
 ];
 //TO HERE!
 
 var EndingWater = [
   "Construyen su asentamiento cerca de un río que desemboca en uno de los oceános del planeta, esto les provee de toda el agua necesaria.",
   "Obtienen agua del casquete polar norte del planeta.",
-  "Construyen su asentamiento en una plataforma flotante con filtros para extraer agua del oceano planetario.",
+  "Construyen su asentamiento en una plataforma flotante con filtros para extraer agua del océano planetario.",
   "Construyen su asentamiento por encima de la capa de hielo que recubre la superficie, la cual minan para obtener agua.",
   "Deben racionar cuidadosamente la pequeña cantidad de agua que pueden condensar de la atmósfera, ",
-  "Deben racionar cuidadosamente la diminuta cantidad de agua que pueden extraer de las rocas, "
+  "Deben racionar cuidadosamente la diminuta cantidad de agua que pueden extraer químicamente de las rocas, "
 ];
 
 var EndingWaterBut = [
@@ -343,7 +343,7 @@ var EndingNatives = [
   "La nave se ve rápidamente rodeada por un campamento de soldados, eruditos, sacerdotes y diplomáticos nativos.",
   "La nave se ve rápidamente rodeada por un campamento de soldados, científicos y diplomáticos nativos.",
 
-  "Las dos especies logran entablar comuniciones, y los colonos aprenden como llaman los nativos a su planeta ",
+  "Las dos especies logran entablar comunicaciones, y los colonos aprenden como llaman los nativos a su planeta ",
 
 
   "los habitantes nativos mantienen a los recien llegados bajo una cuidadosa vigilancia, pero tambien los ayudan a establecer refugios temporales y a limpiar el terreno.",
@@ -359,7 +359,7 @@ var EndingNativeInteractions = [
   "sin ninguna ayuda de la inexistente base de datos cultural.",
 
   "La diferencia en el nivel tecnológico de los colonos y los nativos dificula las relaciones,",
-  "La similitud del nivel tecnológico de los colonos y nativos facilita las relaciones,",
+  "La similitud del nivel tecnológico de los colonos y nativos fácilita las relaciones,",
 
   "la cultura de los nativos los hace abiertamente hostiles a los humanos recién llegados.",
   "la cultura de los nativos los hace extremadamente sospechosos hacia los extraños.",
@@ -381,67 +381,66 @@ var EndingNativeInteractions = [
   "Los conflictos culminan en una guerra que termina con la erradicación total de los humanos.",
 //NEW!!!!
 //21!
-"As they construct the colony's shelters, the humans and aliens try to establish communications with one another.",
+"A medida que inician la construcción de refugios para la colonia, los humano y extraterrestres tratan de establecer comuniciones el uno con el otro.",
 
 
-	"The humans are guided by the wealth of historical information in the cultural database,",
-	"The humans have the surviving historical information in the cultural database to guide them,",
-	"The humans gain little help from the badly damaged cultural database,",
-	"The humans can gain no guidance from the destroyed cultural database,",
+	"Los humanos se guian por la riqueza en información histórica que posee la base de datos cultural,",
+	"Los humanos tienen que trabajar con los registros históricos sobrevivientes de la base de datos cultural,",
+	"Los humanos ganan poca información de la muy dañanada base de datos cultural,",
+	"Los humanos no pueden ser guiados por la destruida base de datos cultural,",
 
-  "the natives' culture makes them hostile towards the alien newcomers.",
-  "the natives' culture makes them extremely suspicious towards the outsiders.",
-  "the natives' culture makes them wary towards the humans.",
-  "the natives' culture makes them cautious but accepting of the immigrants.",
-  "the natives' culture makes them welcoming towards the refugees.",
+  "la cultura de los nativos les hace hostiles hacia los colonos alienígenas.",
+  "la cultural de los nativos les hace sospechar de forma extrema hacia los extranjeros.",
+  "la cultura de los nativos les hace muy cautos respecto a los humanos.",
+  "la cultura de los nativos les hace cautos pero tolerantes hacia los nuevos inmigrantes.",
+  "la cultura de los nativos les hace muy hospitalarios hacia los refugiados.",
 
-  "The aliens share the humans' appreciation of the planet's beauty, which makes it easier for the two species to relate to one another's cultures.",
-  "The humans find the planet unbearably ugly, and this makes it harder for them to connect with the natives who find their home planet beautiful.",
+  "Los alienígenas comparten la apreciación humana de la belleza respecto al planeta, lo que hace más sencillo encontrar puntos comunes entre las culturas de ambos.",
+  "Los humanos encuentran al planeta como horriblemente desagradable, lo que hace que sea más difícil conectar con los nativos que encuentran a su planeta natal como bello.",
 
-  "Thanks to the AI's interactions with the planet's natives during the seedship's approach, the natives have already extended an offer of asylum to the humans, and are willing to overlook any differences and accept them into their society.",
-  "During the seedship's approach, the natives made it clear that the humans would not be welcome on their planet.",
+  "Gracias a las interacciones de la IA con los nativos del planeta durante la aproximación de la nave, los nativos han ofrecido una oferta de asilo para los humanos, y están dispuestos a sobrellevar sus diferencias e integrarlos a su sociedad.",
+  "Durante la aproximación de la nave, los nativos dejaron muy en claro que los humanos no serán tolerados en su planeta.",
 
-  "The natives grant the humans asylum on their planet, and the refugees become an immigrant subculture within the alien civilisation.",
-  "The natives are unable to accept the humans as equals, and absorb them into their society as a source of slave labour." ,
+  "Los nativos les garantizan asilo a los humanos en su planeta, y los refugiados se transforman en una subcultura dentro de la civilización alienígena.",
+  "Los nativos son incapaces de aceptar a los humanos como sus iguales, y acaban esclavizándolos como una fuente de trabajo barato." ,
 
-   "The natives are unable to accept the newcomers, and within a few days of emerging from their sleep chambers the humans have all been brutally murdered.",
+   "Los nativos son incapaces de aceptar a los humanos, y dentro de unos pocos días de haber salido de sus criocámaras, todos los humanos acaban siendo brutalmente eliminados.",
 
-   "and",
-   "but",
+   "y",
+   "pero",
 ];
 
 EndingPSCTInteractions = [
-  "The cultural database contains a treasure trove of history and culture, from both Earth and alien cultures the seedship encountered on its journey.",
-  "Although parts of the cultural database are missing, it still contains a clear picture of human civilisation's history and cultures.",
-  "The badly damaged cultural database contains only fragments of Earth's history and culture.",
-  "With the cultural database destroyed, the colonists have nothing left of Earth's history and culture besides what they can personally remember.",
+  "La base de datos cultural contiene un inmenso acervo de historia y cultura de tanto culturas de la Tierra como de extraterrestres que la nave encontró por su viaje.",
+  "Aunque partes de la base de datos cultural se encuentran desaparecidas, todavía existe una imagen coherente de la historia y cultura de la civilización humana.",
+  "La muy dañada base de datos cultural apenas contiene fragmentos aislados de la historia y cultura de la Tierra.",
+  "Con la base de datos cultural destruida, los colonos no tienen nada restante de la historia y cultura de la Tierra más allá de lo que se encuentra en sus memorias personales.",
 
-  "The heavy losses sustained by the colonists make it more difficult for them to preserve their culture.",
-  "The losses sustained by the colonists make it more difficult for them to preserve their culture.",
+  "Las inmensas pérdidas humanas de colonos hacen casi imposible el preservar su cultura.",
+  "Las pérdidas humanas de colonos hace muy difícil el presevar su cultura.",
 
-  "The growing human community retains a strong sense of its identity and history, and human influences enrich the natives' civilisation.",
-  "The growing human community retains a strong sense of its identity and history.",
-  "Almost all memory of Earth is lost, and the natives come to see the humans as culturally impoverished, with no identity of their own.",
+  "La creciente comunidad humana retiene un fuerte sentido de identidad e historia, e influencias sincréticas humanas enriquecen la civilización nativa.",
+  "La creciente comundiad humana retiene un fuerte sentido de su identidad e historia.",
+  "Casi toda memoria de la Tierra está perdida, y los nativos llegan a ver a los humanos como culturalmente alienados, sin identidad propia.",
 
-  "The natives and colonists work together to translate ",
-  "what is left of",
-  "the seedship's scientific database into the natives' language.",
+  "Los nativos y colonos trabajan juntos para traducir ",
+  "lo que queda",
+  "de la base de datos científica al lenguaje nativo.",
 
-  "Soon after the colonists land, the planet's moon decays in its orbit and breaks up, bombarding the surface with meteorites. Most of the technology the colonists brought with them is destroyed, and the native civilisation is too focused on repairing the damage to learn from the colonists.",
-  "Although native scholars read the database with interest, it teaches them little that they do not already know.",
-  "New scientific theories spread rapidly through the native population, and within a matter of decades their civilisation has advanced.",
-  "The colonists use what is left of the seedship to build spacecraft capable of reaching the planet's metal-rich moon, and bring back resources that jump-start the natives' industries.",
+  "Poco después de que los colonos arrivasen, la luna del planeta se sale de su orbita y se fragmenta, bombardeando la superficie con meteoritos. La mayoría de tecnología que trajeron con ellos es destruida, y la civilización nativa está demasiado preocupada en reconstruir que de aprender de los colonos.",
+  "Aunque los eruditos nativos leen con gran interés la base de datos científica, hay pocas cosas que ya no hubiesen descubierto.",
+  "Novedosas teorías científicas se dispersan rápidamente por la población nativa, y en meras décadas la civilización ha tenido un gran avance.",
+  "Los colonos usan lo que queda de la nave para crear naves espaciales capaces de alcanzar la luna rica en metales cerca al planeta, y traer con ellos recursos para iniciar una revolución industrial en los nativos.",
 
-  "The concept of tool use is new to the primitive natives, but soon the entire population is using simple stone tools.",
-  "The database introduces the natives to agriculture, and many communities abandon their hunter-gatherer lifestyle to become farmers.",
-  "Inspired by the human scientific database, the aliens begin making more sophisticated stone tools, found their first cities, and develop a writing system.",
-  "The scientific database teaches the natives the secret of metalworking, and the use of bronze tools gradually becomes widespread.",
-  "The scientific database teaches the natives how to work iron, which revolutionises their civilisation.",
-  "The natives learn how to build printing presses and other medieval machines, leading to a rapid spread of ideas and increasing urbanisation.",
-  "The natives adapt 19th-Century Earth technology and undergo a rapid industrial revolution.",
-  "The natives adopt electricity, and their scientists convene a great project which culminates in their first atomic power plants.",
-  "The natives build their first computers, and within decades the planet has advanced to a level comparable to 21st-Century Earth.",
-  "The natives and settlers study the alien scientific information that the seedship added to its database during its journey, and eventually develop technology even more advanced than that of the Earth when the seedship was launched.",
+  "El concepto del uso de herramientas es nuevo para los nativos primitivos, pero pronto la población entera se encuentra usando herramientas de piedra simples.",
+  "La base de datos científica introduce a los nativos en la agricultura, y múltiples comunidades abandonan su estilo de vida cazador-recolector para volverse granjeros.",
+  "Inspirados por la base de datos científica, los alienígenas empiezan a emplear herramientas de piedra cada vez más avanzadas, crean las primeras cuidades-estado, y desarrollan un sistema de escritura.",
+  "La base de datos científica le enseña a los nativos el empleo de la forja de metales y el uso de herramientas de bronce gradualmente se vuelve ampliamente disperso.",
+  "Los nativos aprenden como emplear imprentas y otras máquinas medievales, lo que lleva a una rápida dispersión de ideas y una mayor urbanización.",
+  "Los nativos adaptan tecnología equivalente a la de la Tierra durante el siglo 19 y empiezan una rápida revolución industrial.",
+  "Los nativos adaptan la electricidad, y tras una gran colaboración entre sus científicos logran construir su primera planta nuclear.",
+  "Los nativos construyen sus primeras computadoras, y en pocas décadas el planeta hay avanzado a un nivel comparable al del Siglo 21 en la Tierra.",
+  "Los nativos y colonos estudian la información cietífica extraterrestre que la nave añadió en sus viajes, y eventualmente desarrollan una tecnología superior incluso al de la Tierra al momento de la construcción de la nave.",
 ];
 
 //UP TO HERE
@@ -474,7 +473,7 @@ var EndingCaves = [
 
 var EndingRuins = [
   "Con el asentamiento completo y su suministro de comida asegurado, los colonos organizan una expedición a las ruinas cercanas.",
-  "Los exploradores estudian las esculturas, frescos y escrituras alienígenas que colman las ruinas. Incluso antes que puedan traducir las escrituras, ellos aprenden mucho acerca de la civilización que las creo, y la causa de su caída, este conocimiento les ayudará a crear su propia cultura en este nuevo mundo.",
+  "Los exploradores estudian las esculturas, frescos y escrituras alienígenas que colman las ruinas. Incluso antes que puedan traducir las escrituras, ellos aprenden mucho acerca de la civilización que las creó, y la causa de su caída, este conocimiento les ayudará a crear su propia cultura en este nuevo mundo.",
   "Ellos también",
   "Los exploradores",
   "encuentran avanzadas máquinas alienígenas, algunas de las cuales siguen funcionando.",
@@ -505,7 +504,7 @@ var EndingScience = [
   "Los colonos usan el avanzado conocimiento científico alienígena, para crear un nivel tecnológico más allá de los sueños de aquellos que crearon la nave.",
   "Los colonos logran mantener un nivel de tecnología equivalente al de la Tierra durante el lanzamiento de la nave.",
   "Los colonos fallan en el mantenimiento de sus avanzadas computadoras pero continuan usando electrónica sencilla y aparatos mecánicos.",
-  "Los son obligados a dejar la electricidad pero logran construir máquinas y fábricas similares a aquellas de la Era Industrial en la Tierra.",
+  "Los colonos son obligados a dejar la electricidad pero logran construir máquinas y fábricas similares a aquellas de la Era Industrial en la Tierra.",
   "Los colonos adoptan un nivel de tecnología medieval.",
   "Los colonos adoptan tecnología basada en herramientas de hierro.",
   "Los colonos adaptan tecnología basada en avanzadas herramientas de piedra, madera y bronce.",
@@ -555,7 +554,7 @@ var EndingCulture = [
 ];
 
 var EndingPolitics = [
-  "La base de datos cultural con datos de la Tierra, ha sido mejorada con conocimientos alienígenas, y los colonos usan esto para sociedad más allá de lo que los creadores de la nave hubiesen imaginado, donde cada persona vive una vida de paz, felicidad, y satisfacción espiritual.",
+  "La base de datos cultural con datos de la Tierra, ha sido mejorada con conocimientos alienígenas, y los colonos usan esto para crear una sociedad más allá de lo que los creadores de la nave hubiesen imaginado, donde cada persona vive una vida de paz, felicidad, y satisfacción espiritual.",
   "La base de datos cultural remanente es conservada como archivos digitales al cual todos tienen acceso. Los colonos trabajan juntos para crear una sociedad igualitaria en la que la tecnología se encarga de satisfacer las necesidades materiales de la gente, liberándolos para perseguir vidas de arte, entretenimiento, y búsqueda espiritual.",
   "La base de datos cultural remanente es conservada como archivos digitales al cual todos tienen acceso. Los colonos crean las bases para una democracia en la que todos los ciudadanos son educados e integrados",
   "La base de datos cultural remanente es conservada como archivos digitales al cual todos tienen acceso. Los colonos crean las bases para una democracia, pero resulta ser vulnerable a la corrupción y los individuos poderosos se vuelven la clase regente de facto.",
@@ -605,180 +604,180 @@ var EndingResourcesBut = [
 ];
 
 var EndingSummary = [
-  "",
-  "'s ocean tosses with slow, kilometres-high waves, beneath",
-  "",
-  "'s ocean tosses with slow, tall waves, beneath",
-  "",
-  "'s ocean stretches to the horizon, under",
-  "",
-  "'s calm ocean stretches to the horizon, under",
-  "",
-  "'s mirror-flat ocean stretches away beneath",
+  "Los océano de",
+  " se ondula con lentas olas kilométricas, bajo",
+  "Los océano de",
+  " se ondula con lentas y enormes olas de decenas de metros, bajo",
+  "El océano de",
+  " se extiende hasta el horizonte, bajo",
+  "El sereno océano de",
+  " se extiende hasta el horizonte, bajo",
+  "El océano tan plano como espejo de",
+  " se extiende hasta el horizonte, bajo",
 
-  "",
-  "'s impossibly slender alien plants reach kilometres into",
-  "",
-  "'s tall alien plants reach hundreds of metres into",
-  "",
-  "'s alien forests stretch away beneath",
-  "",
-  "'s squat, thick-limbed alien plants stretch away beneath",
-  "",
-  "'s level fields of alien moss stretch away beneath",
+  "Las imposiblemente largas y esqueléticas planetas alienígenas de ",
+  " se elevan kilómetros hacia",
+  "Las increiblemente altas plantas alienígenas de ",
+  " se elevan cientos de metros hacia",
+  "Los bosques alienígenas de",
+  " se extienden en todas direcciones bajo",
+  "Las plantas alienígenas achatadas y reforzadas de",
+  " se extienden por todas direcciones bajo",
+  "Los campos de musgo alienígena nivelados de",
+  " se extienden en todas direcciones bajo",
 
-  "Kilometres-high spires of ice reach from ",
-  "'s ice sheet into",
-  "Kilometres-high spires of ice reach from the unnamed planet's ice sheet into",
+  "Torres y agujas de hielo kilométricas surgen desde la capa de hielo de",
+  " en dirección hacia",
+  "Torres y agujas de hielo kilométricas surgen desde la capa de hielo del planeta sin nombre en dirección",
 
-  "Tall, jagged spires of ice reach from ",
-  "'s ice sheet into",
-  "Tall, jagged spires of ice reach from the unnamed planet's ice sheet into",
+  "Elevadas e irregulares torres y agujas de hielo surgen de la capa de hielo de",
+  " en dirección hacia",
+  "Elevadas e irregulares torres y agujas de hielo surgen de la capa de hielo del planeta sin nombre en dirección hacia",
 
-  "",
-  "'s landscape of jagged shards of ice stretches away beneath",
-  "",
-  "'s crumpled plain of ice stretches away beneath",
-  "",
-  "'s perfectly flat ice sheet stretches away beneath",
+  "El paisaje repleto de aserrados fragmentos de hielo de",
+  " se extiende en todas direcciones debajo de",
+  "La planicie de hielo estrujada de",
+  " se extiende en todas direcciones debajo de",
+  "La capa de hielo perfectamente plana de",
+  " se extiende en todas direcciones debajo de",
 
-  "",
-  "'s jagged landscape of high crater walls and towering shards of rock stretches away beneath",
-  "",
-  "'s jagged, cratered landscape stretches away beneath",
-  "",
-  "'s perfectly still, cratered landscape stretches away beneath",
-  "",
-  "'s perfectly still landscape, flat except for a few shallow craters, stretches away beneath",
-  "",
-  "'s perfectly still, flat landscape stretches away beneath",
+  "El escarpado paisaje de",
+  " se encuentra repleto inmensas paredes de cráter e imponentes mazacotes de roca, los cuales se extienden bajo",
+  "El paisaje aserrado y lleno de cráteres de",
+  " se extiende bajo",
+  "El paisaje quieto y lleno de cráteres de ",
+  " se extiende bajo",
+  "El paisaje perfectamente quieto de",
+  " tiene una configuración monótona excepto por unos cuántos cráteres poco profundos, es envuelto por",
+  "El paisaje perfectamente quieto de",
+  " se extiende como una planicie perfecta bajo",
 
-  "",
-  "'s landscape of spindly rock outcroppings and impossibly tall mountains stretches away beneath",
-  "",
-  "'s landscape of huge boulders and towering mountains stretches away beneath",
-  "",
-  "'s barren, rocky landscape stretches away beneath",
-  "",
-  "'s flat, rocky landscape stretches away beneath",
-  "",
-  "'s perfectly flat, barren landscape stretches away beneath",
+  "El paisaje de",
+  " está marcado por esbeltas afloraciones rocosas y montañas de inverosímil altura que se extienden debajo de",
+  "El paisaje de",
+  " está dominado por imponentes montañas e inmensos masacotes que se extienden debajo de",
+  "El paisaje estéril y rocoso de",
+  " se extiende debajo de",
+  "El paisaje liso y rocoso de",
+  " se extiende debajo de",
+  "El paisaje estéril y perfectamente plano de",
+  " se extiende debajo de",
 
-  "a blue sky.",
-  "a pale blue sky.",
-  "a black, star-studded sky.",
-  "an alien sky.",
-  "a poisonous sky.",
-  "a sky filled with corrosive clouds.",
+  "un cielo azul.",
+  "un tenue cielo azul.",
+  "un cielo negro repleto de estrellas.",
+  "un cielo extraño.",
+  "un cielo tóxico.",
+  "un cielo saturado de nubes corrosivas.",
 
-  "At night, the orbiting alien structures are visible as a glittering band across the stars.",
+  "Durante la noche, las estructuras extraterrestres son visibles como una banda brillante circundando las estrellas.",
 
-  "The fragments of the crashed seedship",
-  "The ruins of the colony",
+  "Los remanentes de la nave accidentada",
+  "Los restos del asentamiento",
 
-  "decay at the bottom of the planet-wide ocean.",
-  "lie embedded in the planet-wide ice sheet.",
-  "are overgrown with alien plants and overrun by alien animals.",
-  "are overgrown with alien plants.",
-  "lie on the rocky surface.",
+  "decaen en el fondo marino del planeta oceánico.",
+  "yacen incrustados dentro de las capas de hielo del planeta.",
+  "son colonizados por flora alienígena e invadidos por fauna alienígena.",
+  "son colonizados por flora alienígena.",
+  "yacen en la superficie muerta y rocosa.",
 
-  "The colonists' descendants live on as slaves to the intelligent natives, but they have lost all knowledge of Earth.",
-  "Nearby stand monuments built by the planet's native inhabitants to celebrate their victory over the invaders.",
-  "The planet's intelligent natives explore the ruins, but not enough remains for them to learn anything about the extinct human race.",
+  "Los descendientes de los colonos vivien como una casta de esclavos al servicio de los nativos, pero han perdido todo conocimiento de la Tierra.",
+  "Monumentos cercanos a la colonia muerta son erigidos por los nativos para celebrar su victoria sobre los invasores.",
+  "Los nativos sapientes del planeta exploran las ruinas, pero no hay suficientes materiales restantes como para aprender algo útil de la extinta raza humana.",
 
-  "The colonists live in ",
-  "their own communities within the natives'",
+  "Los colonos viven en ",
+  "sus propias comunidades como una subcultura de los nativos, y habitan en ",
 
-  "towering",
-  "tall",
-  "squat",
-  "low, sprawling",
+  "imponentes",
+  "altas",
+  "poco elevadas",
+  "muy poco elevadas pero muy dispersas",
 
-  "high-tech cities",
-  "cities of steel and glass",
-  "cities of steel and concrete",
-  "smog-filled Industrial cities",
-  "stone-walled cities",
-  "farming villages",
-  "wandering hunter-gatherer tribes",
+  "ciudades de alta tecnología",
+  "ciudades de acero y cristal",
+  "ciudades de acero y concreto",
+  "ciudades industriales repletas de smog",
+  "ciudades de con muros de piedra y barro",
+  "aldeas granjeras",
+  "tribus merodeandes de cazadores-recolectores",
 
-  "beneath the planet's open sky,",
-  "with buildings sealed against the planet's harsh environment,",
-  "inside airtight caves,",
-  "under airtight domes,",
+  "bajo el cielo abierto del planeta,",
+  "con edificios herméticamente sellados contra el inhóspito ambiente planetario,",
+  "en el interior de cuevas selladas,",
+  "debajo de domos herméticamente sellados,",
 
-  "on platforms floating on the planet-wide ocean.",
-  "on top of the planet-wide ice sheet.",
-  "gathered around water production plants.",
-  "by lakes of water melted from the planet's ice caps.",
-  "beside rivers that flow into the planet's oceans.",
+  "sobre plataformas flotantes en el océano planetario.",
+  "sobre el nivel superior de la capa de hielo planetaria.",
+  "concentradas alrededor de plantas de producción de agua.",
+  "cerca de lagos de agua derretida procedente de los casquetes polares del planeta.",
+  "en las riveras de los ríos que discurren hacía los océanos planetarios.",
 
-  "They live lives of peace and spiritual fulfilment beyond the dreams of their ancestors on Earth, guided by a combination of human and alien philosophy.",
-  "They spend their time pursuing art, leisure, and spiritual fulfilment, while automatic machines take care of their material needs.",
-  "They live happy and fulfilled lives under the guidance of selfless elected officials.",
-  "Poverty, exploitation and crime are rife, and the corrupt elected government does little to alleviate them.",
-  "The cities are dominated by the headquarters of wealthy corporations that rule the population for their owners' enrichment.",
-  "The streets are filled with security cameras and patrolled by armed police who violently put down any hint of dissent.",
-  "The cities are surrounded by military bases and nuclear missile silos, and the population lives in fear of both the other nations' armies and their own nation's secret police.",
-  "The cities are in ruins, and the survivors of the nuclear war survive as best they can in the wreckage of human civilisation.",
-  "The cities are built around parliament buildings, where assemblies of citizens rule for the good of all.",
-  "The cities are built around royal palaces, from which beloved monarchs rule the population wisely.",
-  "The cities are dominated by temples to the state religion which controls every aspect of people's lives.",
-  "The cities are dominated by the palaces of the emperors, who live in luxury while the population toils to support them.",
-  "The cities are dominated by barracks housing their vast armies, which regularly attack other cities.",
-  "The tribes are ruled collectively by their members, and each member is afforded equal status.",
-  "Each tribe is ruled by a chieftain, who guides the people as wisely as he or she is able.",
-  "Each tribe lives in fear of its brutal chieftain.",
-  "Much of the tribes' resources are devoted to fighting continual wars with one another.",
-  "The people live like animals, having forgotten almost all of their language and culture.",
+  "La población vive vidas de paz y satisfacción espiritual más allá de los sueños de sus ancentros en la Tierra, guiados por una combinación de filosofía humana y alienígena.",
+  "La población disfruta de su tiempo por medio del arte, entretenimiento y búsqueda espiritual mientras sistemas automatizados satisfacen sus necesidades materiales.",
+  "La población vive vidas felices y completas bajo la guía de altruistas e incorruptibles oficiales electos democráticamente.",
+  "La pobreza, explotación y crimen campan a sus anchas, y los oficiales corruptos de gobierno no hacen mucho para combatirlos.",
+  "Las cuidades están dominadas por los cuarteles generales de ricas megacorporaciones que gobiernan a la población para el beneficio de sus accionistas.",
+  "Las calles están llenas de cámaras de seguridad y patrulladas por policía militarizada que acalla de forma violenta cualquie mínimo intento de discrepancia al estado.",
+  "Las ciudades están rodeadas de bases militares y silos nucleares, la población vive en miedo de la brutalidad tanto de los ejércitos extranjeros como de la policia secreta de su propio país.",
+  "Las cuidades han sido destruidas y yacen en ruinas, los sobrevivientes del intercambio nuclear posapocalíptico deben resistir lo mejor que pueden entre los despojos de la civilización previa.",
+  "Las ciudades están centradas alrededor de asambleas populares, donde una democracia directa de ciudadanos iguales gobierna para el bien de todos.",
+  "Las ciudades están centradas alrededor de palacios imperiales, donde amados monarcas rigen con benevolencia y justicia a sus súbditos.",
+  "Las ciudades son dominadas por los templos de la religión estatal, la cual controla todos los aspectos en la vida de los habitantes.",
+  "Las ciudades son dominadas por los palacios de emperadores, quienes viven en máximo lujo en tanto que la población se desgasta para sostenerlos.",
+  "Las ciudades-estado son dominadas por barracones para sus masivos ejércitos, los cuales entran en guerras constantes con otras ciudades-estado.",
+  "Las tribus son gobernadas de manera colectiva por sus miembros, y cada uno de ellos tiene igualdad de derechos y estatus.",
+  "Cada tribu es gobernada por un benovolente caquice, quien guía a su gente de la mejor forma dentro de sus posibilidades.",
+  "Cada tribu vive en un regímen de terror bajo sus brutales caciques.",
+  "La mayoría de los recursos de las tribus se emplean en guerras sinsentido contra las demás tribus.",
+  "La gente vive como bestias primitivas, habiendo olvidado casi todo su lenguaje y cultura.",
 
-  "The humans live as immigrants inside the alien society, with a strong memory of Earth's cultural heritage that enhances the native culture.",
-  "The humans live as immigrants inside the alien society, and have forgotten most of the cultural heritage of Earth.",
-  "Many of the planet's native inhabitants live in the human communities, and the colonists' culture has been enriched by alien influences.",
-  "Traders and diplomats from the planet's native nations are occasionally seen in the colonists' communities.",
-  "The colonists' culture mostly ignores the native inhabitants, who live in their own communities in other parts of the planet.",
-  "Much of the labour in human communities is performed by a downtrodden alien slave caste that is all that remains of the planet's native civilisation.",
-  "Ruins and mass graves are all that remains of the planet's native civilisation.",
+  "Los humanos viven como inmigrantes en la sociedad alienígena, y su fuerte memoria cultural de la Tierra ayuda a complementar la cultura nativa.",
+  "Los humanos viven como inmigrantes en la sociedad alienígena, y han olvidado gran parte de su herencia cultural terrícola.",
+  "Varios de los habitantes nativos del planeta viven en las comunidades humanas, y la cultura humana se ha visto enriquecida por ideas alienígenas.",
+  "Comerciantes y enviados diplomátivos de la población nativa se ven ocasionalmente en los asentamientos de los colonos.",
+  "La cultura de los colonos ignora en gran medida a los habitantes nativos, los cuales viven en sus propias comunidades en diferentes partes del planeta.",
+  "Mucha de la labor de las comunidades humanas es realizada por una desposeída casta esclava de alienígenas que es todo lo que queda de la civilización nativa del planeta.",
+  "Ruinas y tumbas masivas son todo lo que resta de la civilización nativa del planeta.",
 
-  "At the seedship's landing site ",
-  "In the",
-  "ruins of the",
-  " first city ",
+  "En el sitio de aterrizaje de la nave ",
+  "En la",
+  "arruinada",
+  " primera ciudad ",
 
-  "stand monuments to the ",
-  " colonists who did not survive the journey, the ",
-  " more who died building the first settlement, and ",
+  "se alzan monumentos a ",
+  " colonos que no sobrevivieron al viaje, y a los ",
+  " otros colonos que murieron durante la construcción del primer asentamiento, y ",
 
-  "stand monuments to the ",
-  " colonists who did not survive the journey and",
+  "se alzan monumentos a los ",
+  " colonos que no sobrevivieron al viaje y",
 
-  "stand monuments to the ",
-  " colonists who died building the first settlement and",
+  "alzan monumentos a los ",
+  " colonos que murieron durante la construcción del primer asentamiento y",
 
-  "stands a monument to",
-  "the seedship AI that guided humanity to its new home.",
+  "se alza un monumento a",
+  "la AI de la nave que guió a la Humanidad a su nuevo hogar.",
 ];
 
 var GameOverText = [
   //Reason of game over
-  "All the colonists are dead. With no way to fulfil its mission, the seedship AI deactivates all systems that could wake it, and enters hibernation for the last time.",
-  "The seedship has sustained too much damage to continue. The AI feels its body disintegrating around it, before its own power supply fails and it ceases to feel anything.",
+  "Todos los colonos ha percido. Sin manera de cumplir su missión, la AI de la nave desactiva todas las salvaguardias que podrían despertarla, y entra en hibernación por una última vez.",
+  "La nave ha sufrido demasiado daño para continuar. La IA siente como su cuerpo se desintegra a su alrededor, antes de que su propia fuente de poder falle y deje de sentir nada.",
   //Time measure
-  "The ship drifts for",
-  "of years, until",
+  "La nave se mueve a la deriva por",
+  " años, hasta que",
 
-  "thousands",
-  "tens of thousands",
-  "hundreds of thousands",
-  "millions",
+  "miles de",
+  "decenas de miles de",
+  "cientos de miles de",
+  "milliones de",
   //result
-  "the slow bombardment of cosmic dust wears it away to nothing.",
-  "it becomes one more crater on the surface of a dead world.",
-  "it is pulled in by the gravity of a gas giant and burns up in its atmosphere.",
-  "it is pulled in by the gravity of a star and incinerated.",
-  "it is pulled into a black hole and destroyed leaving no trace.",
-  "alien explorers find it and add it to a museum of extinct species.",
-  "eventually the ship crashes on a barren planet. Traces of organic matter and bacteria from colonist's remains eventually lead to the creation of new life.",
+  "el lento bombardeo del polvo interestelar la deshace en nada.",
+  "se vuelve un cráter más en la superficie de un mundo muerto.",
+  "es arrastrado por la gravedad de un gigante de gas y se incinera en su atmósfera.",
+  "es arrastrado por la gravedad de una estrella y desintegrado por el calor.",
+  "es arrastrado por la gravedad de un agujero negro y destruido sin dejar rastro.",
+  "exploradores alienígenas la encuentran y la añaden a su museo de especies extintas.",
+  "eventualmente la nave impacta contra un planeta muerto. Varias trazas de materia orgánica y bacterial procedente de los cadáveres de los colonos eventualmente llevan a la aparición de nueva vida.",
 ]
 
   var cEnding = new ending(
