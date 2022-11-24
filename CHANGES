@@ -1,3 +1,8 @@
+Version 0.9.20
+--------------
+Bugs:
+ * Fixed some UI issues where the back button in the past missions page could get covered up.
+
 Version 0.9.19
 --------------
 Features:
