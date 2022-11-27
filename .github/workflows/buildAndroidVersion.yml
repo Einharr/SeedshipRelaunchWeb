@@ -25,11 +25,11 @@ jobs:
          ls;
          
          
-      - name: Use oxr463/setup-cordova
-        uses: oxr463/setup-cordova@0.0.3
+      - name: Use alexjyong/setup-cordova #Use oxr463/setup-cordova
+        uses: alexjyong/setup-cordova@master #oxr463/setup-cordova@0.0.3
         with:
           exec: |
-           apk add gcompat
+           #apk add gcompat
            cordova platform add android && \
            cordova build --no-telemetry 
            
