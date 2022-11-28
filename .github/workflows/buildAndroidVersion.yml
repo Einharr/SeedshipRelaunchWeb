@@ -29,7 +29,7 @@ jobs:
         uses: alexjyong/setup-cordova@master #oxr463/setup-cordova@0.0.3
         with:
           exec: |
-           #apk add gcompat
+           apk add gcompat
            cordova platform add android && \
            cordova build --no-telemetry 
            
