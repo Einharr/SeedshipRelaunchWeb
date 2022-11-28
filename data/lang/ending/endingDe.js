@@ -224,7 +224,7 @@ var EndingAtmosphereBut = [
 ];
 
 var EndingGravity = [
-  "Sie können sie leicht in der Erdähnlichen Gravitation bewegen.",
+  "Sie können sie leicht in der erdähnlichen Gravitation bewegen.",
   "Die hohe Gravitation macht das Arbeiten schwieriger.",
   "Die niedrige Gravitation macht das Arbeiten etwas schwerer als es auf der Erde wäre.",
   "Die zerdrückende Gravitation führt dazu, dass sie sich kaum ohne mechanischer Unterstützung bewegen können,",
@@ -245,8 +245,8 @@ var EndingTemperature = [
   "leichte Kleidung in den angenehmen Temperaturen",
   "schützende Kleidung um der sengenden Hitze zu widerstehen",
   "schwere Kleidung um sie vor der klirrenden Kälte zu beschützen",
-  "wärmende Anzüge um sie vor der bleischmelzenden Hitze zu schützen",
-  "sich selbst eritztende Anzüge, um in den fast 0 K Temperaturen zu überleben",
+  "kühlende Anzüge um sie vor der bleischmelzenden Hitze zu schützen",
+  "sich selbst erhitzende Anzüge, um in den fast 0 K Temperaturen zu überleben",
 ];
 
 var EndingTemperatureBut = [
@@ -270,7 +270,7 @@ var EndingTemperatureBut = [
   "und ",
   " weitere sterben, als ihre Unterkünfte in der eiseigen Kälte zersplittern.",
 
-  "aber 1 Kolonist stibrt, als unfertige Gebäude in der Hitze schmelzen.",
+  "aber ein Kolonist stibrt, als unfertige Gebäude in der Hitze schmelzen.",
   "aber ",
   " Kolonisten sterben, als unfertige Strukturen in der Hitze schmelzen",
 
@@ -385,15 +385,15 @@ var EndingNativeInteractions = [
 
   "die Kultur der Bewohner des Planeten macht sie feindliche gegenüber den ihnen unbekannten Neuankömlingen.",
   "die Kultur der Bewohner des Planeten macht sie sehr misstrauisch gegenüber Außenseitern.",
-  "the natives' culture makes them wary towards the humans.",
+  "die Kultur der Bewohner der Planeten macht sie wachsam gegenüber den Menschen.",
   "die Kultur der Bewohner des Planeten macht sie vorsichtig, aber akzeptant gegenüber den Immigranten.",
   "die Kultur der Einheimischen macht sie den Flüchtlingen gegenüber aufgeschlossen.",
 
-  "Die Bewhoner schätzen es, dass die Menschen ihren Planeten so schln finden wie sie, was des den beiden Spezies einfacher macht, sich mit den anderen Kulturen anzufreunden.",
+  "Die Bewohner schätzen es, dass die Menschen ihren Planeten so schön finden wie sie, was des den beiden Spezies einfacher macht, sich mit den anderen Kulturen anzufreunden.",
   "Die Menschen finden den Planeten unerträglich hässlich, was es schwerer macht, sich mit dem Einheimischen anzufreunden, die ihren Planeten wunderschön finden.",
 
   "Dank den Interaktionen der KI mit dem Planeten während dem Anflug haben die Einheimischen bereits Angeboten, der Menschheit auf ihrem Planeten ein Asyl zu gewähren, und sind gewillt, alle Unterschiede zu ignorieren um sie in ihre Gesellschaft zu integrieren.",
-  "Schon wöhrend dem Anflug der KI, machen es die Eingeborenen klar, dass die Menschen auf ihrem Planeten nicht willkommen sind.",
+  "Schon während dem Anflug der KI, machen es die Eingeborenen klar, dass die Menschen auf ihrem Planeten nicht willkommen sind.",
 
   "Die Eingeborenen gewähren den Menschen Asyl auf ihrem Planeten, und die Flüchtlinge werden zu einer eingewanderten Subkultur innerhalb der fremden Zivilisation.",
   "Die Eingeborenen sind nicht in der Lage, die Menschen als Gleichberechtigte zu akzeptieren, und absorbieren sie in ihre Gesellschaft als Quelle für Sklavenarbeit." ,
@@ -520,7 +520,7 @@ var EndingSustain = [
   "und die Nachkommen der ursprünglichen Kolonisten sterben, als sie ihre luftdichten Unterkünfte nicht mehr instand halten können.",
   "und die Nachkommen der ursprünglichen Kolonisten sterben, als die Strukturen den extremen Temperaturen nicht mehr standhalten können.",
   "und die Nachkommen der ursprünglichen Kolonisten sterben an gesundheitlichen Problemen aufgrund der ", //and the original colonists' descendants die of health problems caused by the very",
-  "und die Nachkommen der ursprünglichen Kolonisten verdursten, als die Wasseraufbereitungssyteme nicht repariert werden können.",//and the original colonists' descendants die when their water-purifying systems stop functioning.",
+  "und die Nachkommen der ursprünglichen Kolonisten verdursten, als ihre Wasseraufbereitungssyteme versagen.",//and the original colonists' descendants die when their water-purifying systems stop functioning.",
 
   "aber, bevor die Technologien versagen,",
   "bauen die ursprünglichen Kolonisten robuste",
@@ -605,7 +605,7 @@ var EndingSummary = [
   "",
   "s Ozean erstreckt sich bis zum Horizont",
   "",
-  "s ruhiger Ozean erstreckt sich nis zum Horizont",
+  "s ruhiger Ozean erstreckt sich bis zum Horizont",
   "",
   "s spiegelglatter Ozean erstreckt sich unter einem",
 
@@ -621,7 +621,7 @@ var EndingSummary = [
   "s moosbedeckte Ebenen erstrecken sich unter einem",
 
   "Kilometerhohe Eistürme erstrecken sich von ",
-  "s Eisschiten in einen ",
+  "s Eisschichten in einen ",
   "Die kilometerhohe Eistürme des unbennanten Planeten strecken sich in einen",
 
   "Große, gezackte Türme aus Eis ragen von ",
@@ -629,9 +629,9 @@ var EndingSummary = [
   "Die großen, gezackten Eistürme des unbenannten Planeten ragen aus der Eisschicht in einen",
 
   "",
-  "s Landschaft aus gezackten eissplittern ersttreckt sich unter einem",
+  "s Landschaft aus gezackten Eissplittern erstreckt sich unter einem",
   "",
-  "s verschrumpelten eisschiten erstrecken sich unter einem",
+  "s verschrumpelten Eisschichten erstrecken sich unter einem",
   "",
   "s flache Eisfläche erstreckt sich unter einem",
 
@@ -662,7 +662,7 @@ var EndingSummary = [
   " schwarzen, sternbedeckten Himmel.",
   " fremden Himmel.",
   " giftigen Himmel.",
-  " Himmel, gefüllt mit giftigen Wolken.",
+  " mit giftigen Wolken gefüllten Himmel.",
 
   "Nachts kann man die umkreisenden außerirdischen Strukturen als glizerndes Band zwischen den Sternen sehen.",
 
@@ -675,9 +675,9 @@ var EndingSummary = [
   "sind von außerirdischen Pflanzen überwachsen.",
   "liegen auf der steinigen Oberfläche.",
 
-  "Die Nachkommen der Kolonisten laben als sklaven unter den intelligentne einwohnern des Planeten und haben sämtlcihes wissen über die Erde verloren.",
+  "Die Nachkommen der Kolonisten laben als sklaven unter den intelligenten Einwohnern des Planeten und haben sämtliches Wissen über die Erde verloren.",
   "In der nähe stehen Monumente der Eingebohrenen des Planeten um den Sieg über die irdischen Invasoren zu feiern.",
-  "Die intelligenten einwohner des Planeten durchsuhen die Ruinen, aber es bleibt nicht genug überig, um über etwas über die nun ausgestorbene menschliche Rasse zu lernen.",
+  "Die intelligenten Einwohner des Planeten durchsuhen die Ruinen, aber es bleibt nicht genug überig, um über etwas über die nun ausgestorbene menschliche Rasse zu lernen.",
 
   "Die Kolonisten Leben in ",
   " ihren eigen Gesellschaften unter den Einwohnern des Planeten ",
@@ -703,7 +703,7 @@ var EndingSummary = [
   "auf Platfromen, die auf dem planetenweiten Ozean schwimmen.",
   "auf der planetenweiten Eisschicht.",
   "und sammeln sich um Wasserproduktionsfabriken.",
-  "an Seen aus Wasser, die aus der Eisschicht des Planeten gescholzen sind.",
+  "an Seen aus Wasser, die aus der Eisschicht des Planeten geschmolzen sind.",
   "neben Flüssen, die in die Ozeane des Planeten fließen.",
 
   "Sie leben ein Leben des Friedens und der spirituellen Erfüllung, das die Träume ihrer Vorfahren auf der Erde übersteigt, geleitet von einer Kombination aus menschlicher und außerirdischer Philosophie.",
@@ -770,8 +770,8 @@ var GameOverText = [
   "es in das Gravitationsfeld eines Gasriesen gerät und dort verbrennt.",
   "es in einen Stern gezogen und dort eingeäschert wird.",
   "es in ein schwarzes Loch gezigen wird und ohne eine Spur zerstört wird.",
-  "ausserirdische erkunder es finden und in einem Musem über ausgestorbene Spezien austellen.",
-  "es letztendlich auf eine kahlen Planeten abstürtzt. Spruen organisches Lebens bilden sich aus den Überresten der Kolonisten und führen letztendlich zu neuem Leben.",
+  "ausserirdische Kundschafter es finden und in einem Museum über ausgestorbene Spezien austellen.",
+  "es letztendlich auf eine kahlen Planeten abstürtzt. Spuren organischer Materie bilden sich aus den Überresten der Kolonisten und führen letztendlich zu neuem Leben.",
 ]
 
   var cEnding = new ending(
