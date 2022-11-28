@@ -79,6 +79,7 @@ if (options.original == true) {
 var myAudio = document.getElementById("TitleAudio");
 document.getElementById("TitleAudio").loop = true;
 var myBGMAudio = document.getElementById("BGMAudio");
+var myIntroAudio = document.getElementById("IntroAudio");
 myBGMAudio.loop=true;
 
 playMusic(myAudio); //play the title music
@@ -1545,7 +1546,7 @@ function intro() {
   var audio;
   myAudio.pause();
   if (options.voiceOverEnabled) {
-    audio = play("./assets/music/Intro.mp3");
+    audio = playMusic(myIntroAudio);
   }
     //window.plugins.NativeAudio.play( 'intro' );
     console.log('intro');
