@@ -106,10 +106,7 @@ function playMusic(audioSrc) {
   else{
     //do nothing if not
   }
-  /*
-  var audio = new Audio(audioSrc);
-  audio.play();
-  return audio; */
+
 }
 
 
@@ -1583,7 +1580,7 @@ function intro() {
   btn.id = "introbutton";
   btn.onclick = function(){
     if (options.voiceOverEnabled) {
-      audio.pause();
+      myIntroAudio.pause();
     }
     //window.plugins.NativeAudio.stop( 'intro' );
 
