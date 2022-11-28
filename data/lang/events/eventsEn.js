@@ -124,7 +124,7 @@ var eventsText = {
       //1
       "The AI calculates a course that it thinks will avoid obstacles, then shuts down the scanners. ",
       "The seedship enters the nebula.",
-      "Flying blind, it has no way of detecting the dense cloud of dust that buffets the ship and",
+      "Flying blind, it has no way of detecting the dense cloud of dust that buffets the ship and ",
       "damages ", " sleep chambers.",
       "knocks loose one of the surface probes.",
       "wears away at the ",
