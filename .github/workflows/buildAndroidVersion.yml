@@ -25,8 +25,8 @@ jobs:
          ls;
          
          
-      - name: Use alexjyong/setup-cordova #Use oxr463/setup-cordova
-        uses: alexjyong/setup-cordova@master #oxr463/setup-cordova@0.0.3
+      - name: Build the app! #Use oxr463/setup-cordova
+        uses: oxr463/setup-cordova@0.0.3 #alexjyong/setup-cordova@master 
         with:
           exec: |
            apk add gcompat
