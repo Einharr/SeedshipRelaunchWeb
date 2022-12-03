@@ -23,15 +23,17 @@ jobs:
          mv *.js *.css *.html -t www/
          mv assets/ bootstrap/ css/ data/ -t www/
          ls;
+         docker run --rm -i -v /$PWD:/workspace -w /workspace --privileged beevelop/cordovacordova platform add android;
+         docker run --rm -i -v /$PWD:/workspace -w /workspace --privileged beevelop/cordovacordova build
          
          
-      - name: Build the app! #Use oxr463/setup-cordova
-        uses: alexjyong/setup-cordova@master #oxr463/setup-cordova@0.0.3  
-        with:
-          exec: |
-           apk add gcompat
-           cordova platform add android && \
-           cordova build --no-telemetry 
+      #- name: Build the app! #Use oxr463/setup-cordova
+      #  uses: alexjyong/setup-cordova@master #oxr463/setup-cordova@0.0.3  
+      #  with:
+       #   exec: |
+       #    apk add gcompat
+       #    cordova platform add android && \
+         #  cordova build --no-telemetry 
            
            
       - name: move file up
