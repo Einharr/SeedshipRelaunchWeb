@@ -23,8 +23,8 @@ jobs:
          mv *.js *.css *.html -t www/
          mv assets/ bootstrap/ css/ data/ -t www/
          ls;
-         docker run --rm -i -v /$PWD:/workspace -w /workspace --privileged beevelop/cordovacordova platform add android;
-         docker run --rm -i -v /$PWD:/workspace -w /workspace --privileged beevelop/cordovacordova build
+         docker run --rm -i -v /$PWD:/workspace -w /workspace --privileged beevelop/cordova cordova platform add android;
+         docker run --rm -i -v /$PWD:/workspace -w /workspace --privileged beevelop/cordova cordova build
          
          
       #- name: Build the app! #Use oxr463/setup-cordova
