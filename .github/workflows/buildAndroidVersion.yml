@@ -25,17 +25,7 @@ jobs:
          ls;
          docker run --rm -i -v /$PWD:/workspace -w /workspace --privileged beevelop/cordova cordova platform add android;
          docker run --rm -i -v /$PWD:/workspace -w /workspace --privileged beevelop/cordova cordova build
-         
-         
-      #- name: Build the app! #Use oxr463/setup-cordova
-      #  uses: alexjyong/setup-cordova@master #oxr463/setup-cordova@0.0.3  
-      #  with:
-       #   exec: |
-       #    apk add gcompat
-       #    cordova platform add android && \
-         #  cordova build --no-telemetry 
-           
-           
+                  
       - name: move file up
         run: |
          cp "$(find . -name '*.apk')" ~/
