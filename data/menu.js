@@ -52,7 +52,7 @@ console.log('Платформа в опциях: ' + options.platform);
 
 loading = false;
 
-var curVersion = "0.9.19";
+var curVersion = "0.9.20";
 if (!options.noLocalStorage){
   if (localStorage.getItem("Options") !== null) {
     options = gameload("Options");
@@ -79,6 +79,7 @@ if (options.original == true) {
 var myAudio = document.getElementById("TitleAudio");
 document.getElementById("TitleAudio").loop = true;
 var myBGMAudio = document.getElementById("BGMAudio");
+var myIntroAudio = document.getElementById("IntroAudio");
 myBGMAudio.loop=true;
 
 playMusic(myAudio); //play the title music
@@ -105,10 +106,7 @@ function playMusic(audioSrc) {
   else{
     //do nothing if not
   }
-  /*
-  var audio = new Audio(audioSrc);
-  audio.play();
-  return audio; */
+
 }
 
 
@@ -1545,7 +1543,7 @@ function intro() {
   var audio;
   myAudio.pause();
   if (options.voiceOverEnabled) {
-    audio = play("./assets/music/Intro.mp3");
+    audio = playMusic(myIntroAudio);
   }
     //window.plugins.NativeAudio.play( 'intro' );
     console.log('intro');
@@ -1582,7 +1580,7 @@ function intro() {
   btn.id = "introbutton";
   btn.onclick = function(){
     if (options.voiceOverEnabled) {
-      audio.pause();
+      myIntroAudio.pause();
     }
     //window.plugins.NativeAudio.stop( 'intro' );
 
