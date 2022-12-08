@@ -3,6 +3,7 @@ Version 0.9.21
 Bugs:
  * A few fixes and translated one missing line. 
  * Fixed an issue where the intro speech would crash the game.
+ * Fixed an issue where the back button was still a little off
 
 Version 0.9.20
 --------------
