@@ -1523,6 +1523,7 @@ function menuPastMissions() {
   var btn = document.createElement("button");
   btn.className = "futurebutton";
   btn.id = "menubutton";
+  btn.style.margin = "10rem";
   btn.onclick = function () {
     window.location.reload(true);
 
