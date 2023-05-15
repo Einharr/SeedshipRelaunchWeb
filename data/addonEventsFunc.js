@@ -866,7 +866,8 @@ Event_community_rare =
   [emergencyAwakening,
     voyagerSignal,
     ternarySignal,
-    unknownProgram];
+    unknownProgram,
+  anotherSeedShip];
 Event_community_malfunctions =
   [emergencyFaloff];
 
