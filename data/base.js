@@ -1601,7 +1601,6 @@ if (planetsVisited == 42){
                     };
   };
 
-  simulation = false;
   aliensAlive = false;
   aliensDead = false;
   welcoming = false;
