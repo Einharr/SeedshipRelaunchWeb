@@ -664,14 +664,18 @@ function landingReject() {
   btn.innerHTML = languageData.foundColony[options.language];
   more.appendChild(btn);
 
-  var more = document.getElementById("more");
-  var btn = document.createElement("button");
-  btn.className = "futurebutton";
-  btn.onclick = function () {
-    nextEncounter();
-  };
-  btn.innerHTML = languageData.moveOn[options.language];
-  more.appendChild(btn);
+
+  if (simulation == false){
+    more = document.getElementById("more");
+    var btn2 = document.createElement("button");
+    btn2.className = "futurebutton";
+    btn2.onclick = function () {
+      nextEncounter();
+    };
+    btn2.innerHTML = languageData.moveOn[options.language];
+    more.appendChild(btn2);
+  }
+  
 };
 
 //Функция для отрисовки листа аномалий на правильном языке
@@ -1597,7 +1601,6 @@ if (planetsVisited == 42){
                     };
   };
 
-  simulation = false;
   aliensAlive = false;
   aliensDead = false;
   welcoming = false;
