@@ -673,7 +673,7 @@ function landingReject() {
       nextEncounter();
     };
     btn2.innerHTML = languageData.moveOn[options.language];
-    more.appendChild(btn);
+    more.appendChild(btn2);
   }
   
 };
