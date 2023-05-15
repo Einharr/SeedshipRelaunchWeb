@@ -673,7 +673,7 @@ function landingReject() {
       nextEncounter();
     };
     btn2.innerHTML = languageData.moveOn[options.language];
-    more.appendChild(btn);
+    more.appendChild(btn2);
   }
   
 };
@@ -904,6 +904,7 @@ if (planetsVisited == 42){
       nativeCulture,
       0,
     );
+    cPlanet = preventIllogicalPlanets(cPlanet);
   } else if (alienObservers == true) {
     cPlanet = new planet(
       either("Breathable", "Breathable", "Marginal"),
@@ -1141,7 +1142,8 @@ if (planetsVisited == 42){
               cPlanet.anomaliesFull.push(addonNatives[0]);
               console.log("Synthetic "+cMachineDoctrine);
         //destinationSignal aliens
-  } else {
+  } 
+  else {
     cPlanet = new planet(
       PlanetAtmosphere[getRandomInt(0, ((PlanetAtmosphere.length - 1) - cShip.atmosphere[1] * 2))], //we will overwrite this later, but i have to refernce planet atmosphere at first otherwise it breaks everything. :/
       PlanetGravity[getRandomInt(0, ((PlanetGravity.length - 1) - cShip.gravity[1] * 2))],
@@ -1168,11 +1170,432 @@ if (planetsVisited == 42){
         cPlanet.atmosphere = "Breathable";
     }
 
-    // Логика исключение невозможных сочетаний
+
+    cPlanet = preventIllogicalPlanets(cPlanet);
+
+
+    //
+    //console.log(cPlanet.anomaliesFull);
+    //console.log("КУЛЬТУРА:" + cPlanet.culture);
+    //Очищаем текст и кнопки
+    //Clear text and buttons
+  };
+  textWipe();
+
+  //Отрисовываем новые элементы
+  //// Draw new elements
+  var textwindow = document.getElementById("textwindow");
+  var para = document.createElement("p");
+  para.id = "name";
+  para.innerHTML = languageData.missionScanResult[options.language];
+  textwindow.appendChild(para);
+
+  var textwindow = document.getElementById("textwindow");
+  var para = document.createElement("p");
+  para.id = "description";
+  para.innerHTML = "Описание планеты";
+  textwindow.appendChild(para);
+
+  var crrow = document.createElement("div");
+  crrow.className = "row";
+  crrow.id = "ScanList";
+  textwindow.appendChild(crrow);
+
+  var scanlist = document.getElementById("ScanList");
+  var crcol = document.createElement("div");
+  crcol.className = "col-5";
+  crcol.id = "ScanNames";
+  scanlist.appendChild(crcol);
+
+  var crcol = document.createElement("div");
+  crcol.className = "col-7";
+  crcol.id = "ScanRes";
+  scanlist.appendChild(crcol);
+
+  var scannames = document.getElementById("ScanNames");
+  for (var i = 0; i < ResNames.length; i++) {
+    var parag = document.createElement("p");
+    parag.className = "stats";
+    parag.innerHTML = ResNames[i] + ":";
+    scannames.appendChild(parag);
+  };
+
+  if (cShip.probes[0] > 0) {
+    var scannames = document.getElementById("ScanNames");
+    var btn = document.createElement("button");
+    btn.className = "probebutton";
+    btn.onclick = function () {
+      launchProbe(cProbing, ScanFailArr, cPlanet);
+    };
+    btn.innerHTML = languageData.launchProbe[options.language];
+    scannames.appendChild(btn);
+  }
+
+  var scanres = document.getElementById("ScanRes");
+  for (var i = 0; i < ResRes.length; i++) {
+    var parag = document.createElement("p");
+    parag.className = "stats";
+    parag.id = ResRes[i];
+    parag.innerHTML = "0";
+    scanres.appendChild(parag);
+  };
+
+  buttonWipe();
+
+  //Добавляем новые кнопки выбора событий
+  //Add new event selection buttons
+  var more = document.getElementById("more");
+  var btn = document.createElement("button");
+  btn.className = "futurebutton";
+  btn.onclick = function () {
+    landingConfirm(cShip, cPlanet, cEnding);
+  }
+  btn.innerHTML = languageData.foundColony[options.language];
+  more.appendChild(btn);
+
+  if (!simulation) {
+    var more = document.getElementById("more");
+    var btn = document.createElement("button");
+    btn.className = "futurebutton";
+    btn.onclick = function () {
+      nextEncounter();
+    };
+    btn.innerHTML = languageData.moveOn[options.language];
+    more.appendChild(btn);
+  };
+
+  planetScale = 1;
+
+  switch (cPlanet.gravity) {
+    case 'Moderate':
+      planetScale = getRandomInt(5, 6) / 10;
+      break;
+    case 'High':
+      planetScale = getRandomInt(6, 7) / 10;
+      break;
+    case 'Low':
+      planetScale = getRandomInt(4, 5) / 10;
+      break;
+    case 'Very High':
+      planetScale = getRandomInt(7, 8) / 10;
+      break;
+    case 'Very Low':
+      planetScale = getRandomInt(3, 4) / 10;
+      break;
+    default:
+      break;
+  };
+
+  //Planet Graphics
+  planetGraphics();
+
+  cPlanet.description = planetDescription(cPlanet);
+  //Отрисовка результатов сканирования
+  //Rendering scan results
+  function drawStats() {
+    var AnomaliesLanguageOutput = anomaliesLang(cPlanet.anomalies, cPlanet.anomaliesFull, languageData);
+    document.getElementById('description').innerHTML = cPlanet.description;
+    document.getElementById('cPlanet.atmosphere').innerHTML = languageData.planet[options.language].Atmosphere[planetStatsTranslate(PlanetAtmosphere, cPlanet.atmosphere)];
+    document.getElementById('cPlanet.gravity').innerHTML = languageData.planet[options.language].Gravity[planetStatsTranslate(PlanetGravity, cPlanet.gravity)]; //cPlanet.gravity;
+    document.getElementById('cPlanet.temperature').innerHTML = languageData.planet[options.language].Temperature[planetStatsTranslate(PlanetTemperature, cPlanet.temperature)]; //cPlanet.temperature;
+    document.getElementById('cPlanet.water').innerHTML = languageData.planet[options.language].Water[planetStatsTranslate(PlanetWater, cPlanet.water)]; //cPlanet.water;
+    document.getElementById('cPlanet.resources').innerHTML = languageData.planet[options.language].Resources[planetStatsTranslate(PlanetResources, cPlanet.resources)];//cPlanet.resources;
+    document.getElementById('cPlanet.anomalies').innerHTML = arrList(AnomaliesLanguageOutput);
+  }
+  drawStats();
+  //Были ли сбои сканирования. Массив для ProbingFunc
+  //Were there any scan failures. Array for ProbingFunc
+  var ScanFailArr = [];
+  function scanFailCheck(scanners, planetAttributes) {
+    for (i = 0; i < scanners.length; i++) {
+      if (scanners[i][0] < 100) {
+        var scanFail = (Math.random() * 100);
+        if (scanFail > scanners[i][0]) {
+          document.getElementById(planetAttributes[i]).innerHTML = "&#8623;" + languageData.scannerFailure[options.language] + "&#8623;";
+          document.getElementById(planetAttributes[i]).style.color = "#ad0000";
+          ScanFailArr.push("&#8623;" + languageData.scannerFailure[options.language] + "&#8623;");
+          console.log(scanners[i][0], scanFail, ScanFailArr);
+          document.getElementById("darkness").style.background = "url(assets/textures/Special/static.gif) repeat-x";
+        };
+      };
+    };
+  };
+
+  // console.log("Сбой сканеров " + ScanFailArr)
+  if(off_course){
+   off_course_counter++;
+  };
+  if(off_course_counter > 3){
+                    if (options.platform == "Android" && typeof cordova !== 'undefined') {
+                      var data = {
+                        achievementId: "CgkIya77kP0DEAIQDg"
+                        //ThisLittleManeuversGonnaCostUs51Years
+                      };
+                      cordova.plugins.playGamesServices.unlockAchievement(data, function () {
+                        // On success
+                      }, function () {
+                        // On error
+                      });
+                    };
+  };
+
+  aliensAlive = false;
+  aliensDead = false;
+  welcoming = false;
+  unwelcoming = false;
+  alienObservers = false;
+  off_course = false;
+  machinePlanet = false;
+  gameOverCheck();
+
+  //Загрузка игры
+  //Load the game
+
+  if (loading) {
+    Loaddata = gameload("Savedata");
+    cShip = Loaddata[0];
+    cPlanet = Loaddata[1];
+    planetsVisited = Loaddata[2];
+    last_encounter_category = Loaddata[3]
+    ScanArr = [cShip.atmosphere, cShip.gravity, cShip.temperature, cShip.water, cShip.resources];
+    drawStats();
+    loading = false;
+    statsRefresh();
+  }
+  //Автосохранение
+  //Autosave
+  Savedata = [cShip, cPlanet, planetsVisited, last_encounter_category, ScanArr];
+  gamesave(Savedata, "Savedata");
+  attributeColor(ResRes);
+  scanFailCheck(ScanArr, ResRes);
+  return cPlanet;
+};
+
+//КОНЕЦ ФУНКЦИИ
+
+//РАНДОМИЗАЦИЯ СЛЕДУЮЩЕГО СОБЫТИЯ
+
+//Исключение предыдущего события
+
+//END OF FUNCTION
+
+//RANDOMIZE THE NEXT EVENT
+
+//Exception of the previous event
+function eventExclusion(list, exclusion) {
+
+  //Исключение уничтоженных девайсов
+  //Exclude destroyed devices
+  var RandEventArr = [];
+  var i;
+  for (i = 0; i < list.length; i++) {
+    if (list[i] !== exclusion) {
+      if (list[i].visited == false || list[i].repeateble == true) {
+        RandEventArr.push(list[i]);
+      };
+    };
+  };
+  //
+ // console.log(RandEventArr)
+  let output = RandEventArr[getRandomInt(0, RandEventArr.length - 1)];
+
+  return output;
+};
+
+counter_uneventful = 0;
+counter_rare = 0;
+
+function randEvent() {
+
+  malfunction_chance = Math.min(planetsVisited - 5, 5);
+  //DEBUG!
+  var visitedEvents = [];
+  visitedEvents.push(curEvent);
+  //
+  prevEvent = curEvent;
+
+
+  if (planetsVisited == 1 && prevEvent.name != "Unsuitable") {
+    curEvent = unsuitable;
+    console.log("SPECIAL:" + curEvent.name);
+  } else if (prevEvent != scannerUpgrade && (planetsVisited % 3 == 0) && randomUpgrade(ScanArr) != 0) {
+    curEvent = scannerUpgrade;
+    console.log("SPECIAL:" + curEvent.name);
+  } else {
+    _r = getRandomInt(0, 9)
+    if (_r < malfunction_chance) {
+      /* MALFUNCTIONS */
+      curEvent = eventExclusion(Event_malfunction, prevEvent);
+      console.log(_r + " to " + malfunction_chance + "MALFUNCTION:" + curEvent.name);
+      last_encounter_category = "Malfunction";
+
+    } else if (_r < 2 && Events_uneventful.lenght - 1 > counter_uneventful && last_encounter_category != "Uneventful") {
+      /* NOTHING INTERESTING HAPPENS - once each per playthrough */
+      curEvent = eventExclusion(Events_uneventful, prevEvent);
+      console.log(_r + "Uneventful:" + curEvent.name);
+      counter_uneventful += 1;
+      last_encounter_category = "Uneventful";
+
+    } else if (planetsVisited < 3) {
+      /* FIRST TWO EVENTS */
+      curEvent = eventExclusion(Events_first_two, prevEvent);
+      console.log(_r + "FIRST TWO:" + curEvent.name);
+      last_encounter_category = "Common";
+
+    } else if (_r == 9 && Events_rare.length - 1 > counter_rare && last_encounter_category != "Rare") {
+      /* RARE EVENTS - once each per playthrough */
+      curEvent = eventExclusion(Events_rare, prevEvent);
+      console.log(_r + "RARE:" + curEvent.name);
+      counter_rare += 1;
+      last_encounter_category = "Rare";
+    } else {
+      /* COMMON EVENTS */
+      curEvent = eventExclusion(Events_common, prevEvent);
+      console.log(_r + "COMMON:" + curEvent.name);
+      last_encounter_category = "Common";
+    };
+  };
+
+};
+
+//ПРОВЕРИТЬ, НЕ УНИЧТОЖЕНЫ ЛИ СТРУКТУРЫ ДЛЯ ОТРИСОВКИ КНОПОК
+//CHECK IF THE STRUCTURES FOR DRAWING BUTTONS HAVE BEEN DESTROYED
+
+function existCheck(DmgArr) {
+  if (DmgArr == "true") {
+    return true;
+  } else if (DmgArr == "false") {
+    return false;
+  } else {
+    //Исключение уничтоженных девайсов
+    //Exclude destroyed devices
+    var RandDmgArr = [];
+    var i;
+    for (i = 0; i < DmgArr.length; i++) {
+      if (DmgArr[i][0] !== 0) {
+        RandDmgArr.push(DmgArr[i]);
+      };
+    };
+    //Если массив пустой, значит кнопка выбора не рисуется
+    //If the array is empty, then the select button is not drawn
+    if (RandDmgArr && RandDmgArr.length) {
+      return true;
+    } else {
+      return false;
+    };
+  };
+  //
+
+};
+
+//ОТРИСОВКА СЛЕДУЮЩЕГО СОБЫТИЯ
+//// DRAWING THE NEXT EVENT
+function nextEncounter(newEnc = "none") {
+  popupClean();
+
+
+  document.getElementById('planetAnimation').style.transform = "scale(0)";
+  document.getElementById('moon').style.opacity = 0;
+  document.getElementById("iceCaps").style.opacity = 0;
+
+  buttonWipe();
+  textWipe();
+
+  var textwindow = document.getElementById("textwindow");
+  var para = document.createElement("p");
+  para.id = "name";
+  textwindow.appendChild(para);
+
+  var textwindow = document.getElementById("textwindow");
+  var para = document.createElement("p");
+  para.id = "description";
+  textwindow.appendChild(para);
+
+  if (newEnc == "none") {
+    randEvent();
+  } else {
+    prevEvent = curEvent;
+    curEvent = newEnc;
+  };
+
+  curEvent.eventProperty();
+
+  document.getElementById('name').innerHTML = curEvent.name;
+  document.getElementById('description').innerHTML = curEvent.description;
+  choicesBtns();
+  gameOverCheck();
+};
+//
+
+
+
+//ОТРИСОВКА КНОПОК ВЫБОРА В СОБЫТИЯХ
+//DRAWING SELECTION BUTTONS IN EVENTS
+function choicesBtns() {
+  //Очищаем кнопки выбора событий
+  //Clear the event select buttons
+  buttonWipe();
+  //Добавляем новые кнопки выбора событий
+  //Add new event selection buttons
+  var more = document.getElementById("more");
+  for (var i = 0; i < curEvent.choices.length; i++) {
+    if (curEvent.choices[i].exist == true) {
+      var btn = document.createElement("button");
+      btn.className = "choicebutton";
+      btn.onclick = curEvent.choices[i].result;
+      btn.innerHTML = curEvent.choices[i].choice;
+      more.appendChild(btn);
+    };
+  };
+};
+//
+
+
+//ДЕБАЖНЫЕ КНОПКИ
+//DEBUG BUTTONS
+function debugSwitch() {
+  if (document.getElementById("DebugWindow").style.visibility == "visible") {
+    document.getElementById("DebugWindow").style.visibility = "hidden";
+  } else {
+    document.getElementById("DebugWindow").style.visibility = "visible";
+    output = "";
+    for (var i = 0; i < debug_event_array.length; i++) {
+      LS = document.getElementById("debugEventLS");
+
+      output += i + ")" + debug_event_array[i].name + "<br>";
+      LS.innerHTML = output;
+    };
+  }
+}
+
+function debugEvent() {
+  var x = document.getElementById("DebugInp").value;
+  nextEncounter(debug_event_array[x]);
+}
+
+function statReset() {
+  damageApply(cShip.atmosphere, 100, "set");
+  damageApply(cShip.gravity, 100, "set");
+  damageApply(cShip.temperature, 100, "set");
+  damageApply(cShip.resources, 100, "set");
+  damageApply(cShip.water, 100, "set");
+  damageApply(cShip.landing, 100, "set");
+  damageApply(cShip.construction, 100, "set");
+  damageApply(cShip.culture, 100, "set");
+  damageApply(cShip.science, 100, "set");
+
+  damageApply(cShip.probes, 10, "set");
+  damageApply(cShip.colonists, 1000, "set");
+}
+
+//prevents "impossible" planets from forming.
+function preventIllogicalPlanets(cPlanet){
+
+// Логика исключение невозможных сочетаний
     //Замораживаем океан
     // Logic excludes impossible combinations. the below prevents impossible combos from happening.
      // Freeze the ocean
-    if (cPlanet.temperature == "Very Cold" && cPlanet.water == "Planet-wide ocean") {
+     if (cPlanet.temperature == "Very Cold" && cPlanet.water == "Planet-wide ocean") {
       cPlanet.water = "Ice-covered surface";
     };
 
@@ -1435,420 +1858,8 @@ if (planetsVisited == 42){
       };
     };
 
+    return cPlanet;
 
-    //
-    //console.log(cPlanet.anomaliesFull);
-    //console.log("КУЛЬТУРА:" + cPlanet.culture);
-    //Очищаем текст и кнопки
-    //Clear text and buttons
-  };
-  textWipe();
-
-  //Отрисовываем новые элементы
-  //// Draw new elements
-  var textwindow = document.getElementById("textwindow");
-  var para = document.createElement("p");
-  para.id = "name";
-  para.innerHTML = languageData.missionScanResult[options.language];
-  textwindow.appendChild(para);
-
-  var textwindow = document.getElementById("textwindow");
-  var para = document.createElement("p");
-  para.id = "description";
-  para.innerHTML = "Описание планеты";
-  textwindow.appendChild(para);
-
-  var crrow = document.createElement("div");
-  crrow.className = "row";
-  crrow.id = "ScanList";
-  textwindow.appendChild(crrow);
-
-  var scanlist = document.getElementById("ScanList");
-  var crcol = document.createElement("div");
-  crcol.className = "col-5";
-  crcol.id = "ScanNames";
-  scanlist.appendChild(crcol);
-
-  var crcol = document.createElement("div");
-  crcol.className = "col-7";
-  crcol.id = "ScanRes";
-  scanlist.appendChild(crcol);
-
-  var scannames = document.getElementById("ScanNames");
-  for (var i = 0; i < ResNames.length; i++) {
-    var parag = document.createElement("p");
-    parag.className = "stats";
-    parag.innerHTML = ResNames[i] + ":";
-    scannames.appendChild(parag);
-  };
-
-  if (cShip.probes[0] > 0) {
-    var scannames = document.getElementById("ScanNames");
-    var btn = document.createElement("button");
-    btn.className = "probebutton";
-    btn.onclick = function () {
-      launchProbe(cProbing, ScanFailArr, cPlanet);
-    };
-    btn.innerHTML = languageData.launchProbe[options.language];
-    scannames.appendChild(btn);
-  }
-
-  var scanres = document.getElementById("ScanRes");
-  for (var i = 0; i < ResRes.length; i++) {
-    var parag = document.createElement("p");
-    parag.className = "stats";
-    parag.id = ResRes[i];
-    parag.innerHTML = "0";
-    scanres.appendChild(parag);
-  };
-
-  buttonWipe();
-
-  //Добавляем новые кнопки выбора событий
-  //Add new event selection buttons
-  var more = document.getElementById("more");
-  var btn = document.createElement("button");
-  btn.className = "futurebutton";
-  btn.onclick = function () {
-    landingConfirm(cShip, cPlanet, cEnding);
-  }
-  btn.innerHTML = languageData.foundColony[options.language];
-  more.appendChild(btn);
-
-  if (!simulation) {
-    var more = document.getElementById("more");
-    var btn = document.createElement("button");
-    btn.className = "futurebutton";
-    btn.onclick = function () {
-      nextEncounter();
-    };
-    btn.innerHTML = languageData.moveOn[options.language];
-    more.appendChild(btn);
-  };
-
-  planetScale = 1;
-
-  switch (cPlanet.gravity) {
-    case 'Moderate':
-      planetScale = getRandomInt(5, 6) / 10;
-      break;
-    case 'High':
-      planetScale = getRandomInt(6, 7) / 10;
-      break;
-    case 'Low':
-      planetScale = getRandomInt(4, 5) / 10;
-      break;
-    case 'Very High':
-      planetScale = getRandomInt(7, 8) / 10;
-      break;
-    case 'Very Low':
-      planetScale = getRandomInt(3, 4) / 10;
-      break;
-    default:
-      break;
-  };
-
-  //Planet Graphics
-  planetGraphics();
-
-  cPlanet.description = planetDescription(cPlanet);
-  //Отрисовка результатов сканирования
-  //Rendering scan results
-  function drawStats() {
-    var AnomaliesLanguageOutput = anomaliesLang(cPlanet.anomalies, cPlanet.anomaliesFull, languageData);
-    document.getElementById('description').innerHTML = cPlanet.description;
-    document.getElementById('cPlanet.atmosphere').innerHTML = languageData.planet[options.language].Atmosphere[planetStatsTranslate(PlanetAtmosphere, cPlanet.atmosphere)];
-    document.getElementById('cPlanet.gravity').innerHTML = languageData.planet[options.language].Gravity[planetStatsTranslate(PlanetGravity, cPlanet.gravity)]; //cPlanet.gravity;
-    document.getElementById('cPlanet.temperature').innerHTML = languageData.planet[options.language].Temperature[planetStatsTranslate(PlanetTemperature, cPlanet.temperature)]; //cPlanet.temperature;
-    document.getElementById('cPlanet.water').innerHTML = languageData.planet[options.language].Water[planetStatsTranslate(PlanetWater, cPlanet.water)]; //cPlanet.water;
-    document.getElementById('cPlanet.resources').innerHTML = languageData.planet[options.language].Resources[planetStatsTranslate(PlanetResources, cPlanet.resources)];//cPlanet.resources;
-    document.getElementById('cPlanet.anomalies').innerHTML = arrList(AnomaliesLanguageOutput);
-  }
-  drawStats();
-  //Были ли сбои сканирования. Массив для ProbingFunc
-  //Were there any scan failures. Array for ProbingFunc
-  var ScanFailArr = [];
-  function scanFailCheck(scanners, planetAttributes) {
-    for (i = 0; i < scanners.length; i++) {
-      if (scanners[i][0] < 100) {
-        var scanFail = (Math.random() * 100);
-        if (scanFail > scanners[i][0]) {
-          document.getElementById(planetAttributes[i]).innerHTML = "&#8623;" + languageData.scannerFailure[options.language] + "&#8623;";
-          document.getElementById(planetAttributes[i]).style.color = "#ad0000";
-          ScanFailArr.push("&#8623;" + languageData.scannerFailure[options.language] + "&#8623;");
-          console.log(scanners[i][0], scanFail, ScanFailArr);
-          document.getElementById("darkness").style.background = "url(assets/textures/Special/static.gif) repeat-x";
-        };
-      };
-    };
-  };
-
-  // console.log("Сбой сканеров " + ScanFailArr)
-  if(off_course){
-   off_course_counter++;
-  };
-  if(off_course_counter > 3){
-                    if (options.platform == "Android" && typeof cordova !== 'undefined') {
-                      var data = {
-                        achievementId: "CgkIya77kP0DEAIQDg"
-                        //ThisLittleManeuversGonnaCostUs51Years
-                      };
-                      cordova.plugins.playGamesServices.unlockAchievement(data, function () {
-                        // On success
-                      }, function () {
-                        // On error
-                      });
-                    };
-  };
-
-  simulation = false;
-  aliensAlive = false;
-  aliensDead = false;
-  welcoming = false;
-  unwelcoming = false;
-  alienObservers = false;
-  off_course = false;
-  machinePlanet = false;
-  gameOverCheck();
-
-  //Загрузка игры
-  //Load the game
-
-  if (loading) {
-    Loaddata = gameload("Savedata");
-    cShip = Loaddata[0];
-    cPlanet = Loaddata[1];
-    planetsVisited = Loaddata[2];
-    last_encounter_category = Loaddata[3]
-    ScanArr = [cShip.atmosphere, cShip.gravity, cShip.temperature, cShip.water, cShip.resources];
-    drawStats();
-    loading = false;
-    statsRefresh();
-  }
-  //Автосохранение
-  //Autosave
-  Savedata = [cShip, cPlanet, planetsVisited, last_encounter_category, ScanArr];
-  gamesave(Savedata, "Savedata");
-  attributeColor(ResRes);
-  scanFailCheck(ScanArr, ResRes);
-  return cPlanet;
-};
-
-//КОНЕЦ ФУНКЦИИ
-
-//РАНДОМИЗАЦИЯ СЛЕДУЮЩЕГО СОБЫТИЯ
-
-//Исключение предыдущего события
-
-//END OF FUNCTION
-
-//RANDOMIZE THE NEXT EVENT
-
-//Exception of the previous event
-function eventExclusion(list, exclusion) {
-
-  //Исключение уничтоженных девайсов
-  //Exclude destroyed devices
-  var RandEventArr = [];
-  var i;
-  for (i = 0; i < list.length; i++) {
-    if (list[i] !== exclusion) {
-      if (list[i].visited == false || list[i].repeateble == true) {
-        RandEventArr.push(list[i]);
-      };
-    };
-  };
-  //
- // console.log(RandEventArr)
-  let output = RandEventArr[getRandomInt(0, RandEventArr.length - 1)];
-
-  return output;
-};
-
-counter_uneventful = 0;
-counter_rare = 0;
-
-function randEvent() {
-
-  malfunction_chance = Math.min(planetsVisited - 5, 5);
-  //DEBUG!
-  var visitedEvents = [];
-  visitedEvents.push(curEvent);
-  //
-  prevEvent = curEvent;
-
-
-  if (planetsVisited == 1 && prevEvent.name != "Unsuitable") {
-    curEvent = unsuitable;
-    console.log("SPECIAL:" + curEvent.name);
-  } else if (prevEvent != scannerUpgrade && (planetsVisited % 3 == 0) && randomUpgrade(ScanArr) != 0) {
-    curEvent = scannerUpgrade;
-    console.log("SPECIAL:" + curEvent.name);
-  } else {
-    _r = getRandomInt(0, 9)
-    if (_r < malfunction_chance) {
-      /* MALFUNCTIONS */
-      curEvent = eventExclusion(Event_malfunction, prevEvent);
-      console.log(_r + " to " + malfunction_chance + "MALFUNCTION:" + curEvent.name);
-      last_encounter_category = "Malfunction";
-
-    } else if (_r < 2 && Events_uneventful.lenght - 1 > counter_uneventful && last_encounter_category != "Uneventful") {
-      /* NOTHING INTERESTING HAPPENS - once each per playthrough */
-      curEvent = eventExclusion(Events_uneventful, prevEvent);
-      console.log(_r + "Uneventful:" + curEvent.name);
-      counter_uneventful += 1;
-      last_encounter_category = "Uneventful";
-
-    } else if (planetsVisited < 3) {
-      /* FIRST TWO EVENTS */
-      curEvent = eventExclusion(Events_first_two, prevEvent);
-      console.log(_r + "FIRST TWO:" + curEvent.name);
-      last_encounter_category = "Common";
-
-    } else if (_r == 9 && Events_rare.length - 1 > counter_rare && last_encounter_category != "Rare") {
-      /* RARE EVENTS - once each per playthrough */
-      curEvent = eventExclusion(Events_rare, prevEvent);
-      console.log(_r + "RARE:" + curEvent.name);
-      counter_rare += 1;
-      last_encounter_category = "Rare";
-    } else {
-      /* COMMON EVENTS */
-      curEvent = eventExclusion(Events_common, prevEvent);
-      console.log(_r + "COMMON:" + curEvent.name);
-      last_encounter_category = "Common";
-    };
-  };
-
-};
-
-//ПРОВЕРИТЬ, НЕ УНИЧТОЖЕНЫ ЛИ СТРУКТУРЫ ДЛЯ ОТРИСОВКИ КНОПОК
-//CHECK IF THE STRUCTURES FOR DRAWING BUTTONS HAVE BEEN DESTROYED
-
-function existCheck(DmgArr) {
-  if (DmgArr == "true") {
-    return true;
-  } else if (DmgArr == "false") {
-    return false;
-  } else {
-    //Исключение уничтоженных девайсов
-    //Exclude destroyed devices
-    var RandDmgArr = [];
-    var i;
-    for (i = 0; i < DmgArr.length; i++) {
-      if (DmgArr[i][0] !== 0) {
-        RandDmgArr.push(DmgArr[i]);
-      };
-    };
-    //Если массив пустой, значит кнопка выбора не рисуется
-    //If the array is empty, then the select button is not drawn
-    if (RandDmgArr && RandDmgArr.length) {
-      return true;
-    } else {
-      return false;
-    };
-  };
-  //
-
-};
-
-//ОТРИСОВКА СЛЕДУЮЩЕГО СОБЫТИЯ
-//// DRAWING THE NEXT EVENT
-function nextEncounter(newEnc = "none") {
-  popupClean();
-
-
-  document.getElementById('planetAnimation').style.transform = "scale(0)";
-  document.getElementById('moon').style.opacity = 0;
-  document.getElementById("iceCaps").style.opacity = 0;
-
-  buttonWipe();
-  textWipe();
-
-  var textwindow = document.getElementById("textwindow");
-  var para = document.createElement("p");
-  para.id = "name";
-  textwindow.appendChild(para);
-
-  var textwindow = document.getElementById("textwindow");
-  var para = document.createElement("p");
-  para.id = "description";
-  textwindow.appendChild(para);
-
-  if (newEnc == "none") {
-    randEvent();
-  } else {
-    prevEvent = curEvent;
-    curEvent = newEnc;
-  };
-
-  curEvent.eventProperty();
-
-  document.getElementById('name').innerHTML = curEvent.name;
-  document.getElementById('description').innerHTML = curEvent.description;
-  choicesBtns();
-  gameOverCheck();
-};
-//
-
-
-
-//ОТРИСОВКА КНОПОК ВЫБОРА В СОБЫТИЯХ
-//DRAWING SELECTION BUTTONS IN EVENTS
-function choicesBtns() {
-  //Очищаем кнопки выбора событий
-  //Clear the event select buttons
-  buttonWipe();
-  //Добавляем новые кнопки выбора событий
-  //Add new event selection buttons
-  var more = document.getElementById("more");
-  for (var i = 0; i < curEvent.choices.length; i++) {
-    if (curEvent.choices[i].exist == true) {
-      var btn = document.createElement("button");
-      btn.className = "choicebutton";
-      btn.onclick = curEvent.choices[i].result;
-      btn.innerHTML = curEvent.choices[i].choice;
-      more.appendChild(btn);
-    };
-  };
-};
-//
-
-
-//ДЕБАЖНЫЕ КНОПКИ
-//DEBUG BUTTONS
-function debugSwitch() {
-  if (document.getElementById("DebugWindow").style.visibility == "visible") {
-    document.getElementById("DebugWindow").style.visibility = "hidden";
-  } else {
-    document.getElementById("DebugWindow").style.visibility = "visible";
-    output = "";
-    for (var i = 0; i < debug_event_array.length; i++) {
-      LS = document.getElementById("debugEventLS");
-
-      output += i + ")" + debug_event_array[i].name + "<br>";
-      LS.innerHTML = output;
-    };
-  }
-}
-
-function debugEvent() {
-  var x = document.getElementById("DebugInp").value;
-  nextEncounter(debug_event_array[x]);
-}
-
-function statReset() {
-  damageApply(cShip.atmosphere, 100, "set");
-  damageApply(cShip.gravity, 100, "set");
-  damageApply(cShip.temperature, 100, "set");
-  damageApply(cShip.resources, 100, "set");
-  damageApply(cShip.water, 100, "set");
-  damageApply(cShip.landing, 100, "set");
-  damageApply(cShip.construction, 100, "set");
-  damageApply(cShip.culture, 100, "set");
-  damageApply(cShip.science, 100, "set");
-
-  damageApply(cShip.probes, 10, "set");
-  damageApply(cShip.colonists, 1000, "set");
 }
 
 console.log("base ЗАГРУЖЕН");
