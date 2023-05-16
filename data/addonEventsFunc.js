@@ -125,24 +125,44 @@ var precautionalRepairs = {
 var anotherSeedShip = {
   id: 112,
   eventProperty: function () {
+      curEvent.description = `As the seedship prepares to into orbit, it notices something extremely peculiar. Another ship is orbiting the planet, and it makes no sign of noticing the seedship, and no other signs of technology are visible in the system. 
+      The seedship successfully pulls up to the foreign ship and notices it is... another seedship? 
+      The AI frantically searches it's records but finds no mention of the seedship's builders launching multiple ships. 
+      The second seedship also looks very damaged, and likely only good for scrap.`;
+
+      if (cShip.probes[0] > 0){
+        curEvent.choices[1].exist = existCheck("true");
+        curEvent.description += `The AI ponders whether or not to send a probe to search for salvage.`;
+      }
+      else {
+        curEvent.choices[1].exist = existCheck("false");
+        curEvent.description += `However, without probes, the AI cannot investigate the ship more closely.`;
+      }
+
   },
   repeateble: false,
   visited: false,
   name: eventsText.anotherSeedShip.name,
-  description: `As the seedship prepares to into orbit, it notices something extremely peculiar. Another ship is orbiting the planet, and it makes no sign of noticing the seedship, and no other signs of technology are visible in the system. 
-  The seedship successfully pulls up to the foreign ship and notices it is... another seedship? 
-  The AI frantically searches it's records but finds no mention of the seedship's builders launching multiple ships. 
-  The second seedship also looks very damaged, and likely only good for scrap. 
-  The AI ponders whether or not to send a probe to search for salvage. 
-  The AI is sufficiently creeped out, and decides to pretend it is not there.`,
+  description: null,
   choices: [
     {
-      choice: eventsText.unsuitable.buttons[0], outcome: null, exist: existCheck("true"), result: function () {
-        document.getElementById('description').innerHTML = curEvent.choices[0].outcome;
+      choice: "Ignore the ship", outcome: null, exist: existCheck("true"), result: function () {
+        anotherSeedShip.visited = true;
+        
+        document.getElementById('description').innerHTML += "<br/><br/>The AI is sufficiently creeped out, and decides to pretend it is not there."
         buttonWipe();
-        nextPlanet();
+        contButton();
       }
     },
+      {
+        choice: "Investigate the ship", outcome: null, exist: existCheck("true"), result: function () {
+        damageApply(cShip.probes, 1, "damage");
+        document.getElementById('description').innerHTML += "<br/><br/>The AI sends a probe out to the ship. Nothing happens besides you losing a probe because I haven't coded it yet."
+        buttonWipe();
+        contButton();
+      }
+    },
+    
   ]
 };
 
