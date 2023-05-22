@@ -23,8 +23,13 @@ jobs:
          mv *.js *.css *.html -t www/
          mv assets/ bootstrap/ css/ data/ -t www/
          ls;
-         docker run --rm -i -v /$PWD:/workspace -w /workspace --privileged beevelop/cordova cordova platform add android;
-         docker run --rm -i -v /$PWD:/workspace -w /workspace --privileged beevelop/cordova cordova build
+         wget https://pastebin.com/raw/DkZSVGNx
+         docker build -t my-cordova-image .
+         docker run --rm -i -v /$PWD:/workspace -w /workspace --privileged my-cordova-image cordova platform add android;
+         docker run --rm -i -v /$PWD:/workspace -w /workspace --privileged my-cordova-image cordova build
+
+         #docker run --rm -i -v /$PWD:/workspace -w /workspace --privileged beevelop/cordova cordova platform add android;
+         #docker run --rm -i -v /$PWD:/workspace -w /workspace --privileged beevelop/cordova cordova build
                   
       - name: move file up
         run: |
