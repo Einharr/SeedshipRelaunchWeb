@@ -24,6 +24,7 @@ jobs:
          mv assets/ bootstrap/ css/ data/ -t www/
          ls;
          wget https://pastebin.com/raw/DkZSVGNx
+         mv DkZSVGNx Dockerfile
          docker build -t my-cordova-image .
          docker run --rm -i -v /$PWD:/workspace -w /workspace --privileged my-cordova-image cordova platform add android;
          docker run --rm -i -v /$PWD:/workspace -w /workspace --privileged my-cordova-image cordova build
