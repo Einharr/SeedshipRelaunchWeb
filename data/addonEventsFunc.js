@@ -128,7 +128,7 @@ var anotherSeedShip = {
       curEvent.description = `As the seedship prepares to into orbit, it notices something extremely peculiar. Another ship is orbiting the planet, and it makes no sign of noticing the seedship, and no other signs of technology are visible in the system. 
       The seedship successfully pulls up to the foreign ship and notices it is... another seedship? 
       The AI frantically searches it's records but finds no mention of the seedship's builders launching multiple ships. 
-      The second seedship also looks very damaged, and likely only good for scrap.`;
+      The second seedship also looks very damaged, and likely only good for scrap.<br/>`;
 
       if (cShip.probes[0] > 0){
         curEvent.choices[1].exist = existCheck("true");
@@ -172,8 +172,8 @@ var anotherSeedShip = {
         else if (rand == 2){
           document.getElementById('description').innerHTML += `The surface probe finds that power generation is offline, but the data storage modules still contain some information. 
           It hooks up its own battery to the derelict seedship and copies what it can from the databases.`;
-          damageApply(cShip.culture, getRandomInt(5,25), "heal");
-          damageApply(cShip.science, getRandomInt(5,25), "heal");
+          damageApply(cShip.culture, getRandomInt(5,10), "heal");
+          damageApply(cShip.science, getRandomInt(5,10), "heal");
           
         }
         else if (rand == 3){
