@@ -157,7 +157,37 @@ var anotherSeedShip = {
       {
         choice: "Investigate the ship", outcome: null, exist: existCheck("true"), result: function () {
         damageApply(cShip.probes, 1, "damage");
-        document.getElementById('description').innerHTML += "<br/><br/>The AI sends a probe out to the ship. Nothing happens besides you losing a probe because I haven't coded it yet."
+        document.getElementById('description').innerHTML += "<br/><br/>The AI sends a probe out to the ship.<br/><br/>"
+        var rand = getRandomInt(1,6);
+
+        if (rand == 1){
+
+          //get some colonists
+          var colonist_count = getRandomInt(20,50);
+          damageApply(cShip.colonists, colonist_count, "heal");
+
+          document.getElementById('description').innerHTML += `The surface probe finds that power generation is still online, although little else is, and a few sleep chambers are still working, 
+          and the surface probe hooks them up to its own chambers. The AI scans the planet below, happy to have rescued ${colonist_count} colonists.`
+        }
+        else if (rand == 2){
+          document.getElementById('description').innerHTML += ``;
+        }
+        else if (rand == 3){
+          
+          document.getElementById('description').innerHTML += `The probe finds that the [non database system] is in almost pristine condition, 
+          and cuts out most of it to bring back to its own seedship, to use in repairing the [system]. `;
+        }
+        else if (rand == 4){
+          document.getElementById('description').innerHTML += `The probe finds that the derelict seedship gathered an obscene amount of data when it was still operating, 
+          and the probe gathers what remains from the derelict seedship's scanners.`;
+        }
+        else if (rand == 5){
+          document.getElementById('description').innerHTML += `The probe boards the derelict seedship and finds that there is no significant salvage to be found. The AI scans the planet below, dejected.`
+        }
+        else {
+          document.getElementById('description').innerHTML += `When the probe touches the other seedship, it jolts to life, sending the probe barreling back towards where it came from, and other seedship sends a very colorfully worded message before hastily pulling away`;
+        }
+
         buttonWipe();
         contButton();
       }
