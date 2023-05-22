@@ -170,22 +170,34 @@ var anotherSeedShip = {
           and the surface probe hooks them up to its own chambers. The AI scans the planet below, happy to have rescued ${colonist_count} colonists.`
         }
         else if (rand == 2){
-          document.getElementById('description').innerHTML += ``;
+          document.getElementById('description').innerHTML += `The surface probe finds that power generation is offline, but the data storage modules still contain some information. 
+          It hooks up its own battery to the derelict seedship and copies what it can from the databases.`;
+          damageApply(cShip.culture, getRandomInt(5,25), "heal");
+          damageApply(cShip.science, getRandomInt(5,25), "heal");
+          
         }
         else if (rand == 3){
-          
-          document.getElementById('description').innerHTML += `The probe finds that the [non database system] is in almost pristine condition, 
-          and cuts out most of it to bring back to its own seedship, to use in repairing the [system]. `;
+          var DamArr = []
+          choDevice = deviceDamage(DamArr.concat(StrArr, ScanArr));
+          damageApply(choDevice, getRandomInt(20,40), "heal");
+          document.getElementById('description').innerHTML += `The probe finds that the ${choDevice[2]} is in almost pristine condition, 
+          and cuts out most of it to bring back to its own seedship, to use in repairing the ${choDevice[2]}. `;
         }
         else if (rand == 4){
+
+          choScanner = deviceDamage(ScanArr);
+          damageApply(choScanner, 1, "upgrade");
           document.getElementById('description').innerHTML += `The probe finds that the derelict seedship gathered an obscene amount of data when it was still operating, 
-          and the probe gathers what remains from the derelict seedship's scanners.`;
+          and the probe gathers what remains from the derelict seedship's scanners. With the data, it is able to update the ${choScanner}.`;
         }
         else if (rand == 5){
-          document.getElementById('description').innerHTML += `The probe boards the derelict seedship and finds that there is no significant salvage to be found. The AI scans the planet below, dejected.`
+          document.getElementById('description').innerHTML += `The probe boards the derelict seedship and finds that there is no significant salvage or surviving colonists to be found. The AI scans the planet below, dejected.`
         }
         else {
-          document.getElementById('description').innerHTML += `When the probe touches the other seedship, it jolts to life, sending the probe barreling back towards where it came from, and other seedship sends a very colorfully worded message before hastily pulling away`;
+          var DamArr = []
+          choDevice = deviceDamage(DamArr.concat(StrArr, ScanArr));
+          damageApply(choDevice, getRandomInt(20,40), "damage");
+          document.getElementById('description').innerHTML += `When the probe touches the other seedship, it jolts to life, sending the probe barreling back towards where it came from, smashing into the seedship. The other seedship sends a very colorfully worded message before hastily pulling away`;
         }
 
         buttonWipe();
