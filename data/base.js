@@ -239,10 +239,11 @@ function systemDamage(dmg) {
 
 function damageApply(system, damage, status) {
   if (status == "heal") {
-    if (DbArr.concat(ColArr).includes(system)) {
+    if (ColArr.includes(system) || DbArr.includes(system)) {
       system[0] += damage;
       dif = "+" + damage;
-    } else {
+    }
+       else {
       if (damage > (100 - system[0]))
         damage = 100 - system[0];
       system[0] += damage;
