@@ -149,7 +149,7 @@ var anotherSeedShip = {
       choice: "Ignore the ship", outcome: null, exist: existCheck("true"), result: function () {
         anotherSeedShip.visited = true;
         
-        document.getElementById('description').innerHTML += "<br/><br/>The AI is sufficiently creeped out, and decides to pretend it is not there."
+        document.getElementById('description').innerHTML += "<br/><br/>The AI is sufficiently creeped out, and decides to pretend it is not there. It proceeds to scan the planet below."
         buttonWipe();
         contButton();
       }
@@ -195,10 +195,10 @@ var anotherSeedShip = {
           document.getElementById('description').innerHTML += `The probe finds that the derelict seedship gathered an obscene amount of data when it was still operating, 
           and the probe gathers what remains from the derelict seedship's scanners. With the data, it is able to update the ${choScanner[2]}.`;
         }
-        else if (rand == 5){
+        else if (rand == 5 || rand <=7){
           document.getElementById('description').innerHTML += `The probe boards the derelict seedship and finds that there is no significant salvage or surviving colonists to be found. The AI scans the planet below, dejected.`
         }
-        else {
+        else if (rand >= 8 || rand <= 10) {
           var DamArr = []
           choDevice = deviceDamage(DamArr.concat(StrArr, ScanArr));
           damageApply(choDevice, getRandomInt(30,60), "damage");
