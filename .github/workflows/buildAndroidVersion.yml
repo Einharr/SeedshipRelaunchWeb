@@ -23,8 +23,8 @@ jobs:
          mv *.js *.css *.html -t www/
          mv assets/ bootstrap/ css/ data/ -t www/
          ls;
-         wget https://raw.githubusercontent.com/beevelop/docker-cordova/latest/Dockerfile
-         perl -pi -e 's/CORDOVA_VERSION=11\.0\.0/CORDOVA_VERSION=11.1.0/g' Dockerfile
+         https://raw.githubusercontent.com/beevelop/docker-cordova/35cd80194a94a72be793b0b88b9d83c6310cc06d/Dockerfile
+         #perl -pi -e 's/CORDOVA_VERSION=11\.0\.0/CORDOVA_VERSION=11.1.0/g' Dockerfile
          docker build -t my-cordova-image .
          docker run --rm -i -v /$PWD:/workspace -w /workspace --privileged my-cordova-image cordova platform add android;
          docker run --rm -i -v /$PWD:/workspace -w /workspace --privileged my-cordova-image cordova build
