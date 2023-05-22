@@ -904,6 +904,7 @@ if (planetsVisited == 42){
       nativeCulture,
       0,
     );
+    cPlanet = preventIllogicalPlanets(cPlanet);
   } else if (alienObservers == true) {
     cPlanet = new planet(
       either("Breathable", "Breathable", "Marginal"),
@@ -1141,7 +1142,8 @@ if (planetsVisited == 42){
               cPlanet.anomaliesFull.push(addonNatives[0]);
               console.log("Synthetic "+cMachineDoctrine);
         //destinationSignal aliens
-  } else {
+  } 
+  else {
     cPlanet = new planet(
       PlanetAtmosphere[getRandomInt(0, ((PlanetAtmosphere.length - 1) - cShip.atmosphere[1] * 2))], //we will overwrite this later, but i have to refernce planet atmosphere at first otherwise it breaks everything. :/
       PlanetGravity[getRandomInt(0, ((PlanetGravity.length - 1) - cShip.gravity[1] * 2))],
@@ -1168,272 +1170,8 @@ if (planetsVisited == 42){
         cPlanet.atmosphere = "Breathable";
     }
 
-    // Логика исключение невозможных сочетаний
-    //Замораживаем океан
-    // Logic excludes impossible combinations. the below prevents impossible combos from happening.
-     // Freeze the ocean
-    if (cPlanet.temperature == "Very Cold" && cPlanet.water == "Planet-wide ocean") {
-      cPlanet.water = "Ice-covered surface";
-    };
 
-    if (cPlanet.temperature == "Cold" && cPlanet.water == "Planet-wide ocean") {
-      a = getRandomInt(1, 3);
-      if (a = 1) {
-        cPlanet.water = "Ice-covered surface";
-      } else {
-        cPlanet.water = "Planet-wide ocean";
-      };
-    };
-
-    //Растапливаем лёд
-    //// Melt the ice
-    if ((cPlanet.temperature == "Very Hot" || cPlanet.temperature == "Hot" || cPlanet.temperature == "Moderate") && cPlanet.water == "Ice-covered surface") {
-      cPlanet.water = "Planet-wide ocean";
-    };
-
-    if (cPlanet.temperature == "Very Hot" && cPlanet.water == "Ice caps") {
-      cPlanet.water = "Oceans";
-    };
-
-    //Если есть жидкая вода — есть атмосфера
-    //If there is liquid water, there is an atmosphere
-    if (cPlanet.atmosphere == "None" && (cPlanet.water == "Oceans" || cPlanet.water == "Planet-wide ocean")) {
-      cPlanet.atmosphere = "Non-breathable";
-    };
-
-    //Логика аномалий
-    //Луна
-    // Anomaly logic
-     //Moon
-    var moon_chance = 0;
-
-    function moon_random(moon) {
-      if (getRandomInt(1, 99) <= moon) {
-        cPlanet.anomalies.push(PlanetAnomaliesList[0]);
-        cPlanet.anomaliesFull.push(PlanetMoon[getRandomInt(0, PlanetMoon.length - 1)]);
-      };
-    };
-
-    switch (cPlanet.gravity) {
-      case 'Moderate':
-        moon_chance = 30;
-        moon_random(moon_chance);
-        break;
-      case 'High':
-        moon_chance = 40;
-        moon_random(moon_chance);
-        break;
-      case 'Low':
-        moon_chance = 20;
-        moon_random(moon_chance);
-        break;
-      case 'Very High':
-        moon_chance = 50;
-        moon_random(moon_chance);
-        break;
-      case 'Very Low':
-        moon_chance = 10;
-        moon_random(moon_chance);
-        break;
-
-      default:
-
-        break;
-    };
-
-
-    //Красота
-    //planet beauty
-
-    if (getRandomInt(1, 99) <= 20) {
-      cPlanet.anomaliesFull.push(PlanetAesthetics[0]);
-    } else if (getRandomInt(1, 99) >= 80) {
-      cPlanet.anomaliesFull.push(PlanetAesthetics[1]);
-    };
-
-    //Пещеры
-    //Caves
-    var cave_chance = 0;
-
-    function cave_random(cave) {
-      if (getRandomInt(1, 99) <= cave) {
-        cPlanet.anomalies.push(PlanetAnomaliesList[4]);
-        cPlanet.anomaliesFull.push(PlanetCaves[getRandomInt(0, PlanetCaves.length - 1)]);
-      };
-    };
-
-    if (cPlanet.water == "Planet-wide ocean" || cPlanet.water == "Ice-covered surface") {
-
-    } else {
-      switch (cPlanet.gravity) {
-        case 'Moderate':
-          var cave_chance = 30;
-          cave_random(cave_chance);
-          break;
-        case 'Very Low':
-          var cave_chance = 50;
-          cave_random(cave_chance);
-          break;
-        case 'Low':
-          var cave_chance = 40;
-          cave_random(cave_chance);
-          break;
-        case 'High':
-          var cave_chance = 20;
-          cave_random(cave_chance);
-          break;
-        case 'Very High':
-          var cave_chance = 10;
-          cave_random(cave_chance);
-          break;
-        default:
-          break;
-      };
-    };
-
-    //ЖИЗНЬ
-    //Растения
-    //Life
-     //Plants
-     //Plants can only exist where there is an atmosphere and the temp isn't super extreme
-    if (cPlanet.atmosphere != "None" && (cPlanet.temperature == "Hot" || cPlanet.temperature == "Cold" || cPlanet.temperature == "Moderate")) {
-      cPlanet.anomalies.push(PlanetAnomaliesList[1]);
-      switch (cPlanet.atmosphere) {
-        case 'Breathable':
-          if (getRandomInt(1, 99) >= 10) {
-            cPlanet.anomaliesFull.push(PlanetVegetation[2]);
-          } else {
-            cPlanet.anomaliesFull.push(PlanetVegetation[0]);
-          };
-          break;
-        case 'Marginal':
-          if (getRandomInt(1, 99) >= 50) {
-            cPlanet.anomaliesFull.push(PlanetVegetation[2]);
-          } else if (getRandomInt(1, 99) >= 10) {
-            cPlanet.anomaliesFull.push(PlanetVegetation[0]);
-          } else {
-            cPlanet.anomaliesFull.push(PlanetVegetation[1]);
-          };
-          break;
-        case 'Non-breathable':
-          if (getRandomInt(1, 99) >= 90) {
-            cPlanet.anomaliesFull.push(PlanetVegetation[2]);
-          } else if (getRandomInt(1, 99) >= 30) {
-            cPlanet.anomaliesFull.push(PlanetVegetation[0]);
-          } else {
-            cPlanet.anomaliesFull.push(PlanetVegetation[1]);
-          };
-          break;
-        case 'Toxic':
-          if (getRandomInt(1, 99) >= 90) {
-            cPlanet.anomaliesFull.push(PlanetVegetation[2]);
-          } else if (getRandomInt(1, 99) >= 70) {
-            cPlanet.anomaliesFull.push(PlanetVegetation[0]);
-          } else {
-            cPlanet.anomaliesFull.push(PlanetVegetation[1]);
-          };
-          break;
-        case 'Corrosive':
-          if (getRandomInt(1, 99) >= 95) {
-            cPlanet.anomaliesFull.push(PlanetVegetation[2]);
-          } else if (getRandomInt(1, 99) >= 90) {
-            cPlanet.anomaliesFull.push(PlanetVegetation[0]);
-          } else {
-            cPlanet.anomaliesFull.push(PlanetVegetation[1]);
-          };
-          break;
-        case 'None':
-
-          break;
-        default:
-          break;
-      };
-    };
-
-    //Животные
-    //Animals may show up if there is vegetation.
-
-    if (cPlanet.anomalies.includes("Vegetation")) {
-      var animals_chance = 50;
-      if (getRandomInt(1, 99) >= animals_chance) {
-        cPlanet.anomalies.push(PlanetAnomaliesList[2]);
-        cPlanet.anomaliesFull.push(PlanetAnimals[getRandomInt(0, PlanetAnimals.length - 1)]);
-      };
-    };
-
-    //Местное население
-    //Local population
-
-    if (cPlanet.anomalies.includes("Animal life")) {
-      var natives_chance = 50;
-      if (getRandomInt(1, 99) >= natives_chance) {
-        cPlanet.anomaliesFull.push(PlanetAnomaliesList[5]);
-        switch (cPlanet.resources) {
-          case 'Rich':
-            cPlanet.techLvl = getRandomInt(0, 10);
-            break;
-          case 'Poor':
-            cPlanet.techLvl = getRandomInt(0, 6);
-            break;
-          case 'None':
-            cPlanet.techLvl = getRandomInt(0, 3);
-            break;
-          default:
-            break;
-        }
-        //        console.log("ТЕХНОУРОВЕНЬ ПЛАНЕТЫ:", cPlanet.techLvl);
-        if (cPlanet.techLvl >= 7) {
-          cPlanet.anomalies.push(PlanetAnomaliesList[6]);
-          if (options.addOnFeatures) {
-            if (getRandomInt(1, 99) >= 85) {
-              cPlanet.anomaliesFull.push(addonNatives[0]);
-              cMachineDoctrine = either("Guardian", "Assimilator", "Exterminator");
-              console.log("Synthetic "+cMachineDoctrine);
-            } else {
-              cPlanet.anomaliesFull.push(PlanetNatives[cPlanet.techLvl]);
-            };
-          }
-
-        } else if (cPlanet.techLvl >= 3) {
-          cPlanet.anomalies.push(PlanetAnomaliesList[3]);
-          cPlanet.anomaliesFull.push(PlanetNatives[cPlanet.techLvl]);
-        } else {
-          cPlanet.anomaliesFull.push(PlanetNatives[cPlanet.techLvl]);
-        };
-
-        //Культура местных
-        //Local Culture
-        if (cPlanet.techLvl < 8) {
-          cPlanet.culture = getRandomInt(5, 9);
-        } else if (cPlanet.techLvl < 3) {
-          cPlanet.culture = getRandomInt(0, 4);
-        } else {
-          cPlanet.culture = getRandomInt(10, 16);
-        };
-        if (getRandomInt(0, 10) < cPlanet.techLvl - 2) {
-          cPlanet.anomaliesFull.push(PlanetAnomaliesList[7]);
-        };
-      };
-    };
-
-    //Руины
-    //Ruin
-    var ruin_chance = 10;
-    if (cPlanet.anomaliesFull.includes("Planet-spanning civilisation")) {
-      ruin_chance = 0;
-    };
-
-    if(cMachineDoctrine == "Guardian" || cMachineDoctrine == "Exterminator" ){
-      ruin_chance = 100;
-    };
-
-    if (getRandomInt(0, 99) < ruin_chance) {
-      cPlanet.anomaliesFull.push(PlanetRuins[(getRandomInt(0, PlanetRuins.length - 1))]);
-      if (cPlanet.anomalies.includes("Possible structures")) {
-      } else {
-        cPlanet.anomalies.push(PlanetAnomaliesList[3]);
-      };
-    };
+    cPlanet = preventIllogicalPlanets(cPlanet);
 
 
     //
@@ -1848,6 +1586,280 @@ function statReset() {
 
   damageApply(cShip.probes, 10, "set");
   damageApply(cShip.colonists, 1000, "set");
+}
+
+//prevents "impossible" planets from forming.
+function preventIllogicalPlanets(cPlanet){
+
+// Логика исключение невозможных сочетаний
+    //Замораживаем океан
+    // Logic excludes impossible combinations. the below prevents impossible combos from happening.
+     // Freeze the ocean
+     if (cPlanet.temperature == "Very Cold" && cPlanet.water == "Planet-wide ocean") {
+      cPlanet.water = "Ice-covered surface";
+    };
+
+    if (cPlanet.temperature == "Cold" && cPlanet.water == "Planet-wide ocean") {
+      a = getRandomInt(1, 3);
+      if (a = 1) {
+        cPlanet.water = "Ice-covered surface";
+      } else {
+        cPlanet.water = "Planet-wide ocean";
+      };
+    };
+
+    //Растапливаем лёд
+    //// Melt the ice
+    if ((cPlanet.temperature == "Very Hot" || cPlanet.temperature == "Hot" || cPlanet.temperature == "Moderate") && cPlanet.water == "Ice-covered surface") {
+      cPlanet.water = "Planet-wide ocean";
+    };
+
+    if (cPlanet.temperature == "Very Hot" && cPlanet.water == "Ice caps") {
+      cPlanet.water = "Oceans";
+    };
+
+    //Если есть жидкая вода — есть атмосфера
+    //If there is liquid water, there is an atmosphere
+    if (cPlanet.atmosphere == "None" && (cPlanet.water == "Oceans" || cPlanet.water == "Planet-wide ocean")) {
+      cPlanet.atmosphere = "Non-breathable";
+    };
+
+    //Логика аномалий
+    //Луна
+    // Anomaly logic
+     //Moon
+    var moon_chance = 0;
+
+    function moon_random(moon) {
+      if (getRandomInt(1, 99) <= moon) {
+        cPlanet.anomalies.push(PlanetAnomaliesList[0]);
+        cPlanet.anomaliesFull.push(PlanetMoon[getRandomInt(0, PlanetMoon.length - 1)]);
+      };
+    };
+
+    switch (cPlanet.gravity) {
+      case 'Moderate':
+        moon_chance = 30;
+        moon_random(moon_chance);
+        break;
+      case 'High':
+        moon_chance = 40;
+        moon_random(moon_chance);
+        break;
+      case 'Low':
+        moon_chance = 20;
+        moon_random(moon_chance);
+        break;
+      case 'Very High':
+        moon_chance = 50;
+        moon_random(moon_chance);
+        break;
+      case 'Very Low':
+        moon_chance = 10;
+        moon_random(moon_chance);
+        break;
+
+      default:
+
+        break;
+    };
+
+
+    //Красота
+    //planet beauty
+
+    if (getRandomInt(1, 99) <= 20) {
+      cPlanet.anomaliesFull.push(PlanetAesthetics[0]);
+    } else if (getRandomInt(1, 99) >= 80) {
+      cPlanet.anomaliesFull.push(PlanetAesthetics[1]);
+    };
+
+    //Пещеры
+    //Caves
+    var cave_chance = 0;
+
+    function cave_random(cave) {
+      if (getRandomInt(1, 99) <= cave) {
+        cPlanet.anomalies.push(PlanetAnomaliesList[4]);
+        cPlanet.anomaliesFull.push(PlanetCaves[getRandomInt(0, PlanetCaves.length - 1)]);
+      };
+    };
+
+    if (cPlanet.water == "Planet-wide ocean" || cPlanet.water == "Ice-covered surface") {
+
+    } else {
+      switch (cPlanet.gravity) {
+        case 'Moderate':
+          var cave_chance = 30;
+          cave_random(cave_chance);
+          break;
+        case 'Very Low':
+          var cave_chance = 50;
+          cave_random(cave_chance);
+          break;
+        case 'Low':
+          var cave_chance = 40;
+          cave_random(cave_chance);
+          break;
+        case 'High':
+          var cave_chance = 20;
+          cave_random(cave_chance);
+          break;
+        case 'Very High':
+          var cave_chance = 10;
+          cave_random(cave_chance);
+          break;
+        default:
+          break;
+      };
+    };
+
+    //ЖИЗНЬ
+    //Растения
+    //Life
+     //Plants
+     //Plants can only exist where there is an atmosphere and the temp isn't super extreme
+    if (cPlanet.atmosphere != "None" && (cPlanet.temperature == "Hot" || cPlanet.temperature == "Cold" || cPlanet.temperature == "Moderate")) {
+      cPlanet.anomalies.push(PlanetAnomaliesList[1]);
+      switch (cPlanet.atmosphere) {
+        case 'Breathable':
+          if (getRandomInt(1, 99) >= 10) {
+            cPlanet.anomaliesFull.push(PlanetVegetation[2]);
+          } else {
+            cPlanet.anomaliesFull.push(PlanetVegetation[0]);
+          };
+          break;
+        case 'Marginal':
+          if (getRandomInt(1, 99) >= 50) {
+            cPlanet.anomaliesFull.push(PlanetVegetation[2]);
+          } else if (getRandomInt(1, 99) >= 10) {
+            cPlanet.anomaliesFull.push(PlanetVegetation[0]);
+          } else {
+            cPlanet.anomaliesFull.push(PlanetVegetation[1]);
+          };
+          break;
+        case 'Non-breathable':
+          if (getRandomInt(1, 99) >= 90) {
+            cPlanet.anomaliesFull.push(PlanetVegetation[2]);
+          } else if (getRandomInt(1, 99) >= 30) {
+            cPlanet.anomaliesFull.push(PlanetVegetation[0]);
+          } else {
+            cPlanet.anomaliesFull.push(PlanetVegetation[1]);
+          };
+          break;
+        case 'Toxic':
+          if (getRandomInt(1, 99) >= 90) {
+            cPlanet.anomaliesFull.push(PlanetVegetation[2]);
+          } else if (getRandomInt(1, 99) >= 70) {
+            cPlanet.anomaliesFull.push(PlanetVegetation[0]);
+          } else {
+            cPlanet.anomaliesFull.push(PlanetVegetation[1]);
+          };
+          break;
+        case 'Corrosive':
+          if (getRandomInt(1, 99) >= 95) {
+            cPlanet.anomaliesFull.push(PlanetVegetation[2]);
+          } else if (getRandomInt(1, 99) >= 90) {
+            cPlanet.anomaliesFull.push(PlanetVegetation[0]);
+          } else {
+            cPlanet.anomaliesFull.push(PlanetVegetation[1]);
+          };
+          break;
+        case 'None':
+
+          break;
+        default:
+          break;
+      };
+    };
+
+    //Животные
+    //Animals may show up if there is vegetation.
+
+    if (cPlanet.anomalies.includes("Vegetation")) {
+      var animals_chance = 50;
+      if (getRandomInt(1, 99) >= animals_chance) {
+        cPlanet.anomalies.push(PlanetAnomaliesList[2]);
+        cPlanet.anomaliesFull.push(PlanetAnimals[getRandomInt(0, PlanetAnimals.length - 1)]);
+      };
+    };
+
+    //Местное население
+    //Local population
+
+    if (cPlanet.anomalies.includes("Animal life")) {
+      var natives_chance = 50;
+      if (getRandomInt(1, 99) >= natives_chance) {
+        cPlanet.anomaliesFull.push(PlanetAnomaliesList[5]);
+        switch (cPlanet.resources) {
+          case 'Rich':
+            cPlanet.techLvl = getRandomInt(0, 10);
+            break;
+          case 'Poor':
+            cPlanet.techLvl = getRandomInt(0, 6);
+            break;
+          case 'None':
+            cPlanet.techLvl = getRandomInt(0, 3);
+            break;
+          default:
+            break;
+        }
+        //        console.log("ТЕХНОУРОВЕНЬ ПЛАНЕТЫ:", cPlanet.techLvl);
+        if (cPlanet.techLvl >= 7) {
+          cPlanet.anomalies.push(PlanetAnomaliesList[6]);
+          if (options.addOnFeatures) {
+            if (getRandomInt(1, 99) >= 85) {
+              cPlanet.anomaliesFull.push(addonNatives[0]);
+              cMachineDoctrine = either("Guardian", "Assimilator", "Exterminator");
+              console.log("Synthetic "+cMachineDoctrine);
+            } else {
+              cPlanet.anomaliesFull.push(PlanetNatives[cPlanet.techLvl]);
+            };
+          }
+
+        } else if (cPlanet.techLvl >= 3) {
+          cPlanet.anomalies.push(PlanetAnomaliesList[3]);
+          cPlanet.anomaliesFull.push(PlanetNatives[cPlanet.techLvl]);
+        } else {
+          cPlanet.anomaliesFull.push(PlanetNatives[cPlanet.techLvl]);
+        };
+
+        //Культура местных
+        //Local Culture
+        if (cPlanet.techLvl < 8) {
+          cPlanet.culture = getRandomInt(5, 9);
+        } else if (cPlanet.techLvl < 3) {
+          cPlanet.culture = getRandomInt(0, 4);
+        } else {
+          cPlanet.culture = getRandomInt(10, 16);
+        };
+        if (getRandomInt(0, 10) < cPlanet.techLvl - 2) {
+          cPlanet.anomaliesFull.push(PlanetAnomaliesList[7]);
+        };
+      };
+    };
+
+    //Руины
+    //Ruin
+    var ruin_chance = 10;
+    if (cPlanet.anomaliesFull.includes("Planet-spanning civilisation")) {
+      ruin_chance = 0;
+    };
+
+    if(cMachineDoctrine == "Guardian" || cMachineDoctrine == "Exterminator" ){
+      ruin_chance = 100;
+    };
+
+    if (getRandomInt(0, 99) < ruin_chance) {
+      cPlanet.anomaliesFull.push(PlanetRuins[(getRandomInt(0, PlanetRuins.length - 1))]);
+      if (cPlanet.anomalies.includes("Possible structures")) {
+      } else {
+        cPlanet.anomalies.push(PlanetAnomaliesList[3]);
+      };
+    };
+
+    return cPlanet;
+
 }
 
 console.log("base ЗАГРУЖЕН");
