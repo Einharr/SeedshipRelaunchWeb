@@ -1475,6 +1475,15 @@ var eventsText = {
     ],
   },
 
+  anotherSeedShip: {
+    name: "Another Seedship",
+    description: [],
+    outcomes:[],
+    buttons:[
+      "Continue"
+    ]
+  },
+
   //SCANNER UPGRADE
   scannerUpgrade: {
     name: "Scanner Upgrade",

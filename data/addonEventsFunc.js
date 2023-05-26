@@ -122,6 +122,98 @@ var precautionalRepairs = {
 };
 
 //RARE
+var anotherSeedShip = {
+  id: 112,
+  eventProperty: function () {
+      curEvent.description = `As the seedship prepares to into orbit, it notices something extremely peculiar. Another ship is orbiting the planet, and it makes no sign of noticing the seedship, and no other signs of technology are visible in the system. 
+      The seedship successfully pulls up to the foreign ship and notices it is... another seedship? 
+      The AI frantically searches it's records but finds no mention of the seedship's builders launching multiple ships. 
+      The second seedship also looks very damaged, and likely only good for scrap.<br/>`;
+
+      if (cShip.probes[0] > 0){
+        curEvent.choices[1].exist = existCheck("true");
+        curEvent.description += `The AI ponders whether or not to send a probe to search for salvage.`;
+      }
+      else {
+        curEvent.choices[1].exist = existCheck("false");
+        curEvent.description += `However, without probes, the AI cannot investigate the ship more closely.`;
+      }
+
+  },
+  repeateble: false,
+  visited: false,
+  name: eventsText.anotherSeedShip.name,
+  description: null,
+  choices: [
+    {
+      choice: "Ignore the ship", outcome: null, exist: existCheck("true"), result: function () {
+        anotherSeedShip.visited = true;
+        
+        document.getElementById('description').innerHTML += "<br/><br/>The AI is sufficiently creeped out, and decides to pretend it is not there. It proceeds to scan the planet below."
+        buttonWipe();
+        contButton();
+      }
+    },
+      {
+        choice: "Investigate the ship", outcome: null, exist: existCheck("true"), result: function () {
+        damageApply(cShip.probes, 1, "damage");
+        document.getElementById('description').innerHTML += "<br/><br/>The AI sends a probe out to the ship.<br/><br/>"
+        var rand = getRandomInt(1,10);
+
+        if (rand == 1){
+
+          //get some colonists
+          var colonist_count = getRandomInt(20,50);
+          damageApply(cShip.colonists, colonist_count, "heal");
+
+          document.getElementById('description').innerHTML += `The surface probe finds that power generation is still online, although little else is, and a few sleep chambers are still working, 
+          and the surface probe hooks them up to its own chambers. The AI scans the planet below, happy to have rescued ${colonist_count} colonists.`
+        }
+        else if (rand == 2){
+          document.getElementById('description').innerHTML += `The surface probe finds that power generation is offline, but the data storage modules still contain some information. 
+          It hooks up its own battery to the derelict seedship and copies what it can from the databases.`;
+          damageApply(cShip.culture, getRandomInt(5,10), "heal");
+          damageApply(cShip.science, getRandomInt(5,10), "heal");
+          
+        }
+        else if (rand == 3){
+          var DamArr = []
+          choDevice = deviceDamage(DamArr.concat(StrArr, ScanArr));
+          damageApply(choDevice, getRandomInt(20,40), "heal");
+          document.getElementById('description').innerHTML += `The probe finds that the ${choDevice[2]} is in almost pristine condition. `
+          if (choDevice[0] >= 100){
+            document.getElementById('description').innerHTML += `However, there is nothing the ${choDevice[2]} has that the ship's ${choDevice[2]} doesn't, giving the probe nothing to do.`;
+          }
+          else {
+            document.getElementById('description').innerHTML += `It cuts out most of it to bring back to its own seedship, to use in repairing the ${choDevice[2]}. `;
+          }
+        }
+        else if (rand == 4){
+
+          choScanner = deviceDamage(ScanArr);
+          damageApply(choScanner, 1, "upgrade");
+          document.getElementById('description').innerHTML += `The probe finds that the derelict seedship gathered an obscene amount of data when it was still operating, 
+          and the probe gathers what remains from the derelict seedship's scanners. With the data, it is able to update the ${choScanner[2]}.`;
+        }
+        else if (rand == 5 || rand <=7){
+          document.getElementById('description').innerHTML += `The probe boards the derelict seedship and finds that there is no significant salvage or surviving colonists to be found. The AI scans the planet below, dejected.`
+        }
+        else if (rand >= 8 || rand <= 10) {
+          var DamArr = []
+          choDevice = deviceDamage(DamArr.concat(StrArr, ScanArr));
+          damageApply(choDevice, getRandomInt(30,60), "damage");
+          document.getElementById('description').innerHTML += `When the probe touches the other seedship, it jolts to life, sending the probe barreling back towards where it came from, smashing into the seedship. The other seedship sends a very colorfully worded message before hastily pulling away.`;
+        }
+
+        buttonWipe();
+        contButton();
+      }
+    },
+    
+  ]
+};
+
+
 var emergencyAwakening = {
   id: 102,
   eventProperty: function () {
@@ -841,7 +933,8 @@ Event_community_rare =
   [emergencyAwakening,
     voyagerSignal,
     ternarySignal,
-    unknownProgram];
+    unknownProgram,
+  anotherSeedShip];
 Event_community_malfunctions =
   [emergencyFaloff];
 
