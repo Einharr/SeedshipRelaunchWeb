@@ -80,7 +80,7 @@
             case 'Trace':
             case 'None':
             document.getElementById("clouds").style.opacity = 0;
-            document.getElementById("planetAnimation").style.boxShadow = "0 0 60px -20px rgba(255, 3, 3, 0.72), -14px -15px 40px -10px rgba(255, 238, 191, 0.23)"; //Red halo
+            document.getElementById("planetAnimation").style.boxShadow = "0 0 60px -20px rgba(3, 172, 255, 0.72), -14px -15px 40px -10px rgba(255, 238, 191, 0.23)"; //Blue halo
             break;
           default:
             break;
