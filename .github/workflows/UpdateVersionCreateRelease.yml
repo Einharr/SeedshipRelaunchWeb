@@ -38,7 +38,8 @@ jobs:
     #     git push origin --tags
 
     - name: Archive files
-      run: tar czvf files.tar.gz $XML_FILE_PATH $JS_FILE_PATH
+      run:  |
+       tar czvf files.tar.gz config.xml data/menu.js
     
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
