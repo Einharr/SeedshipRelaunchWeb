@@ -28,8 +28,8 @@ jobs:
         cat $XML_FILE_PATH
         cat $JS_FILE_PATH
 
-     - name: Commit and push changes
-       run: |
+    - name: Commit and push changes
+      run: |
          git config --local user.email "action@github.com"
          git config --local user.name "GitHub Action"
          git diff config.xml
