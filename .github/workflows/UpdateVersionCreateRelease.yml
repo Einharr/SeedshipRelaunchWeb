@@ -28,14 +28,18 @@ jobs:
         cat $XML_FILE_PATH
         cat $JS_FILE_PATH
 
-    # - name: Commit and push changes
-    #   run: |
-    #     git config --local user.email "action@github.com"
-    #     git config --local user.name "GitHub Action"
-    #     git add $XML_FILE_PATH $JS_FILE_PATH
-    #     git commit -m "Update version to $NEW_VERSION"
-    #     git tag $NEW_VERSION
-    #     git push origin --tags
+     - name: Commit and push changes
+       run: |
+         git config --local user.email "action@github.com"
+         git config --local user.name "GitHub Action"
+         git diff config.xml
+         git diff data/menu.js
+         git add data/menu.js
+         git add config.xml
+         git commit -m "Update version to ${{ github.event.inputs.version }}"
+         #git push #to main
+         #git tag ${{ github.event.inputs.version }}
+         #git push origin --tags
 
     - name: Archive files
       run:  |
