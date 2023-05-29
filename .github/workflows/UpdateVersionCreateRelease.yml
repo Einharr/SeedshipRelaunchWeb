@@ -23,7 +23,7 @@ jobs:
         NEW_VERSION=${{ github.event.inputs.version }}
         XML_FILE_PATH="config.xml"
         JS_FILE_PATH="data/menu.js"
-        xmlstarlet edit --inplace --update "/_:widget/@version" --value "${{ github.event.inputs.version }}" --ps $XML_FILE_PATH
+        xmlstarlet edit --inplace --update "//_:widget/@version" --value "${{ github.event.inputs.version }}" $XML_FILE_PATH
         sed -i "s/var curVersion = \".*\";/var curVersion = \"${{ github.event.inputs.version }}\";/" $JS_FILE_PATH
         cat $XML_FILE_PATH
         cat $JS_FILE_PATH
