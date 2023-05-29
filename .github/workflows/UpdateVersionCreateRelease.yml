@@ -29,14 +29,14 @@ jobs:
         cat $XML_FILE_PATH
         cat $JS_FILE_PATH
 
-    - name: Commit and push changes
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add $XML_FILE_PATH $JS_FILE_PATH
-        git commit -m "Update version to $NEW_VERSION"
-        git tag $NEW_VERSION
-        git push origin --tags
+    # - name: Commit and push changes
+    #   run: |
+    #     git config --local user.email "action@github.com"
+    #     git config --local user.name "GitHub Action"
+    #     git add $XML_FILE_PATH $JS_FILE_PATH
+    #     git commit -m "Update version to $NEW_VERSION"
+    #     git tag $NEW_VERSION
+    #     git push origin --tags
 
     - name: Archive files
       run: tar czvf files.tar.gz $XML_FILE_PATH $JS_FILE_PATH
@@ -47,15 +47,15 @@ jobs:
         name: files
         path: files.tar.gz
 
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
-      with:
-        tag_name: ${{ github.event.inputs.version }}
-        release_name: ${{ github.event.inputs.version }}
-        body: |
-          Version ${{ github.event.inputs.version }}
-          --------------
+    # - name: Create Release
+    #   id: create_release
+    #   uses: actions/create-release@v1
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+    #   with:
+    #     tag_name: ${{ github.event.inputs.version }}
+    #     release_name: ${{ github.event.inputs.version }}
+    #     body: |
+    #       Version ${{ github.event.inputs.version }}
+    #       --------------
           
