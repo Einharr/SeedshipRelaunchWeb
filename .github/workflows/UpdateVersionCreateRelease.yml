@@ -37,9 +37,9 @@ jobs:
          git add data/menu.js
          git add config.xml
          git commit -m "Update version to ${{ github.event.inputs.version }}"
-         #git push #to main
-         #git tag ${{ github.event.inputs.version }}
-         #git push origin --tags
+         git push #to main
+         git tag ${{ github.event.inputs.version }}
+         git push origin --tags
 
     - name: Archive files
       run:  |
@@ -51,15 +51,15 @@ jobs:
         name: files
         path: files.tar.gz
 
-    # - name: Create Release
-    #   id: create_release
-    #   uses: actions/create-release@v1
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
-    #   with:
-    #     tag_name: ${{ github.event.inputs.version }}
-    #     release_name: ${{ github.event.inputs.version }}
-    #     body: |
-    #       Version ${{ github.event.inputs.version }}
-    #       --------------
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      with:
+         tag_name: ${{ github.event.inputs.version }}
+         release_name: ${{ github.event.inputs.version }}
+         body: |
+           Version ${{ github.event.inputs.version }}
+           --------------
           
