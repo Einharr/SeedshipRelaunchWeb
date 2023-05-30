@@ -125,9 +125,9 @@ var precautionalRepairs = {
 var anotherSeedShip = {
   id: 112,
   eventProperty: function () {
-      curEvent.description = `As the seedship prepares to into orbit, it notices something extremely peculiar. Another ship is orbiting the planet, and it makes no sign of noticing the seedship, and no other signs of technology are visible in the system. 
+      curEvent.description = `As the seedship prepares enter orbit, it notices something extremely peculiar. Another ship is orbiting the planet, and it makes no sign of noticing the seedship, and no other signs of technology are visible in the system. 
       The seedship successfully pulls up to the foreign ship and notices it is... another seedship? 
-      The AI frantically searches it's records but finds no mention of the seedship's builders launching multiple ships. 
+      The AI frantically searches its records but finds no mention of the seedship's builders launching multiple ships. 
       The second seedship also looks very damaged, and likely only good for scrap.<br/>`;
 
       if (cShip.probes[0] > 0){
