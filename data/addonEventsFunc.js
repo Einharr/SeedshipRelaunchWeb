@@ -938,15 +938,16 @@ Event_community_rare =
     voyagerSignal,
     ternarySignal,
     unknownProgram,
+    emergencyFaloff,
   anotherSeedShip];
-Event_community_malfunctions =
-  [emergencyFaloff];
+//Event_community_malfunctions =
+//  [emergencyFaloff];
 
 if (options.addOnFeatures) {
   Events_uneventful = Events_uneventful.concat(Event_community_uneventful);
   Events_common = Events_common.concat(Event_community_common);
   Events_rare = Events_rare.concat(Event_community_rare);
-  Event_malfunction = Event_malfunction.concat(Event_community_malfunctions);
+  //Event_malfunction = Event_malfunction.concat(Event_community_malfunctions);
 } else {
 };
 
