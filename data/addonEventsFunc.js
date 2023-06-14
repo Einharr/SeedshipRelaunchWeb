@@ -852,7 +852,11 @@ var forewarnedForearmed= {
 var emergencyFaloff = {
   id: 108,
   eventProperty: function () {
-    choDevice = cShip.colonists;
+	  
+    DamagedSystemsArray = [];
+    DamagedSystemsArray.push(deviceDamage(RandStr));
+    DamagedSystemsArray.push(deviceDamage(RandStr));
+	  
     curEvent.description = eventsText.emergencyFaloff.description[0] + DamagedSystemsArray[0][2] + eventsText.emergencyFaloff.description[1] + DamagedSystemsArray[1][2] + eventsText.emergencyFaloff.description[2];
     curEvent.damageTaken = systemDamage("High");
     damageApply(DamagedSystemsArray[0], curEvent.damageTaken, "damage");
@@ -934,15 +938,16 @@ Event_community_rare =
     voyagerSignal,
     ternarySignal,
     unknownProgram,
+    emergencyFaloff,
   anotherSeedShip];
-Event_community_malfunctions =
-  [emergencyFaloff];
+//Event_community_malfunctions =
+//  [emergencyFaloff];
 
 if (options.addOnFeatures) {
   Events_uneventful = Events_uneventful.concat(Event_community_uneventful);
   Events_common = Events_common.concat(Event_community_common);
   Events_rare = Events_rare.concat(Event_community_rare);
-  Event_malfunction = Event_malfunction.concat(Event_community_malfunctions);
+  //Event_malfunction = Event_malfunction.concat(Event_community_malfunctions);
 } else {
 };
 
