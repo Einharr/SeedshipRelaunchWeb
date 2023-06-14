@@ -853,9 +853,9 @@ var emergencyFaloff = {
   id: 108,
   eventProperty: function () {
 	  
-    choDevice = deviceDamage(RandStr);
     DamagedSystemsArray = [];
-    DamagedSystemsArray.push(choDevice);
+    DamagedSystemsArray.push(deviceDamage(RandStr));
+    DamagedSystemsArray.push(deviceDamage(RandStr));
 	  
     curEvent.description = eventsText.emergencyFaloff.description[0] + DamagedSystemsArray[0][2] + eventsText.emergencyFaloff.description[1] + DamagedSystemsArray[1][2] + eventsText.emergencyFaloff.description[2];
     curEvent.damageTaken = systemDamage("High");
