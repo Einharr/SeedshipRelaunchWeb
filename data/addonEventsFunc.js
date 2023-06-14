@@ -852,7 +852,11 @@ var forewarnedForearmed= {
 var emergencyFaloff = {
   id: 108,
   eventProperty: function () {
-    choDevice = cShip.colonists;
+	  
+    choDevice = deviceDamage(RandStr);
+    DamagedSystemsArray = [];
+    DamagedSystemsArray.push(choDevice);
+	  
     curEvent.description = eventsText.emergencyFaloff.description[0] + DamagedSystemsArray[0][2] + eventsText.emergencyFaloff.description[1] + DamagedSystemsArray[1][2] + eventsText.emergencyFaloff.description[2];
     curEvent.damageTaken = systemDamage("High");
     damageApply(DamagedSystemsArray[0], curEvent.damageTaken, "damage");
