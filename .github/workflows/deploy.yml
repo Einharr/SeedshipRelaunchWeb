@@ -45,6 +45,6 @@ jobs:
           curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default \
           && unzip butler.zip \
           && chmod +x butler
-          export BUTLER_API_KEY="${{ inputs.apiKey }}"
+          export BUTLER_API_KEY="${{ inputs.apiKey }}" #yes this is bad, but i didn't have access to the secrets and i would nuke the key after running this.
           ./butler push "SeedshipRelaunchWeb.zip" ${{ inputs.userName }}/${{ inputs.gameName }}:html5 
 
