@@ -923,6 +923,85 @@ var dream2 = {
   ]
 };
 
+var derelictStation = {
+  id: 113,
+  eventProperty: function () {
+    curEvent.description = eventsText.derelictStation.description[0];
+    
+    if (cShip.probes[0] > 0) {
+      curEvent.description += eventsText.derelictStation.description[1];
+      curEvent.choices[1].exist = existCheck("true");
+      curEvent.choices[2].exist = existCheck("false");
+    } else {
+      curEvent.description += eventsText.derelictStation.description[2];
+      curEvent.choices[1].exist = existCheck("false");
+      curEvent.choices[2].exist = existCheck("true");
+    }
+  },
+  repeateble: false,
+  visited: false,
+  name: eventsText.derelictStation.name,
+  description: null,
+  choices: [
+    {
+      choice: eventsText.derelictStation.buttons[0], 
+      outcome: null, 
+      exist: existCheck("true"), 
+      result: function () {
+        derelictStation.visited = true;
+        document.getElementById('description').innerHTML += "<br><br>The AI decides the risk is too great and the potential rewards too uncertain. The seedship adjusts course slightly to avoid the debris field and continues on its journey, leaving the ancient station to its eternal vigil in the void.";
+        buttonWipe();
+        nextPlanet();
+      }
+    },
+    {
+      choice: eventsText.derelictStation.buttons[1], 
+      outcome: null, 
+      exist: existCheck("false"), 
+      result: function () {
+        derelictStation.visited = true;
+        damageApply(cShip.probes, 1, "damage");
+        
+        var rand = getRandomInt(1, 10);
+        
+        if (rand <= 2) {
+          // Outcome 1: Scientific and cultural advancement (20% chance)
+          var scienceGain = getRandomInt(8, 15);
+          var cultureGain = getRandomInt(5, 12);
+          damageApply(cShip.science, scienceGain, "heal");
+          damageApply(cShip.culture, cultureGain, "heal");
+          document.getElementById('description').innerHTML += "<br><br>" + eventsText.derelictStation.outcomes[0];
+        }
+        else if (rand <= 4) {
+          // Outcome 2: Defense systems cause damage (20% chance)
+          var choDevice = deviceDamage(ScanArr.concat(StrArr));
+          var damageTaken = systemDamage("Medium");
+          damageApply(choDevice, damageTaken, "damage");
+          document.getElementById('description').innerHTML += "<br><br>" + eventsText.derelictStation.outcomes[1];
+        }
+        else {
+          // Outcome 3: Nothing found, probe lost (60% chance)
+          document.getElementById('description').innerHTML += "<br><br>" + eventsText.derelictStation.outcomes[2];
+        }
+        
+        buttonWipe();
+        contButton();
+      }
+    },
+    {
+      choice: eventsText.derelictStation.buttons[2], 
+      outcome: null, 
+      exist: existCheck("false"), 
+      result: function () {
+        derelictStation.visited = true;
+        document.getElementById('description').innerHTML += "<br><br>" + eventsText.derelictStation.outcomes[3];
+        buttonWipe();
+        nextPlanet();
+      }
+    }
+  ]
+};
+
 
 Event_community_uneventful =
   [crypticMessage,
@@ -939,7 +1018,8 @@ Event_community_rare =
     ternarySignal,
     unknownProgram,
     emergencyFaloff,
-  anotherSeedShip];
+    anotherSeedShip,
+    derelictStation];
 //Event_community_malfunctions =
 //  [emergencyFaloff];
 
