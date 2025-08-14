@@ -550,7 +550,8 @@ var EndingCulture = [
   "With the cultural database destroyed, those born on the new world know nothing about Earth's history and culture besides what the first colonists can pass on in person.",
 
   "The heavy losses sustained by the colonists make building a new society more difficult.",
-  "The losses sustained by the colonists make building a new society more difficult.",
+  "The losses sustained by the colonists make it more difficult for them to preserve their culture.",
+  "The billionaire rescued from the derelict luxury ship attempts to seize control of the colony's resource systems during landing, using hidden override protocols they uploaded to the seedship. Their corporate takeover succeeds, and they establish themselves as the colony's economic overlord, creating a stratified society where advancement depends on serving their interests.",
 ];
 
 var EndingPolitics = [

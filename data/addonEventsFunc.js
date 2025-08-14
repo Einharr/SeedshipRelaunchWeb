@@ -965,7 +965,6 @@ var derelictStation = {
         var rand = getRandomInt(1, 10);
         
         if (rand <= 2) {
-          // Outcome 1: Scientific and cultural advancement (20% chance)
           var scienceGain = getRandomInt(8, 15);
           var cultureGain = getRandomInt(5, 12);
           damageApply(cShip.science, scienceGain, "heal");
@@ -973,14 +972,12 @@ var derelictStation = {
           document.getElementById('description').innerHTML += "<br><br>" + eventsText.derelictStation.outcomes[0];
         }
         else if (rand <= 4) {
-          // Outcome 2: Defense systems cause damage (20% chance)
           var choDevice = deviceDamage(ScanArr.concat(StrArr));
           var damageTaken = systemDamage("Medium");
           damageApply(choDevice, damageTaken, "damage");
           document.getElementById('description').innerHTML += "<br><br>" + eventsText.derelictStation.outcomes[1];
         }
         else {
-          // Outcome 3: Nothing found, probe lost (60% chance)
           document.getElementById('description').innerHTML += "<br><br>" + eventsText.derelictStation.outcomes[2];
         }
         
@@ -995,6 +992,140 @@ var derelictStation = {
       result: function () {
         derelictStation.visited = true;
         document.getElementById('description').innerHTML += "<br><br>" + eventsText.derelictStation.outcomes[3];
+        buttonWipe();
+        nextPlanet();
+      }
+    }
+  ]
+};
+
+var billionaireSeedship = {
+  id: 114,
+  eventProperty: function () {
+    curEvent.description = eventsText.billionaireSeedship.description[0];
+    curEvent.description += eventsText.billionaireSeedship.description[1];
+    curEvent.description += eventsText.billionaireSeedship.description[2];
+    
+    if (cShip.probes[0] > 0) {
+      curEvent.description += eventsText.billionaireSeedship.description[3];
+      curEvent.choices[1].exist = existCheck("true");
+      curEvent.choices[2].exist = existCheck("false");
+    } else {
+      curEvent.description += eventsText.billionaireSeedship.description[4];
+      curEvent.choices[1].exist = existCheck("false");
+      curEvent.choices[2].exist = existCheck("true");
+    }
+  },
+  repeateble: false,
+  visited: false,
+  name: eventsText.billionaireSeedship.name,
+  description: null,
+  choices: [
+    {
+      choice: eventsText.billionaireSeedship.buttons[0], 
+      outcome: null, 
+      exist: existCheck("true"), 
+      result: function () {
+        billionaireSeedship.visited = true;
+        if (cShip.culture[0] >= 60) {
+          document.getElementById('description').innerHTML += "<br><br>" + eventsText.billionaireSeedship.outcomes[6];
+        } else {
+          document.getElementById('description').innerHTML += "<br><br>" + eventsText.billionaireSeedship.outcomes[7];
+        }
+        buttonWipe();
+        contButton();
+      }
+    },
+    {
+      choice: eventsText.billionaireSeedship.buttons[1], 
+      outcome: null, 
+      exist: existCheck("false"), 
+      result: function () {
+        billionaireSeedship.visited = true;
+        damageApply(cShip.probes, 1, "damage");
+        
+        var rand = getRandomInt(1, 10);
+        
+        if (rand <= 3) {
+          var systemToRepair = deviceDamage(ScanArr.concat(StrArr));
+          var repairAmount = getRandomInt(25, 40);
+          damageApply(systemToRepair, repairAmount, "heal");
+          document.getElementById('description').innerHTML += "<br><br>" + eventsText.billionaireSeedship.outcomes[0];
+          buttonWipe();
+          contButton();
+          return;
+        }
+        else if (rand <= 5) {
+          document.getElementById('description').innerHTML += "<br><br>" + eventsText.billionaireSeedship.outcomes[5];
+          buttonWipe();
+          contButton();
+          return;
+        }
+        else if (rand <= 6) {
+          if (cShip.culture[0] >= 60) {
+            document.getElementById('description').innerHTML += "<br><br>" + eventsText.billionaireSeedship.outcomes[1];
+            setTimeout(function() {
+              buttonWipe();
+              
+              var rescueBtn = document.createElement("button");
+              rescueBtn.className = "futurebutton";
+              rescueBtn.innerHTML = eventsText.billionaireSeedship.buttons[3];
+              rescueBtn.onclick = function() {
+                var entourageSize = getRandomInt(3, 8);
+                damageApply(cShip.colonists, entourageSize, "heal");
+                billionaire = true;
+                document.getElementById('description').innerHTML += "<br><br>" + eventsText.billionaireSeedship.outcomes[8];
+                buttonWipe();
+                contButton();
+              };
+              
+              var leaveBtn = document.createElement("button");
+              leaveBtn.className = "futurebutton";
+              leaveBtn.innerHTML = eventsText.billionaireSeedship.buttons[4];
+              leaveBtn.onclick = function() {
+                if (cShip.culture[0] >= 60) {
+                  document.getElementById('description').innerHTML += "<br><br>" + eventsText.billionaireSeedship.outcomes[9];
+                } else {
+                  document.getElementById('description').innerHTML += "<br><br>" + eventsText.billionaireSeedship.outcomes[10];
+                }
+                buttonWipe();
+                contButton();
+              };
+              
+              document.getElementById('more').appendChild(rescueBtn);
+              document.getElementById('more').appendChild(leaveBtn);
+            }, 100);
+            return;
+          } else {
+            rand = 8;
+          }
+        }
+        
+        if (rand <= 7) {
+          var entourageSize = getRandomInt(2, 6);
+          damageApply(cShip.colonists, entourageSize, "heal");
+          billionaire = true;
+          damageApply(cShip.culture, getRandomInt(5, 15), "damage");
+          document.getElementById('description').innerHTML += "<br><br>" + eventsText.billionaireSeedship.outcomes[2] + " " + eventsText.billionaireSeedship.outcomes[11].replace("NUMBER", entourageSize);
+        }
+        else {
+          var choDevice = deviceDamage(ScanArr.concat(StrArr));
+          var damageTaken = systemDamage("High");
+          damageApply(choDevice, damageTaken, "damage");
+          document.getElementById('description').innerHTML += "<br><br>" + eventsText.billionaireSeedship.outcomes[3];
+        }
+        
+        buttonWipe();
+        contButton();
+      }
+    },
+    {
+      choice: eventsText.billionaireSeedship.buttons[2], 
+      outcome: null, 
+      exist: existCheck("false"), 
+      result: function () {
+        billionaireSeedship.visited = true;
+        document.getElementById('description').innerHTML += "<br><br>" + eventsText.billionaireSeedship.outcomes[4];
         buttonWipe();
         nextPlanet();
       }
@@ -1019,7 +1150,8 @@ Event_community_rare =
     unknownProgram,
     emergencyFaloff,
     anotherSeedShip,
-    derelictStation];
+    derelictStation,
+    billionaireSeedship];
 //Event_community_malfunctions =
 //  [emergencyFaloff];
 

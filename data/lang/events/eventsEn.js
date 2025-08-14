@@ -1492,19 +1492,47 @@ var eventsText = {
       "However, without any probes available, the AI can only observe the station from a distance as it passes by."
     ],
     outcomes: [
-      // Outcome 0 - Scientific/Cultural advancement
       "The probe carefully maneuvers through the debris field and docks with the station. Despite the extensive damage, some sections remain intact. The probe discovers a partially functional data core containing fragmentary records of the station's builders - their scientific methods, cultural practices, and technological insights. Though much of the information is corrupted, what remains provides valuable additions to the ship's databases.",
-      // Outcome 1 - Defense systems activate and cause damage
       "As the probe approaches the station, dormant defense systems suddenly flicker to life. Ancient weapons, still partially functional after eons of drift, target what they perceive as an intruder. The probe barely escapes as energy beams lance through space, but not before one of the defensive systems miscalculates and strikes a piece of debris, sending it careening into the seedship's hull.",
-      // Outcome 2 - Nothing useful found, probe lost
       "The probe carefully navigates to the station and begins its investigation. However, the damage is too extensive - radiation, micro-meteorites, and the passage of eons have rendered everything aboard completely illegible. Worse, as the probe attempts to return, a cascade failure in the station's unstable structure causes a section to collapse, crushing the probe beyond recovery.",
-      // Outcome 3 - No probes available
       "The AI observes the mysterious structure with longing, knowing that its secrets might hold valuable knowledge for humanity's future. But without probes to investigate, the seedship can only record what it can see from a distance before continuing on its journey, leaving the derelict station to its eternal drift through the void."
     ],
     buttons: [
       "Ignore the station and continue",
       "Send a probe to investigate",
       "Continue observing"
+    ]
+  },
+
+  billionaireSeedship: {
+    name: "Billionaire's Ark",
+    description: [
+      "While scanning a distant system, the AI detects an artificial structure in orbit around a gas giant. As the seedship approaches, the object resolves into another seedship - but this one is clearly different. Where the AI's seedship is utilitarian and government-built, this vessel is sleek, ostentatious, and bears the logo of a major Earth corporation. ",
+      "The AI accesses its historical databases and identifies the ship: a private ark commissioned by one of Earth's wealthiest individuals just before the planet's collapse. Unlike the AI's mission to preserve all humanity, this ship was built to save only the billionaire and their chosen elite. ",
+      "The billionaire's seedship appears heavily damaged and drifting powerless. ",
+      "The AI has probes available to investigate the luxury vessel more closely.",
+      "However, without probes, the AI can only observe the opulent wreck from a distance."
+    ],
+    outcomes: [
+      "The probe discovers that the billionaire's ship is indeed abandoned - its wealthy passengers apparently died during a catastrophic system failure years ago. However, the ship's premium components and advanced technology are largely intact. The probe salvages what it can, bringing back superior materials that can be used to repair the seedship's systems.",
+      "The probe finds the billionaire still alive in a luxury hibernation suite, their survival ensured by the ship's premium life support systems. The AI's cultural database contains extensive records of the billionaire's history of exploitation, union-busting, and environmental destruction. Recognizing the threat they would pose to an egalitarian colony, the AI nevertheless faces a moral dilemma about whether to rescue them.",
+      "The probe discovers the billionaire and several associates still alive in their luxury hibernation chambers. Without sufficient cultural context to understand who these people are or what they represent, the AI views them simply as human lives to preserve. The probe begins the complex process of transferring their hibernation pods and connecting them to the seedship's life support systems.",
+      "As the probe approaches, the billionaire's ship suddenly activates automated defense systems, apparently programmed to protect against 'unworthy' rescue attempts. The defensive weapons damage the probe and send debris flying toward the seedship. The billionaire's paranoia and elitism threaten the mission even in death.",
+      "The AI observes the luxury vessel with a mixture of curiosity and resentment. The opulent ship represents everything wrong with the old world - wealth hoarded while the planet burned. Unable to investigate further, the seedship continues its mission to find a home for all of humanity, not just the privileged few.",
+      "The probe investigates the luxury vessel thoroughly but finds nothing of value. The ship's systems failed long ago, its passengers are dead, and any useful technology has degraded beyond recovery. The probe returns empty-handed.",
+      "The AI decides that the risks outweigh any potential benefits. The seedship adjusts its course to avoid the billionaire's vessel, leaving the monument to greed and inequality to drift in the void where it belongs.",
+      "The AI decides not to investigate the unknown vessel. The seedship adjusts its course and continues toward the planetary system, leaving the mysterious luxury craft to drift in the void.",
+      "The AI decides to preserve these human lives. The probe carefully disconnects hibernation pods from the failing billionaire ship and transports them to the seedship, where they are integrated into the life support systems. The wealthy individuals will remain in stasis until landing, when their true nature may reveal itself.",
+      "The AI determines that some people do not deserve rescue, especially those who hoarded resources while the world burned. The billionaire remains in their golden tomb.",
+      "The AI decides not to risk the mission on unknown individuals. The luxury hibernation pods will remain with their failing ship as the seedship continues its journey.",
+      "The probe transfers NUMBER hibernation pods to the seedship and integrates them into the life support network."
+    ],
+    buttons: [
+      "Ignore the billionaire's ship",
+      "Send a probe to investigate", 
+      "Continue observing",
+      "Rescue the billionaire",
+      "Leave them to their fate"
     ]
   },
 
