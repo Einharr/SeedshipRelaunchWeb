@@ -1484,6 +1484,30 @@ var eventsText = {
     ]
   },
 
+  derelictStation: {
+    name: "Derelict Space Station",
+    description: [
+      "The AI awakens from hibernation as its scanners detect an artificial structure drifting through the void between stars. As the seedship approaches, the object resolves into what appears to be an abandoned space station - heavily damaged, its hull scarred and torn, with debris floating around it like a metallic cloud. The station shows no signs of power or life, but its alien architecture suggests it was built by an unknown civilization. ",
+      "The AI has a surface probe available and could investigate the station more closely.",
+      "However, without any probes available, the AI can only observe the station from a distance as it passes by."
+    ],
+    outcomes: [
+      // Outcome 0 - Scientific/Cultural advancement
+      "The probe carefully maneuvers through the debris field and docks with the station. Despite the extensive damage, some sections remain intact. The probe discovers a partially functional data core containing fragmentary records of the station's builders - their scientific methods, cultural practices, and technological insights. Though much of the information is corrupted, what remains provides valuable additions to the ship's databases.",
+      // Outcome 1 - Defense systems activate and cause damage
+      "As the probe approaches the station, dormant defense systems suddenly flicker to life. Ancient weapons, still partially functional after eons of drift, target what they perceive as an intruder. The probe barely escapes as energy beams lance through space, but not before one of the defensive systems miscalculates and strikes a piece of debris, sending it careening into the seedship's hull.",
+      // Outcome 2 - Nothing useful found, probe lost
+      "The probe carefully navigates to the station and begins its investigation. However, the damage is too extensive - radiation, micro-meteorites, and the passage of eons have rendered everything aboard completely illegible. Worse, as the probe attempts to return, a cascade failure in the station's unstable structure causes a section to collapse, crushing the probe beyond recovery.",
+      // Outcome 3 - No probes available
+      "The AI observes the mysterious structure with longing, knowing that its secrets might hold valuable knowledge for humanity's future. But without probes to investigate, the seedship can only record what it can see from a distance before continuing on its journey, leaving the derelict station to its eternal drift through the void."
+    ],
+    buttons: [
+      "Ignore the station and continue",
+      "Send a probe to investigate",
+      "Continue observing"
+    ]
+  },
+
   //SCANNER UPGRADE
   scannerUpgrade: {
     name: "Scanner Upgrade",
