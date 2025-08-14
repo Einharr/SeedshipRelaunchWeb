@@ -1596,7 +1596,7 @@ function preventIllogicalPlanets(cPlanet){
     //Замораживаем океан
     // Logic excludes impossible combinations. the below prevents impossible combos from happening.
      // Freeze the ocean
-     if (cPlanet.temperature == "Very Cold" && cPlanet.water == "Planet-wide ocean") {
+     if (cPlanet.temperature == "Very Cold" && (cPlanet.water == "Planet-wide ocean" || cPlanet.water == "Oceans")) {
       cPlanet.water = "Ice-covered surface";
     };
 
