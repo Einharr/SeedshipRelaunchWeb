@@ -5,6 +5,7 @@ var preDevice = 0;
 
 
 var dictator = false;
+var billionaire = false;
 var transmittedGreeting = false;
 var harpoonSystem = 0;
 

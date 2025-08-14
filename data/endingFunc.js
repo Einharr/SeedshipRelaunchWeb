@@ -48,6 +48,17 @@ function newColony(ship, planet, ending) {
   var EndingNativesList = [];
   var ScoreDescription = [];
   var EndingPSCrelationsList = [];
+
+  if (billionaire == true) {
+    if (getRandomInt(0, 100) < 50) {
+      EndingLandingList.push("As the colonists begin to wake from their sleep chambers, the billionaire and their corporate entourage emerge from stasis with hidden control protocols already in place, seizing administrative access to the colony's resource distribution systems.");
+    } else {
+      var billionaireDeaths = getRandomInt(2, 5);
+      damageApply(cShip.colonists, billionaireDeaths, "damage");
+      EndingLandingList.push("The billionaire attempts to activate hidden override protocols during the landing sequence, but the incompatible systems overload, killing them and " + (billionaireDeaths - 1) + " of their associates in their sleep chambers. The colony is spared their corporate tyranny.");
+      billionaire = false;
+    }
+  }
   var EndingPSCTechnologyList = [];
 
   //Damage Arrays
@@ -1914,7 +1925,10 @@ function newColony(ship, planet, ending) {
 
     if (dictator == true) {
       _culture_score = 20;
-      EndingCultureList.push(ending.culture[0]); //The dictator who replaced one of the original colonists swiftly takes control of the colony and creates an authoritarian regime.
+      EndingCultureList.push(ending.culture[0]);
+    } else if (billionaire == true) {
+      _culture_score = Math.max(30, _culture_score * 0.7);
+      EndingCultureList.push(ending.culture[6]);
     } else {
       if (ship.culture[0] >= 100) {
         EndingCultureList.push(ending.culture[1]); //The cultural database contains a wealth of historical information to help the colonists make their choice of government, and a vast library of art and literature to entertain and inspire them.
