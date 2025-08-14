@@ -1257,6 +1257,9 @@ function menuPastMissions() {
           var currentI = i;
           return function () {
             scoreLoad = gameload("Hiscore");
+            if (curPage >0){
+              currentI = (curPage * 10) - 1; //handle other pages 
+            }
             console.log("ТЫЦ:", currentI)
             singlePastMission(scoreLoad.reverse(), currentI);
             document.getElementById('shipstatspanel').style.opacity = 1;
