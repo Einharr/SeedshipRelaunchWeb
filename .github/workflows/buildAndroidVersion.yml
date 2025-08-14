@@ -23,7 +23,7 @@ jobs:
          mv *.js *.css *.html -t www/
          mv assets/ bootstrap/ css/ data/ -t www/
          ls;
-         docker run --rm -i -v $PWD:/workspace -w /workspace --privileged ghcr.io/alexjyong/CordovaDocker:main sh -c "
+         docker run --rm -i -v $PWD:/workspace -w /workspace --privileged ghcr.io/alexjyong/cordovadocker:main sh -c "
          cordova platform add android;
          cordova build;
          "
